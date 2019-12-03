@@ -35,15 +35,11 @@ sysinfo.txt
 *.apk
 *.unitypackage
 RPGDEMO/Assets/_TerrainAutoUpgrade.meta
-RPGDEMO/Assets/_TerrainAutoUpgrade/layer_TerrainTile_Dirt_ATerrainTile_Norm(15.000,15.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer
+*.terrainlayer
 RPGDEMO/Assets/_TerrainAutoUpgrade/layer_TerrainTile_Dirt_ATerrainTile_Norm(15.000,15.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer.meta
-RPGDEMO/Assets/_TerrainAutoUpgrade/layer_TerrainTile_Dirt_BTerrainTile_Norm(15.000,15.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer
 RPGDEMO/Assets/_TerrainAutoUpgrade/layer_TerrainTile_Dirt_BTerrainTile_Norm(15.000,15.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer.meta
-RPGDEMO/Assets/_TerrainAutoUpgrade/layer_TerrainTile_Green_ATerrainTile_Norm(12.000,12.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer
 RPGDEMO/Assets/_TerrainAutoUpgrade/layer_TerrainTile_Green_ATerrainTile_Norm(12.000,12.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer.meta
-RPGDEMO/Assets/_TerrainAutoUpgrade/layer_TerrainTile_Path_ATerrainTile_Norm(15.000,15.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer
 RPGDEMO/Assets/_TerrainAutoUpgrade/layer_TerrainTile_Path_ATerrainTile_Norm(15.000,15.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer.meta
-RPGDEMO/Assets/_TerrainAutoUpgrade/layer_TerrainTile_Water_ATerrainTile_Norm(15.000,15.000)(0.000,0.000)(0.000,0.000,0.000),0.440,0.960.terrainlayer
 RPGDEMO/Assets/_TerrainAutoUpgrade/layer_TerrainTile_Water_ATerrainTile_Norm(15.000,15.000)(0.000,0.000)(0.000,0.000,0.000),0.440,0.960.terrainlayer.meta
 RPGDEMO/Assets/GUIPack-Clean&Minimalist.meta
 RPGDEMO/Assets/GUIPack-Clean&Minimalist/Demo.meta
@@ -6792,6 +6788,8 @@ RPGDEMO/Assets/LowPolyLandscape/Prefabs/Sky/Cloud-03.prefab
 RPGDEMO/Assets/LowPolyLandscape/Prefabs/Sky/Cloud-03.prefab.meta
 RPGDEMO/Assets/Scenes/MainScene.unity
 RPGDEMO/Assets/Scenes/MainScene.unity.meta
+RPGDEMO/Assets/Scenes/SampleScene.unity
+RPGDEMO/Assets/Scenes/SampleScene.unity.meta
 RPGDEMO/Assets/Suriyun.meta
 RPGDEMO/Assets/Suriyun/Animations.meta
 RPGDEMO/Assets/Suriyun/Animations/Anim@Angpose.fbx

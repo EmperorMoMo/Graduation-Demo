@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Animator anim;
+
+    public float InputX;
+    public float InputZ;
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = this.GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        InputX = Input.GetAxis("Horizontal");
+        InputZ = Input.GetAxis("Vertical");
     }
 }

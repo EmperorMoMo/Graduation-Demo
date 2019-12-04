@@ -372,7 +372,7 @@ MonoBehaviour:
   keyRight: d
   keyA: left shift
   keyB: space
-  keyC: 
+  keyC: left ctrl
   keyD: 
   Dup: 0
   Dright: 0
@@ -380,6 +380,7 @@ MonoBehaviour:
   Dvec: {x: 0, y: 0, z: 0}
   run: 0
   jump: 0
+  roll: 0
   inputEnabled: 1
 --- !u!136 &627488767
 CapsuleCollider:
@@ -394,7 +395,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 1.8
   m_Direction: 1
-  m_Center: {x: 0, y: 0.9, z: 0}
+  m_Center: {x: 0, y: 0.89, z: 0}
 --- !u!33 &627488768
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -554,6 +555,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hoshi
       objectReference: {fileID: 0}
+    - target: {fileID: 95316331630631582, guid: 98a0661a1a68d9949b6b7d564da9f41f,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: edc788ba907fd194b883f833c109d85a, type: 2}
     - target: {fileID: 4308067830959778, guid: 98a0661a1a68d9949b6b7d564da9f41f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -608,11 +614,6 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.3
       objectReference: {fileID: 0}
-    - target: {fileID: 95316331630631582, guid: 98a0661a1a68d9949b6b7d564da9f41f,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: edc788ba907fd194b883f833c109d85a, type: 2}
     - target: {fileID: 137504163154508048, guid: 98a0661a1a68d9949b6b7d564da9f41f,
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.size

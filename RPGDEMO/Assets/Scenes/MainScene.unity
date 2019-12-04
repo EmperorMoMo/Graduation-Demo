@@ -14837,7 +14837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mousemoveSpeed: 2
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 815945366}
   pi: {fileID: 0}
 --- !u!1001 &796626139
 PrefabInstance:

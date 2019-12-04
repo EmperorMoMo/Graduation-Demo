@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gate04 : MonoBehaviour
+public class Gate06 : MonoBehaviour
 {
     private GameObject Player;
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class Gate04 : MonoBehaviour
     }
     void transformChange()
     {
-        Player.transform.position = new Vector3(51, 0, -215);
+        Player.transform.position = new Vector3(55, 0, -370);
     }
     // Update is called once per frame
     void Update()

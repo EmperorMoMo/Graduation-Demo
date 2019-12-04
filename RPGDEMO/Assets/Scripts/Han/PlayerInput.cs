@@ -15,6 +15,7 @@ public class PlayerInput : MonoBehaviour
     public string keyB;
     public string keyC;
     public string keyD;
+    public string keyE;
 
     [Header("=====  output signals =====")]
     public float Dup;
@@ -24,9 +25,12 @@ public class PlayerInput : MonoBehaviour
 
     //1.pressing signal按压型
     public bool run;
+
+    public bool hide;
     //2.trgger once type signal一次性触发
     public bool jump;
-    private bool lastJump;
+
+    public bool roll;
     //3.double trigger双击型
 
     [Header("=====  others =====")]
@@ -73,6 +77,9 @@ public class PlayerInput : MonoBehaviour
         //    print("Jump trigger!!!!");
         //}
 
+        roll = Input.GetKeyDown(keyC);
+
+        hide = Input.GetKey(keyE);
 
     }
 

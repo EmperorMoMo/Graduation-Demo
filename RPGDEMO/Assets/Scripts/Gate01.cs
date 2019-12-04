@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class BackGate : MonoBehaviour
+public class Gate01 : MonoBehaviour
 {
     private GameObject Player;
     // Start is called before the first frame update
@@ -15,14 +14,12 @@ public class BackGate : MonoBehaviour
     {
         if (collider.name == "Test")
         {
-            SceneManager.LoadScene("MainScene");
-            DontDestroyOnLoad(Player);
             transformChange();
         }
     }
     void transformChange()
     {
-        Player.transform.position = new Vector3(37, 0, 57);
+        Player.transform.position = new Vector3(22, 0, -215);
     }
     // Update is called once per frame
     void Update()

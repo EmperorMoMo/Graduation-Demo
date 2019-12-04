@@ -100,7 +100,7 @@ public class ActorController : MonoBehaviour
         lockCamera = true;
         rollVec = 2.5f;
         planarVec *= rollVec;
-        print("on roll enter!");
+        //print("on roll enter!");
     }
 
     public void OnRollExit()

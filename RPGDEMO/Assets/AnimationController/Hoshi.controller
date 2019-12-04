@@ -56,6 +56,20 @@ MonoBehaviour:
   - jump
   - roll
   clearAtExit: []
+--- !u!114 &114149379647835230
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51812ad5ed922e74bb2c230df9b83ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onExitMessages:
+  - OnJumpExit
 --- !u!114 &114259851642244110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,6 +84,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onExitMessages:
   - OnJumpExit
+--- !u!114 &114277535694771452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51812ad5ed922e74bb2c230df9b83ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onExitMessages:
+  - OnRollExit
 --- !u!114 &114463987627091982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -259,7 +287,7 @@ AnimatorState:
   - {fileID: 1101725637072672238}
   m_StateMachineBehaviours:
   - {fileID: 114914691699291652}
-  - {fileID: 114259851642244110}
+  - {fileID: 114149379647835230}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -287,8 +315,8 @@ AnimatorState:
   m_Transitions:
   - {fileID: 1101931769954274268}
   m_StateMachineBehaviours:
-  - {fileID: 114463987627091982}
   - {fileID: 114859668842633558}
+  - {fileID: 114277535694771452}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1

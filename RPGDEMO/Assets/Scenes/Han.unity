@@ -227,7 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mousemoveSpeed: 2
   playerTransform: {fileID: 1684726047}
-  ac: {fileID: 0}
+  pi: {fileID: 0}
 --- !u!1 &253740893
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,11 +390,13 @@ MonoBehaviour:
   keyB: space
   keyC: left ctrl
   keyD: 
+  keyE: left alt
   Dup: 0
   Dright: 0
   Dmag: 0
   Dvec: {x: 0, y: 0, z: 0}
   run: 0
+  hide: 0
   jump: 0
   roll: 0
   inputEnabled: 1

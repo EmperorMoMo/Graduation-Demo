@@ -59,7 +59,7 @@ public class ActorController : MonoBehaviour
         
         if ((pi.Dup != 0 || pi.Dright != 0 )&& lockCamera == false )
         {
-            float targetrotation = Mathf.Atan2(pi.Dright, pi.Dup) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
+            float targetrotation = cameraTransform.eulerAngles.y;
             transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetrotation,
                                         ref currentvelocity, smoothtime);
         }
@@ -98,7 +98,7 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = false;
         lockPlanar = true;
         lockCamera = true;
-        rollVec = 2.5f;
+        rollVec = 3f;
         planarVec *= rollVec;
         //print("on roll enter!");
     }

@@ -11,10 +11,12 @@ public class CameraController : MonoBehaviour
 
     public Transform playerTransform;
 
+    public PlayerInput pi;
+
     // Start is called before the first frame update
     void Awake()
     {
-
+        pi = GetComponent<PlayerInput>();
     }
 
     // Update is called once per frame
@@ -40,6 +42,12 @@ public class CameraController : MonoBehaviour
             {
                 Camera.main.fieldOfView -= 3;
             }
+        }
+
+        Cursor.visible = false;
+        if (pi.hide)
+        {
+            Cursor.visible = true;
         }
     }
 }

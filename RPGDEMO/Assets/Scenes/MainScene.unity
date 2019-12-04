@@ -114,6 +114,77 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &1962518
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.731329
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.6218872
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1962519 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1962518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3132198
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -573,6 +644,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
     type: 3}
   m_PrefabInstance: {fileID: 31913860}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &32048844
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.568672
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.621887
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 57
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1605425
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &32048845 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 32048844}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &32419030
 GameObject:
@@ -1423,6 +1565,148 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1528013415}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &84856903
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &84856904 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 84856903}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &95292670
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &95292671 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 95292670}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &100772210 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 491544, guid: a5561fd9a635eae46807e75869f1c71e,
@@ -1537,6 +1821,77 @@ Transform:
   m_Father: {fileID: 1335828737}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &105331438
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &105331439 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 105331438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &105634127 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 448896, guid: b766c3e6691d8824d91710361acdac3e,
@@ -2496,6 +2851,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1843993794}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &215474959
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (55)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 54
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4943151
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &215474960 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 215474959}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &217269111 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 431390, guid: 51f5278d490af4b41849b4e2dd36b7a5,
@@ -3344,6 +3770,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 959283208}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &286932108
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &286932109 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 286932108}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &287846921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3831,6 +4328,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88c84fb0162191445a1dc2f33a564a5d, type: 3}
+--- !u!1001 &323512488
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.731329
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &323512489 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 323512488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &325861265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4042,6 +4610,77 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &335527199
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.431328
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.9718933
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.000002324581
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 179.9997
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1605425
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &335527200 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 335527199}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &336096003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4970,6 +5609,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 370925051}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &371048795
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4821293
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &371048796 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 371048795}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &371797773 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 426894, guid: d3ee3b32a2293b44f9b092f79878a6cb,
@@ -5674,6 +6384,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1547404bf6b22e445965fc541f8daa2b, type: 3}
+--- !u!1001 &404137817
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &404137818 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 404137817}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &405420611 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 431390, guid: 51f5278d490af4b41849b4e2dd36b7a5,
@@ -5691,6 +6472,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 405956, guid: 1077cb74ccff8654091adfa33d24d130,
     type: 3}
   m_PrefabInstance: {fileID: 996244273}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &413556470
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.860609
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &413556471 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 413556470}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &415427235
 PrefabInstance:
@@ -5823,6 +6675,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 496208, guid: f221830319fa90f43bb65096057b2b5f,
     type: 3}
   m_PrefabInstance: {fileID: 416172429}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &425031620
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &425031621 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 425031620}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &425926553
 PrefabInstance:
@@ -6464,6 +7387,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 626ab82c1c9a7d04da47bcb7dfd9e3b0, type: 3}
+--- !u!1001 &469433412
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (54)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 53
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &469433413 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 469433412}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &472981106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6534,6 +7528,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
     type: 3}
   m_PrefabInstance: {fileID: 472981106}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &474068435
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (49)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &474068436 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 474068435}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &475551700
 GameObject:
@@ -7697,6 +8762,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1485195699}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &551965485
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -17.317
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &551965486 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 551965485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &555934650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8270,6 +9406,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51f5278d490af4b41849b4e2dd36b7a5, type: 3}
+--- !u!1001 &602353500
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.860609
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &602353501 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 602353500}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &602503032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8323,6 +9530,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5371d5bf67ec554bb326e3c14a28f77, type: 3}
+--- !u!1001 &602794095
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &602794096 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 602794095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &603626059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8368,6 +9646,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1547404bf6b22e445965fc541f8daa2b, type: 3}
+--- !u!1001 &607865083
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -17.317
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &607865084 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 607865083}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &609458857 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 405956, guid: 1077cb74ccff8654091adfa33d24d130,
@@ -9226,6 +10575,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51f5278d490af4b41849b4e2dd36b7a5, type: 3}
+--- !u!1001 &637894495
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (52)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -17.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &637894496 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 637894495}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &638881899 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 491544, guid: a5561fd9a635eae46807e75869f1c71e,
@@ -10011,6 +11431,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 802172825}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &697377610
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &697377611 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 697377610}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &701565932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10156,6 +11647,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 480536, guid: 720b1057872090a45bf3bfee7ee139b2,
     type: 3}
   m_PrefabInstance: {fileID: 71103749}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &705262637
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.731329
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.6218872
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &705262638 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 705262637}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &710812629 stripped
 Transform:
@@ -12085,6 +13647,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 921402854}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &840832230
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.431328
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.6218872
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.000002324581
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 179.9997
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1605425
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &840832231 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 840832230}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &840950118 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 426894, guid: d3ee3b32a2293b44f9b092f79878a6cb,
@@ -12211,6 +13844,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5159aaa83d5a21468c956268b7d5434, type: 3}
+--- !u!1001 &850425016
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.3781128
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &850425017 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 850425016}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &851974383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12663,6 +14367,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 491544, guid: a5561fd9a635eae46807e75869f1c71e,
     type: 3}
   m_PrefabInstance: {fileID: 870748808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &873314876
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &873314877 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 873314876}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &875569758
 PrefabInstance:
@@ -13176,6 +14951,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1782493514}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &903604516
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (48)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 47
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &903604517 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 903604516}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &908168640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13632,6 +15478,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 496668, guid: 1547404bf6b22e445965fc541f8daa2b,
     type: 3}
   m_PrefabInstance: {fileID: 702232172}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &929471200
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4821293
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &929471201 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 929471200}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &929743984
 PrefabInstance:
@@ -14537,6 +16454,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2067254754}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1010241983
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1010241984 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1010241983}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1015514575 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 431390, guid: 51f5278d490af4b41849b4e2dd36b7a5,
@@ -15348,6 +17336,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 456568, guid: 66a2447ab75ca594e82282f5cc5d1d05,
     type: 3}
   m_PrefabInstance: {fileID: 370181497}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1072131348
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (53)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3034059
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1072131349 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1072131348}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1072813458
 GameObject:
@@ -16287,6 +18346,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3ee3b32a2293b44f9b092f79878a6cb, type: 3}
+--- !u!1001 &1134648268
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1134648269 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1134648268}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1137753635 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 476772, guid: 06cb39402acee974a83470aefa8c877b,
@@ -16344,6 +18474,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06cb39402acee974a83470aefa8c877b, type: 3}
+--- !u!1001 &1148779252
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1148779253 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1148779252}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1151336871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16429,6 +18630,148 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49750cdef9e2e6640913a0fa6be6e81a, type: 3}
+--- !u!1001 &1153335854
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1153335855 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1153335854}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1154571455
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.731329
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1154571456 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1154571455}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1156109125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16795,6 +19138,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 431390, guid: 51f5278d490af4b41849b4e2dd36b7a5,
     type: 3}
   m_PrefabInstance: {fileID: 1287588371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1185354083
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1185354084 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1185354083}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1188514817
 PrefabInstance:
@@ -17324,6 +19738,77 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &1231090249
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1231090250 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1231090249}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1233965599 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 476772, guid: 06cb39402acee974a83470aefa8c877b,
@@ -19284,6 +21769,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49750cdef9e2e6640913a0fa6be6e81a, type: 3}
+--- !u!1001 &1305371582
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1305371583 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1305371582}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1309035491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19436,6 +21992,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 477734152}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1319714818
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (56)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1319714819 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1319714818}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1320951444 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 440440, guid: 25c7c7b23b7f7624aa38f0e331db2fd5,
@@ -19492,6 +22119,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 405956, guid: 1077cb74ccff8654091adfa33d24d130,
     type: 3}
   m_PrefabInstance: {fileID: 974749837}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1326642888
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.731329
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4733093
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1326642889 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1326642888}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1329411280
 PrefabInstance:
@@ -20174,6 +22872,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 206908dd4e65b264e92829ae6566cbf6, type: 3}
+--- !u!1001 &1368186751
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (50)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1368186752 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1368186751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1369968895 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 479374, guid: 49750cdef9e2e6640913a0fa6be6e81a,
@@ -20596,6 +23365,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c77b9828eb5dcf443932fed11c52c3cd, type: 3}
+--- !u!1001 &1389074918
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1389074919 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1389074918}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1392427627
 GameObject:
   m_ObjectHideFlags: 0
@@ -21342,6 +24182,95 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1544769175}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1423524720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1423524721}
+  m_Layer: 0
+  m_Name: Wall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1423524721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423524720}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 127.47061, y: -36.870823, z: -102.177734}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1513165771}
+  - {fileID: 335527200}
+  - {fileID: 705262638}
+  - {fileID: 1962519}
+  - {fileID: 1788328861}
+  - {fileID: 1154571456}
+  - {fileID: 2026422502}
+  - {fileID: 323512489}
+  - {fileID: 1326642889}
+  - {fileID: 1713615489}
+  - {fileID: 413556471}
+  - {fileID: 602353501}
+  - {fileID: 2027795789}
+  - {fileID: 1466931276}
+  - {fileID: 607865084}
+  - {fileID: 1389074919}
+  - {fileID: 1185354084}
+  - {fileID: 1010241984}
+  - {fileID: 286932109}
+  - {fileID: 84856904}
+  - {fileID: 1602973043}
+  - {fileID: 1231090250}
+  - {fileID: 850425017}
+  - {fileID: 404137818}
+  - {fileID: 697377611}
+  - {fileID: 2084412962}
+  - {fileID: 2118155128}
+  - {fileID: 873314877}
+  - {fileID: 929471201}
+  - {fileID: 551965486}
+  - {fileID: 1134648269}
+  - {fileID: 1844214019}
+  - {fileID: 105331439}
+  - {fileID: 602794096}
+  - {fileID: 1451121300}
+  - {fileID: 1933924341}
+  - {fileID: 1305371583}
+  - {fileID: 371048796}
+  - {fileID: 1995936372}
+  - {fileID: 95292671}
+  - {fileID: 1495982356}
+  - {fileID: 1148779253}
+  - {fileID: 425031621}
+  - {fileID: 1953855732}
+  - {fileID: 1591805541}
+  - {fileID: 1153335855}
+  - {fileID: 2096765204}
+  - {fileID: 903604517}
+  - {fileID: 474068436}
+  - {fileID: 1368186752}
+  - {fileID: 1871114627}
+  - {fileID: 637894496}
+  - {fileID: 1072131349}
+  - {fileID: 469433413}
+  - {fileID: 215474960}
+  - {fileID: 1319714819}
+  - {fileID: 840832231}
+  - {fileID: 32048845}
+  - {fileID: 1565180854}
+  m_Father: {fileID: 1960911170}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1424035674 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 419490, guid: 6a2d3f1c2ce19c34cb209fe38fd1dcb1,
@@ -21844,6 +24773,77 @@ Transform:
   m_Father: {fileID: 1335828737}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1451121299
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1451121300 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1451121299}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1451602242 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400030, guid: 80bb278c8c93f524fb7381ccd34e92cf,
@@ -22043,6 +25043,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9b9e80a6e9f2e84d8df548b8a832b25, type: 3}
+--- !u!1001 &1466931275
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -21.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2766405
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1466931276 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1466931275}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1468639515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22718,6 +25789,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1490667930}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1495982355
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1495982356 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1495982355}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1495987165
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23087,6 +26229,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51f5278d490af4b41849b4e2dd36b7a5, type: 3}
+--- !u!1001 &1513165770
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.811329
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.6218872
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.000002324581
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 179.9997
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1605425
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1513165771 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1513165770}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1515929518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24104,6 +27317,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1547404bf6b22e445965fc541f8daa2b, type: 3}
+--- !u!1001 &1565180853
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.568672
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.6218872
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 58
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1605425
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1565180854 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1565180853}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1566614279
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24655,6 +27939,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1588688825}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1591805540
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (45)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1591805541 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1591805540}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1595431816 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 431390, guid: 51f5278d490af4b41849b4e2dd36b7a5,
@@ -24815,6 +28170,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b766c3e6691d8824d91710361acdac3e, type: 3}
+--- !u!1001 &1602973042
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1602973043 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1602973042}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1606448896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26901,6 +30327,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1680726210}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1713615488
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.860609
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1713615489 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1713615488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1714958357 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 461582, guid: 743a111eeca8e4a40a3e3123173a3339,
@@ -28254,6 +31751,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5561fd9a635eae46807e75869f1c71e, type: 3}
+--- !u!1001 &1788328860
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.731329
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.3781128
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1788328861 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1788328860}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1789205672 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 424838, guid: b5159aaa83d5a21468c956268b7d5434,
@@ -29462,6 +33030,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5159aaa83d5a21468c956268b7d5434, type: 3}
+--- !u!1001 &1844214018
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1844214019 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1844214018}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1849961838 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 480536, guid: 720b1057872090a45bf3bfee7ee139b2,
@@ -29757,6 +33396,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 453924, guid: 4c273e4fdf7c0814bb8781ef32ea1cc1,
     type: 3}
   m_PrefabInstance: {fileID: 1519078794}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1871114626
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (51)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1871114627 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1871114626}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1871844944 stripped
 Transform:
@@ -30438,6 +34148,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1932678043}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1933924340
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1933924341 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1933924340}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1936603743 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 458834, guid: c77b9828eb5dcf443932fed11c52c3cd,
@@ -30765,6 +34546,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49750cdef9e2e6640913a0fa6be6e81a, type: 3}
+--- !u!1001 &1953855731
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1953855732 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1953855731}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1960911169
 GameObject:
   m_ObjectHideFlags: 0
@@ -30799,6 +34651,7 @@ Transform:
   - {fileID: 502507099}
   - {fileID: 1730825267}
   - {fileID: 1127237335}
+  - {fileID: 1423524721}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31139,6 +34992,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 405956, guid: 1077cb74ccff8654091adfa33d24d130,
     type: 3}
   m_PrefabInstance: {fileID: 1408298336}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1995936371
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &1995936372 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1995936371}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1997518939
 PrefabInstance:
@@ -31621,6 +35545,148 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 491544, guid: a5561fd9a635eae46807e75869f1c71e,
     type: 3}
   m_PrefabInstance: {fileID: 2127425304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2026422501
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.731329
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &2026422502 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2026422501}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2027795788
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -17.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.860609
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &2027795789 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2027795788}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2030501712 stripped
 Transform:
@@ -32394,6 +36460,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a2d3f1c2ce19c34cb209fe38fd1dcb1, type: 3}
+--- !u!1001 &2084412961
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &2084412962 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2084412961}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2085386677 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 480536, guid: 720b1057872090a45bf3bfee7ee139b2,
@@ -32640,6 +36777,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25c7c7b23b7f7624aa38f0e331db2fd5, type: 3}
+--- !u!1001 &2096765203
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &2096765204 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2096765203}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2097365563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 448896, guid: b766c3e6691d8824d91710361acdac3e,
@@ -32776,6 +36984,77 @@ Transform:
   m_Father: {fileID: 1335828737}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2118155127
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1423524721}
+    m_Modifications:
+    - target: {fileID: 188484, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_Name
+      value: RoadFenceStone_Damagedl-01 (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.4508567
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.160543
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4989a7344bfb3df4aad127586437eee1, type: 3}
+--- !u!4 &2118155128 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 427328, guid: 4989a7344bfb3df4aad127586437eee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2118155127}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2119914306
 GameObject:
   m_ObjectHideFlags: 0

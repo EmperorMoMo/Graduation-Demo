@@ -14813,7 +14813,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mousemoveSpeed: 2
   playerTransform: {fileID: 2045138259}
-  ac: {fileID: 0}
 --- !u!1001 &796626139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26713,7 +26712,7 @@ GameObject:
   - component: {fileID: 1410734626}
   m_Layer: 0
   m_Name: PlayerHandle
-  m_TagString: Untagged
+  m_TagString: TestPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

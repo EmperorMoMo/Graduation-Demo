@@ -8,11 +8,11 @@ public class Gate04 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.Find("Test");
+        Player = GameObject.FindWithTag("TestPlayer");
     }
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.name == "Test")
+        if (collider.tag == "TestPlayer")
         {
             transformChange();
         }

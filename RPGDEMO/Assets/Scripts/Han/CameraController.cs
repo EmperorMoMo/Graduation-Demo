@@ -10,12 +10,11 @@ public class CameraController : MonoBehaviour
     public float mousemoveSpeed = 2f;
 
     public Transform playerTransform;
-    public ActorController ac;
 
     // Start is called before the first frame update
     void Awake()
     {
-        ac = GetComponent<ActorController>();
+
     }
 
     // Update is called once per frame

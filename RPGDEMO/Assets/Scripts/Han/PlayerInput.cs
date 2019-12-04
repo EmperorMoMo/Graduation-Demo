@@ -27,6 +27,8 @@ public class PlayerInput : MonoBehaviour
     //2.trgger once type signal一次性触发
     public bool jump;
     private bool lastJump;
+
+    public bool roll;
     //3.double trigger双击型
 
     [Header("=====  others =====")]
@@ -73,6 +75,7 @@ public class PlayerInput : MonoBehaviour
         //    print("Jump trigger!!!!");
         //}
 
+        roll = Input.GetKeyDown(keyC);
 
     }
 

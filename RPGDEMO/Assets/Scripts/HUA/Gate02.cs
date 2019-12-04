@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class Gate : MonoBehaviour
+public class Gate02 : MonoBehaviour
 {
     private GameObject Player;
     // Start is called before the first frame update
@@ -15,14 +14,12 @@ public class Gate : MonoBehaviour
     {
         if (collider.name == "Test")
         {
-            SceneManager.LoadScene("CheckPoint01");
-            DontDestroyOnLoad(Player);
             transformChange();
         }
     }
     void transformChange()
     {
-        Player.transform.position = new Vector3(-12, 0, 0);
+        Player.transform.position = new Vector3(38, 0, 57);
     }
     // Update is called once per frame
     void Update()

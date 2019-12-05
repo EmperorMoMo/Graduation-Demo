@@ -10,14 +10,15 @@ public class CameraController : MonoBehaviour
     public float mousemoveSpeed = 2f;
     public float temp=3.0f;
 
-    public Transform playerTransform;
+    private Transform playerTransform;
 
-    public PlayerInput pi;
+    private PlayerInput pi;
 
     // Start is called before the first frame update
     void Awake()
     {
         pi = GetComponent<PlayerInput>();
+        playerTransform = GameObject.Find("Follow").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -47,56 +48,16 @@ public class CameraController : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        //if (pi.hide)
-        //{
-        //    Cursor.visible = true;
-        //}
-
-        //if (Check(-1.7f)&&temp>0.5f)
-        //{
-        //    temp -= 0.5f;
-        //}
-        //else if (!Check(1.7f) && temp < 3f)
-        //{
-        //    temp += 0.5f;
-        //}
 
         RaycastHit[] hits;
         Vector3 dir = -(playerTransform.position - transform.position).normalized;
         hits = Physics.RaycastAll(playerTransform.position, dir,
             Vector3.Distance(playerTransform.position, transform.position));
-        Debug.DrawRay(playerTransform.position, dir, Color.green);
+        //Debug.DrawRay(playerTransform.position, dir, Color.green);
         if (hits.Length > 0 && hits[0].collider.tag != "MainCamera")
         {
             transform.position = hits[0].point;
         }
-        //{
-        //    string name = hit.collider.gameObject.tag;
-        //    if (name != "MainCamera")
-        //    {
-        //        transform.position = hit.point;
-        //    }
-        //    else
-        //    {
-        //        transform.position = playerTransform.position - transform.forward * temp;
-        //    }
-        //}
 
     }
-    
-
-    //bool Check(float p)
-    //{
-    //    Vector3 dir = -(playerTransform.position - transform.position).normalized;
-    //    hits = Physics.RaycastAll(playerTransform.position, dir,
-    //        Vector3.Distance(playerTransform.position, transform.position) + p);
-
-    //    Debug.DrawRay(playerTransform.position, dir, Color.red,
-    //        Vector3.Distance(playerTransform.position, transform.position));
-    //    if (hits.Length > 0 && hits[0].collider.tag != "Player")
-    //    {
-    //        return true;
-    //    }
-    //    return false;
-    //}
 }

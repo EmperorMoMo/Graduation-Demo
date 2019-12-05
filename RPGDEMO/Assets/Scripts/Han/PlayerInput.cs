@@ -68,7 +68,15 @@ public class PlayerInput : MonoBehaviour
         Dmag = Mathf.Sqrt(((Dup2 * Dup2) + (Dright2 * Dright2)));
         Dvec = Dright2 * transform.right + Dup2 * transform.forward;
 
-        run = Input.GetKey(keyA);
+        if (Input.GetKeyDown(keyA))
+        {
+            run = true;
+        }
+        else if (targetDup==0&&targetDright==0)
+        {
+            run = false;
+        }
+
 
         jump = Input.GetKeyDown(keyB);
         //if (jump)

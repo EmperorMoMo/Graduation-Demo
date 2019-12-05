@@ -8,15 +8,17 @@ public class CameraController : MonoBehaviour
     private float pitch;
 
     public float mousemoveSpeed = 2f;
+    public float temp=3.0f;
 
-    public Transform playerTransform;
+    private Transform playerTransform;
 
-    public PlayerInput pi;
+    private PlayerInput pi;
 
     // Start is called before the first frame update
     void Awake()
     {
         pi = GetComponent<PlayerInput>();
+        playerTransform = GameObject.Find("Follow").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -27,7 +29,7 @@ public class CameraController : MonoBehaviour
         transform.eulerAngles = new Vector3(pitch, yaw, 0);
 
         //这里这个3是距离，相机跟角色的距离；
-        transform.position = playerTransform.position - transform.forward * 3;
+        transform.position = playerTransform.position - transform.forward * temp;
 
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
@@ -46,9 +48,16 @@ public class CameraController : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        //if (pi.hide)
-        //{
-        //    Cursor.visible = true;
-        //}
+
+        RaycastHit[] hits;
+        Vector3 dir = -(playerTransform.position - transform.position).normalized;
+        hits = Physics.RaycastAll(playerTransform.position, dir,
+            Vector3.Distance(playerTransform.position, transform.position));
+        //Debug.DrawRay(playerTransform.position, dir, Color.green);
+        if (hits.Length > 0 && hits[0].collider.tag != "MainCamera")
+        {
+            transform.position = hits[0].point;
+        }
+
     }
 }

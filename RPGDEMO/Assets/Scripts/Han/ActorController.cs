@@ -98,7 +98,14 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = false;
         lockPlanar = true;
         lockCamera = true;
-        rollVec = 3f;
+        if (pi.run == true)
+        {
+            rollVec = 2f;
+        }
+        else
+        {
+            rollVec = 4f;
+        }
         planarVec *= rollVec;
         //print("on roll enter!");
     }

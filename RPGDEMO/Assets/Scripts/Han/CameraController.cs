@@ -44,10 +44,11 @@ public class CameraController : MonoBehaviour
             }
         }
 
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        if (pi.hide)
-        {
-            Cursor.visible = true;
-        }
+        //if (pi.hide)
+        //{
+        //    Cursor.visible = true;
+        //}
     }
 }

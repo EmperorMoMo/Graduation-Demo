@@ -15,7 +15,6 @@ public class PlayerInput : MonoBehaviour
     public string keyB;
     public string keyC;
     public string keyD;
-    public string keyE;
 
     [Header("=====  output signals =====")]
     public float Dup;
@@ -79,7 +78,7 @@ public class PlayerInput : MonoBehaviour
 
         roll = Input.GetKeyDown(keyC);
 
-        hide = Input.GetKey(keyE);
+        //hide = Input.GetKeyDown(KeyCode.Z);
 
     }
 

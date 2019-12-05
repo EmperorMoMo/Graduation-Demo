@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
     private float pitch;
 
     public float mousemoveSpeed = 2f;
+    public float temp=3.0f;
 
     public Transform playerTransform;
 
@@ -27,7 +28,7 @@ public class CameraController : MonoBehaviour
         transform.eulerAngles = new Vector3(pitch, yaw, 0);
 
         //这里这个3是距离，相机跟角色的距离；
-        transform.position = playerTransform.position - transform.forward * 3;
+        transform.position = playerTransform.position - transform.forward * temp;
 
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
@@ -50,5 +51,52 @@ public class CameraController : MonoBehaviour
         //{
         //    Cursor.visible = true;
         //}
+
+        //if (Check(-1.7f)&&temp>0.5f)
+        //{
+        //    temp -= 0.5f;
+        //}
+        //else if (!Check(1.7f) && temp < 3f)
+        //{
+        //    temp += 0.5f;
+        //}
+
+        RaycastHit[] hits;
+        Vector3 dir = -(playerTransform.position - transform.position).normalized;
+        hits = Physics.RaycastAll(playerTransform.position, dir,
+            Vector3.Distance(playerTransform.position, transform.position));
+        Debug.DrawRay(playerTransform.position, dir, Color.green);
+        if (hits.Length > 0 && hits[0].collider.tag != "MainCamera")
+        {
+            transform.position = hits[0].point;
+        }
+        //{
+        //    string name = hit.collider.gameObject.tag;
+        //    if (name != "MainCamera")
+        //    {
+        //        transform.position = hit.point;
+        //    }
+        //    else
+        //    {
+        //        transform.position = playerTransform.position - transform.forward * temp;
+        //    }
+        //}
+
     }
+    
+
+    //bool Check(float p)
+    //{
+    //    Vector3 dir = -(playerTransform.position - transform.position).normalized;
+    //    hits = Physics.RaycastAll(playerTransform.position, dir,
+    //        Vector3.Distance(playerTransform.position, transform.position) + p);
+
+    //    Debug.DrawRay(playerTransform.position, dir, Color.red,
+    //        Vector3.Distance(playerTransform.position, transform.position));
+    //    if (hits.Length > 0 && hits[0].collider.tag != "Player")
+    //    {
+    //        return true;
+    //    }
+    //    return false;
+    //}
 }

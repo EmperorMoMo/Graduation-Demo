@@ -11,6 +11,8 @@ public class ActorController : MonoBehaviour
     public float runMultiplier = 2.0f;
     public float smoothtime = 0.2f;
     private float currentvelocity;
+    
+    //public EffectInfo[] Effects;
 
     [SerializeField]
     private Animator anim;
@@ -19,6 +21,7 @@ public class ActorController : MonoBehaviour
     private Vector3 thrustVec;
     private float rollVec = 1f;
     private float currentVelocity;
+    private float lerpTarget;//状态机权重
 
     private bool lockPlanar = false;
     public bool lockCamera = false;
@@ -44,6 +47,11 @@ public class ActorController : MonoBehaviour
         if (pi.roll)
         {
             anim.SetTrigger("roll");
+        }
+
+        if (pi.attack)
+        {
+            anim.SetTrigger("attack");
         }
 
         if (pi.Dmag > 0.1f)
@@ -116,4 +124,54 @@ public class ActorController : MonoBehaviour
         lockPlanar = false;
         lockCamera = false;
     }
+
+    public void OnAttack1Enter()
+    {
+        pi.inputEnabled = false;
+        lerpTarget = 1.0f;
+        //InstantiateEffect(0);
+    }
+
+    public void OnAttack1Update()
+    {
+        float currentWeight = anim.GetLayerWeight(anim.GetLayerIndex("attack"));
+        currentWeight = Mathf.Lerp(currentWeight, lerpTarget, 0.25f);
+        anim.SetLayerWeight(anim.GetLayerIndex("attack"), currentWeight);
+    }
+    
+    public void OnAttack2Enter()
+    {
+        //InstantiateEffect(1);
+    }
+
+    public void OnAttackIdleEnter()
+    {
+        pi.inputEnabled = true;
+        print("on AttackIdleEnter!!!");
+        lerpTarget = 0f;
+    }
+
+    public void OnAttackIdleUpdate()
+    {
+        float currentWeight = anim.GetLayerWeight(anim.GetLayerIndex("attack"));
+        currentWeight = Mathf.Lerp(currentWeight, lerpTarget, 0.25f);
+        anim.SetLayerWeight(anim.GetLayerIndex("attack"), currentWeight);
+    }
+
+    //[System.Serializable]
+    //public class EffectInfo
+    //{
+    //    public GameObject Effect;
+    //    public Transform StartPositionRotation;
+    //    public float DestroyAfter = 10;
+    //    public bool UseLocalPosition = true;
+    //}
+
+    //void InstantiateEffect(int EffectNumber)
+    //{
+    //    var instance = Instantiate(Effects[EffectNumber].Effect, Effects[EffectNumber].StartPositionRotation.position,
+    //        Effects[EffectNumber].StartPositionRotation.rotation);
+
+    //    Destroy(instance, Effects[EffectNumber].DestroyAfter);
+    //}
 }

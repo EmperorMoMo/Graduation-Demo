@@ -36,29 +36,18 @@ public class NPCName : MonoBehaviour {
         Vector3 worldPosition = new Vector3(collider.transform.position.x, collider.transform.position.y + npcHeight, collider.transform.position.z);
         //根据NPC头顶的3D坐标换算成它在2D屏幕中的坐标
         Vector2 targetPosition = Camera.main.WorldToScreenPoint(worldPosition);
-        Vector2  position = text.transform.position;
-        
-        if(position.x < -50 || position.x > 1970){
-            if(text.activeSelf){
-                text.SetActive(false);
-            }
-        }else{
-            if(!text.activeSelf){
-                text.SetActive(true);
-            }
+        text.transform.position = targetPosition;   
+    }
+
+    public void OnBecameVisible() {
+        if (!text.activeSelf) {
+            text.SetActive(true);
         }
-        if(position.y < -15 || position.y > 1095){
-            if(text.activeSelf){
-                text.SetActive(false);
-            }
-        }else{
-            if(!text.activeSelf){
-                text.SetActive(true);
-            }
+    }
+
+    public void OnBecameInvisible() {
+        if (text.activeSelf) {
+            text.SetActive(false);
         }
-        position.x = Mathf.Lerp(targetPosition.x, position.x, 0.02f);
-        position.y = Mathf.Lerp(targetPosition.y, position.y, 0.02f);
-        
-        text.transform.position = position;
     }
 }

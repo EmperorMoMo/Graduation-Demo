@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8e9d17796fd47c46976ba2f17284603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ac: {fileID: 0}
   Effects:
   - Effect: {fileID: 1819066416490906, guid: f71e64e1ba018eb419bd5e9e3ca8a65c, type: 3}
     StartPositionRotation: {fileID: 862485379}
@@ -477,6 +478,7 @@ MonoBehaviour:
   smoothtime: 0.2
   anim: {fileID: 172672131}
   lockCamera: 0
+  str: 0
 --- !u!54 &627488771
 Rigidbody:
   m_ObjectHideFlags: 0

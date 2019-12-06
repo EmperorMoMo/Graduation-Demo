@@ -29,7 +29,6 @@ public class ActorController : MonoBehaviour
 
     private bool lockPlanar = false;
     private bool lockCamera = false;
-    private bool waiting;
     public bool isDam;
 
     [Header("=====  Attack =====")]
@@ -184,7 +183,7 @@ public class ActorController : MonoBehaviour
             {
                 float angle = Vector3.Angle(transform.forward, enemy[i].transform.position - transform.position);
                 Debug.Log(angle);
-                if (dir < normalDis && angle < 50)
+                if (dir < normalDis && angle < 60)
                 {
                     tempList.Add(enemy[i]);
                 }
@@ -206,25 +205,5 @@ public class ActorController : MonoBehaviour
             //Stop(0.1f);
         }
     }
-
-    public void Stop(float duration)
-    {
-        if (waiting)
-        {
-            return;
-        }
-
-        Time.timeScale = 0.0f;
-
-        StartCoroutine(Wait(duration));
-    }
-
-    IEnumerator Wait(float duration)
-    {
-        waiting = true;
-        yield return new WaitForSecondsRealtime(duration);
-        Time.timeScale = 1f;
-        waiting = false;
-    }
-
+    
 }

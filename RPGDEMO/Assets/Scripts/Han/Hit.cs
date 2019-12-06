@@ -5,6 +5,8 @@ using UnityEngine;
 public class Hit : MonoBehaviour
 {
     private ActorController ac;
+
+    private bool waiting;
     // Start is called before the first frame update
     void Awake()
     {
@@ -21,7 +23,27 @@ public class Hit : MonoBehaviour
     {
         if (ac.str == ActorController.State.normalAtk&&ac.isDam)
         {
-            ac.Stop(0.1f);
+            Stop(0.1f);
         }
+    }
+
+    public void Stop(float duration)
+    {
+        if (waiting)
+        {
+            return;
+        }
+
+        Time.timeScale = 0.0f;
+
+        StartCoroutine(Wait(duration));
+    }
+
+    IEnumerator Wait(float duration)
+    {
+        waiting = true;
+        yield return new WaitForSecondsRealtime(duration);
+        Time.timeScale = 1f;
+        waiting = false;
     }
 }

@@ -9,6 +9,7 @@ public class NPCName : MonoBehaviour {
     private GameObject text;
     private float npcHeight;
     private Collider collider;
+    private bool isIn = false;
 
     void Start() {
         float size_y;
@@ -40,7 +41,7 @@ public class NPCName : MonoBehaviour {
 
         if (text != null) {
             if (Vector3.Distance(this.transform.position, Camera.main.transform.position) <= 20) {
-                if (!text.activeSelf) {
+                if (!text.activeSelf && isIn) {
                     text.SetActive(true);
                 }
             } else {
@@ -52,6 +53,7 @@ public class NPCName : MonoBehaviour {
     }
 
     public void OnBecameVisible() {
+        isIn = true;
         if (text != null) {
             if (!text.activeSelf) {
                 text.SetActive(true);
@@ -60,6 +62,7 @@ public class NPCName : MonoBehaviour {
     }
 
     public void OnBecameInvisible() {
+        isIn = false;
         if (text != null) { 
             if (text.activeSelf) {
                 text.SetActive(false);

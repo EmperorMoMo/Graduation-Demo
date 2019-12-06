@@ -36,10 +36,10 @@ public class HTDRAFSM : MonsterFSM
     //角色是否还存活
     private bool _isDead;
     //实现基类初始状态机方法
-    void GetMessage(string s)
-    {
-        _animation.Play(s);
-    }
+    //void GetMessage(string s)
+    //{
+    //    _animation.Play(s);
+    //}
     protected override void Initialize()
     {
         monsterHP = 100;

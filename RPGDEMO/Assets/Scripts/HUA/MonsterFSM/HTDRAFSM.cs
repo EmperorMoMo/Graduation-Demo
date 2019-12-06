@@ -56,7 +56,7 @@ public class HTDRAFSM : MonsterFSM
         //获取AI对象动画播放器组件
         _animation = GetComponent<Animation>();
         //获取AI对象巡逻点
-        pointList = GameObject.FindGameObjectsWithTag("Player");
+        pointList = GameObject.FindGameObjectsWithTag("Finish");
         //获取玩家对象标签和位置
         GameObject obj = GameObject.FindGameObjectWithTag("TestPlayer");
         playerTransform = obj.transform;

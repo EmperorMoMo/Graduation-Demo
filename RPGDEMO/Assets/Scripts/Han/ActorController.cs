@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class ActorController : MonoBehaviour
 {
+    public enum State
+    {
+        normalAtk,
+        skillAtk,
+    }
+
+
     public GameObject model;
     public PlayerInput pi;
     private Transform cameraTransform;
@@ -11,8 +18,6 @@ public class ActorController : MonoBehaviour
     public float runMultiplier = 2.0f;
     public float smoothtime = 0.2f;
     private float currentvelocity;
-    
-    //public EffectInfo[] Effects;
 
     [SerializeField]
     private Animator anim;
@@ -26,6 +31,12 @@ public class ActorController : MonoBehaviour
     private bool lockPlanar = false;
     public bool lockCamera = false;
 
+    [Header("=====  Attack =====")]
+    private float normalDis;//普攻距离
+
+    private float skillDis;//技能距离
+    private State str;//当前是何种攻击方式
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -33,6 +44,7 @@ public class ActorController : MonoBehaviour
         anim = model.GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
         cameraTransform = Camera.main.transform;
+        normalDis = 3f;
     }
 
     // Update is called once per frame
@@ -129,7 +141,8 @@ public class ActorController : MonoBehaviour
     {
         pi.inputEnabled = false;
         lerpTarget = 1.0f;
-        //InstantiateEffect(0);
+        str = State.normalAtk;
+        Select(str);
     }
 
     public void OnAttack1Update()
@@ -141,13 +154,14 @@ public class ActorController : MonoBehaviour
     
     public void OnAttack2Enter()
     {
-        //InstantiateEffect(1);
+        str = State.normalAtk;
+        Select(str);
     }
 
     public void OnAttackIdleEnter()
     {
         pi.inputEnabled = true;
-        print("on AttackIdleEnter!!!");
+        //print("on AttackIdleEnter!!!");
         lerpTarget = 0f;
     }
 
@@ -158,20 +172,33 @@ public class ActorController : MonoBehaviour
         anim.SetLayerWeight(anim.GetLayerIndex("attack"), currentWeight);
     }
 
-    //[System.Serializable]
-    //public class EffectInfo
-    //{
-    //    public GameObject Effect;
-    //    public Transform StartPositionRotation;
-    //    public float DestroyAfter = 10;
-    //    public bool UseLocalPosition = true;
-    //}
+    public void Select(State str)
+    {
+        GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
+        List<GameObject> tempList=new List<GameObject>();
+        for (int i = 0; i < enemy.Length; i++)
+        {
+            float dir = Vector3.Distance(transform.position, enemy[i].transform.position);
+            if (str == State.normalAtk)
+            {
+                float angle = Vector3.Angle(transform.forward, enemy[i].transform.position - transform.position);
+                Debug.Log(angle);
+                if (dir < normalDis && angle < 50)
+                {
+                    tempList.Add(enemy[i]);
+                }
+            }
+        }
 
-    //void InstantiateEffect(int EffectNumber)
-    //{
-    //    var instance = Instantiate(Effects[EffectNumber].Effect, Effects[EffectNumber].StartPositionRotation.position,
-    //        Effects[EffectNumber].StartPositionRotation.rotation);
+        foreach (var objects in tempList)
+        {
+            if (objects.GetComponent<Rigidbody>() != null && str == State.normalAtk)
+            {
+                objects.GetComponent<Rigidbody>().freezeRotation = true;
+                objects.GetComponent<Rigidbody>().AddExplosionForce(200, transform.position, 2);
+            }
+            objects.GetComponent<EnemyAI>().Damage();
+        }
+    }
 
-    //    Destroy(instance, Effects[EffectNumber].DestroyAfter);
-    //}
 }

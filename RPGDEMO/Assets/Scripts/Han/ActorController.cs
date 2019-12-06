@@ -9,8 +9,7 @@ public class ActorController : MonoBehaviour
         normalAtk,
         skillAtk,
     }
-
-
+    
     public GameObject model;
     public PlayerInput pi;
     private Transform cameraTransform;
@@ -29,13 +28,14 @@ public class ActorController : MonoBehaviour
     private float lerpTarget;//状态机权重
 
     private bool lockPlanar = false;
-    public bool lockCamera = false;
+    private bool lockCamera = false;
+    private bool waiting; 
 
     [Header("=====  Attack =====")]
     private float normalDis;//普攻距离
 
     private float skillDis;//技能距离
-    private State str;//当前是何种攻击方式
+    public State str;//当前是何种攻击方式
 
     // Start is called before the first frame update
     void Awake()
@@ -142,7 +142,7 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = false;
         lerpTarget = 1.0f;
         str = State.normalAtk;
-        Select(str);
+        //Select(str);
     }
 
     public void OnAttack1Update()
@@ -155,7 +155,7 @@ public class ActorController : MonoBehaviour
     public void OnAttack2Enter()
     {
         str = State.normalAtk;
-        Select(str);
+        //Select(str);
     }
 
     public void OnAttackIdleEnter()
@@ -195,10 +195,33 @@ public class ActorController : MonoBehaviour
             if (objects.GetComponent<Rigidbody>() != null && str == State.normalAtk)
             {
                 objects.GetComponent<Rigidbody>().freezeRotation = true;
-                objects.GetComponent<Rigidbody>().AddExplosionForce(200, transform.position, 2);
+                
+                objects.GetComponent<Rigidbody>().AddExplosionForce(200, transform.position, 3, 100);
+
+                Stop(0.1f);
             }
             objects.GetComponent<EnemyAI>().Damage();
         }
+    }
+
+    public void Stop(float duration)
+    {
+        if (waiting)
+        {
+            return;
+        }
+
+        Time.timeScale = 0.0f;
+
+        StartCoroutine(Wait(duration));
+    }
+
+    IEnumerator Wait(float duration)
+    {
+        waiting = true;
+        yield return new WaitForSecondsRealtime(duration);
+        Time.timeScale = 1f;
+        waiting = false;
     }
 
 }

@@ -11,6 +11,8 @@ public class AnimationEventEffects : MonoBehaviour {
     //public Transform EffectStartPositionWorld;
     //public float DestroyAfterWorld = 10;
 
+    public ActorController ac;
+
     public EffectInfo[] Effects;
 
     [System.Serializable]
@@ -21,6 +23,7 @@ public class AnimationEventEffects : MonoBehaviour {
         public Transform StartPositionRotation;
         public float DestroyAfter = 10;
         public bool UseLocalPosition = true;
+        
     }
 
     //   // Update is called once per frame
@@ -36,7 +39,9 @@ public class AnimationEventEffects : MonoBehaviour {
 
     //       Destroy(effectOBJ, DestroyAfterWorld);
     //   }
-    void Start() {
+    void Awake()
+    {
+        ac = this.transform.GetComponentInParent<ActorController>();
     }
             
     void InstantiateEffect(int EffectNumber)
@@ -47,6 +52,8 @@ public class AnimationEventEffects : MonoBehaviour {
         }
 
         var instance = Instantiate(Effects[EffectNumber].Effect, Effects[EffectNumber].StartPositionRotation.position, Effects[EffectNumber].StartPositionRotation.rotation);
+        //Debug.Log(ac);
+        ac.Select(ac.str);
 
         if (Effects[EffectNumber].UseLocalPosition)
         {
@@ -55,5 +62,7 @@ public class AnimationEventEffects : MonoBehaviour {
             instance.transform.localRotation = new Quaternion();
         }
         Destroy(instance, Effects[EffectNumber].DestroyAfter);
+
+
     }
 }

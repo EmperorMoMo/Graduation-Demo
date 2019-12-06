@@ -9,6 +9,7 @@ public class NPCName : MonoBehaviour {
     private GameObject text;
     private float npcHeight;
     private Collider collider;
+    private bool isIn = false;
 
     void Start() {
         float size_y;
@@ -36,10 +37,23 @@ public class NPCName : MonoBehaviour {
         Vector3 worldPosition = new Vector3(collider.transform.position.x, collider.transform.position.y + npcHeight, collider.transform.position.z);
         //根据NPC头顶的3D坐标换算成它在2D屏幕中的坐标
         Vector2 targetPosition = Camera.main.WorldToScreenPoint(worldPosition);
-        text.transform.position = targetPosition;   
+        text.transform.position = targetPosition;
+
+        if (text != null) {
+            if (Vector3.Distance(this.transform.position, Camera.main.transform.position) <= 20) {
+                if (!text.activeSelf && isIn) {
+                    text.SetActive(true);
+                }
+            } else {
+                if (text.activeSelf) {
+                    text.SetActive(false);
+                }
+            }
+        }
     }
 
     public void OnBecameVisible() {
+        isIn = true;
         if (text != null) {
             if (!text.activeSelf) {
                 text.SetActive(true);
@@ -48,6 +62,7 @@ public class NPCName : MonoBehaviour {
     }
 
     public void OnBecameInvisible() {
+        isIn = false;
         if (text != null) { 
             if (text.activeSelf) {
                 text.SetActive(false);

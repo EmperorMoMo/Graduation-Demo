@@ -36,10 +36,10 @@ public class HTDRAFSM : MonsterFSM
     //角色是否还存活
     private bool _isDead;
     //实现基类初始状态机方法
-    void GetMessage(string s)
-    {
-        _animation.Play(s);
-    }
+    //void GetMessage(string s)
+    //{
+    //    _animation.Play(s);
+    //}
     protected override void Initialize()
     {
         monsterHP = 100;
@@ -56,7 +56,7 @@ public class HTDRAFSM : MonsterFSM
         //获取AI对象动画播放器组件
         _animation = GetComponent<Animation>();
         //获取AI对象巡逻点
-        pointList = GameObject.FindGameObjectsWithTag("Player");
+        pointList = GameObject.FindGameObjectsWithTag("Finish");
         //获取玩家对象标签和位置
         GameObject obj = GameObject.FindGameObjectWithTag("TestPlayer");
         playerTransform = obj.transform;

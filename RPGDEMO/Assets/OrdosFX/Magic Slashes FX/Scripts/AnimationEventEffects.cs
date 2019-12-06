@@ -11,7 +11,7 @@ public class AnimationEventEffects : MonoBehaviour {
     //public Transform EffectStartPositionWorld;
     //public float DestroyAfterWorld = 10;
 
-    public ActorController ac;
+    private ActorController ac;
 
     public EffectInfo[] Effects;
 

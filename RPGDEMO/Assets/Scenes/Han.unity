@@ -146,6 +146,18 @@ MonoBehaviour:
     StartPositionRotation: {fileID: 1358271026}
     DestroyAfter: 0.75
     UseLocalPosition: 1
+--- !u!114 &172672133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172672130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2a02d8e6b57bb84ea0c3873671369aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &172672134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4308067830959778, guid: 98a0661a1a68d9949b6b7d564da9f41f,
@@ -477,7 +489,6 @@ MonoBehaviour:
   runMultiplier: 2.7
   smoothtime: 0.2
   anim: {fileID: 172672131}
-  lockCamera: 0
   str: 0
 --- !u!54 &627488771
 Rigidbody:

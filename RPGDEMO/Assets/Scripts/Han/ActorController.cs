@@ -29,7 +29,8 @@ public class ActorController : MonoBehaviour
 
     private bool lockPlanar = false;
     private bool lockCamera = false;
-    private bool waiting; 
+    private bool waiting;
+    public bool isDam;
 
     [Header("=====  Attack =====")]
     private float normalDis;//普攻距离
@@ -197,10 +198,12 @@ public class ActorController : MonoBehaviour
                 objects.GetComponent<Rigidbody>().freezeRotation = true;
                 
                 objects.GetComponent<Rigidbody>().AddExplosionForce(200, transform.position, 3, 100);
+                isDam = true;
 
-                Stop(0.1f);
             }
             objects.GetComponent<EnemyAI>().Damage();
+
+            //Stop(0.1f);
         }
     }
 

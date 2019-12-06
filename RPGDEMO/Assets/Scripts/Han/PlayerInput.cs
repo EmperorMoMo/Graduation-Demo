@@ -31,6 +31,7 @@ public class PlayerInput : MonoBehaviour
 
     public bool roll;
     //3.double trigger双击型
+    public bool attack;
 
     [Header("=====  others =====")]
     public bool inputEnabled = true;
@@ -39,6 +40,8 @@ public class PlayerInput : MonoBehaviour
     private float targetDright;
     private float velocityDup;
     private float velocityDright;
+
+    private float timeTemp = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -87,6 +90,16 @@ public class PlayerInput : MonoBehaviour
         roll = Input.GetKeyDown(keyC);
 
         //hide = Input.GetKeyDown(KeyCode.Z);
+
+        attack = Input.GetMouseButtonDown(0);
+        if (attack)
+        {
+            timeTemp += Time.deltaTime;
+        }
+        if (Input.GetMouseButtonUp(0)&&timeTemp>0.25f)
+        {
+            attack = false;
+        }
 
     }
 

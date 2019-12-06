@@ -40,14 +40,18 @@ public class NPCName : MonoBehaviour {
     }
 
     public void OnBecameVisible() {
-        if (!text.activeSelf) {
-            text.SetActive(true);
+        if (text != null) {
+            if (!text.activeSelf) {
+                text.SetActive(true);
+            }
         }
     }
 
     public void OnBecameInvisible() {
-        if (text.activeSelf) {
-            text.SetActive(false);
+        if (text != null) { 
+            if (text.activeSelf) {
+                text.SetActive(false);
+            }
         }
     }
 }

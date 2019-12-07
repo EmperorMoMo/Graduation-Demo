@@ -85,7 +85,7 @@ public class ActorController : MonoBehaviour
         }
 
         
-        if ( pi.Dmag!=0 && lockCamera == false )
+        if ( (pi.targetDup!=0||pi.targetDright!=0)&& lockCamera == false )
         {
             float targetrotation = cameraTransform.eulerAngles.y;
             transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetrotation,

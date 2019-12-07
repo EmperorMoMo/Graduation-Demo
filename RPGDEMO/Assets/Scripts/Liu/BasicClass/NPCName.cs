@@ -41,8 +41,10 @@ public class NPCName : MonoBehaviour {
 
         if (text != null) {
             if (Vector3.Distance(this.transform.position, Camera.main.transform.position) <= 20) {
-                if (!text.activeSelf && isIn) {
-                    text.SetActive(true);
+                if (isIn) {
+                    if (!text.activeSelf) {
+                        text.SetActive(true);
+                    }
                 }
             } else {
                 if (text.activeSelf) {

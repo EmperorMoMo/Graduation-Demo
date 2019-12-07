@@ -182,27 +182,40 @@ public class ActorController : MonoBehaviour
         currentWeight = Mathf.Lerp(currentWeight, lerpTarget, 0.25f);
         anim.SetLayerWeight(anim.GetLayerIndex("attack"), currentWeight);
     }
-
+    
     public void Select(State str)
     {
-        GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
+        int radius = 1;
         List<GameObject> tempList=new List<GameObject>();
-        for (int i = 0; i < enemy.Length; i++)
+        while (radius < 50)
         {
-            float dir = Vector3.Distance(model.transform.position, enemy[i].transform.position);
-            if (str == State.normalAtk)
+            Collider[] cols = Physics.OverlapSphere(model.transform.position, radius);
+            if (cols.Length > 0)
             {
-                float angle = Vector3.Angle(model.transform.forward, enemy[i].transform.position - model.transform.position);
-                Debug.Log(angle);
-                if (dir < normalDis && angle < 60)
+                for (int i = 0; i < cols.Length; i++)
                 {
-                    tempList.Add(enemy[i]);
-                }
-                else
-                {
-                    isDam = false;
+                    if (cols[i].tag.Equals("Enemy"))
+                    {
+                        float dir = Vector3.Distance(model.transform.position, cols[i].transform.position);
+                        if (str == State.normalAtk)
+                        {
+                            float angle = Vector3.Angle(model.transform.forward,
+                                cols[i].transform.position - model.transform.position);
+                            if (dir < normalDis && angle < 90)
+                            {
+                                tempList.Add(cols[i].gameObject);
+                                isDam = true;
+                            }
+                            else
+                            {
+                                isDam = false;
+                            }
+                        }
+                    }
                 }
             }
+
+            radius += 2;
         }
 
         foreach (var objects in tempList)
@@ -210,15 +223,55 @@ public class ActorController : MonoBehaviour
             if (objects.GetComponent<Rigidbody>() != null && str == State.normalAtk)
             {
                 objects.GetComponent<Rigidbody>().freezeRotation = true;
-                
-                objects.GetComponent<Rigidbody>().AddExplosionForce(200, transform.position, 3, 100);
-                isDam = true;
+
+                objects.GetComponent<Rigidbody>().AddExplosionForce(10, transform.position, 3, 10);
+                //isDam = true;
 
             }
             objects.GetComponent<EnemyAI>().Damage();
-
-            //Stop(0.1f);
         }
+
     }
-    
+
+    ///
+    ///寻找敌人的另一种方法
+    /// 
+    //public void Select(State str)
+    //{
+    //    GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
+    //    List<GameObject> tempList=new List<GameObject>();
+    //    for (int i = 0; i < enemy.Length; i++)
+    //    {
+    //        float dir = Vector3.Distance(model.transform.position, enemy[i].transform.position);
+    //        if (str == State.normalAtk)
+    //        {
+    //            float angle = Vector3.Angle(model.transform.forward, enemy[i].transform.position - model.transform.position);
+    //            Debug.Log(angle);
+    //            if (dir < normalDis && angle < 60)
+    //            {
+    //                tempList.Add(enemy[i]);
+    //            }
+    //            else
+    //            {
+    //                isDam = false;
+    //            }
+    //        }
+    //    }
+
+    //    foreach (var objects in tempList)
+    //    {
+    //        if (objects.GetComponent<Rigidbody>() != null && str == State.normalAtk)
+    //        {
+    //            objects.GetComponent<Rigidbody>().freezeRotation = true;
+
+    //            objects.GetComponent<Rigidbody>().AddExplosionForce(200, transform.position, 3, 100);
+    //            isDam = true;
+
+    //        }
+    //        objects.GetComponent<EnemyAI>().Damage();
+
+    //        //Stop(0.1f);
+    //    }
+    //}
+
 }

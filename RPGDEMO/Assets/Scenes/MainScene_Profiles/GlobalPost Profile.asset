@@ -121,13 +121,13 @@ MonoBehaviour:
     value: 100
   lift:
     overrideState: 1
-    value: {x: 1, y: 0.9096703, z: 0.73417425, w: 0}
+    value: {x: 1, y: 0.9731186, z: 0.9196267, w: 0}
   gamma:
     overrideState: 1
-    value: {x: 1, y: 0.91737443, z: 0.760628, w: 0}
+    value: {x: 1, y: 0.92132753, z: 0.87173456, w: 0}
   gain:
     overrideState: 1
-    value: {x: 0.9986338, y: 1, z: 0.91330016, w: 0}
+    value: {x: 1, y: 0.96381116, z: 0.91238433, w: 0}
   masterCurve:
     overrideState: 0
     value:
@@ -1346,7 +1346,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 2
+    value: 1.25
   threshold:
     overrideState: 1
     value: 1
@@ -1367,7 +1367,7 @@ MonoBehaviour:
     value: {r: 1, g: 1, b: 1, a: 1}
   fastMode:
     overrideState: 1
-    value: 0
+    value: 1
   dirtTexture:
     overrideState: 1
     value: {fileID: 0}
@@ -1392,23 +1392,23 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   intensity:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 35
   intensityX:
-    overrideState: 0
+    overrideState: 1
     value: 1
   intensityY:
-    overrideState: 0
+    overrideState: 1
     value: 1
   centerX:
-    overrideState: 0
+    overrideState: 1
     value: 0
   centerY:
-    overrideState: 0
+    overrideState: 1
     value: 0
   scale:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 1.1
 --- !u!114 &114745355174267386
 MonoBehaviour:
   m_ObjectHideFlags: 3

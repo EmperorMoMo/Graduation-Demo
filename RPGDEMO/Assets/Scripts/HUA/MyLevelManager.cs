@@ -10,7 +10,7 @@ public class MyLevelManager : MonoBehaviour
     static string nextLevel;
     AsyncOperation async;
     public float tempProgress;
-    public Slider slider;
+    //public Slider slider;
     public Text text;
     // Start is called before the first frame update
     void Start()
@@ -37,20 +37,21 @@ public class MyLevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(text&&slider)
+        if(text)
         {
             tempProgress = Mathf.Lerp(tempProgress, async.progress, Time.deltaTime*10);
-            text.text =((int)(tempProgress / 9*10 * 100)).ToString() + "%";
-            slider.value =tempProgress / 9*10;
+            //text.text =((int)(tempProgress / 9*10 * 100)).ToString() + "%";
+            text.text = "Loading...";
+            //slider.value =tempProgress / 9*10;
             if(tempProgress>0.855)
             {
                 tempProgress = 1;
-                text.text = ((int)(tempProgress / 10.01f * 10 * 100)).ToString() + "%";
-                slider.value =tempProgress / 10.01f * 10;
+                text.text = "Loading...";
+                //text.text = ((int)(tempProgress / 10.01f * 10 * 100)).ToString() + "%";
+                //slider.value =tempProgress / 10.01f * 10;
                 async.allowSceneActivation = true;
                 //SceneManager.MoveGameObjectToScene(player, _scene);
                 //DontDestroyOnLoad(player);
-
                 transformChange();
             }
         }

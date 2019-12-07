@@ -19,7 +19,7 @@ public class NPCName : MonoBehaviour {
     void Start() {
         float size_y;           //模型y轴高度
         float scal_y;           //模型y轴缩放比例
-        MyCollider = GetComponent<Collider>();    //物品Collider组件
+        MyCollider = transform.GetComponentInParent<Collider>();    //物品Collider组件
 
         size_y = MyCollider.bounds.size.y;
         scal_y = MyCollider.transform.localScale.y;
@@ -29,7 +29,7 @@ public class NPCName : MonoBehaviour {
         text.name = Name;   //文本对象名
         text.transform.GetChild(0).GetComponent<Text>().text = Name;    //文本对象内容
         //物体头顶位置3d坐标
-        Vector3 worldPosition = new Vector3(MyCollider.transform.position.x, MyCollider.transform.position.y + npcHeight, MyCollider.transform.position.z);
+        Vector3 worldPosition = new Vector3(this.transform.position.x, this.transform.position.y + npcHeight, this.transform.position.z);
         Vector2 position = Camera.main.WorldToScreenPoint(worldPosition);   //转换为2d屏幕坐标
 
         text.transform.position = position;     //移动到指定坐标
@@ -40,7 +40,7 @@ public class NPCName : MonoBehaviour {
     void FixedUpdate() {
             //得到NPC头顶在3D世界中的坐标
             //默认NPC坐标点在脚底下，所以这里加上npcHeight它模型的高度即可
-            Vector3 worldPosition = new Vector3(MyCollider.transform.position.x, MyCollider.transform.position.y + npcHeight, MyCollider.transform.position.z);
+            Vector3 worldPosition = new Vector3(this.transform.position.x, this.transform.position.y + npcHeight, this.transform.position.z);
             //根据NPC头顶的3D坐标换算成它在2D屏幕中的坐标
             Vector2 targetPosition = Camera.main.WorldToScreenPoint(worldPosition);
             Vector2 position = text.transform.position;

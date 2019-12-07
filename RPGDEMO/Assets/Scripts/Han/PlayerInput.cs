@@ -36,8 +36,8 @@ public class PlayerInput : MonoBehaviour
     [Header("=====  others =====")]
     public bool inputEnabled = true;
 
-    private float targetDup;
-    private float targetDright;
+    public float targetDup;
+    public float targetDright;
     private float velocityDup;
     private float velocityDright;
 
@@ -86,7 +86,7 @@ public class PlayerInput : MonoBehaviour
         //{
         //    print("Jump trigger!!!!");
         //}
-        if (Dmag != 0)
+        if (targetDup != 0||targetDright != 0)
         {
             roll = Input.GetKeyDown(keyC);
         }

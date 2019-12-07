@@ -13,6 +13,7 @@ public class ActorController : MonoBehaviour
     public GameObject model;
     public PlayerInput pi;
     private Transform cameraTransform;
+    //private GameObject cameraTransform;
     public float walkSpeed = 2.0f;
     public float runMultiplier = 2.0f;
     public float smoothtime = 0.2f;
@@ -44,12 +45,19 @@ public class ActorController : MonoBehaviour
         anim = model.GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
         cameraTransform = Camera.main.transform;
+
         normalDis = 3f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (cameraTransform == null)
+        {
+            cameraTransform = Camera.main.transform;
+            //cameraTransform=GameObject.Find("Main Camera").transform;
+            print("null");
+        }
         anim.SetFloat("forward", pi.Dmag * Mathf.Lerp(anim.GetFloat("forward"), (pi.run ? 2.0f : 1.0f), 0.4f));
         if (pi.jump)
         {

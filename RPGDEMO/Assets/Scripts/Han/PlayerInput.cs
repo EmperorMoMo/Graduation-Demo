@@ -86,8 +86,14 @@ public class PlayerInput : MonoBehaviour
         //{
         //    print("Jump trigger!!!!");
         //}
-
-        roll = Input.GetKeyDown(keyC);
+        if (Dmag != 0)
+        {
+            roll = Input.GetKeyDown(keyC);
+        }
+        else
+        {
+            roll = false;
+        }
 
         //hide = Input.GetKeyDown(KeyCode.Z);
 

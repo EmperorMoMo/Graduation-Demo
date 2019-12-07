@@ -85,7 +85,7 @@ public class ActorController : MonoBehaviour
         }
 
         
-        if ((pi.Dup != 0 || pi.Dright != 0 )&& lockCamera == false )
+        if ( pi.Dmag!=0 && lockCamera == false )
         {
             float targetrotation = cameraTransform.eulerAngles.y;
             transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetrotation,
@@ -148,6 +148,7 @@ public class ActorController : MonoBehaviour
     public void OnAttack1Enter()
     {
         pi.inputEnabled = false;
+        lockCamera = true;
         lerpTarget = 1.0f;
         str = State.normalAtk;
         //Select(str);
@@ -163,6 +164,7 @@ public class ActorController : MonoBehaviour
     public void OnAttack2Enter()
     {
         str = State.normalAtk;
+        lockCamera = true;
         //Select(str);
     }
 
@@ -170,6 +172,7 @@ public class ActorController : MonoBehaviour
     {
         pi.inputEnabled = true;
         //print("on AttackIdleEnter!!!");
+        lockCamera = false;
         lerpTarget = 0f;
     }
 
@@ -186,14 +189,18 @@ public class ActorController : MonoBehaviour
         List<GameObject> tempList=new List<GameObject>();
         for (int i = 0; i < enemy.Length; i++)
         {
-            float dir = Vector3.Distance(transform.position, enemy[i].transform.position);
+            float dir = Vector3.Distance(model.transform.position, enemy[i].transform.position);
             if (str == State.normalAtk)
             {
-                float angle = Vector3.Angle(transform.forward, enemy[i].transform.position - transform.position);
+                float angle = Vector3.Angle(model.transform.forward, enemy[i].transform.position - model.transform.position);
                 Debug.Log(angle);
                 if (dir < normalDis && angle < 60)
                 {
                     tempList.Add(enemy[i]);
+                }
+                else
+                {
+                    isDam = false;
                 }
             }
         }

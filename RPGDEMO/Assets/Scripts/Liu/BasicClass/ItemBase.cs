@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 物品类基类：几乎所有的物品衍生类，技能类都继承于此类
+/// 物品基础类：几乎所有的物品衍生类都继承于此类
+/// 不挂载在物体上
 /// </summary>
 public class ItemBase {
     public int UID { get; set; }            //物品标识
@@ -11,5 +12,21 @@ public class ItemBase {
     public int Quality { get; set; }        //物品品质
     public int Price { get; set; }          //物品价格
     public string Describe { get; set; }    //物品描述
-    public Sprite Sprite { get; set; }      //物品贴图
+    public string SpriteName { get; set; }  //贴图名字
+    public int StackMax { get; set; }       //堆叠上限 
+
+    //默认构造方法
+    public ItemBase() { }
+
+    //物品构造函数
+    public ItemBase(int uid, string name, int quality, int price, string describe, string spriteName, int stackMax) {
+        UID = uid;
+        Name = name;
+        Quality = quality;
+        Price = price;
+        Describe = describe;
+        SpriteName = spriteName;
+        StackMax = stackMax;
+    }
+
 }

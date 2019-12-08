@@ -28,7 +28,9 @@ public class MyLevelManager : MonoBehaviour
     {
         nextLevel = nextLevelName;
         DontDestroyOnLoad(player);
+        player.SetActive(false);
         SceneManager.LoadSceneAsync("LoadingScene");
+        player.SetActive(true);
     }
     void transformChange()
     {

@@ -7,7 +7,7 @@ public class ActorController : MonoBehaviour
     public enum State
     {
         normalAtk,
-        skillAtk,
+        skill_One,
     }
     
     public GameObject model;
@@ -26,7 +26,7 @@ public class ActorController : MonoBehaviour
     private Vector3 thrustVec;
     private float rollVec = 1f;
     private float currentVelocity;
-    private float lerpTarget;//状态机权重
+    //private float lerpTarget;//状态机权重
 
     private bool lockPlanar = false;
     private bool lockCamera = false;
@@ -35,7 +35,7 @@ public class ActorController : MonoBehaviour
     [Header("=====  Attack =====")]
     private float normalDis;//普攻距离
 
-    private float skillDis;//技能距离
+    private float skill_OneDis;//技能距离
     public State str;//当前是何种攻击方式
 
     // Start is called before the first frame update
@@ -47,6 +47,7 @@ public class ActorController : MonoBehaviour
         cameraTransform = Camera.main.transform;
 
         normalDis = 3f;
+        skill_OneDis = 6f;
     }
 
     // Update is called once per frame
@@ -91,6 +92,11 @@ public class ActorController : MonoBehaviour
             transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetrotation,
                                         ref currentvelocity, smoothtime);
         }
+
+        if (pi.skill_1)
+        {
+            anim.SetTrigger("skill_1");
+        }
     }
 
     void FixedUpdate()
@@ -119,6 +125,7 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = true;
         lockPlanar = false;
         lockCamera = false;
+        anim.ResetTrigger("attack");
     }
 
     public void OnRollEnter()
@@ -143,22 +150,29 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = true;
         lockPlanar = false;
         lockCamera = false;
+        anim.ResetTrigger("attack");
+    }
+
+    public void OnGround()
+    {
+        pi.inputEnabled = true;
+        lockCamera = false;
     }
 
     public void OnAttack1Enter()
     {
         pi.inputEnabled = false;
         lockCamera = true;
-        lerpTarget = 1.0f;
+        //lerpTarget = 1.0f;
         str = State.normalAtk;
         //Select(str);
     }
 
     public void OnAttack1Update()
     {
-        float currentWeight = anim.GetLayerWeight(anim.GetLayerIndex("attack"));
-        currentWeight = Mathf.Lerp(currentWeight, lerpTarget, 0.25f);
-        anim.SetLayerWeight(anim.GetLayerIndex("attack"), currentWeight);
+        //float currentWeight = anim.GetLayerWeight(anim.GetLayerIndex("attack"));
+        //currentWeight = Mathf.Lerp(currentWeight, lerpTarget, 0.25f);
+        //anim.SetLayerWeight(anim.GetLayerIndex("attack"), currentWeight);
     }
     
     public void OnAttack2Enter()
@@ -171,37 +185,61 @@ public class ActorController : MonoBehaviour
     public void OnAttackIdleEnter()
     {
         pi.inputEnabled = true;
-        //print("on AttackIdleEnter!!!");
         lockCamera = false;
-        lerpTarget = 0f;
+        //lerpTarget = 0f;
     }
 
     public void OnAttackIdleUpdate()
     {
-        float currentWeight = anim.GetLayerWeight(anim.GetLayerIndex("attack"));
-        currentWeight = Mathf.Lerp(currentWeight, lerpTarget, 0.25f);
-        anim.SetLayerWeight(anim.GetLayerIndex("attack"), currentWeight);
+        //float currentWeight = anim.GetLayerWeight(anim.GetLayerIndex("attack"));
+        //currentWeight = Mathf.Lerp(currentWeight, lerpTarget, 0.25f);
+        //anim.SetLayerWeight(anim.GetLayerIndex("attack"), currentWeight);
     }
-    
+
+    public void OnSkillOneEnter()
+    {
+        pi.inputEnabled = false;
+        lockCamera = true;
+        str = State.skill_One;
+    }
+
     public void Select(State str)
     {
-        int radius = 1;
+        int radius = 12;
         List<GameObject> tempList=new List<GameObject>();
-        while (radius < 50)
+        while (radius < 13)
         {
             Collider[] cols = Physics.OverlapSphere(model.transform.position, radius);
             if (cols.Length > 0)
             {
+                //print("test1");
                 for (int i = 0; i < cols.Length; i++)
                 {
-                    if (cols[i].tag.Equals("Enemy"))
+                    //print("test2"+cols[i].name);
+                    if (cols[i].tag == "Enemy")
                     {
+                        //print("test3"+cols[i].name);
                         float dir = Vector3.Distance(model.transform.position, cols[i].transform.position);
+                        float angle = Vector3.Angle(model.transform.forward,
+                            cols[i].transform.position - model.transform.position);
                         if (str == State.normalAtk)
                         {
-                            float angle = Vector3.Angle(model.transform.forward,
-                                cols[i].transform.position - model.transform.position);
+                            //print("test4");
                             if (dir < normalDis && angle < 90)
+                            {
+                                tempList.Add(cols[i].gameObject);
+                                //print("test5");
+                                isDam = true;
+                            }
+                            else
+                            {
+                                isDam = false;
+                            }
+                        }
+
+                        if (str == State.skill_One)
+                        {
+                            if (dir < skill_OneDis && angle < 360)
                             {
                                 tempList.Add(cols[i].gameObject);
                                 isDam = true;
@@ -215,7 +253,7 @@ public class ActorController : MonoBehaviour
                 }
             }
 
-            radius += 2;
+            radius += 1;
         }
 
         foreach (var objects in tempList)
@@ -224,9 +262,16 @@ public class ActorController : MonoBehaviour
             {
                 objects.GetComponent<Rigidbody>().freezeRotation = true;
 
-                objects.GetComponent<Rigidbody>().AddExplosionForce(10, transform.position, 3, 10);
+                objects.GetComponent<Rigidbody>().AddExplosionForce(180, transform.position, 5, 180);
                 //isDam = true;
+                
+            }
 
+            if (objects.GetComponent<Rigidbody>() != null && str == State.skill_One)
+            {
+                objects.GetComponent<Rigidbody>().freezeRotation = true;
+
+                objects.GetComponent<Rigidbody>().AddExplosionForce(150, transform.position, 6, 150);
             }
             objects.GetComponent<EnemyAI>().Damage();
         }

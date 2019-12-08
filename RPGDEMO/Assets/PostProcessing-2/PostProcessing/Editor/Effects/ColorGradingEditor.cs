@@ -5,7 +5,7 @@ using UnityEngine.Rendering.PostProcessing;
 namespace UnityEditor.Rendering.PostProcessing
 {
     [PostProcessEditor(typeof(ColorGrading))]
-    internal sealed class ColorGradingEditor : PostProcessEffectEditor<ColorGrading>
+    public sealed class ColorGradingEditor : PostProcessEffectEditor<ColorGrading>
     {
         SerializedParameterOverride m_GradingMode;
 
@@ -293,7 +293,7 @@ namespace UnityEditor.Rendering.PostProcessing
 
             using (new EditorGUILayout.HorizontalScope())
             {
-                EditorGUILayout.PrefixLabel("Channel Mixer", GUIStyle.none, Styling.headerLabel);
+                EditorGUILayout.PrefixLabel("Channel Mixer", GUIStyle.none, Styling.labelHeader);
 
                 EditorGUI.BeginChangeCheck();
                 {
@@ -366,11 +366,6 @@ namespace UnityEditor.Rendering.PostProcessing
 
                     if (!valid)
                         EditorUtilities.DrawFixMeBox("Invalid LUT import settings.", () => SetLutImportSettings(importer));
-                }
-
-                if (lut.width != lut.height * lut.height)
-                {
-                    EditorGUILayout.HelpBox("The Lookup Texture size is invalid. Width should be Height * Height.", MessageType.Error);
                 }
             }
         }

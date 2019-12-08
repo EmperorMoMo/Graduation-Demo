@@ -3,7 +3,7 @@
 namespace UnityEditor.Rendering.PostProcessing
 {
     [PostProcessEditor(typeof(ChromaticAberration))]
-    internal sealed class ChromaticAberrationEditor : PostProcessEffectEditor<ChromaticAberration>
+    public sealed class ChromaticAberrationEditor : PostProcessEffectEditor<ChromaticAberration>
     {
         SerializedParameterOverride m_SpectralLut;
         SerializedParameterOverride m_Intensity;

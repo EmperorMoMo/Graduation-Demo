@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: 948f4100a11a5c24981795d21301da5c
-timeCreated: 1493713997
-licenseType: Pro
+guid: 4095831bf32181c46a6f0d05b02c9ba1
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
   defaultReferences:
   - volumeTrigger: {instanceID: 0}

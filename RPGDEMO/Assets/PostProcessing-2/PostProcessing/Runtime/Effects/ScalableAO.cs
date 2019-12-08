@@ -3,9 +3,8 @@ using System;
 namespace UnityEngine.Rendering.PostProcessing
 {
     // Scalable ambient obscurance
-    [UnityEngine.Scripting.Preserve]
     [Serializable]
-    internal sealed class ScalableAO : IAmbientOcclusionMethod
+    public sealed class ScalableAO : IAmbientOcclusionMethod
     {
         RenderTexture m_Result;
         PropertySheet m_PropertySheet;
@@ -136,7 +135,7 @@ namespace UnityEngine.Rendering.PostProcessing
             cmd.BeginSample("Ambient Occlusion");
             Render(context, cmd, 0);
             cmd.SetGlobalTexture(ShaderIDs.SAOcclusionTexture, m_Result);
-            cmd.BlitFullscreenTriangle(BuiltinRenderTextureType.None, BuiltinRenderTextureType.CameraTarget, m_PropertySheet, (int)Pass.CompositionForward, RenderBufferLoadAction.Load);
+            cmd.BlitFullscreenTriangle(BuiltinRenderTextureType.None, BuiltinRenderTextureType.CameraTarget, m_PropertySheet, (int)Pass.CompositionForward);
             cmd.EndSample("Ambient Occlusion");
         }
 

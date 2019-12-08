@@ -145,6 +145,12 @@ public class ActorController : MonoBehaviour
         lockCamera = false;
     }
 
+    public void OnGround()
+    {
+        pi.inputEnabled = true;
+        lockCamera = false;
+    }
+
     public void OnAttack1Enter()
     {
         pi.inputEnabled = false;
@@ -156,9 +162,9 @@ public class ActorController : MonoBehaviour
 
     public void OnAttack1Update()
     {
-        float currentWeight = anim.GetLayerWeight(anim.GetLayerIndex("attack"));
-        currentWeight = Mathf.Lerp(currentWeight, lerpTarget, 0.25f);
-        anim.SetLayerWeight(anim.GetLayerIndex("attack"), currentWeight);
+        //float currentWeight = anim.GetLayerWeight(anim.GetLayerIndex("attack"));
+        //currentWeight = Mathf.Lerp(currentWeight, lerpTarget, 0.25f);
+        //anim.SetLayerWeight(anim.GetLayerIndex("attack"), currentWeight);
     }
     
     public void OnAttack2Enter()
@@ -171,16 +177,15 @@ public class ActorController : MonoBehaviour
     public void OnAttackIdleEnter()
     {
         pi.inputEnabled = true;
-        //print("on AttackIdleEnter!!!");
         lockCamera = false;
         lerpTarget = 0f;
     }
 
     public void OnAttackIdleUpdate()
     {
-        float currentWeight = anim.GetLayerWeight(anim.GetLayerIndex("attack"));
-        currentWeight = Mathf.Lerp(currentWeight, lerpTarget, 0.25f);
-        anim.SetLayerWeight(anim.GetLayerIndex("attack"), currentWeight);
+        //float currentWeight = anim.GetLayerWeight(anim.GetLayerIndex("attack"));
+        //currentWeight = Mathf.Lerp(currentWeight, lerpTarget, 0.25f);
+        //anim.SetLayerWeight(anim.GetLayerIndex("attack"), currentWeight);
     }
     
     public void Select(State str)

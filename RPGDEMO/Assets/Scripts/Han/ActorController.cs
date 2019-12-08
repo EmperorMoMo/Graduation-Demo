@@ -119,6 +119,7 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = true;
         lockPlanar = false;
         lockCamera = false;
+        anim.ResetTrigger("attack");
     }
 
     public void OnRollEnter()
@@ -143,6 +144,7 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = true;
         lockPlanar = false;
         lockCamera = false;
+        anim.ResetTrigger("attack");
     }
 
     public void OnGround()

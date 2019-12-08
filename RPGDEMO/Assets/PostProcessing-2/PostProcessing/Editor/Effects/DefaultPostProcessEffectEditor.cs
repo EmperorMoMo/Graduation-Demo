@@ -6,15 +6,10 @@ using UnityEngine.Rendering.PostProcessing;
 
 namespace UnityEditor.Rendering.PostProcessing
 {
-    /// <summary>
-    /// A default effect editor that gathers all parameters and list them vertically in the
-    /// inspector.
-    /// </summary>
     public class DefaultPostProcessEffectEditor : PostProcessEffectBaseEditor
     {
-        List<SerializedParameterOverride> m_Parameters;
+        List<SerializedParameterOverride> m_Parameters; 
 
-        /// <inheritdoc />
         public override void OnEnable()
         {
             m_Parameters = new List<SerializedParameterOverride>();
@@ -37,7 +32,6 @@ namespace UnityEditor.Rendering.PostProcessing
             }
         }
 
-        /// <inheritdoc />
         public override void OnInspectorGUI()
         {
             foreach (var parameter in m_Parameters)

@@ -4,7 +4,7 @@ using UnityEngine.Rendering.PostProcessing;
 namespace UnityEditor.Rendering.PostProcessing
 {
     [PostProcessEditor(typeof(AutoExposure))]
-    internal sealed class AutoExposureEditor : PostProcessEffectEditor<AutoExposure>
+    public sealed class AutoExposureEditor : PostProcessEffectEditor<AutoExposure>
     {
         SerializedParameterOverride m_Filtering;
         

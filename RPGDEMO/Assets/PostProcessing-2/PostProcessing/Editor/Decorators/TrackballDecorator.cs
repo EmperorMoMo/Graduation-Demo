@@ -5,7 +5,7 @@ using UnityEngine.Rendering.PostProcessing;
 namespace UnityEditor.Rendering.PostProcessing
 {
     [Decorator(typeof(TrackballAttribute))]
-    internal sealed class TrackballDecorator : AttributeDecorator
+    public sealed class TrackballDecorator : AttributeDecorator
     {
         static readonly int k_ThumbHash = "colorWheelThumb".GetHashCode();
         static Material s_Material;

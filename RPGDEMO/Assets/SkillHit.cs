@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hit : MonoBehaviour
+public class SkillHit : MonoBehaviour
 {
     private ActorController ac;
 
@@ -10,7 +10,7 @@ public class Hit : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        ac = this.transform.GetComponentInParent<ActorController>();
+        ac = this.GetComponentInParent<ActorController>();
     }
 
     // Update is called once per frame
@@ -19,15 +19,14 @@ public class Hit : MonoBehaviour
         
     }
 
-    void Hit1()
+    void Skill_One()
     {
-        if (ac.str == ActorController.State.normalAtk)
+        if (ac.str == ActorController.State.skill_One)
         {
-            //Debug.Log(ac.str);
             ac.Select(ac.str);
             if (ac.isDam)
             {
-                Stop(0.1f);
+                Stop(0.07f);
             }
         }
     }

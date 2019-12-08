@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    public float HP = 100f;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,14 @@ public class EnemyAI : MonoBehaviour
 
     public void Damage()
     {
-        print("100DPS");
+        HP = HP - 5f;
+        if (HP < 0)
+        {
+            Debug.LogError("HP values is Error!");
+        }
+        else
+        {
+            print(HP);
+        }
     }
 }

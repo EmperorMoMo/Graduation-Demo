@@ -30,6 +30,8 @@ public class PlayerInput : MonoBehaviour
     public bool jump;
 
     public bool roll;
+
+    public bool skill_1;
     //3.double trigger双击型
     public bool lastAttack;
     public bool attack;
@@ -106,6 +108,8 @@ public class PlayerInput : MonoBehaviour
             attack = false;
         }
         lastAttack = newAttack;
+
+        skill_1 = Input.GetKeyDown(keyD);
 
     }
 

@@ -11,8 +11,6 @@ public class AnimationEventEffects : MonoBehaviour {
     //public Transform EffectStartPositionWorld;
     //public float DestroyAfterWorld = 10;
 
-    private ActorController ac;
-
     public EffectInfo[] Effects;
 
     [System.Serializable]
@@ -41,7 +39,7 @@ public class AnimationEventEffects : MonoBehaviour {
     //   }
     void Awake()
     {
-        ac = this.transform.GetComponentInParent<ActorController>();
+
     }
             
     void InstantiateEffect(int EffectNumber)
@@ -52,8 +50,6 @@ public class AnimationEventEffects : MonoBehaviour {
         }
 
         var instance = Instantiate(Effects[EffectNumber].Effect, Effects[EffectNumber].StartPositionRotation.position, Effects[EffectNumber].StartPositionRotation.rotation);
-        //Debug.Log(ac);
-        ac.Select(ac.str);
 
         if (Effects[EffectNumber].UseLocalPosition)
         {

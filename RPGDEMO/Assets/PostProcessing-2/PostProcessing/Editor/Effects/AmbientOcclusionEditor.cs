@@ -4,7 +4,7 @@ using UnityEngine.Rendering.PostProcessing;
 namespace UnityEditor.Rendering.PostProcessing
 {
     [PostProcessEditor(typeof(AmbientOcclusion))]
-    public sealed class AmbientOcclusionEditor : PostProcessEffectEditor<AmbientOcclusion>
+    internal sealed class AmbientOcclusionEditor : PostProcessEffectEditor<AmbientOcclusion>
     {
         SerializedParameterOverride m_Mode;
         SerializedParameterOverride m_Intensity;
@@ -37,14 +37,6 @@ namespace UnityEditor.Rendering.PostProcessing
                 EditorGUILayout.HelpBox("Scalable ambient obscurance doesn't work with scriptable render pipelines.", MessageType.Warning);
                 return;
             }
-
-#if !UNITY_2017_1_OR_NEWER
-            if (aoMode == (int)AmbientOcclusionMode.MultiScaleVolumetricObscurance)
-            {
-                EditorGUILayout.HelpBox("Multi-scale volumetric obscurance requires Unity 2017.1 or more.", MessageType.Warning);
-                return;
-            }
-#endif
 
             PropertyField(m_Intensity);
 

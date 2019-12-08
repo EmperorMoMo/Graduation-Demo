@@ -12,9 +12,12 @@ namespace UnityEditor.Rendering.PostProcessing
     using EXRFlags = Texture2D.EXRFlags;
 
     [CanEditMultipleObjects, CustomEditor(typeof(PostProcessLayer))]
-    public sealed class PostProcessLayerEditor : BaseEditor<PostProcessLayer>
+    sealed class PostProcessLayerEditor : BaseEditor<PostProcessLayer>
     {
         SerializedProperty m_StopNaNPropagation;
+#pragma warning disable 414
+        SerializedProperty m_DirectToCameraTarget;
+#pragma warning restore 414
         SerializedProperty m_VolumeTrigger;
         SerializedProperty m_VolumeLayer;
 
@@ -35,6 +38,10 @@ namespace UnityEditor.Rendering.PostProcessing
 
         Dictionary<PostProcessEvent, ReorderableList> m_CustomLists;
 
+        #if UNITY_2017_3_OR_NEWER
+        Camera m_TargetCameraComponent;
+        #endif
+
         static GUIContent[] s_AntialiasingMethodNames =
         {
             new GUIContent("No Anti-aliasing"),
@@ -54,6 +61,7 @@ namespace UnityEditor.Rendering.PostProcessing
         void OnEnable()
         {
             m_StopNaNPropagation = FindProperty(x => x.stopNaNPropagation);
+            m_DirectToCameraTarget = FindProperty(x => x.finalBlitToCameraTarget);
             m_VolumeTrigger = FindProperty(x => x.volumeTrigger);
             m_VolumeLayer = FindProperty(x => x.volumeLayer);
 
@@ -71,6 +79,10 @@ namespace UnityEditor.Rendering.PostProcessing
 
             m_ShowToolkit = serializedObject.FindProperty("m_ShowToolkit");
             m_ShowCustomSorter = serializedObject.FindProperty("m_ShowCustomSorter");
+
+            #if UNITY_2017_3_OR_NEWER
+            m_TargetCameraComponent = m_Target.GetComponent<Camera>();
+            #endif
         }
 
         void OnDisable()
@@ -84,16 +96,17 @@ namespace UnityEditor.Rendering.PostProcessing
 
             var camera = m_Target.GetComponent<Camera>();
 
-            #if !UNITY_2017_2_OR_NEWER
-            if (RuntimeUtilities.isSinglePassStereoSelected)
-                EditorGUILayout.HelpBox("Unity 2017.2+ required for full Single-pass stereo rendering support.", MessageType.Warning);
-            #endif
-
             DoVolumeBlending();
             DoAntialiasing();
             DoFog(camera);
 
             EditorGUILayout.PropertyField(m_StopNaNPropagation, EditorUtilities.GetContent("Stop NaN Propagation|Automatically replaces NaN/Inf in shaders by a black pixel to avoid breaking some effects. This will slightly affect performances and should only be used if you experience NaN issues that you can't fix. Has no effect on GLES2 platforms."));
+
+#if UNITY_2019_1_OR_NEWER
+            if (!RuntimeUtilities.scriptableRenderPipelineActive)
+                EditorGUILayout.PropertyField(m_DirectToCameraTarget, EditorUtilities.GetContent("Directly to Camera Target|Use the final blit to the camera render target for postprocessing. This has less overhead but breaks compatibility with legacy image effect that use OnRenderImage."));
+#endif
+
             EditorGUILayout.Space();
 
             DoToolkit();
@@ -151,6 +164,10 @@ namespace UnityEditor.Rendering.PostProcessing
                     #if !UNITY_2017_3_OR_NEWER
                     if (RuntimeUtilities.isSinglePassStereoSelected)
                         EditorGUILayout.HelpBox("TAA requires Unity 2017.3+ for Single-pass stereo rendering support.", MessageType.Warning);
+                    #endif
+                    #if UNITY_2017_3_OR_NEWER
+                    if (m_TargetCameraComponent != null && m_TargetCameraComponent.allowDynamicResolution)
+                        EditorGUILayout.HelpBox("TAA is not supported with Dynamic Resolution.", MessageType.Warning);
                     #endif
 
                     EditorGUILayout.PropertyField(m_TaaJitterSpread);

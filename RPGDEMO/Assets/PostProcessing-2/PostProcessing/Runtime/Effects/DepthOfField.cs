@@ -2,33 +2,74 @@ using System;
 
 namespace UnityEngine.Rendering.PostProcessing
 {
+    /// <summary>
+    /// Convolution kernel size for the Depth of Field effect.
+    /// </summary>
     public enum KernelSize
     {
+        /// <summary>
+        /// Small filter.
+        /// </summary>
         Small,
+
+        /// <summary>
+        /// Medium filter.
+        /// </summary>
         Medium,
+
+        /// <summary>
+        /// Large filter.
+        /// </summary>
         Large,
+
+        /// <summary>
+        /// Very large filter.
+        /// </summary>
         VeryLarge
     }
 
+    /// <summary>
+    /// A volume parameter holding a <see cref="KernelSize"/> value.
+    /// </summary>
     [Serializable]
     public sealed class KernelSizeParameter : ParameterOverride<KernelSize> {}
 
+    /// <summary>
+    /// This class holds settings for the Depth of Field effect.
+    /// </summary>
     [Serializable]
     [PostProcess(typeof(DepthOfFieldRenderer), "Unity/Depth of Field", false)]
     public sealed class DepthOfField : PostProcessEffectSettings
     {
+        /// <summary>
+        /// The distance to the point of focus.
+        /// </summary>
         [Min(0.1f), Tooltip("Distance to the point of focus.")]
         public FloatParameter focusDistance = new FloatParameter { value = 10f };
 
+        /// <summary>
+        /// The ratio of the aperture (known as f-stop or f-number). The smaller the value is, the
+        /// shallower the depth of field is.
+        /// </summary>
         [Range(0.05f, 32f), Tooltip("Ratio of aperture (known as f-stop or f-number). The smaller the value is, the shallower the depth of field is.")]
         public FloatParameter aperture = new FloatParameter { value = 5.6f };
 
+        /// <summary>
+        /// The distance between the lens and the film. The larger the value is, the shallower the
+        /// depth of field is.
+        /// </summary>
         [Range(1f, 300f), Tooltip("Distance between the lens and the film. The larger the value is, the shallower the depth of field is.")]
         public FloatParameter focalLength = new FloatParameter { value = 50f };
 
+        /// <summary>
+        /// The convolution kernel size of the bokeh filter, which determines the maximum radius of
+        /// bokeh. It also affects the performance (the larger the kernel is, the longer the GPU
+        /// time is required).
+        /// </summary>
         [DisplayName("Max Blur Size"), Tooltip("Convolution kernel size of the bokeh filter, which determines the maximum radius of bokeh. It also affects performances (the larger the kernel is, the longer the GPU time is required).")]
         public KernelSizeParameter kernelSize = new KernelSizeParameter { value = KernelSize.Medium };
 
+        /// <inheritdoc />
         public override bool IsEnabledAndSupported(PostProcessRenderContext context)
         {
             return enabled.value
@@ -36,9 +77,9 @@ namespace UnityEngine.Rendering.PostProcessing
         }
     }
 
-    // TODO: Look into minimum blur amount in the distance, right now it's lerped until a point
+    [UnityEngine.Scripting.Preserve]
     // TODO: Doesn't play nice with alpha propagation, see if it can be fixed without killing performances
-    public sealed class DepthOfFieldRenderer : PostProcessEffectRenderer<DepthOfField>
+    internal sealed class DepthOfFieldRenderer : PostProcessEffectRenderer<DepthOfField>
     {
         enum Pass
         {
@@ -109,8 +150,7 @@ namespace UnityEngine.Rendering.PostProcessing
             {
                 RenderTexture.ReleaseTemporary(rt);
 
-                // TODO: The CoCCalculation CoCTex uses RenderTextureReadWrite.Linear, why isn't this?
-                rt = context.GetScreenSpaceTemporaryRT(0, format);
+                rt = context.GetScreenSpaceTemporaryRT(0, format, RenderTextureReadWrite.Linear);
                 rt.name = "CoC History, Eye: " + eye + ", ID: " + id;
                 rt.filterMode = FilterMode.Bilinear;
                 rt.Create();
@@ -122,14 +162,10 @@ namespace UnityEngine.Rendering.PostProcessing
 
         public override void Render(PostProcessRenderContext context)
         {
-            var colorFormat = RenderTextureFormat.DefaultHDR;
+            // The coc is stored in alpha so we need a 4 channels target. Note that using ARGB32
+            // will result in a very weak near-blur.
+            var colorFormat = context.camera.allowHDR ? RenderTextureFormat.ARGBHalf : RenderTextureFormat.ARGB32;
             var cocFormat = SelectFormat(RenderTextureFormat.R8, RenderTextureFormat.RHalf);
-
-            // Avoid using R8 on OSX with Metal. #896121, https://goo.gl/MgKqu6
-            #if (UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX) && !UNITY_2017_1_OR_NEWER
-            if (SystemInfo.graphicsDeviceType == UnityEngine.Rendering.GraphicsDeviceType.Metal)
-                cocFormat = SelectFormat(RenderTextureFormat.RHalf, RenderTextureFormat.Default);
-            #endif
 
             // Material setup
             float scaledFilmHeight = k_FilmHeight * (context.height / 1080f);

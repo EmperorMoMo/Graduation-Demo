@@ -3,10 +3,12 @@ using UnityEngine.Assertions;
 
 namespace UnityEngine.Rendering.PostProcessing
 {
+    [UnityEngine.Scripting.Preserve]
     [Serializable]
-    public sealed class Dithering
+    internal sealed class Dithering
     {
         int m_NoiseTextureIndex = 0;
+        System.Random m_Random = new System.Random(1234);
 
         internal void Render(PostProcessRenderContext context)
         {
@@ -21,8 +23,8 @@ namespace UnityEngine.Rendering.PostProcessing
             if (++m_NoiseTextureIndex >= blueNoise.Length)
                 m_NoiseTextureIndex = 0;
 
-            float rndOffsetX = Random.value;
-            float rndOffsetY = Random.value;
+            float rndOffsetX = (float)m_Random.NextDouble();
+            float rndOffsetY = (float)m_Random.NextDouble();
         #endif
 
             var noiseTex = blueNoise[m_NoiseTextureIndex];

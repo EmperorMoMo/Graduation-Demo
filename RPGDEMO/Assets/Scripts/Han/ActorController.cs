@@ -26,7 +26,7 @@ public class ActorController : MonoBehaviour
     private Vector3 thrustVec;
     private float rollVec = 1f;
     private float currentVelocity;
-    private float lerpTarget;//状态机权重
+    //private float lerpTarget;//状态机权重
 
     private bool lockPlanar = false;
     private bool lockCamera = false;
@@ -157,7 +157,7 @@ public class ActorController : MonoBehaviour
     {
         pi.inputEnabled = false;
         lockCamera = true;
-        lerpTarget = 1.0f;
+        //lerpTarget = 1.0f;
         str = State.normalAtk;
         //Select(str);
     }
@@ -180,7 +180,7 @@ public class ActorController : MonoBehaviour
     {
         pi.inputEnabled = true;
         lockCamera = false;
-        lerpTarget = 0f;
+        //lerpTarget = 0f;
     }
 
     public void OnAttackIdleUpdate()

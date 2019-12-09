@@ -2,13 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 创建向导
+/// 负责创建物品网格等
+/// </summary>
 public class CreateManager : MonoBehaviour {
     public GameObject SlotPrefab;
     public GameObject ItemPrefab;
+
+    private FetchUtils FU = new FetchUtils();
     void Start() {
         CreateSlot();
-        CreateItem(0);
-        CreateItem(1);
+        CreateItem(0, 101, 3);
+        CreateItem(1, 101, 3);
+        CreateItem(2, 101, 3);
+        CreateItem(3, 101, 3);
+        CreateItem(4, 101, 3);
     }
 
     private void CreateSlot(){
@@ -20,24 +29,16 @@ public class CreateManager : MonoBehaviour {
         }
     }
 
-    private void CreateItem(int slotIndex) {
-        int listIndex = FetchNull();
+    public void CreateItem(int slotIndex, int uid, int stackMax) {
+        int listIndex = FU.FetchEmpty();
         if (listIndex == -1) {
             return;
         }
         GameObject item = GameObject.Instantiate(ItemPrefab, GameObject.Find("Slot" + slotIndex).transform);
-        item.AddComponent<Item>().itemBase = new ItemBase();
+        item.AddComponent<Item>().itemBase = new ItemBase(uid, stackMax);
         item.GetComponent<Item>().SlotIndex = slotIndex;
+        item.GetComponent<Item>().ShowCount();
         DataManager.SlotGOList[slotIndex].GetComponent<Slot>().ListIndex = slotIndex;
-        DataManager.ItemGOList[listIndex] = item;
-    }
-
-    private int FetchNull() {
-        for (int i = 0; i < 80; i++) {
-            if (DataManager.ItemGOList[i] == null) {
-                return i;
-            }
-        }
-        return -1;
+        DataManager.ItemGOList[slotIndex] = item;
     }
 }

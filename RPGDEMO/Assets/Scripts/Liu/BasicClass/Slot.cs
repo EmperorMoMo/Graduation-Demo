@@ -23,13 +23,9 @@ public class Slot : MonoBehaviour, IDropHandler {
         if (ListIndex == -1) {
             //如果按住ctrl键,拆分
             if (Input.GetKey(KeyCode.LeftControl) && dragItem.curStack > 1) {
-                CreateManager CM = GameObject.Find("CreateManager").GetComponent<CreateManager>();
-                CM.CreateItem(SlotIndex, dragItem.itemBase.UID, dragItem.itemBase.StackMax);
-                Item newItem = DataManager.ItemGOList[ListIndex].GetComponent<Item>();
-                newItem.curStack = 1;
-                dragItem.curStack -= newItem.curStack;
-                newItem.ShowCount();
-                dragItem.ShowCount();
+                Split.slot = this;
+                Split.item = dragItem;
+                GameObject.Find("Backpage").transform.GetChild(3).gameObject.SetActive(true);
             } else { 
             //放置在空位
                 DataManager.ItemGOList[SlotIndex] = dragItemGO;         //网格对应List中的物体指向拖拽体
@@ -56,6 +52,16 @@ public class Slot : MonoBehaviour, IDropHandler {
                 curItem.ReplaceParent();                                //当前物品的父物体更新
             }
         }
+    }
+
+    public void SplitItem(Item item, int count) {
+        CreateManager CM = GameObject.Find("CreateManager").GetComponent<CreateManager>();
+        CM.CreateItem(SlotIndex, item.itemBase.UID, item.itemBase.StackMax);
+        Item newItem = DataManager.ItemGOList[ListIndex].GetComponent<Item>();
+        newItem.curStack = count;
+        item.curStack -= newItem.curStack;
+        newItem.ShowCount();
+        item.ShowCount();
     }
 
     //设置网格索引的初始值

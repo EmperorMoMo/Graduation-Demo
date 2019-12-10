@@ -47,7 +47,7 @@ public class ActorController : MonoBehaviour
         cameraTransform = Camera.main.transform;
 
         normalDis = 3f;
-        skill_OneDis = 6f;
+        skill_OneDis = 4f;
     }
 
     // Update is called once per frame
@@ -271,7 +271,7 @@ public class ActorController : MonoBehaviour
             {
                 objects.GetComponent<Rigidbody>().freezeRotation = true;
 
-                objects.GetComponent<Rigidbody>().AddExplosionForce(150, transform.position, 6, 150);
+                objects.GetComponent<Rigidbody>().AddExplosionForce(150, transform.position, 4, 150);
             }
             objects.GetComponent<EnemyAI>().Damage();
         }

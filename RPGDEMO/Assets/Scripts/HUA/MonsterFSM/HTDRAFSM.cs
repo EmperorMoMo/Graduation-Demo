@@ -35,12 +35,13 @@ public class HTDRAFSM : MonsterFSM
     private int _currentPoint = 0;
     //角色是否还存活
     private bool _isDead;
-    private bool firstAttack = false;
+    //是否第一次进入攻击
+    private bool flag = false;
     //实现基类初始状态机方法
-    //void GetMessage(string s)
-    //{
-    //    _animation.Play(s);
-    //}
+    void GetMessage(string s)
+    {
+        _animation.Play(s);
+    }
     protected override void Initialize()
     {
         monsterHP = 100;
@@ -49,7 +50,7 @@ public class HTDRAFSM : MonsterFSM
         //没有死亡
         _isDead = false;
         //上一次攻击时间
-        elapsedTime = 6;
+        elapsedTime = 0;
         //攻击间隔时间
         attackRate = 5.3f;
         //获取AI对象控制器组件
@@ -57,7 +58,7 @@ public class HTDRAFSM : MonsterFSM
         //获取AI对象动画播放器组件
         _animation = GetComponent<Animation>();
         //获取AI对象巡逻点
-        pointList = GameObject.FindGameObjectsWithTag("Finish");
+        //pointList = GameObject.FindGameObjectsWithTag("Patrol");
         //获取玩家对象标签和位置
         GameObject obj = GameObject.FindGameObjectWithTag("TestPlayer");
         playerTransform = obj.transform;
@@ -90,11 +91,40 @@ public class HTDRAFSM : MonsterFSM
         //_controller.SimpleMove(transform.forward * Time.deltaTime * walkSpeed);
         ////播放AI对象移动动画
         //_animation.Play("Run");
-        _animation.Play("Idle");
+        //_animation.Play("Idle");
         if (Vector3.Distance(transform.position, playerTransform.position) <= chaseDistance)
             curState = FSMState.chase;
     }
     //追逐状态方法
+    private void animation_Manager(string name)
+    {
+        //if (_animation["Attack01"].normalizedTime == 0.5f)
+        //{
+        //    Debug.Log("attack01");
+        //    this.transform.GetComponent<Damage>().TakeDamage(playerTransform.GetComponent<Status>());
+        //}
+        //if (_animation["Attack02"].normalizedTime == 0.5f)
+        //{
+        //    Debug.Log("attack02");
+        //    this.transform.GetComponent<Damage>().TakeDamage(playerTransform.GetComponent<Status>());
+        //}
+
+        //if (_animation["Attack03"].normalizedTime == 0.5f)
+        //{
+        //    Debug.Log("attack03");
+        //    this.transform.GetComponent<Damage>().TakeDamage(playerTransform.GetComponent<Status>());
+        //}
+        AnimationEvent event0 = new AnimationEvent();
+        event0.time = this._animation[name].length * 0.5f;
+        event0.functionName = "takeDamage";
+        _animation[name].clip.AddEvent(event0);
+        _animation.Play(name);
+    }
+    //private void takeDamage()
+    //{
+    //    print("test");
+    //    this.transform.GetComponent<Damage>().TakeDamage(playerTransform.GetComponent<Status>());
+    //}
     private void ChaseState()
     {
         //切换至追逐状态时，将目标位置置换成玩家位置
@@ -107,7 +137,7 @@ public class HTDRAFSM : MonsterFSM
         //if (distance <= attackDistance)
         //    curState = FSMState.attack;
         ////如果当前距离已经大于巡逻状态，将当前状态切换成巡逻状态
-        else if (distance > chaseDistance)
+        else if (distance >= chaseDistance)
             curState = FSMState.idle;
         //根据目标位置控制AI对象转向，根据目标位置与AI对象当前位置差值获取转向角度，再实现转向
         Vector3 a = new Vector3(targetPoint.x - transform.position.x, 0, targetPoint.z - transform.position.z);
@@ -128,17 +158,22 @@ public class HTDRAFSM : MonsterFSM
         _controller.SimpleMove(transform.forward * Time.deltaTime * runSpeed);
         _animation.Play("Run");
     }
+    //private void attackNow()
+    //{
+    //    _animation.Play("Attack01");
+    //}
     private void WalkState()
     {
         targetPoint = playerTransform.position;
         float distance = Vector3.Distance(transform.position, targetPoint);
         if (distance <= attackDistance)
         {
-            firstAttack = false;
+            flag = false;
+            i = 1;
             curState = FSMState.attack;
         }
         //如果当前距离已经大于巡逻状态，将当前状态切换成巡逻状态
-        else if (distance > walkDistance)
+        else if (distance >= walkDistance)
             curState = FSMState.chase;
         //根据目标位置控制AI对象转向，根据目标位置与AI对象当前位置差值获取转向角度，再实现转向
         Vector3 a = new Vector3(targetPoint.x - transform.position.x, 0, targetPoint.z - transform.position.z);
@@ -187,14 +222,14 @@ public class HTDRAFSM : MonsterFSM
         //如果上一次攻击时间大于等于间隔时间，则认为可以攻击
         if (elapsedTime >= attackRate)
         {
-            if (!firstAttack)
-            {
+            if (!flag) {
                 elapsedTime = 5.067f;
-                firstAttack = true;
+                flag = true;
             }
             if (i == 1)
             {
                 _animation.Play("Attack01");
+                //animation_Manager("Attack01");
                 if (elapsedTime > 6.4)
                 {
                     elapsedTime = 0;
@@ -204,6 +239,7 @@ public class HTDRAFSM : MonsterFSM
             if (i == 2)
             {
                 _animation.Play("Attack02");
+                //animation_Manager("Attack02");
                 if (elapsedTime > 7.9)
                 {
                     elapsedTime = 0;
@@ -213,12 +249,14 @@ public class HTDRAFSM : MonsterFSM
             if (i == 3)
             {
                 _animation.Play("Attack03");
+                //animation_Manager("Attack03");
                 if (elapsedTime > 6.6)
                 {
                     elapsedTime = 0;
                     i = Random.Range(1, 4);
                 }
             }
+            Debug.Log(i);
             //将上一次攻击时间置零
 
         }
@@ -229,9 +267,10 @@ public class HTDRAFSM : MonsterFSM
         }
     }
     //死亡状态方法实现
+
     private void DeadState()
     {
-        if(monsterHP<=0)
+        if(monsterHP>=0)
         _animation.Play("Dead");
     }
     //重写父类方法
@@ -264,6 +303,6 @@ public class HTDRAFSM : MonsterFSM
         }
         //计算攻击状态中上一次攻击时间
         elapsedTime += Time.deltaTime;
-        Debug.Log(elapsedTime);
+        //Debug.Log(elapsedTime);
     }
 }

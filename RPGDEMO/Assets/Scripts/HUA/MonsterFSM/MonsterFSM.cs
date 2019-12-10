@@ -11,7 +11,7 @@ public class MonsterFSM : MonoBehaviour
     //目标位置
     protected Vector3 targetPoint;
     //路径巡逻数组
-    protected GameObject[] pointList;
+    //protected GameObject[] pointList;
     //AI对象攻击速度
     protected float attackRate;
     //记录AI对象上次攻击时间

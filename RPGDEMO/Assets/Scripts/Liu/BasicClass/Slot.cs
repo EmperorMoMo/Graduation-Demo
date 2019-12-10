@@ -23,8 +23,7 @@ public class Slot : MonoBehaviour, IDropHandler {
         if (ListIndex == -1) {
             //如果按住ctrl键,拆分
             if (Input.GetKey(KeyCode.LeftControl) && dragItem.curStack > 1) {
-                Split.slot = this;
-                Split.item = dragItem;
+                Split.SetValue(dragItem, this);
                 GameObject.Find("Backpage").transform.GetChild(3).gameObject.SetActive(true);
             } else { 
             //放置在空位

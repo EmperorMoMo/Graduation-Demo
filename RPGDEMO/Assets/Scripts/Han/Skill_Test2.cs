@@ -6,10 +6,13 @@ public class Skill_Test2 : MonoBehaviour
 {
     private Vector3 target_2;
     private EnemyAI ai;
+
+    private Collider box;
     // Start is called before the first frame update
     void Awake()
     {
         target_2 = GameObject.Find("Target_2").transform.position;
+        box = GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
@@ -32,9 +35,17 @@ public class Skill_Test2 : MonoBehaviour
             //col.GetComponent<Rigidbody>().AddForce(col.transform.position*100f);
             float t2 = 0f;
             t2 += 1f * Time.deltaTime;
-            col.transform.position = Vector3.Lerp(col.transform.position, -col.transform.forward* 100f, t2*0.9f);
+            col.transform.position = Vector3.Lerp(col.transform.position, -col.transform.forward* 90f, t2*0.8f);
+
+            //col.transform.Translate(Vector3.Lerp(col.transform.position, -col.transform.forward, t2),
+            //    Space.World);
             ai.Damage();
         }
+
+        //if (col.tag == "wall")
+        //{
+        //    Destroy(this.gameObject);
+        //}
     }
 
 }

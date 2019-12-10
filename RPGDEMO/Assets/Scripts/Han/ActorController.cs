@@ -218,6 +218,7 @@ public class ActorController : MonoBehaviour
 
     public void Select(State str)
     {
+        isDam = false;
         int radius = 12;
         List<GameObject> tempList=new List<GameObject>();
         while (radius < 13)
@@ -244,22 +245,13 @@ public class ActorController : MonoBehaviour
                                 //print("test5");
                                 isDam = true;
                             }
-                            else
-                            {
-                                isDam = false;
-                            }
                         }
-
                         if (str == State.skill_One)
                         {
                             if (dir < skill_OneDis && angle < 360)
                             {
                                 tempList.Add(cols[i].gameObject);
                                 isDam = true;
-                            }
-                            else
-                            {
-                                isDam = false;
                             }
                         }
                     }

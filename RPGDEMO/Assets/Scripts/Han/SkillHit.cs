@@ -26,7 +26,7 @@ public class SkillHit : MonoBehaviour
             ac.Select(ac.str);
             if (ac.isDam)
             {
-                Stop(0.07f);
+                Stop(0.08f);
             }
         }
     }

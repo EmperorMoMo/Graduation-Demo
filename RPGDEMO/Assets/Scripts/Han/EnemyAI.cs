@@ -11,11 +11,15 @@ public class EnemyAI : MonoBehaviour
 
     private Rigidbody rig;
 
+    public GameObject Effect;
+
+    private Transform hitpoint;
     // Start is called before the first frame update
     void Awake()
     {
         playerTrans = GameObject.Find("Follow").GetComponent<Transform>();
         rig = GetComponent<Rigidbody>();
+        hitpoint = this.transform.GetChild(1).GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -28,6 +32,7 @@ public class EnemyAI : MonoBehaviour
 
     public void Damage()
     {
+        InstantiateEffect();
         HP = HP - 5f;
         if (HP < 0)
         {
@@ -57,5 +62,11 @@ public class EnemyAI : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position,
                 (collision.transform.position - transform.position) * 0.3f, Time.deltaTime*3.8f);
         }
+    }
+
+    void InstantiateEffect()
+    {
+        var instance = Instantiate(Effect, hitpoint.position, hitpoint.rotation);
+        Destroy(instance,1.0f);
     }
 }

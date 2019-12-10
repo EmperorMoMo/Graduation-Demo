@@ -25,9 +25,10 @@ public class Hit : MonoBehaviour
         {
             //Debug.Log(ac.str);
             ac.Select(ac.str);
+            //Debug.Log(ac.isDam);
             if (ac.isDam)
             {
-                Stop(0.1f);
+                Stop(0.12f);
             }
         }
     }

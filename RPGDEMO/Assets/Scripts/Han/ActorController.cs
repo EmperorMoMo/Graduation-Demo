@@ -284,7 +284,7 @@ public class ActorController : MonoBehaviour
             {
                 objects.GetComponent<Rigidbody>().freezeRotation = true;
 
-                objects.GetComponent<Rigidbody>().AddExplosionForce(150, transform.position, 4, 150);
+                objects.GetComponent<Rigidbody>().AddExplosionForce(165, transform.position, 4, 150);
             }
             objects.GetComponent<EnemyAI>().Damage();
         }

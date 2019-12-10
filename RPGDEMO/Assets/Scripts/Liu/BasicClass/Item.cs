@@ -11,7 +11,7 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
     public ItemBase itemBase;               //物品基类对象
-
+    public int curStack = 1;                //物品当前堆叠数量
     public int SlotIndex = -1;              //物品对应网格的索引
 
     //开始拖拽
@@ -36,10 +36,44 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public void OnEndDrag(PointerEventData eventData) {
         //鼠标左键弹起
         if (Input.GetMouseButtonUp(0)) {
-            Debug.Log("text");
-            this.transform.SetParent(DataManager.SlotGOList[SlotIndex].transform);      //将该物品的父物体设置为索引网格
-            this.transform.position = this.transform.parent.position;                   //将该物体移动到父物体的位置
+            ReplaceParent();
             this.transform.GetComponent<Image>().raycastTarget = true;                  //开启当前组件中Image的射线检测
         }
+    }
+
+    //堆叠该物体至其他物体
+    public void Stack(Item tarItem) {
+        //若堆叠数量小于堆叠上限
+        if (curStack + tarItem.curStack <= itemBase.StackMax) {
+            tarItem.curStack += curStack;
+            DataManager.ItemGOList[SlotIndex] = null;
+            DataManager.SlotGOList[SlotIndex].GetComponent<Slot>().ListIndex = -1;
+            Destroy(this.gameObject);
+        } else {
+        //若堆叠数量大于堆叠上限
+            curStack = (curStack + tarItem.curStack) - itemBase.StackMax;
+            tarItem.curStack = itemBase.StackMax;
+            ShowCount();
+        }
+        tarItem.ShowCount();
+    }
+
+
+
+    //更新父物体
+    public void ReplaceParent() {
+        this.transform.SetParent(DataManager.SlotGOList[SlotIndex].transform);      //将该物品的父物体设置为索引网格
+        this.transform.position = this.transform.parent.position;                   //将该物体移动到父物体的位置
+    }
+
+    //数量文本更新
+    public void ShowCount() {
+        string count;
+        if (curStack != 1) {
+            count = curStack.ToString();
+        } else {
+            count = "";
+        }
+        this.transform.GetComponentInChildren<Text>().text = count;
     }
 }

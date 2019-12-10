@@ -7,6 +7,7 @@ using UnityEngine;
 /// 不挂载在物体上
 /// </summary>
 public class ItemBase {
+
     public int UID { get; set; }            //物品标识
     public string Name { get; set; }        //物品名称
     public int Quality { get; set; }        //物品品质
@@ -29,4 +30,9 @@ public class ItemBase {
         StackMax = stackMax;
     }
 
+    //构造函数，堆叠上限测试
+    public ItemBase(int uid, int stackMax) {
+        UID = uid;
+        StackMax = stackMax;
+    }
 }

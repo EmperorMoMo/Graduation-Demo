@@ -8,6 +8,7 @@ public class ActorController : MonoBehaviour
     {
         normalAtk,
         skill_One,
+        skill_Two,
     }
     
     public GameObject model;
@@ -47,7 +48,7 @@ public class ActorController : MonoBehaviour
         cameraTransform = Camera.main.transform;
 
         normalDis = 3f;
-        skill_OneDis = 6f;
+        skill_OneDis = 4f;
     }
 
     // Update is called once per frame
@@ -96,6 +97,11 @@ public class ActorController : MonoBehaviour
         if (pi.skill_1)
         {
             anim.SetTrigger("skill_1");
+        }
+
+        if (pi.skill_2)
+        {
+            anim.SetTrigger("skill_2");
         }
     }
 
@@ -203,6 +209,13 @@ public class ActorController : MonoBehaviour
         str = State.skill_One;
     }
 
+    public void OnSkillTwoEnter()
+    {
+        pi.inputEnabled = false;
+        lockCamera = true;
+        str = State.skill_Two;
+    }
+
     public void Select(State str)
     {
         int radius = 12;
@@ -271,7 +284,7 @@ public class ActorController : MonoBehaviour
             {
                 objects.GetComponent<Rigidbody>().freezeRotation = true;
 
-                objects.GetComponent<Rigidbody>().AddExplosionForce(150, transform.position, 6, 150);
+                objects.GetComponent<Rigidbody>().AddExplosionForce(150, transform.position, 4, 150);
             }
             objects.GetComponent<EnemyAI>().Damage();
         }

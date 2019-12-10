@@ -14,6 +14,9 @@ public class Slot : MonoBehaviour, IDropHandler {
 
     //鼠标在该网格上落下
     public void OnDrop(PointerEventData eventData) {
+        if (eventData == null) {
+            return;
+        }
         GameObject dragItemGO = eventData.pointerDrag;              //鼠标拖拽的物品对象
         Item dragItem = dragItemGO.GetComponent<Item>();            //拖拽体的Item脚本
         Slot preSlot = DataManager.SlotGOList[dragItem.SlotIndex]
@@ -23,8 +26,7 @@ public class Slot : MonoBehaviour, IDropHandler {
         if (ListIndex == -1) {
             //如果按住ctrl键,拆分
             if (Input.GetKey(KeyCode.LeftControl) && dragItem.curStack > 1) {
-                Split.slot = this;
-                Split.item = dragItem;
+                Split.SetValue(dragItem, this);
                 GameObject.Find("Backpage").transform.GetChild(3).gameObject.SetActive(true);
             } else { 
             //放置在空位

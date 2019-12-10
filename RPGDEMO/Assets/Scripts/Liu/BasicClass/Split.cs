@@ -5,8 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Split : MonoBehaviour {
-    public static Slot slot;
-    public static Item item;
+    public static Slot Slot;
+    public static Item Item;
+    public static bool ReOpen = false;
     public int Count = 1;
 
     public string tiptext;
@@ -15,11 +16,15 @@ public class Split : MonoBehaviour {
         TipText = this.transform.GetComponentInChildren<Text>();
     }
     void Update() {
-        tiptext = "物品UID：" + item.itemBase.UID + "数量 * " + Count.ToString();
+        tiptext = "物品UID：" + Item.itemBase.UID + "数量 * " + Count.ToString();
         TipText.text = tiptext;
+        if (ReOpen) {
+            SetCount(1);
+            ReOpen = false;
+        }
     }
     public void DeSplit() {
-        slot.SplitItem(item, Count);
+        Slot.SplitItem(Item, Count);
         GameObject.Find("Split").SetActive(false);
     }
 
@@ -38,14 +43,19 @@ public class Split : MonoBehaviour {
     }
 
     public void ChangeCount() {
-        Debug.Log("ChangeCount");
         if (this.transform.GetComponent<InputField>().text != "") {
             SetCount(Convert.ToInt32(this.transform.GetComponent<InputField>().text));
         }
     }
 
     private void SetCount(int count) {
-        Count = Mathf.Clamp(count, 1, item.curStack - 1);
+        Count = Mathf.Clamp(count, 1, Item.curStack - 1);
         this.transform.GetComponent<InputField>().text = Count.ToString();
+    }
+
+    public static void SetValue(Item item, Slot slot) {
+        Item = item;
+        Slot = slot;
+        ReOpen = true;
     }
 }

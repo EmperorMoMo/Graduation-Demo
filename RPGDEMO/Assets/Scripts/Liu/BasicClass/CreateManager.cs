@@ -11,13 +11,28 @@ public class CreateManager : MonoBehaviour {
     public GameObject ItemPrefab;
 
     private FetchUtils FU = new FetchUtils();
+
+    private bool isInit = false;
     void Start() {
+        
+    }
+
+    void Update() {
+        if (!isInit) {
+            if (GameObject.Find("BackpgGrid") != null) {
+                Init();
+            }
+        }
+    }
+
+    void Init() {
         CreateSlot();
         CreateItem(0, 101, 3);
         CreateItem(1, 101, 3);
         CreateItem(2, 101, 3);
         CreateItem(3, 101, 3);
         CreateItem(4, 101, 3);
+        isInit = true;
     }
 
     private void CreateSlot(){

@@ -35,6 +35,7 @@ public class HTDRAFSM : MonsterFSM
     private int _currentPoint = 0;
     //角色是否还存活
     private bool _isDead;
+    private bool firstAttack = false;
     //实现基类初始状态机方法
     //void GetMessage(string s)
     //{
@@ -48,7 +49,7 @@ public class HTDRAFSM : MonsterFSM
         //没有死亡
         _isDead = false;
         //上一次攻击时间
-        elapsedTime = 0;
+        elapsedTime = 6;
         //攻击间隔时间
         attackRate = 5.3f;
         //获取AI对象控制器组件
@@ -132,7 +133,10 @@ public class HTDRAFSM : MonsterFSM
         targetPoint = playerTransform.position;
         float distance = Vector3.Distance(transform.position, targetPoint);
         if (distance <= attackDistance)
+        {
+            firstAttack = false;
             curState = FSMState.attack;
+        }
         //如果当前距离已经大于巡逻状态，将当前状态切换成巡逻状态
         else if (distance > walkDistance)
             curState = FSMState.chase;
@@ -183,6 +187,11 @@ public class HTDRAFSM : MonsterFSM
         //如果上一次攻击时间大于等于间隔时间，则认为可以攻击
         if (elapsedTime >= attackRate)
         {
+            if (!firstAttack)
+            {
+                elapsedTime = 5.067f;
+                firstAttack = true;
+            }
             if (i == 1)
             {
                 _animation.Play("Attack01");
@@ -255,5 +264,6 @@ public class HTDRAFSM : MonsterFSM
         }
         //计算攻击状态中上一次攻击时间
         elapsedTime += Time.deltaTime;
+        Debug.Log(elapsedTime);
     }
 }

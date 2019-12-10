@@ -8,6 +8,7 @@ public class ActorController : MonoBehaviour
     {
         normalAtk,
         skill_One,
+        skill_Two,
     }
     
     public GameObject model;
@@ -96,6 +97,11 @@ public class ActorController : MonoBehaviour
         if (pi.skill_1)
         {
             anim.SetTrigger("skill_1");
+        }
+
+        if (pi.skill_2)
+        {
+            anim.SetTrigger("skill_2");
         }
     }
 
@@ -201,6 +207,13 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = false;
         lockCamera = true;
         str = State.skill_One;
+    }
+
+    public void OnSkillTwoEnter()
+    {
+        pi.inputEnabled = false;
+        lockCamera = true;
+        str = State.skill_Two;
     }
 
     public void Select(State str)

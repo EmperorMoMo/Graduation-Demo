@@ -14,6 +14,9 @@ public class Slot : MonoBehaviour, IDropHandler {
 
     //鼠标在该网格上落下
     public void OnDrop(PointerEventData eventData) {
+        if (eventData == null) {
+            return;
+        }
         GameObject dragItemGO = eventData.pointerDrag;              //鼠标拖拽的物品对象
         Item dragItem = dragItemGO.GetComponent<Item>();            //拖拽体的Item脚本
         Slot preSlot = DataManager.SlotGOList[dragItem.SlotIndex]

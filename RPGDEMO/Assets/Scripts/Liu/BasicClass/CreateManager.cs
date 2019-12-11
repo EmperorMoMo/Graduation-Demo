@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// 创建向导
@@ -27,11 +28,11 @@ public class CreateManager : MonoBehaviour {
 
     void Init() {
         CreateSlot();
-        CreateItem(0, 101, 3);
-        CreateItem(1, 101, 3);
-        CreateItem(2, 101, 3);
-        CreateItem(3, 101, 3);
-        CreateItem(4, 101, 3);
+        CreateItem(1001);
+        CreateItem(1002);
+        CreateItem(1003);
+        CreateItem(1004);
+        CreateItem(1005);
         isInit = true;
     }
 
@@ -44,16 +45,17 @@ public class CreateManager : MonoBehaviour {
         }
     }
 
-    public void CreateItem(int slotIndex, int uid, int stackMax) {
-        int listIndex = FU.FetchEmpty();
-        if (listIndex == -1) {
+    public void CreateItem(int uid) {
+        int index = FU.FetchEmpty();
+        if (index == -1) {
             return;
         }
-        GameObject item = GameObject.Instantiate(ItemPrefab, GameObject.Find("Slot" + slotIndex).transform);
-        item.AddComponent<Item>().itemBase = new ItemBase(uid, stackMax);
-        item.GetComponent<Item>().SlotIndex = slotIndex;
+        GameObject item = GameObject.Instantiate(ItemPrefab, GameObject.Find("Slot" + index).transform);
+        item.AddComponent<Item>().itemBase = FU.FetchEquipmentsBase(uid);
+        item.GetComponent<Item>().SlotIndex = index;
         item.GetComponent<Item>().ShowCount();
-        DataManager.SlotGOList[slotIndex].GetComponent<Slot>().ListIndex = slotIndex;
-        DataManager.ItemGOList[slotIndex] = item;
+        item.GetComponent<Image>().sprite = FU.FetchEquipmentsBase(uid).sprite;
+        DataManager.SlotGOList[index].GetComponent<Slot>().ListIndex = index;
+        DataManager.ItemGOList[index] = item;
     }
 }

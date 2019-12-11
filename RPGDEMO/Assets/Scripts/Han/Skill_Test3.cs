@@ -41,7 +41,9 @@ public class Skill_Test3 : MonoBehaviour
                     Rigidbody rig = cols[i].GetComponent<Rigidbody>();
                     if (time < 1.8f)
                     {
-                        cols[i].transform.position = new Vector3(cols[i].transform.position.x, 1.75f, cols[i].transform.position.z);
+                        //cols[i].transform.position = new Vector3(cols[i].transform.position.x, 1.75f, cols[i].transform.position.z);
+                        cols[i].transform.position = Vector3.Lerp(cols[i].transform.position, transform.position,
+                            Time.fixedDeltaTime);
                         rig.constraints = RigidbodyConstraints.FreezePositionY;
 
                     }
@@ -49,17 +51,16 @@ public class Skill_Test3 : MonoBehaviour
                     {
                         rig.constraints = ~RigidbodyConstraints.FreezePosition;
                     }
-                    if (timeTemp >= 0.15f)
+
+                    if (timeTemp >= 0.2f)
                     {
-                        //cols[i].transform.position += Vector3.up * 0.5f;
+                        ai.Damage();
+                        timeTemp = 0;
                         if (canStop)
                         {
                             Stop(0.3f);
                         }
-                        ai.Damage();
-                        timeTemp = 0;
                     }
-
                     timeTemp += Time.fixedDeltaTime;
                 }
             }

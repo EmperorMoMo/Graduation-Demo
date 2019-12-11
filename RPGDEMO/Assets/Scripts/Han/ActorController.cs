@@ -9,6 +9,7 @@ public class ActorController : MonoBehaviour
         normalAtk,
         skill_One,
         skill_Two,
+        skill_Three,
     }
     
     public GameObject model;
@@ -87,7 +88,7 @@ public class ActorController : MonoBehaviour
         }
 
         
-        if ( (pi.targetDup!=0||pi.targetDright!=0)&& lockCamera == false )
+        if ( (pi.Dup!=0||pi.Dright!=0)&& lockCamera == false )
         {
             float targetrotation = cameraTransform.eulerAngles.y;
             transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetrotation,
@@ -102,6 +103,11 @@ public class ActorController : MonoBehaviour
         if (pi.skill_2)
         {
             anim.SetTrigger("skill_2");
+        }
+
+        if (pi.skill_3)
+        {
+            anim.SetTrigger("skill_3");
         }
     }
 
@@ -214,6 +220,18 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = false;
         lockCamera = true;
         str = State.skill_Two;
+    }
+
+    public void OnSkillThreeEnter()
+    {
+        pi.inputEnabled = false;
+        lockCamera = true;
+        str = State.skill_Three;
+    }
+
+    public void OnSkillThreeExit()
+    {
+
     }
 
     public void Select(State str)

@@ -17,16 +17,17 @@ public class Skill_Test : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        canCollider = false;
         //trans = GetComponent<Transform>();
-        target = GameObject.Find("TargetPoint").transform.position;
+        target = GameObject.Find("TargetPoint_").transform.position;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        canCollider = false;
-        StartCoroutine(stayDelay());
-    }
+    //void Update()
+    //{
+    //    canCollider = false;
+    //    StartCoroutine(stayDelay());
+    //}
 
     IEnumerator stayDelay()
     {
@@ -35,8 +36,32 @@ public class Skill_Test : MonoBehaviour
         //transform.Translate(transform.forward * Time.deltaTime*9f,Space.World);
         float t1 = 0f;
         t1 += 1f * Time.deltaTime;
-        transform.position = Vector3.Lerp(transform.position, target, t1*3.3f);
-        Destroy(this.gameObject, 1f);
+        transform.position = Vector3.Lerp(transform.position, target, t1*4f);
+        Destroy(this.gameObject, 1.5f);
+    }
+
+    void FixedUpdate()
+    {
+        StartCoroutine(stayDelay());
+        if (canCollider)
+        {
+            Collider[] cols = Physics.OverlapSphere(transform.position, 5.5f);
+            if (cols.Length > 0)
+            {
+                for (int i = 0; i < cols.Length; i++)
+                {
+                    if (cols[i].tag == "Enemy")
+                    {
+                        ai=cols[i].GetComponent<EnemyAI>();
+                        float t2 = 0f;
+                        t2 += 1f * Time.fixedDeltaTime;
+                        cols[i].transform.position = Vector3.Lerp(cols[i].transform.position, (-cols[i].transform.forward * 4f + Vector3.up * 4f) * 10f, t2);
+                        ai.Damage();
+                    }
+                }
+            }
+        }
+        
     }
 
     //void OnTriggerEnter(Collider[] col)
@@ -55,20 +80,20 @@ public class Skill_Test : MonoBehaviour
     //    }
     //}
 
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.tag == "Enemy" && canCollider)
-        {
-            ai = col.GetComponent<EnemyAI>();
-            //print("=============================");
-            //col.GetComponent<Rigidbody>().freezeRotation = true;
-            //col.GetComponent<Rigidbody>().AddExplosionForce(300, col.transform.position, 3, 200);
-            //col.GetComponent<Rigidbody>().AddForce(col.transform.position*100f);
-            float t2 = 0f;
-            t2 += 1f * Time.deltaTime;
-            col.transform.position = Vector3.Lerp(col.transform.position,(-col.transform.forward*4f+Vector3.up*4f)*10f, t2);
-            ai.Damage();
-        }
-    }
+    //void OnTriggerEnter(Collider col)
+    //{
+    //    if (col.tag == "Enemy" && canCollider)
+    //    {
+    //        ai = col.GetComponent<EnemyAI>();
+    //        //print("=============================");
+    //        //col.GetComponent<Rigidbody>().freezeRotation = true;
+    //        //col.GetComponent<Rigidbody>().AddExplosionForce(300, col.transform.position, 3, 200);
+    //        //col.GetComponent<Rigidbody>().AddForce(col.transform.position*100f);
+    //        float t2 = 0f;
+    //        t2 += 1f * Time.deltaTime;
+    //        col.transform.position = Vector3.Lerp(col.transform.position,(-col.transform.forward*4f+Vector3.up*4f)*10f, t2);
+    //        ai.Damage();
+    //    }
+    //}
 
 }

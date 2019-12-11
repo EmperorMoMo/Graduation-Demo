@@ -16,6 +16,7 @@ public class PlayerInput : MonoBehaviour
     public string keyC;
     public string keyD;
     public string keyE;
+    public string keyF;
 
     [Header("=====  output signals =====")]
     public float Dup;
@@ -35,6 +36,8 @@ public class PlayerInput : MonoBehaviour
     public bool skill_1;
 
     public bool skill_2;
+
+    public bool skill_3;
     //3.double trigger双击型
     public bool lastAttack;
     public bool attack;
@@ -115,6 +118,8 @@ public class PlayerInput : MonoBehaviour
         skill_1 = Input.GetKeyDown(keyD);
 
         skill_2 = Input.GetKeyDown(keyE);
+
+        skill_3 = Input.GetKeyDown(keyF);
 
     }
 

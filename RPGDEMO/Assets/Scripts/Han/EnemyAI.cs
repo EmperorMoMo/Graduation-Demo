@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public float HP = 100f;
+    private float HP = 1000f;
 
     private Transform playerTrans;
 
@@ -40,7 +40,7 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            print(HP);
+            print(gameObject.name+"还剩："+HP+"HP");
         }
     }
 

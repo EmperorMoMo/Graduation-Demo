@@ -38,8 +38,8 @@ public class Skill_Test2 : MonoBehaviour
     {
         float t1 = 0f;
         t1 += 1f * Time.deltaTime;
-        transform.position = Vector3.Lerp(transform.position, target_2, t1 * 3.3f);
-        Destroy(this.gameObject, 1f);
+        transform.position = Vector3.Lerp(transform.position, target_2, t1 * 3.8f);
+        Destroy(this.gameObject, 0.9f);
     }
 
     //// Update is called once per frame

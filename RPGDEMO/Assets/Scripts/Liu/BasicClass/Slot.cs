@@ -58,7 +58,7 @@ public class Slot : MonoBehaviour, IDropHandler {
 
     public void SplitItem(Item item, int count) {
         CreateManager CM = GameObject.Find("CreateManager").GetComponent<CreateManager>();
-        CM.CreateItem(SlotIndex, item.itemBase.UID, item.itemBase.StackMax);
+        CM.CreateItem(item.itemBase.UID);
         Item newItem = DataManager.ItemGOList[ListIndex].GetComponent<Item>();
         newItem.curStack = count;
         item.curStack -= newItem.curStack;

@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 
 /// <summary>
 /// 物品类
-/// 挂载在物体上
+/// 可挂载在物体上
 /// </summary>
 public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
     public ItemBase itemBase;               //物品基类对象

@@ -17,6 +17,15 @@ public class FetchUtils {
         return -1;
     }
 
+    public EquipmentBase FetchEquipmentsBase(int uid) {
+        foreach (int key in DataManager.EquipmentDic.Keys) {
+            if (key == uid) {
+                return DataManager.EquipmentDic[key];
+            }
+        }
+        return null;
+    }
+
     //在物品List中寻找所有特定UID的Item游戏对象
     public List<Item> FetchByUID(int uid){
         List<Item> items = new List<Item>();

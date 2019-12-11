@@ -26,7 +26,7 @@ public class SkillHit : MonoBehaviour
             ac.Select(ac.str);
             if (ac.isDam)
             {
-                Stop(0.08f);
+                Stop(0.15f);
             }
         }
     }
@@ -38,7 +38,7 @@ public class SkillHit : MonoBehaviour
             return;
         }
 
-        Time.timeScale = 0.0f;
+        Time.timeScale = 0.2f;
 
         StartCoroutine(Wait(duration));
     }

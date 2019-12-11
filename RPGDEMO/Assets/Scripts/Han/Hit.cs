@@ -28,7 +28,7 @@ public class Hit : MonoBehaviour
             //Debug.Log(ac.isDam);
             if (ac.isDam)
             {
-                Stop(0.12f);
+                Stop(0.15f);
             }
         }
     }
@@ -40,7 +40,7 @@ public class Hit : MonoBehaviour
             return;
         }
 
-        Time.timeScale = 0.0f;
+        Time.timeScale = 0.1f;
 
         StartCoroutine(Wait(duration));
     }

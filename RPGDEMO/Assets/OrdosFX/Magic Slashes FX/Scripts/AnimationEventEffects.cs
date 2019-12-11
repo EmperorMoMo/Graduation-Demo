@@ -10,6 +10,7 @@ public class AnimationEventEffects : MonoBehaviour {
     //public GameObject EffectPrefabWorldSpace;
     //public Transform EffectStartPositionWorld;
     //public float DestroyAfterWorld = 10;
+    private bool waiting;
 
     public EffectInfo[] Effects;
 
@@ -49,6 +50,11 @@ public class AnimationEventEffects : MonoBehaviour {
             Debug.LogError("Incorrect effect number or effect is null");
         }
 
+        if (EffectNumber == 6)
+        {
+            Stop(0.6f,0.45f);
+        }
+
         var instance = Instantiate(Effects[EffectNumber].Effect, Effects[EffectNumber].StartPositionRotation.position, Effects[EffectNumber].StartPositionRotation.rotation);
 
         if (Effects[EffectNumber].UseLocalPosition)
@@ -60,5 +66,25 @@ public class AnimationEventEffects : MonoBehaviour {
         Destroy(instance, Effects[EffectNumber].DestroyAfter);
 
 
+    }
+
+    public void Stop(float duration,float p)
+    {
+        if (waiting)
+        {
+            return;
+        }
+
+        Time.timeScale = p;
+
+        StartCoroutine(Wait(duration));
+    }
+
+    IEnumerator Wait(float duration)
+    {
+        waiting = true;
+        yield return new WaitForSecondsRealtime(duration);
+        Time.timeScale = 1f;
+        waiting = false;
     }
 }

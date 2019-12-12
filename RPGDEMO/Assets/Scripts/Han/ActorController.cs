@@ -233,12 +233,6 @@ public class ActorController : MonoBehaviour
         str = State.pickup;
     }
 
-    public void OnPickUpExit()
-    {
-        pi.inputEnabled = true;
-        lockCamera = false;
-    }
-
     public void Select(State str)
     {
         isDam = false;
@@ -313,10 +307,10 @@ public class ActorController : MonoBehaviour
 
             if (objects.GetComponent<Rigidbody>() != null && str == State.pickup)
             {
-                objects.transform.position = new Vector3(objects.transform.position.x, 2f,
+                objects.transform.position = new Vector3(objects.transform.position.x, 2.5f,
                     objects.transform.position.z);
-                objects.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
-                objects.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
+                //objects.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
+                //objects.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
                 
             }
             objects.GetComponent<EnemyAI>().Damage();

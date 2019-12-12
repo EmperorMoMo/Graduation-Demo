@@ -10,6 +10,7 @@ public class ActorController : MonoBehaviour
         skill_One,
         skill_Two,
         skill_Three,
+        pickup,
     }
     
     public GameObject model;
@@ -109,6 +110,11 @@ public class ActorController : MonoBehaviour
         {
             anim.SetTrigger("skill_3");
         }
+
+        if (pi.pickup)
+        {
+            anim.SetTrigger("pickup");
+        }
     }
 
     void FixedUpdate()
@@ -121,14 +127,26 @@ public class ActorController : MonoBehaviour
 
     /// 
     /// 
-    /// 
+    ///
+    public void OnGround()
+    {
+        pi.inputEnabled = true;
+        lockCamera = false;
+        this.gameObject.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
+    }
+
     public void OnJumpEnter()
     {
         //print("on jump enter!");
         pi.inputEnabled = false;
         lockPlanar = true;
         lockCamera = true;
-        thrustVec = new Vector3(0, 3.6f, 0);
+        thrustVec = new Vector3(0, 3f, 0);
+    }
+
+    public void OnJumpUpdate()
+    {
+
     }
 
     public void OnJumpExit()
@@ -137,7 +155,6 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = true;
         lockPlanar = false;
         lockCamera = false;
-        anim.ResetTrigger("attack");
     }
 
     public void OnRollEnter()
@@ -165,12 +182,6 @@ public class ActorController : MonoBehaviour
         anim.ResetTrigger("attack");
     }
 
-    public void OnGround()
-    {
-        pi.inputEnabled = true;
-        lockCamera = false;
-    }
-
     public void OnAttack1Enter()
     {
         pi.inputEnabled = false;
@@ -178,13 +189,6 @@ public class ActorController : MonoBehaviour
         //lerpTarget = 1.0f;
         str = State.normalAtk;
         //Select(str);
-    }
-
-    public void OnAttack1Update()
-    {
-        //float currentWeight = anim.GetLayerWeight(anim.GetLayerIndex("attack"));
-        //currentWeight = Mathf.Lerp(currentWeight, lerpTarget, 0.25f);
-        //anim.SetLayerWeight(anim.GetLayerIndex("attack"), currentWeight);
     }
     
     public void OnAttack2Enter()
@@ -199,13 +203,6 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = true;
         lockCamera = false;
         //lerpTarget = 0f;
-    }
-
-    public void OnAttackIdleUpdate()
-    {
-        //float currentWeight = anim.GetLayerWeight(anim.GetLayerIndex("attack"));
-        //currentWeight = Mathf.Lerp(currentWeight, lerpTarget, 0.25f);
-        //anim.SetLayerWeight(anim.GetLayerIndex("attack"), currentWeight);
     }
 
     public void OnSkillOneEnter()
@@ -229,9 +226,17 @@ public class ActorController : MonoBehaviour
         str = State.skill_Three;
     }
 
-    public void OnSkillThreeExit()
+    public void OnPickUpEnter()
     {
+        pi.inputEnabled = false;
+        lockCamera = true;
+        str = State.pickup;
+    }
 
+    public void OnPickUpExit()
+    {
+        pi.inputEnabled = true;
+        lockCamera = false;
     }
 
     public void Select(State str)
@@ -272,6 +277,15 @@ public class ActorController : MonoBehaviour
                                 isDam = true;
                             }
                         }
+
+                        if (str == State.pickup)
+                        {
+                            if (dir < normalDis && angle < 60)
+                            {
+                                tempList.Add(cols[i].gameObject);
+                                isDam = true;
+                            }
+                        }
                     }
                 }
             }
@@ -295,6 +309,15 @@ public class ActorController : MonoBehaviour
                 objects.GetComponent<Rigidbody>().freezeRotation = true;
 
                 objects.GetComponent<Rigidbody>().AddExplosionForce(165, transform.position, 4, 150);
+            }
+
+            if (objects.GetComponent<Rigidbody>() != null && str == State.pickup)
+            {
+                objects.transform.position = new Vector3(objects.transform.position.x, 2f,
+                    objects.transform.position.z);
+                objects.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
+                objects.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
+                
             }
             objects.GetComponent<EnemyAI>().Damage();
         }

@@ -13,20 +13,24 @@ public class CameraController : MonoBehaviour
     private Transform playerTransform;
 
     private PlayerInput pi;
+    private bool lockCamera;
 
     // Start is called before the first frame update
     void Awake()
     {
-        pi = GetComponent<PlayerInput>();
+        pi = GameObject.Find("PlayerHandle").GetComponent<PlayerInput>();
         playerTransform = GameObject.Find("Follow").GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        yaw += Input.GetAxis("Mouse X") * mousemoveSpeed;
-        pitch -= Input.GetAxis("Mouse Y") * mousemoveSpeed;
-        transform.eulerAngles = new Vector3(pitch, yaw, 0);
+        if (!lockCamera)
+        {
+            yaw += Input.GetAxis("Mouse X") * mousemoveSpeed;
+            pitch -= Input.GetAxis("Mouse Y") * mousemoveSpeed;
+            transform.eulerAngles = new Vector3(pitch, yaw, 0);
+        }
 
         //这里这个3是距离，相机跟角色的距离；
         transform.position = playerTransform.position - transform.forward * temp;
@@ -51,11 +55,15 @@ public class CameraController : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            pi.enabled = false;
+            lockCamera = true;
         }
         else
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            pi.enabled = true;
+            lockCamera = false;
         }
 
         RaycastHit[] hits;

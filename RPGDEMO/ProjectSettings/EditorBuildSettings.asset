@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CheckPoint_Coin_Exp/CheckPoint_Exp.unity
     guid: edcba459fc938e64b8b64b670bfd293d
+  - enabled: 1
+    path: Assets/CheckPoint_Coin_Exp/CheckPoint1.0.unity
+    guid: 39cc0d3af2c976144b9e0e4110e79c83
+  - enabled: 1
+    path: Assets/CheckPoint_Coin_Exp/CheckPoint1.1.unity
+    guid: cd68e35d44db8424cb18cce3e401adb3
   m_configObjects: {}

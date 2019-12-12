@@ -21,13 +21,13 @@ public class Gate01 : MonoBehaviour
             mainCamera.backgroundColor = Color.black;
             mainCamera.clearFlags = CameraClearFlags.SolidColor;
             DontDestroyOnLoad(Player);
-            SceneManager.LoadScene("CheckPoint 1");
+            SceneManager.LoadScene("CheckPoint1.0");
             transformChange();
         }
     }
     void transformChange()
     {
-        Player.transform.position = new Vector3(21, 0, -215.5f);
+        Player.transform.position = new Vector3(0.5f, 0,0);
     }
     // Update is called once per frame
     void Update()

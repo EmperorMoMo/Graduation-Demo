@@ -13,7 +13,7 @@ public class ItemBase {
     public int Price { get; set; }          //物品价格
     public string Describe { get; set; }    //物品描述
     public string SpriteName { get; set; }  //贴图名字
-    public int StackMax { get; set; }       //堆叠上限 
+    public int StackMax { get; set; }       //堆叠上限
 
     //默认构造方法
     public ItemBase() { }
@@ -26,12 +26,6 @@ public class ItemBase {
         Price = price;
         Describe = describe;
         SpriteName = spriteName;
-        StackMax = stackMax;
-    }
-
-    //构造函数，堆叠上限测试
-    public ItemBase(int uid, int stackMax) {
-        UID = uid;
         StackMax = stackMax;
     }
 }

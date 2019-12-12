@@ -46,8 +46,17 @@ public class CameraController : MonoBehaviour
             }
         }
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        
+        if (Input.GetKey(KeyCode.Tab))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
 
         RaycastHit[] hits;
         Vector3 dir = -(playerTransform.position - transform.position).normalized;

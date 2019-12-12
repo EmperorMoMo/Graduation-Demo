@@ -9,13 +9,34 @@ using UnityEngine.EventSystems;
 /// 挂载在装备上
 /// </summary>
 public class Equipment : Item, IPointerEnterHandler, IPointerExitHandler {
+    public EquipmentBase equipemtnBase;
     private bool isEnter = false;
+    private bool isShow = false;
+    private float stayTime = 0.5f;
+    private float stayTimer = 0;
+
+    public void Start() {
+        equipemtnBase = (EquipmentBase)itemBase;
+    }
+    public void Update() {
+        if (isEnter && !isShow) {
+            stayTimer += Time.deltaTime;
+            if (stayTimer > stayTime) {
+                InfoPanel.ShowEquipmentInfo(this.equipemtnBase);
+                isShow = true;
+                stayTimer = 0;
+            }
+        }
+    }
 
     public void OnPointerEnter(PointerEventData eventData) {
+        Debug.Log("isEnter");
         isEnter = true;
     }
 
     public void OnPointerExit(PointerEventData eventData) {
-        isEnter = false;   
+        isEnter = false;
+        InfoPanel.HidePanel();
+        isShow = false;
     }
 }

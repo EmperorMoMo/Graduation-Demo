@@ -51,9 +51,10 @@ public class CreateManager : MonoBehaviour {
             return;
         }
         GameObject item = GameObject.Instantiate(ItemPrefab, GameObject.Find("Slot" + index).transform);
-        item.AddComponent<Item>().itemBase = FU.FetchEquipmentsBase(uid);
-        item.GetComponent<Item>().SlotIndex = index;
-        item.GetComponent<Item>().ShowCount();
+        Equipment equipment = item.AddComponent<Equipment>();
+        equipment.itemBase = FU.FetchEquipmentsBase(uid);
+        equipment.SlotIndex = index;
+        equipment.ShowCount();
         item.GetComponent<Image>().sprite = FU.FetchEquipmentsBase(uid).sprite;
         DataManager.SlotGOList[index].GetComponent<Slot>().ListIndex = index;
         DataManager.ItemGOList[index] = item;

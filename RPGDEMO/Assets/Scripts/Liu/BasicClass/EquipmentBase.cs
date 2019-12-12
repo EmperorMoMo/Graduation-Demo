@@ -20,7 +20,6 @@ public class EquipmentBase : ItemBase{
             Position = position;
             Attr = attr;
             LvLimit = lvlimit;
-            Debug.Log(spriteName);
             sprite = Resources.Load<Sprite>("Equipment/" + spriteName);
             
     }

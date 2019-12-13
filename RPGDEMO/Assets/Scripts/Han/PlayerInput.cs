@@ -88,8 +88,7 @@ public class PlayerInput : MonoBehaviour
         {
             run = false;
         }
-
-
+        
         jump = Input.GetKeyDown(keyB);
         //if (jump)
         //{

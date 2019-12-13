@@ -136,7 +136,7 @@ public class ActorController : MonoBehaviour
     {
         pi.inputEnabled = true;
         lockCamera = false;
-        this.gameObject.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
+        //this.gameObject.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
     }
 
     public void OnJumpEnter()

@@ -40,16 +40,16 @@ public class CharacterAttribute : MonoBehaviour
         
     }
 
-    public float Character_HP(float _HP)
+    public void Character_HP(float _HP)
     {
         MAX_HP += _HP;
-        return MAX_HP;
+        //return MAX_HP;
     }
 
-    public float Character_MP(float _MP)
+    public void Character_MP(float _MP)
     {
         MAX_MP += _MP;
-        return MAX_MP;
+        //return MAX_MP;
     }
 
     public void Character_ReplyHP()
@@ -62,10 +62,10 @@ public class CharacterAttribute : MonoBehaviour
 
     }
 
-    public float Character_Aggressivity(float _Aggressivity)
+    public void Character_Aggressivity(float _Aggressivity)
     {
         Aggressivity += _Aggressivity;
-        return Aggressivity;
+        //return Aggressivity;
     }
 
     public void Character_Armor()
@@ -73,10 +73,10 @@ public class CharacterAttribute : MonoBehaviour
 
     }
 
-    public float Character_Exp(float _Exp)
+    public void Character_Exp(float _Exp)
     {
         Exp += _Exp;
-        return Exp;
+        //return Exp;
     }
 
     public void Character_Level()
@@ -97,7 +97,7 @@ public class CharacterAttribute : MonoBehaviour
         }
     }
 
-    public float Character_Strength(float _Strength)
+    public void Character_Strength(float _Strength)
     {
         Strength += _Strength;
         ReplyHP += Strength / 10;
@@ -106,10 +106,10 @@ public class CharacterAttribute : MonoBehaviour
         {
             Aggressivity += Strength;
         }
-        return Strength;
+        //return Strength;
     }
 
-    public float Character_Agile(float _Agile)
+    public void Character_Agile(float _Agile)
     {
         Agile += _Agile;
         Armor += Agile / 10;
@@ -117,15 +117,15 @@ public class CharacterAttribute : MonoBehaviour
         {
             Aggressivity += Agile;
         }
-        return Agile;
+        //return Agile;
     }
 
-    public float Character_Intellect(float _Intellect)
+    public void Character_Intellect(float _Intellect)
     {
         Intellect += _Intellect;
         ReplyMP += Intellect * 4;
         MAX_MP += Intellect * 20;
-        return Intellect;
+        //return Intellect;
     }
 
     public void Character_Attacked(float _Aggressivity)

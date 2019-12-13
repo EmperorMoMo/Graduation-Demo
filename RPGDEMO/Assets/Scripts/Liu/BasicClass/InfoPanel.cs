@@ -22,9 +22,10 @@ public class InfoPanel : MonoBehaviour {
         Price = this.transform.GetChild(6);
         Carry = this.transform.GetChild(7);
     }
+
     public static void ShowEquipmentInfo(EquipmentBase equipment ) {
         BuildItemBase(equipment);
-        Head.GetChild(0).GetComponent<Image>().sprite = equipment.sprite;
+        Head.GetChild(0).GetComponent<Image>().sprite = equipment.Sprite;
         Head.GetChild(3).GetComponent<Text>().text = GetPosition(equipment.Position);
         LvLimit.GetComponent<Text>().text = "等级：Lv" + equipment.LvLimit + "以上";
         Attribute.GetComponent<Text>().text = GetAttribute(equipment.Attr);
@@ -34,9 +35,9 @@ public class InfoPanel : MonoBehaviour {
     private static void ShowPanel() {
         Panel.position = Input.mousePosition;
         Panel.GetComponent<CanvasGroup>().alpha = 1;
-        //if (1f - Panel.GetComponent<CanvasGroup>().alpha > 0.001f) {
-        //    Panel.GetComponent<CanvasGroup>().alpha = Mathf.Lerp(Panel.GetComponent<CanvasGroup>().alpha, 1f, 0.2f);
-        //}
+        if (1f - Panel.GetComponent<CanvasGroup>().alpha > 0.001f) {
+            Panel.GetComponent<CanvasGroup>().alpha = Mathf.Lerp(Panel.GetComponent<CanvasGroup>().alpha, 1f, 0.2f);
+        }
     }
 
     public static void HidePanel() {

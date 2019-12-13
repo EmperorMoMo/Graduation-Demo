@@ -11,8 +11,9 @@ using LitJson;
 /// </summary>
 public class DataManager : MonoBehaviour
 {
-    public static GameObject[] SlotGOList = new GameObject[80];     //存放所有的Slot游戏对象
-    public static GameObject[] ItemGOList = new GameObject[80];     //存放所有的Item游戏对象
+    public static Slot[] SlotArr = new Slot[98];                    //存放所有的Slot脚本
+    public static Item[] ItemArr = new Item[98];                    //存放当前分类的Item脚本
+    public static Equipment[] EquipmentArr = new Equipment[80];     //存放所有的Equipment脚本
 
     public static Dictionary<int, EquipmentBase> EquipmentDic = new Dictionary<int, EquipmentBase>();      //装备词典
 
@@ -33,7 +34,7 @@ public class DataManager : MonoBehaviour
         BaseAttribute attr;
         int lvlimit;
         string describe;
-        string spriteName;
+        string sprite;
         int stackMax; 
 
         for (int i = 0; i < EquipmentJData.Count; i++) {
@@ -45,10 +46,10 @@ public class DataManager : MonoBehaviour
             attr = ContructAttribute(i);
             lvlimit = (int)EquipmentJData[i]["LvLimit"];
             describe = EquipmentJData[i]["Describe"].ToString();
-            spriteName = EquipmentJData[i]["Sprite"].ToString();
+            sprite = EquipmentJData[i]["Sprite"].ToString();
             stackMax = (int)EquipmentJData[i]["StackMax"];
 
-            EquipmentBase equipment = new EquipmentBase(uid, name, quality, price, describe, spriteName, stackMax, position, attr, lvlimit);
+            EquipmentBase equipment = new EquipmentBase(uid, name, quality, price, stackMax, describe, sprite, position, attr, lvlimit);
             EquipmentDic.Add(uid, equipment);
         }
     }

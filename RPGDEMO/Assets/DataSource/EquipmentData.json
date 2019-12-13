@@ -9,7 +9,7 @@
 		"LvLimit" : 0,
 		"Describe" : "最常见的武器，配发给新手",
 		"Sprite" : "1000",
-		"StackMax" : 1
+		"StackMax" : 5
 	},
 	{
 		"UID" : 1001,

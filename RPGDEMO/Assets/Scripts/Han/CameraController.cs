@@ -38,7 +38,7 @@ public class CameraController : MonoBehaviour
 
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
-            if (Camera.main.fieldOfView <= 70)
+            if (Camera.main.fieldOfView <= 90)
             {
                 Camera.main.fieldOfView += 3;
             }

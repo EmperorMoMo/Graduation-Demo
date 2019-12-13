@@ -36,6 +36,7 @@ public class ActorController : MonoBehaviour
     private bool lockPlanar = false;
     private bool lockCamera = false;
     public bool isDam;
+    private bool stillRun;
 
     [Header("=====  Attack =====")]
     private float normalDis;//普攻距离
@@ -135,7 +136,7 @@ public class ActorController : MonoBehaviour
     {
         pi.inputEnabled = true;
         lockCamera = false;
-        this.gameObject.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
+        //this.gameObject.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
     }
 
     public void OnJumpEnter()
@@ -172,6 +173,7 @@ public class ActorController : MonoBehaviour
         if (pi.run)
         {
             rollVec = 2.5f;
+            stillRun = true;
         }
         else
         {
@@ -188,6 +190,10 @@ public class ActorController : MonoBehaviour
         lockCamera = false;
         anim.ResetTrigger("attack");
         planarVec = Vector3.zero;
+        if (stillRun)
+        {
+            pi.run = true;
+        }
     }
 
     public void OnAttack1Enter()

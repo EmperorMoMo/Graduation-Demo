@@ -45,10 +45,10 @@ public class InfoPanel : MonoBehaviour {
     }
     private static void BuildItemBase<T>(T itembase) where T : ItemBase {
         string color = GetColor(itembase.Quality);
-        Head.GetChild(1).GetComponent<Text>().text = "<color=" + color + ">" + itembase.Name + "</color>";
-        Head.GetChild(2).GetComponent<Text>().text = "<color=" + color + ">" + GetQuality(itembase.Quality) + "</color>";
+        Head.GetChild(1).GetComponent<Text>().text = " <color=" + color + ">" + itembase.Name + "</color>";
+        Head.GetChild(2).GetComponent<Text>().text = " <color=" + color + ">" + GetQuality(itembase.Quality) + "</color>";
         Describe.GetComponent<Text>().text = "<color=" + color + ">" + itembase.Describe + "</color>";
-        Price.GetComponent<Text>().text = "<color=" + color + ">售价" + itembase.Price + "</color>";
+        Price.GetComponent<Text>().text = "<color=" + color + ">售价:" + itembase.Price + "</color>";
         Carry.GetComponent<Text>().text = "负重：0.81kg";
     }
 
@@ -64,15 +64,15 @@ public class InfoPanel : MonoBehaviour {
     }
     private static string GetPosition(int position) { 
         switch (position) {
-            case 0: return "武器";
-            case 1: return "头盔";
-            case 2: return "胸甲";
-            case 3: return "护肩";
-            case 4: return "手套";
-            case 5: return "腰带";
-            case 6: return "鞋子";
-            case 7: return "项链";
-            case 8: return "戒指";
+            case 0: return " 武器";
+            case 1: return " 头盔";
+            case 2: return " 胸甲";
+            case 3: return " 护肩";
+            case 4: return " 手套";
+            case 5: return " 腰带";
+            case 6: return " 鞋子";
+            case 7: return " 项链";
+            case 8: return " 戒指";
             default: return "#FFFFFF";
         }
     }

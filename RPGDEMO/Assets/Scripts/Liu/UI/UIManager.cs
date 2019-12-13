@@ -12,22 +12,23 @@ public class UIManager : MonoBehaviour {
     public static GameObject Head;              //头像血条
     public static GameObject MiniMap;           //小地图
     public static GameObject QuickBar;          //快捷栏
+    public static GameObject EquipmentPanel;    //装备面板
     public static GameObject Backpage;          //背包
     public static GameObject Shoppage;          //商店
-    public static GameObject EquipmentPanel;    //装备面板
     public static GameObject AttributePanel;    //属性面板
     public static GameObject SwitchRole;        //切换人物
     public static GameObject FuncationMenu;     //功能菜单
     public static GameObject DialogBox;         //对话框
 
+    //
     void Awake() {
         Canvas = GameObject.Find("Canvas");
         Head = Canvas.transform.GetChild(0).gameObject;
         MiniMap = Canvas.transform.GetChild(1).gameObject;
         QuickBar = Canvas.transform.GetChild(2).gameObject; ;
-        Backpage = Canvas.transform.GetChild(3).gameObject; ;
-        Shoppage = Canvas.transform.GetChild(4).gameObject;
-        EquipmentPanel = Canvas.transform.GetChild(5).gameObject;
+        EquipmentPanel = Canvas.transform.GetChild(3).gameObject; ;
+        Backpage = Canvas.transform.GetChild(4).gameObject;
+        Shoppage = Canvas.transform.GetChild(5).gameObject;
         AttributePanel = Canvas.transform.GetChild(6).gameObject;
         SwitchRole = Canvas.transform.GetChild(7).gameObject;
         FuncationMenu = Canvas.transform.GetChild(8).gameObject;

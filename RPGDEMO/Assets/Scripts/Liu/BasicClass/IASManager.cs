@@ -13,6 +13,8 @@ public class IASManager : MonoBehaviour {
     private static GameObject SlotPrefab;       //生成网格的预制体
     private static GameObject ItemPrefab;       //生成物品的预制体
 
+    private static BaseAttribute EquipmentsAttr;
+
     public void Awake(){
         SlotPrefab = slotPrefab;
         ItemPrefab = itemPrefab;
@@ -33,6 +35,7 @@ public class IASManager : MonoBehaviour {
         CreateItem(1003);
         CreateItem(1004);
         CreateItem(1005);
+        CreateItem(1100);
         
     }
     public void Update() {
@@ -53,7 +56,7 @@ public class IASManager : MonoBehaviour {
     //创建装备栏网格
     private static void CreateEquipmentSlot() {
         Transform Equips = UIManager.EquipmentPanel.transform.GetChild(2).GetChild(0);
-        for (int i = 90; i < 98; i++) {
+        for (int i = 90; i < 99; i++) {
             GameObject slot = Equips.GetChild(i - 90).gameObject;       //对应装备栏
             slot.AddComponent<Slot>().Index = i;                        //网格的索引
             DataManager.SlotArr[i] = slot.GetComponent<Slot>();         //将Slot脚本存入数组
@@ -83,9 +86,16 @@ public class IASManager : MonoBehaviour {
 
     //将物品放在空网格上
     public static void ToEmpty(Item item, Slot slot) {
+        int slotIndex = item.SlotIndex;
+        
         DataManager.ItemArr[slot.Index] = item;                 //网格指向的Arr指向的物品更新
         DataManager.ItemArr[item.SlotIndex] = null;             //原存储物品的Arr的指向置为空
         item.SlotIndex = slot.Index;                            //拖拽体指向的Slot更新
+
+        if (slotIndex >= 90 && slotIndex < 99) {
+            SetEquipmentAtr();
+            DataManager.SlotArr[slotIndex].transform.GetChild(0).gameObject.SetActive(true);
+        }
     }
 
     //将物品交换位置
@@ -135,14 +145,43 @@ public class IASManager : MonoBehaviour {
             //放置在空位
             int index = FetchUtils.FetchEmpty();
             ToEmpty(equipment, DataManager.SlotArr[index]);
-            equipment.ReplaceParent();
+            EquipSlot.transform.GetChild(0).gameObject.SetActive(true);
         } else {
         //该装备不在对应的装备栏上
             //装备栏上存在其他物品
-            if (DataManager.SlotArr[EquipSlot.Index] != null) { 
+            if (DataManager.ItemArr[EquipSlot.Index] != null) { 
                 //交换位置
+                Debug.Log("装备交换位置");
                 IASManager.Exchange(equipment, EquipSlot);
+            } else { 
+            //装备栏上不存在装备
+                Debug.Log("装备到装备栏");
+                ToEmpty(equipment, EquipSlot);
+                EquipSlot.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
+        SetEquipmentAtr();
+        equipment.ReplaceParent();
+    }
+
+    public static void SetEquipmentAtr() {
+        BaseAttribute attr = new BaseAttribute();
+        BaseAttribute equipmentAttr;
+        for (int i = 90; i < 99; i++) {
+            if (DataManager.ItemArr[i] != null) {
+                equipmentAttr = ((Equipment)DataManager.ItemArr[i]).equipemtnBase.Attr;
+                attr.HP += equipmentAttr.HP;
+                attr.MP += equipmentAttr.MP;
+                attr.ReHP += equipmentAttr.ReHP;
+                attr.ReMP += equipmentAttr.ReMP;
+                attr.Aggressivity += equipmentAttr.Aggressivity;
+                attr.Armor += equipmentAttr.Armor;
+                attr.Strength += equipmentAttr.Strength;
+                attr.Intellect += equipmentAttr.Intellect;
+                attr.Agile += equipmentAttr.Agile;
+            }
+        }
+        EquipmentsAttr = attr;
+        Debug.Log(attr.HP + "//" + attr.Aggressivity);
     }
 }

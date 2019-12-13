@@ -11,8 +11,8 @@ using LitJson;
 /// </summary>
 public class DataManager : MonoBehaviour
 {
-    public static Slot[] SlotArr = new Slot[98];                    //存放所有的Slot脚本
-    public static Item[] ItemArr = new Item[98];                    //存放当前分类的Item脚本
+    public static Slot[] SlotArr = new Slot[99];                    //存放所有的Slot脚本
+    public static Item[] ItemArr = new Item[99];                    //存放当前分类的Item脚本
     public static Equipment[] EquipmentArr = new Equipment[80];     //存放所有的Equipment脚本
 
     public static Dictionary<int, EquipmentBase> EquipmentDic = new Dictionary<int, EquipmentBase>();      //装备词典

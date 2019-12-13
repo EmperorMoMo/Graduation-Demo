@@ -20,7 +20,8 @@ public class UIManager : MonoBehaviour {
     public static GameObject FuncationMenu;     //功能菜单
     public static GameObject DialogBox;         //对话框
 
-    //
+    private static GameObject MainCamera;       //主相机
+
     void Awake() {
         Canvas = GameObject.Find("Canvas");
         Head = Canvas.transform.GetChild(0).gameObject;

@@ -26,6 +26,13 @@ public class UIManager : MonoBehaviour {
 
     private static Stack<GameObject> UIStack = new Stack<GameObject>();        //存储UI面板的栈
 
+    private static GameObject GetPanel(string panelName) {
+        switch (panelName) {
+            case "equip": return EquipmentPanel;
+            case "backpage": return Backpage;
+            default: return null;
+        }
+    }
     void Awake() {
         Canvas = GameObject.Find("Canvas");
         Head = Canvas.transform.GetChild(0).gameObject;
@@ -52,7 +59,9 @@ public class UIManager : MonoBehaviour {
         }
 
         if (Input.GetKeyUp(KeyCode.F1)) {
-            UIStack.Pop().SetActive(false);
+            if (UIStack.Count != 0) {
+                UIStack.Pop().SetActive(false);
+            }
         }
 
         if (isNone) {
@@ -85,20 +94,15 @@ public class UIManager : MonoBehaviour {
         }
     }
 
-    public static void ShowPanel() { 
-        
+    public void PreShowPanel(string panelName) {
+        ShowPanel(panelName);
+    }
+    public static void ShowPanel(string panelName) {
+        GameObject Panel = GetPanel(panelName);
+        Panel.SetActive(true);
+        UIStack.Push(Panel);
+        CloseFuncationMenu();
     }
 
-    //public void ShowBackpage(string str) {
-    //    GameObject Panel = Backpage;
-    //    Panel.SetActive(true);
-    //    UIStack.Push(Backpage);
-    //    CloseFuncationMenu();
-    //}
 
-    //public static void ShowEquip() {
-    //    EquipmentPanel.SetActive(true);
-    //    UIStack.Push(EquipmentPanel);
-    //    CloseFuncationMenu();
-    //}
 }

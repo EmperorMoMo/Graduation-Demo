@@ -13101,7 +13101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a8dc3ebafbc834d8dbdb6f8d6ab433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRange: 7
+  spawnRange: 10
   enemy: {fileID: 1449104016, guid: 5ffbafd5c254b254c8bdb07c025cbc40, type: 3}
   Enemy: 15
 --- !u!4 &306250407
@@ -22606,7 +22606,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &520644200
 PrefabInstance:
@@ -38411,7 +38411,7 @@ Transform:
   - {fileID: 725954331}
   - {fileID: 2031706092}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &911566665
 PrefabInstance:

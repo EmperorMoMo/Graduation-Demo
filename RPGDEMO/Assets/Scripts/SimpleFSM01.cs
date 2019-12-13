@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleFSM : FSM
+public class SimpleFSM01 : FSM
 {
     //枚举需要实现的状态
     public enum FSMState
@@ -52,7 +52,7 @@ public class SimpleFSM : FSM
         //获取AI对象巡逻点
         pointList = GameObject.FindGameObjectsWithTag("Patrol");
         //获取玩家对象标签和位置
-        GameObject obj = GameObject.FindGameObjectWithTag("Player");
+        GameObject obj = GameObject.FindGameObjectWithTag("TestPlayer");
         playerTransform = obj.transform;
         //获取初始路径点
         FindNextPoint();
@@ -135,8 +135,8 @@ public class SimpleFSM : FSM
         {
             _animation.Play("Attack01");
             //将上一次攻击时间置零
-            if(elapsedTime>2)
-            elapsedTime = 0;
+            if (elapsedTime > 2.45f)
+                elapsedTime = 0;
         }
         //否则播放站立动画
         else

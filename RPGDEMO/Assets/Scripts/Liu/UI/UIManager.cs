@@ -20,7 +20,9 @@ public class UIManager : MonoBehaviour {
     public static GameObject FuncationMenu;     //功能菜单
     public static GameObject DialogBox;         //对话框
 
-    private static GameObject MainCamera;       //主相机
+    //private static CameraController MainCamera;       //主相机控制脚本
+
+    private Stack<GameObject> UIStack = new Stack<GameObject>();        //存储UI面板的栈
 
     void Awake() {
         Canvas = GameObject.Find("Canvas");
@@ -34,12 +36,15 @@ public class UIManager : MonoBehaviour {
         SwitchRole = Canvas.transform.GetChild(7).gameObject;
         FuncationMenu = Canvas.transform.GetChild(8).gameObject;
         DialogBox = Canvas.transform.GetChild(9).gameObject;
+
+        //MainCamera = GameObject.Find("MainCamera").GetComponent<CameraController>();
     }
 
-    void Update() {
+    public void Update() {
         if (Input.GetKeyDown(KeyCode.Tab)) {
             if (!FuncationMenu.activeSelf) {
                 FuncationMenu.SetActive(true);
+                //MainCamera.show_Cursor();
             }
         }
 
@@ -48,5 +53,10 @@ public class UIManager : MonoBehaviour {
                 FuncationMenu.SetActive(false);
             }
         }
+    }
+
+    public void ShowBackpage() {
+        Backpage.SetActive(true);
+        UIStack.Push(Backpage);
     }
 }

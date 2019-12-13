@@ -50,22 +50,6 @@ public class CameraController : MonoBehaviour
             }
         }
 
-        
-        if (Input.GetKey(KeyCode.Tab))
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            pi.enabled = false;
-            lockCamera = true;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            pi.enabled = true;
-            lockCamera = false;
-        }
-
         RaycastHit[] hits;
         Vector3 dir = -(playerTransform.position - transform.position).normalized;
         hits = Physics.RaycastAll(playerTransform.position, dir,
@@ -76,5 +60,21 @@ public class CameraController : MonoBehaviour
             transform.position = hits[0].point;
         }
 
+    }
+
+    public void show_Cursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        pi.enabled = true;
+        lockCamera = false;
+    }
+
+    public void hide_Cursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        pi.enabled = false;
+        lockCamera = true;
     }
 }

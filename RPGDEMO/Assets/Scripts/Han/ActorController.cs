@@ -16,6 +16,8 @@ public class ActorController : MonoBehaviour
     public GameObject model;
     public PlayerInput pi;
     private Transform cameraTransform;
+
+    private Transform flashPoint;
     //private GameObject cameraTransform;
     public float walkSpeed = 2.0f;
     public float runMultiplier = 2.0f;
@@ -48,6 +50,7 @@ public class ActorController : MonoBehaviour
         anim = model.GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
         cameraTransform = Camera.main.transform;
+        flashPoint = GameObject.Find("flashPoint").GetComponent<Transform>();
 
         normalDis = 3f;
         skill_OneDis = 4f;
@@ -159,19 +162,23 @@ public class ActorController : MonoBehaviour
 
     public void OnRollEnter()
     {
+        Vector3 temp=new Vector3();
+        temp = planarVec;
+        planarVec=Vector3.zero;
+
         pi.inputEnabled = false;
         lockPlanar = true;
         lockCamera = true;
-        if (pi.run == true)
+        if (pi.run)
         {
-            rollVec = 2f;
+            rollVec = 2.5f;
         }
         else
         {
-            rollVec = 4f;
+            rollVec = 5f;
         }
+        planarVec = temp;
         planarVec *= rollVec;
-        //print("on roll enter!");
     }
 
     public void OnRollExit()
@@ -180,6 +187,7 @@ public class ActorController : MonoBehaviour
         lockPlanar = false;
         lockCamera = false;
         anim.ResetTrigger("attack");
+        planarVec = Vector3.zero;
     }
 
     public void OnAttack1Enter()

@@ -408,6 +408,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae5d0fcfa9e6ec43baffa844449a2d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &172672138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172672130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7247815dad498014f9d3b6eaf20d81e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowMaterial: {fileID: 2100000, guid: dcffb5db51245c34fbb5d4ca5df95db7, type: 2}
 --- !u!1 &197948427
 GameObject:
   m_ObjectHideFlags: 0
@@ -2000,6 +2013,36 @@ Transform:
   m_Father: {fileID: 1071351903}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1560602527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1560602528}
+  m_Layer: 0
+  m_Name: flashPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1560602528
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560602527}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 172672134}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1567693079
 GameObject:
   m_ObjectHideFlags: 0
@@ -2322,6 +2365,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1259015192425890, guid: 98a0661a1a68d9949b6b7d564da9f41f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 95316331630631582, guid: 98a0661a1a68d9949b6b7d564da9f41f,
         type: 3}
       propertyPath: m_Controller
@@ -2410,6 +2457,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1713562163773244, guid: 98a0661a1a68d9949b6b7d564da9f41f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 136442965987953636, guid: 98a0661a1a68d9949b6b7d564da9f41f, type: 3}

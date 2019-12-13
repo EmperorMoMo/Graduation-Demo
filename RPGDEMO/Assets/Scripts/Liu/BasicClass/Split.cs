@@ -16,7 +16,7 @@ public class Split : MonoBehaviour {
         TipText = this.transform.GetComponentInChildren<Text>();
     }
     void Update() {
-        tiptext = "物品UID：" + Item.itemBase.UID + "数量 * " + Count.ToString();
+        tiptext = "拆分物品：" + Item.itemBase.Name + " 数量 * " + Count.ToString();
         TipText.text = tiptext;
         if (ReOpen) {
             SetCount(1);
@@ -24,7 +24,8 @@ public class Split : MonoBehaviour {
         }
     }
     public void DeSplit() {
-        Slot.SplitItem(Item, Count);
+        Debug.Log("拆分");
+        IASManager.SplitItem(Item, Slot, Count);
         GameObject.Find("Split").SetActive(false);
     }
 
@@ -33,12 +34,10 @@ public class Split : MonoBehaviour {
     }
 
     public void AddCount() {
-        Debug.Log("Add");
         SetCount(++Count);
     }
 
     public void DecCount() {
-        Debug.Log("Dec");
         SetCount(--Count);
     }
 

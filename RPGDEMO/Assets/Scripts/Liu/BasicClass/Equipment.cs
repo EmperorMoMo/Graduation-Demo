@@ -19,18 +19,23 @@ public class Equipment : Item, IPointerEnterHandler, IPointerExitHandler {
         equipemtnBase = (EquipmentBase)itemBase;
     }
     public void Update() {
-        if (isEnter && !isShow) {
-            stayTimer += Time.deltaTime;
-            if (stayTimer > stayTime) {
-                InfoPanel.ShowEquipmentInfo(this.equipemtnBase);
-                isShow = true;
-                stayTimer = 0;
+        if (isEnter) {
+            if (!isShow) {
+                stayTimer += Time.deltaTime;
+                if (stayTimer > stayTime) {
+                    InfoPanel.ShowEquipmentInfo(this.equipemtnBase);
+                    isShow = true;
+                    stayTimer = 0;
+                }
+            }
+
+            if (Input.GetMouseButtonUp(1)) {
+                IASManager.Equip(this);
             }
         }
     }
 
     public void OnPointerEnter(PointerEventData eventData) {
-        Debug.Log("isEnter");
         isEnter = true;
     }
 

@@ -4,21 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-
 /// <summary>
-/// 物品类
-/// 可挂载在物体上
+/// 物品类基类：所有的物品类子类都继承于此类
+/// 一般不挂载在物体上
+/// 拥有作为物品的一些逻辑关系
+/// 其可执行所有物品公有一些基础操作
 /// </summary>
 public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
-    public ItemBase itemBase;               //物品基类对象
+    public ItemBase itemBase;               //物品基础类对象
     public int curStack = 1;                //物品当前堆叠数量
-    public int SlotIndex = -1;              //物品对应网格的索引
+
+    public int SlotIndex = -1;              //指向的网格索引
 
     //开始拖拽
     public void OnBeginDrag(PointerEventData eventData) {
         //鼠标左键按住
         if (Input.GetMouseButton(0)) {
-            this.transform.SetParent(this.transform.parent.parent);     //将GameObject上移一层
+            this.transform.SetParent(UIManager.Canvas.transform);       //将物品移至Canvas下
             this.transform.position = eventData.position;               //设置为鼠标位置
             this.transform.GetComponent<Image>().raycastTarget = false; //关闭当前组件中Image的射线检测
         }
@@ -41,28 +43,9 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         }
     }
 
-    //堆叠该物体至其他物体
-    public void Stack(Item tarItem) {
-        //若堆叠数量小于堆叠上限
-        if (curStack + tarItem.curStack <= itemBase.StackMax) {
-            tarItem.curStack += curStack;
-            DataManager.ItemGOList[SlotIndex] = null;
-            DataManager.SlotGOList[SlotIndex].GetComponent<Slot>().ListIndex = -1;
-            Destroy(this.gameObject);
-        } else {
-        //若堆叠数量大于堆叠上限
-            curStack = (curStack + tarItem.curStack) - itemBase.StackMax;
-            tarItem.curStack = itemBase.StackMax;
-            ShowCount();
-        }
-        tarItem.ShowCount();
-    }
-
-
-
     //更新父物体
     public void ReplaceParent() {
-        this.transform.SetParent(DataManager.SlotGOList[SlotIndex].transform);      //将该物品的父物体设置为索引网格
+        this.transform.SetParent(DataManager.SlotArr[SlotIndex].transform);      //将该物品的父物体设置为索引网格
         this.transform.position = this.transform.parent.position;                   //将该物体移动到父物体的位置
     }
 

@@ -13,11 +13,13 @@ public class CharacterAttribute : MonoBehaviour
 
     public Attribute Main_Attribute;
 
-    public float HP=250;//生命值
-    public float MP=500;//魔法值
+    public float MAX_HP=250;//最大生命值
+    public float HP;//生命值
+    public float MAX_MP=500;//最大魔法值
+    public float MP;//魔法值
     public float ReplyHP=1;//生命回复
     public float ReplyMP=5;//魔法回复
-    public float Aggressivity=25;//攻击力
+    public float Aggressivity=22;//攻击力
     public float Armor=2;//护甲值
     public float Exp=0;//经验值
     public int Level=1;//等级
@@ -25,9 +27,9 @@ public class CharacterAttribute : MonoBehaviour
     public float Agile=10;//敏捷
     public float Intellect=15;//智力
     
-    bool _Upgrade;
+    bool _Upgrade;//判断是否升级了
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         
     }
@@ -40,14 +42,14 @@ public class CharacterAttribute : MonoBehaviour
 
     public float Character_HP(float _HP)
     {
-        HP += _HP;
-        return HP;
+        MAX_HP += _HP;
+        return MAX_HP;
     }
 
     public float Character_MP(float _MP)
     {
-        MP += _MP;
-        return MP;
+        MAX_MP += _MP;
+        return MAX_MP;
     }
 
     public void Character_ReplyHP()
@@ -88,9 +90,10 @@ public class CharacterAttribute : MonoBehaviour
 
         if (_Upgrade)
         {
-            Character_Strength(Level * 12);
-            Character_Agile(Level * 10);
-            Character_Intellect(Level * 12);
+            Character_Strength(25);
+            Character_Agile(20);
+            Character_Intellect(20);
+            _Upgrade = false;
         }
     }
 
@@ -98,7 +101,7 @@ public class CharacterAttribute : MonoBehaviour
     {
         Strength += _Strength;
         ReplyHP += Strength / 10;
-        HP += Strength * 10;
+        MAX_HP += Strength * 10;
         if (Main_Attribute==Attribute.Strength)
         {
             Aggressivity += Strength;
@@ -121,7 +124,25 @@ public class CharacterAttribute : MonoBehaviour
     {
         Intellect += _Intellect;
         ReplyMP += Intellect * 4;
-        MP += Intellect * 20;
+        MAX_MP += Intellect * 20;
         return Intellect;
+    }
+
+    public void Character_Attacked(float _Aggressivity)
+    {
+        if (Armor == 0)
+        {
+            HP -= _Aggressivity;
+        }
+
+        if (Armor < 0)
+        {
+            HP -= _Aggressivity * 2;
+        }
+
+        if (Armor > 0)
+        {
+            HP -= (_Aggressivity - ((Armor * 6)/(100+Armor*6)));
+        }
     }
 }

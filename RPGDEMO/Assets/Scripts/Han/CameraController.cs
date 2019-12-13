@@ -20,6 +20,7 @@ public class CameraController : MonoBehaviour
     {
         pi = GameObject.Find("PlayerHandle").GetComponent<PlayerInput>();
         playerTransform = GameObject.Find("Follow").GetComponent<Transform>();
+        hide_Cursor();
     }
 
     // Update is called once per frame
@@ -62,7 +63,7 @@ public class CameraController : MonoBehaviour
 
     }
 
-    public void show_Cursor()
+    public void hide_Cursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -70,7 +71,7 @@ public class CameraController : MonoBehaviour
         lockCamera = false;
     }
 
-    public void hide_Cursor()
+    public void show_Cursor()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

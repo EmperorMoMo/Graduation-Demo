@@ -73,6 +73,7 @@ public class CameraController : MonoBehaviour
 
     public void show_Cursor()
     {
+        pi.Dmag = 0;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         pi.enabled = false;

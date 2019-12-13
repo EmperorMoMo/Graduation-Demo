@@ -142,7 +142,7 @@ public class CharacterAttribute : MonoBehaviour
 
         if (Armor > 0)
         {
-            HP -= (_Aggressivity - ((Armor * 6)/(100+Armor*6)));
+            HP -= (_Aggressivity - (_Aggressivity * ((Armor * 6) / (100 + Armor * 6))));
         }
     }
 }

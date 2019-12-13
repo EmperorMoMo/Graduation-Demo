@@ -38,6 +38,8 @@ public class PlayerInput : MonoBehaviour
     public bool skill_2;
 
     public bool skill_3;
+
+    public bool pickup;
     //3.double trigger双击型
     public bool lastAttack;
     public bool attack;
@@ -120,6 +122,8 @@ public class PlayerInput : MonoBehaviour
         skill_2 = Input.GetKeyDown(keyE);
 
         skill_3 = Input.GetKeyDown(keyF);
+
+        pickup = Input.GetMouseButtonDown(1);
 
     }
 

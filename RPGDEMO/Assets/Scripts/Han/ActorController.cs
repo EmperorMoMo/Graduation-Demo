@@ -10,11 +10,14 @@ public class ActorController : MonoBehaviour
         skill_One,
         skill_Two,
         skill_Three,
+        pickup,
     }
     
     public GameObject model;
     public PlayerInput pi;
     private Transform cameraTransform;
+
+    private Transform flashPoint;
     //private GameObject cameraTransform;
     public float walkSpeed = 2.0f;
     public float runMultiplier = 2.0f;
@@ -47,6 +50,7 @@ public class ActorController : MonoBehaviour
         anim = model.GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
         cameraTransform = Camera.main.transform;
+        flashPoint = GameObject.Find("flashPoint").GetComponent<Transform>();
 
         normalDis = 3f;
         skill_OneDis = 4f;
@@ -109,6 +113,11 @@ public class ActorController : MonoBehaviour
         {
             anim.SetTrigger("skill_3");
         }
+
+        if (pi.pickup)
+        {
+            anim.SetTrigger("pickup");
+        }
     }
 
     void FixedUpdate()
@@ -121,14 +130,26 @@ public class ActorController : MonoBehaviour
 
     /// 
     /// 
-    /// 
+    ///
+    public void OnGround()
+    {
+        pi.inputEnabled = true;
+        lockCamera = false;
+        this.gameObject.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
+    }
+
     public void OnJumpEnter()
     {
         //print("on jump enter!");
         pi.inputEnabled = false;
         lockPlanar = true;
         lockCamera = true;
-        thrustVec = new Vector3(0, 3.6f, 0);
+        thrustVec = new Vector3(0, 3f, 0);
+    }
+
+    public void OnJumpUpdate()
+    {
+
     }
 
     public void OnJumpExit()
@@ -137,24 +158,27 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = true;
         lockPlanar = false;
         lockCamera = false;
-        anim.ResetTrigger("attack");
     }
 
     public void OnRollEnter()
     {
+        Vector3 temp=new Vector3();
+        temp = planarVec;
+        planarVec=Vector3.zero;
+
         pi.inputEnabled = false;
         lockPlanar = true;
         lockCamera = true;
-        if (pi.run == true)
+        if (pi.run)
         {
-            rollVec = 2f;
+            rollVec = 2.5f;
         }
         else
         {
-            rollVec = 4f;
+            rollVec = 5f;
         }
+        planarVec = temp;
         planarVec *= rollVec;
-        //print("on roll enter!");
     }
 
     public void OnRollExit()
@@ -163,12 +187,7 @@ public class ActorController : MonoBehaviour
         lockPlanar = false;
         lockCamera = false;
         anim.ResetTrigger("attack");
-    }
-
-    public void OnGround()
-    {
-        pi.inputEnabled = true;
-        lockCamera = false;
+        planarVec = Vector3.zero;
     }
 
     public void OnAttack1Enter()
@@ -178,13 +197,6 @@ public class ActorController : MonoBehaviour
         //lerpTarget = 1.0f;
         str = State.normalAtk;
         //Select(str);
-    }
-
-    public void OnAttack1Update()
-    {
-        //float currentWeight = anim.GetLayerWeight(anim.GetLayerIndex("attack"));
-        //currentWeight = Mathf.Lerp(currentWeight, lerpTarget, 0.25f);
-        //anim.SetLayerWeight(anim.GetLayerIndex("attack"), currentWeight);
     }
     
     public void OnAttack2Enter()
@@ -199,13 +211,6 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = true;
         lockCamera = false;
         //lerpTarget = 0f;
-    }
-
-    public void OnAttackIdleUpdate()
-    {
-        //float currentWeight = anim.GetLayerWeight(anim.GetLayerIndex("attack"));
-        //currentWeight = Mathf.Lerp(currentWeight, lerpTarget, 0.25f);
-        //anim.SetLayerWeight(anim.GetLayerIndex("attack"), currentWeight);
     }
 
     public void OnSkillOneEnter()
@@ -229,9 +234,11 @@ public class ActorController : MonoBehaviour
         str = State.skill_Three;
     }
 
-    public void OnSkillThreeExit()
+    public void OnPickUpEnter()
     {
-
+        pi.inputEnabled = false;
+        lockCamera = true;
+        str = State.pickup;
     }
 
     public void Select(State str)
@@ -272,6 +279,15 @@ public class ActorController : MonoBehaviour
                                 isDam = true;
                             }
                         }
+
+                        if (str == State.pickup)
+                        {
+                            if (dir < normalDis && angle < 60)
+                            {
+                                tempList.Add(cols[i].gameObject);
+                                isDam = true;
+                            }
+                        }
                     }
                 }
             }
@@ -295,6 +311,15 @@ public class ActorController : MonoBehaviour
                 objects.GetComponent<Rigidbody>().freezeRotation = true;
 
                 objects.GetComponent<Rigidbody>().AddExplosionForce(165, transform.position, 4, 150);
+            }
+
+            if (objects.GetComponent<Rigidbody>() != null && str == State.pickup)
+            {
+                objects.transform.position = new Vector3(objects.transform.position.x, 2.5f,
+                    objects.transform.position.z);
+                //objects.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
+                //objects.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
+                
             }
             objects.GetComponent<EnemyAI>().Damage();
         }

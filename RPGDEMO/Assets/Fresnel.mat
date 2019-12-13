@@ -110,4 +110,4 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlowColor: {r: 0, g: 0.31531525, b: 1, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
-    - _TintColor: {r: 0.990566, g: 0.94205266, b: 0.34109113, a: 1}
+    - _TintColor: {r: 15.874511, g: 14.295371, b: 5.485433, a: 1}

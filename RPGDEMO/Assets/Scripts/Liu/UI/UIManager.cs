@@ -20,9 +20,11 @@ public class UIManager : MonoBehaviour {
     public static GameObject FuncationMenu;     //功能菜单
     public static GameObject DialogBox;         //对话框
 
-    //private static CameraController MainCamera;       //主相机控制脚本
+    private static CameraController MainCamera;       //主相机控制脚本
+    private static bool isNone = false;
+    private static bool isCtrl = false;
 
-    private Stack<GameObject> UIStack = new Stack<GameObject>();        //存储UI面板的栈
+    private static Stack<GameObject> UIStack = new Stack<GameObject>();        //存储UI面板的栈
 
     void Awake() {
         Canvas = GameObject.Find("Canvas");
@@ -37,26 +39,66 @@ public class UIManager : MonoBehaviour {
         FuncationMenu = Canvas.transform.GetChild(8).gameObject;
         DialogBox = Canvas.transform.GetChild(9).gameObject;
 
-        //MainCamera = GameObject.Find("MainCamera").GetComponent<CameraController>();
+        MainCamera = GameObject.Find("Main Camera").GetComponent<CameraController>();
     }
 
     public void Update() {
         if (Input.GetKeyDown(KeyCode.Tab)) {
-            if (!FuncationMenu.activeSelf) {
-                FuncationMenu.SetActive(true);
-                //MainCamera.show_Cursor();
-            }
+            ShowFuncationMenu();
         }
 
         if (Input.GetKeyUp(KeyCode.Tab)) {
-            if (FuncationMenu.activeSelf) {
-                FuncationMenu.SetActive(false);
+            CloseFuncationMenu();
+        }
+
+        if (Input.GetKeyUp(KeyCode.F1)) {
+            UIStack.Pop().SetActive(false);
+        }
+
+        if (isNone) {
+            if (UIStack.Count == 0) {
+                    if (isCtrl) {
+                    Debug.Log("归还控制");
+                    MainCamera.hide_Cursor();
+                    isCtrl = false;
+                }
             }
         }
     }
 
-    public void ShowBackpage() {
-        Backpage.SetActive(true);
-        UIStack.Push(Backpage);
+    public static void ShowFuncationMenu() {
+        if (!FuncationMenu.activeSelf) {
+            FuncationMenu.SetActive(true);
+            isNone = false;
+            MainCamera.show_Cursor();
+            if (!isCtrl) {
+                isCtrl = true;
+                Debug.Log("取得控制");
+            }
+        }
     }
+
+    public static void CloseFuncationMenu() {
+        if (FuncationMenu.activeSelf) {
+            FuncationMenu.SetActive(false);
+            isNone = true;
+        }
+    }
+
+    public static void ShowPanel() { 
+        
+    }
+
+    //public void ShowBackpage(string str) {
+    //    GameObject Panel = Backpage;
+    //    Panel.SetActive(true);
+    //    UIStack.Push(Backpage);
+    //    CloseFuncationMenu();
+    //}
+
+    //public static void ShowEquip() {
+    //    EquipmentPanel.SetActive(true);
+    //    UIStack.Push(EquipmentPanel);
+    //    CloseFuncationMenu();
+    //}
 }

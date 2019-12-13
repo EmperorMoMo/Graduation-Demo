@@ -138,6 +138,7 @@ public class IASManager : MonoBehaviour {
     }
 
     public static void Equip(Equipment equipment){
+        //UIManager.ShowEquip();
         Slot EquipSlot = DataManager.SlotArr[equipment.equipemtnBase.Position + 90];
         //如果该装备在对应的装备栏上
         Debug.Log(equipment.SlotIndex + "//" + EquipSlot.Index);

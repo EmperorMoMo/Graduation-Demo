@@ -13,23 +13,44 @@ public class MyLevelManager : MonoBehaviour
     //public Slider slider;
     public Text text;
     // Start is called before the first frame update
+
+    private Image background;                   //背景图
+    private Sprite[] sprite = new Sprite[8];    //存储背景图数组
+    private int LastTimeIndex = -1;             //上次背景图索引
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("TestPlayer");
         tempProgress = 0;
         if (SceneManager.GetActiveScene().name=="LoadingScene")
         {
+            background = GameObject.Find("BackGround").GetComponent<Image>();       //获取Image组件
+            for (int i = 0; i < 8; i++) {                                           //读取存储背景图
+                sprite[i] = Resources.Load<Sprite>("BackGround/10" + i);
+            }
+            int index;
+            do {
+                index = Random.Range(0, 8);
+            } while (index == LastTimeIndex);
+            background.sprite = sprite[index];
+            LastTimeIndex = index;
+
             async =SceneManager.LoadSceneAsync(nextLevel);
             async.allowSceneActivation = false;
             Debug.Log("1");
         }
+
+       
     }
     public void LoadLoadingLevel(string nextLevelName)
     {
         nextLevel = nextLevelName;
         DontDestroyOnLoad(player);
         player.SetActive(false);
+
         SceneManager.LoadSceneAsync("LoadingScene");
+
+        
+
         player.SetActive(true);
     }
     void transformChange()
@@ -49,6 +70,7 @@ public class MyLevelManager : MonoBehaviour
             {
                 tempProgress = 1;
                 text.text = "Loading...";
+
                 //text.text = ((int)(tempProgress / 10.01f * 10 * 100)).ToString() + "%";
                 //slider.value =tempProgress / 10.01f * 10;
                 async.allowSceneActivation = true;

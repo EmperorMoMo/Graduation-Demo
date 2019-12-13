@@ -895,6 +895,7 @@ GameObject:
   - component: {fileID: 627488766}
   - component: {fileID: 627488770}
   - component: {fileID: 627488771}
+  - component: {fileID: 627488772}
   m_Layer: 0
   m_Name: PlayerHandle
   m_TagString: TestPlayer
@@ -1015,6 +1016,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &627488772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627488765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b53866c83e639bd4a9c5deed30a8af03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Main_Attribute: 0
+  MAX_HP: 250
+  HP: 250
+  MAX_MP: 500
+  MP: 500
+  ReplyHP: 1
+  ReplyMP: 5
+  Aggressivity: 25
+  Armor: 2
+  Exp: 0
+  Level: 1
+  Strength: 18
+  Agile: 10
+  Intellect: 15
 --- !u!1 &696438876
 GameObject:
   m_ObjectHideFlags: 0

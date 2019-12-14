@@ -1635,7 +1635,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 13
   enemy: {fileID: 1446162900, guid: 55544d07b698c94489896a1ae08b0d22, type: 3}
-  Enemy: 3
+  Enemy: 5
+  mons: 0
 --- !u!4 &41599998
 Transform:
   m_ObjectHideFlags: 0
@@ -10363,7 +10364,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 25
   enemy: {fileID: 1446162900, guid: 55544d07b698c94489896a1ae08b0d22, type: 3}
-  Enemy: 3
+  Enemy: 5
+  mons: 0
 --- !u!4 &233491695
 Transform:
   m_ObjectHideFlags: 0
@@ -10376,7 +10378,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &239469543
 PrefabInstance:
@@ -22062,7 +22064,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: 25
   enemy: {fileID: 1446162900, guid: 55544d07b698c94489896a1ae08b0d22, type: 3}
-  Enemy: 3
+  Enemy: 5
+  mons: 0
 --- !u!4 &519455787
 Transform:
   m_ObjectHideFlags: 0
@@ -22075,7 +22078,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &520649402
 PrefabInstance:
@@ -30341,52 +30344,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0000005, z: 1}
   m_Center: {x: -0.000000074505806, y: 0.50000024, z: -0.00000031292439}
---- !u!1 &694769366
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 694769368}
-  - component: {fileID: 694769367}
-  m_Layer: 0
-  m_Name: Monster_Manager (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &694769367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694769366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2a8dc3ebafbc834d8dbdb6f8d6ab433, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnRange: 10
-  enemy: {fileID: 1446162900, guid: 55544d07b698c94489896a1ae08b0d22, type: 3}
-  Enemy: 3
---- !u!4 &694769368
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694769366}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 0, z: -8.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &695693189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46780,52 +46737,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1087858490}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1089539669
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1089539671}
-  - component: {fileID: 1089539670}
-  m_Layer: 0
-  m_Name: Monster_Manager (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1089539670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1089539669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2a8dc3ebafbc834d8dbdb6f8d6ab433, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnRange: 8
-  enemy: {fileID: 1446162900, guid: 55544d07b698c94489896a1ae08b0d22, type: 3}
-  Enemy: 3
---- !u!4 &1089539671
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1089539669}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: -9.31}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1092063242
 PrefabInstance:
   m_ObjectHideFlags: 0

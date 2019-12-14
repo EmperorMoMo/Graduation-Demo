@@ -38,27 +38,33 @@ public class EnemyAttribute : MonoBehaviour
 
     public void Enemy_Attacked(float _Aggressivity)
     {
-        InstantiateEffect();
-        sim._isAttacked = true;
-        //if (isme)
-        //    sim._isAttacked = true;
-        //else
-        //    sim01._isAttacked = true;
-        if (Armor == 0)
+        if(HP>0)
         {
-            HP -= _Aggressivity;
-        }
+            InstantiateEffect();
+            sim._isAttacked = true;
+            //if (isme)
+            //    sim._isAttacked = true;
+            //else
+            //    sim01._isAttacked = true;
+            if (Armor == 0)
+            {
+                HP -= _Aggressivity;
+            }
 
-        if (Armor < 0)
+            if (Armor < 0)
+            {
+                HP -= _Aggressivity * 2;
+            }
+
+            if (Armor > 0)
+            {
+                HP -= (_Aggressivity - (_Aggressivity * ((Armor * 6) / (100 + Armor * 6))));
+            }
+        }
+        else
         {
-            HP -= _Aggressivity * 2;
+            sim._isAttacked = false;
         }
-
-        if (Armor > 0)
-        {
-            HP -= (_Aggressivity - (_Aggressivity * ((Armor * 6) / (100 + Armor * 6))));
-        }
-
         print(gameObject.name+"还剩："+HP);
     }
 

@@ -55,7 +55,7 @@ public class MyLevelManager : MonoBehaviour
     }
     void transformChange()
     {
-        player.transform.position = new Vector3(37, 1, 52);
+        player.transform.position = new Vector3(37, 0, 52);
     }
     // Update is called once per frame
     void Update()

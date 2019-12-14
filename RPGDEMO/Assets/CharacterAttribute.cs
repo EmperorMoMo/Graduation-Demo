@@ -37,6 +37,7 @@ public class CharacterAttribute : MonoBehaviour
         ac = GetComponent<ActorController>();
         HP = MAX_HP;
         MP = MAX_MP;
+        print(HP);
     }
 
     // Update is called once per frame
@@ -135,7 +136,10 @@ public class CharacterAttribute : MonoBehaviour
 
     public void Character_Attacked(float _Aggressivity)
     {
-        ac._isAttacked = true;
+        if (ac.canAttacked == true)
+        {
+            ac._isAttacked = true;
+        }
         if (Armor == 0)
         {
             HP -= _Aggressivity;
@@ -150,6 +154,7 @@ public class CharacterAttribute : MonoBehaviour
         {
             HP -= (_Aggressivity - (_Aggressivity * ((Armor * 6) / (100 + Armor * 6))));
         }
+        print("HoShi还剩："+HP);
     }
 
     public void ChangeAttribute(BaseAttribute equipAttribute)

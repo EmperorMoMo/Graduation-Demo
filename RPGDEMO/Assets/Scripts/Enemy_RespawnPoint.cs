@@ -15,7 +15,7 @@ public class Enemy_RespawnPoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindWithTag("Player").transform;
+        target = GameObject.FindWithTag("TestPlayer").transform;
     }
 
     // Update is called once per frame

@@ -1320,7 +1320,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 27574a472d417a04087a7be40c5e9bf8, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: 27574a472d417a04087a7be40c5e9bf8, type: 3}
-  - {fileID: 7400000, guid: b60de62cdbd35ac43bfc1382aed73c8d, type: 3}
+  - {fileID: 7400000, guid: e5eea0976bb307f4d83871fd0043ac39, type: 2}
   - {fileID: 7400000, guid: 5f396d057aa82c84196aedab51716d78, type: 3}
   - {fileID: 7400000, guid: 24591c9c7767dc8438bbdabfdf3afd49, type: 3}
   - {fileID: 7400000, guid: 7a632564328d4a84ead46bf7402ef628, type: 3}
@@ -1368,7 +1368,9 @@ MonoBehaviour:
   curState: 0
   walkSpeed: 80
   turnSpeed: 10
+  damageTime: 0
   _isAttacked: 0
+  ca: {fileID: 0}
 --- !u!54 &1643899656504083374
 Rigidbody:
   m_ObjectHideFlags: 0

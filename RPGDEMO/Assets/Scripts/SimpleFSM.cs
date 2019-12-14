@@ -37,9 +37,13 @@ public class SimpleFSM : FSM
     public float damageTime = 0;
     private bool _isDead;
     public bool _isAttacked;
+    private CharacterAttribute ca;
+    private EnemyAttribute ea;
     //实现基类初始状态机方法
     protected override void Initialize()
     {
+        ca =  GameObject.Find("PlayerHandle").GetComponent<CharacterAttribute>();
+        ea = GetComponent<EnemyAttribute>();
         _isAttacked = false;
         //先将AI对象的当前状态设置为巡逻状态
         curState = FSMState.patrol;
@@ -57,7 +61,7 @@ public class SimpleFSM : FSM
         //获取AI对象巡逻点
         pointList = GameObject.FindGameObjectsWithTag("Patrol");
         //获取玩家对象标签和位置
-        GameObject obj = GameObject.FindGameObjectWithTag("Player");
+        GameObject obj = GameObject.FindGameObjectWithTag("TestPlayer");
         playerTransform = obj.transform;
         //获取初始路径点
         FindNextPoint();
@@ -71,6 +75,10 @@ public class SimpleFSM : FSM
         targetPoint = pointList[i].transform.position;
     }
     //巡逻状态实现方法
+    public void Damage()
+    {
+        ca.Character_Attacked(ea.Aggressivity);
+    }
     private void PatrolState()
     {
         Vector3 trans = new Vector3(transform.position.x, 0, transform.position.z);

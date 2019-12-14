@@ -196,6 +196,6 @@ public class IASManager : MonoBehaviour {
             }
         }
         Debug.Log("test1");
-        CA.ChangeAttribute(attr);
+        CA.ChangeEquipAttribute(attr);
     }
 }

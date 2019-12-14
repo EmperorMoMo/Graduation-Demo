@@ -14873,7 +14873,14 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1097191830}
+  - component: {fileID: 1088763783}
+  - component: {fileID: 1088763782}
+  - component: {fileID: 1088763781}
+  - component: {fileID: 1088763780}
+  - component: {fileID: 1088763779}
+  - component: {fileID: 1088763778}
+  - component: {fileID: 1088763777}
+  - component: {fileID: 1088763784}
   m_Layer: 0
   m_Name: StartPoint3
   m_TagString: Untagged
@@ -14881,7 +14888,133 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1097191830
+--- !u!114 &1088763777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088763776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b53866c83e639bd4a9c5deed30a8af03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Main_Attribute: 0
+  MAX_HP: 250
+  HP: 250
+  MAX_MP: 500
+  MP: 500
+  ReplyHP: 1
+  ReplyMP: 5
+  Aggressivity: 25
+  Armor: 2
+  Exp: 0
+  Level: 1
+  Strength: 18
+  Agile: 10
+  Intellect: 15
+--- !u!54 &1088763778
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088763776}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!114 &1088763779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088763776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58137ac807593454796211868b9bb10f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  model: {fileID: 632346118}
+  pi: {fileID: 0}
+  walkSpeed: 1.4
+  runMultiplier: 2.7
+  smoothtime: 0.2
+  anim: {fileID: 632346117}
+  isDam: 0
+  _isAttacked: 0
+  canAttacked: 0
+  die: 0
+  str: 0
+--- !u!114 &1088763780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088763776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c1e52dbb321b4e4e933dfe2455725ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyUp: w
+  keyDown: s
+  keyLeft: a
+  keyRight: d
+  keyA: left shift
+  keyB: space
+  keyC: left ctrl
+  keyD: z
+  keyE: x
+  keyF: c
+  Dup: 0
+  Dright: 0
+  Dmag: 0
+  Dvec: {x: 0, y: 0, z: 0}
+  run: 0
+  hide: 0
+  jump: 0
+  roll: 0
+  skill_1: 0
+  skill_2: 0
+  skill_3: 0
+  pickup: 0
+  lastAttack: 0
+  attack: 0
+  inputEnabled: 1
+  targetDup: 0
+  targetDright: 0
+--- !u!136 &1088763781
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088763776}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.89, z: 0}
+--- !u!33 &1088763782
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088763776}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1088763783
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14895,6 +15028,18 @@ Transform:
   m_Father: {fileID: 19135440}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1088763784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088763776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2e47274408a0b4f82ce557e74e9d4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1102328188
 PrefabInstance:
   m_ObjectHideFlags: 0

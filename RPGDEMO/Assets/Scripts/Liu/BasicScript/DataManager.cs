@@ -13,6 +13,7 @@ public class DataManager : MonoBehaviour
 {
     public static Slot[] SlotArr = new Slot[99];                    //存放所有的Slot脚本
     public static Item[] ItemArr = new Item[99];                    //存放当前分类的Item脚本
+    public static List<int[]> ItemFile = new List<int[]>();           //物品存档
     public static Equipment[] EquipmentArr = new Equipment[80];     //存放所有的Equipment脚本
 
     public static Dictionary<int, EquipmentBase> EquipmentDic = new Dictionary<int, EquipmentBase>();      //装备词典
@@ -70,5 +71,26 @@ public class DataManager : MonoBehaviour
         BaseAttribute attr = new BaseAttribute(hp, mp, rehp, remp, aggr, armo, stre, inte, agil);
 
         return attr;
+    }
+
+    public static void SaveItem() {
+        Item item;
+        for (int i = 0; i < 99; i++) {
+            item = ItemArr[i];
+            if (item != null) {
+                ItemFile.Add(new int[3]{item.itemBase.UID, item.SlotIndex, item.curStack});
+            }
+        }
+    }
+
+    public static string ShowFile() {
+        string str = "物品";
+        foreach (int[] i in ItemFile) {
+            foreach(int j in i){
+                str += j + "/";
+            }
+            str += "  //  ";
+        }
+        return str;
     }
 }

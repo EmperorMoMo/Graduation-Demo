@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1446162904}
   - component: {fileID: 1446162903}
   - component: {fileID: 2002727356762718027}
+  - component: {fileID: 2049084805417573449}
   - component: {fileID: 1181165006409443707}
   m_Layer: 0
   m_Name: mon_orgeHitter
@@ -115,11 +116,35 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1446162900}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11109c6856819fd4ca1b9fcc7826ec1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  simpleFSM: {fileID: 0}
+  velocity: {x: 0, y: 0, z: 0}
+  chaseDistance: 5
+  attackDistance: 2.3
+  arriveDistance: 2
+  curState: 0
+  walkSpeed: 50
+  turnSpeed: 10
+  damageTime: 0
+  _isAttacked: 0
+--- !u!114 &2049084805417573449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446162900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 764f18c8bb4ab4d4f9ad1c5e8741e838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster1: 2
+  monster2: 2.5
   simpleFSM: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   chaseDistance: 5

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Skill_Test2 : MonoBehaviour
 {
     private Vector3 target_2;
-    private EnemyAI ai;
+    private EnemyAttribute ai;
 
     //private Collider box;
     //// Start is called before the first frame update
@@ -24,11 +24,11 @@ public class Skill_Test2 : MonoBehaviour
             {
                 if (cols[i].tag == "Enemy")
                 {
-                    ai = cols[i].GetComponent<EnemyAI>();
+                    ai = cols[i].GetComponent<EnemyAttribute>();
                     float t2 = 0f;
                     t2 += 1f * Time.fixedDeltaTime;
                     cols[i].transform.position = Vector3.Lerp(cols[i].transform.position, -cols[i].transform.forward*20f, t2*1f);
-                    ai.Damage();
+                    ai.Enemy_Attacked(10);
                 }
             }
         }

@@ -6,7 +6,7 @@ public class Skill_Test3 : MonoBehaviour
 {
     private ActorController ac;
 
-    private EnemyAI ai;
+    private EnemyAttribute ai;
     
     float timeTemp = 0f;
     float time = 0;
@@ -37,7 +37,7 @@ public class Skill_Test3 : MonoBehaviour
             {
                 if (cols[i].tag == "Enemy")
                 {
-                    ai = cols[i].GetComponent<EnemyAI>();
+                    ai = cols[i].GetComponent<EnemyAttribute>();
                     Rigidbody rig = cols[i].GetComponent<Rigidbody>();
                     if (time < 1.8f)
                     {
@@ -54,7 +54,7 @@ public class Skill_Test3 : MonoBehaviour
 
                     if (timeTemp >= 0.2f)
                     {
-                        ai.Damage();
+                        ai.Enemy_Attacked(20);
                         timeTemp = 0;
                         if (canStop)
                         {

@@ -309,7 +309,8 @@ public class ActorController : MonoBehaviour
 
                 objects.GetComponent<Rigidbody>().AddExplosionForce(180, transform.position, 5, 180);
                 //isDam = true;
-                
+
+                objects.GetComponent<EnemyAttribute>().Enemy_Attacked(50);
             }
 
             if (objects.GetComponent<Rigidbody>() != null && str == State.skill_One)
@@ -317,6 +318,8 @@ public class ActorController : MonoBehaviour
                 objects.GetComponent<Rigidbody>().freezeRotation = true;
 
                 objects.GetComponent<Rigidbody>().AddExplosionForce(165, transform.position, 4, 150);
+
+                objects.GetComponent<EnemyAttribute>().Enemy_Attacked(50);
             }
 
             if (objects.GetComponent<Rigidbody>() != null && str == State.pickup)
@@ -327,7 +330,7 @@ public class ActorController : MonoBehaviour
                 //objects.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
                 
             }
-            objects.GetComponent<EnemyAI>().Damage();
+            //objects.GetComponent<EnemyAI>().Damage();
         }
 
     }

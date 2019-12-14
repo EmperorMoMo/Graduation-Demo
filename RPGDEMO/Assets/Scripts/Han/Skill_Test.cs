@@ -6,7 +6,7 @@ public class Skill_Test : MonoBehaviour
 {
     private Animator anim;
 
-    private EnemyAI ai;
+    private EnemyAttribute ai;
     //private Vector3 currentVelocity;
     //private Transform trans;
 
@@ -52,11 +52,12 @@ public class Skill_Test : MonoBehaviour
                 {
                     if (cols[i].tag == "Enemy")
                     {
-                        ai=cols[i].GetComponent<EnemyAI>();
+                        //ai=cols[i].GetComponent<EnemyAI>();
+                        ai = cols[i].GetComponent<EnemyAttribute>();
                         float t2 = 0f;
                         t2 += 1f * Time.fixedDeltaTime;
                         cols[i].transform.position = Vector3.Lerp(cols[i].transform.position, (-cols[i].transform.forward * 4f + Vector3.up * 4f) * 10f, t2);
-                        ai.Damage();
+                        ai.Enemy_Attacked(25);
                     }
                 }
             }

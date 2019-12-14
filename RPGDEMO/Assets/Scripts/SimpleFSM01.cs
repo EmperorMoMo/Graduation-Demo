@@ -38,12 +38,12 @@ public class SimpleFSM01 : FSM
     private bool _isDead;
     public bool _isAttacked;
     private CharacterAttribute ca;
-    private EnemyAttribute02 ea02;
+    private EnemyAttribute ea;
     //实现基类初始状态机方法
     protected override void Initialize()
     {
         ca = GameObject.Find("PlayerHandle").GetComponent<CharacterAttribute>();
-        ea02 = GetComponent<EnemyAttribute02>();
+        ea = GetComponent<EnemyAttribute>();
         _isAttacked = false;
         //先将AI对象的当前状态设置为巡逻状态
         curState = FSMState.patrol;
@@ -76,7 +76,7 @@ public class SimpleFSM01 : FSM
     }
     public void Damage()
     {
-        ca.Character_Attacked(ea02.Aggressivity);
+        ca.Character_Attacked(ea.Aggressivity);
     }
     //巡逻状态实现方法
     private void PatrolState()
@@ -149,11 +149,11 @@ public class SimpleFSM01 : FSM
     //攻击状态
     private void AttackState()
     {
+        Vector3 trans = new Vector3(transform.position.x, 0, transform.position.z);
         //将目标位置复制成玩家位置
         targetPoint = playerTransform.position;
         //计算两者之间的距离
         float distance = Vector3.Distance(transform.position, targetPoint);
-        Vector3 trans = new Vector3(transform.position.x, 0, transform.position.z);
         if (!_isAttacked)
         {
             //判断是否满足攻击需求
@@ -196,7 +196,7 @@ public class SimpleFSM01 : FSM
         {
             damageTime += Time.deltaTime;
             _animation.Play("Damage");
-            if (damageTime >= 0.4f)
+            if (damageTime >= 0.5f)
             {
                 _isAttacked = false;
                 damageTime = 0;

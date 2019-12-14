@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1446162904}
   - component: {fileID: 1446162903}
   - component: {fileID: 2002727356762718027}
-  - component: {fileID: 6779515742344894556}
+  - component: {fileID: 1181165006409443707}
   m_Layer: 0
   m_Name: mon_orgeHitter
   m_TagString: Enemy
@@ -130,7 +130,7 @@ MonoBehaviour:
   turnSpeed: 10
   damageTime: 0
   _isAttacked: 0
---- !u!114 &6779515742344894556
+--- !u!114 &1181165006409443707
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1446162900}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b91243f70fa64e46abc040f6a8543c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 880a887a85d2f9744babd3140dbba7ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MAX_HP: 1000

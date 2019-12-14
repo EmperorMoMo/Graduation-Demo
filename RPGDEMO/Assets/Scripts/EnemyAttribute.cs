@@ -12,13 +12,21 @@ public class EnemyAttribute : MonoBehaviour
     public GameObject Effect;
     private Transform hitpoint;
     private SimpleFSM sim;
+    private SimpleFSM01 sim01;
+    private bool isme = false;
     // Start is called before the first frame update
     void Awake()
     {
         HP = MAX_HP;
         hitpoint= this.transform.GetChild(2).GetComponent<Transform>();
         //animation = GetComponent<Animation>();
-        sim = GetComponent<SimpleFSM>();
+        if(this.gameObject.name== "mon_orcWarrior")
+        {
+            sim = GetComponent<SimpleFSM>();
+            isme = true;
+        }
+        else
+        sim01 = GetComponent<SimpleFSM01>();
     }
 
     // Update is called once per frame
@@ -30,7 +38,10 @@ public class EnemyAttribute : MonoBehaviour
     public void Enemy_Attacked(float _Aggressivity)
     {
         InstantiateEffect();
-        sim._isAttacked = true;
+        if (isme)
+            sim._isAttacked = true;
+        else
+            sim01._isAttacked = true;
         if (Armor == 0)
         {
             HP -= _Aggressivity;

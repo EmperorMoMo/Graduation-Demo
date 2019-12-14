@@ -103,6 +103,4 @@ public class UIManager : MonoBehaviour {
         UIStack.Push(Panel);
         CloseFuncationMenu();
     }
-
-
 }

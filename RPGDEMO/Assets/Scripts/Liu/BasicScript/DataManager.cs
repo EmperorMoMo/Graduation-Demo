@@ -74,10 +74,13 @@ public class DataManager : MonoBehaviour
     }
 
     public static void SaveItem() {
+        Debug.Log("Saving...");
         Item item;
+        ItemFile.Clear();
         for (int i = 0; i < 99; i++) {
             item = ItemArr[i];
             if (item != null) {
+                Debug.Log("Save one");
                 ItemFile.Add(new int[3]{item.itemBase.UID, item.SlotIndex, item.curStack});
             }
         }

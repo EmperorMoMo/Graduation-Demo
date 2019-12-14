@@ -47,6 +47,7 @@ public class MyLevelManager : MonoBehaviour
         DontDestroyOnLoad(player);
         player.SetActive(false);
 
+
         SceneManager.LoadSceneAsync("LoadingScene");
 
         

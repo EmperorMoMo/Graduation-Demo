@@ -12,6 +12,8 @@ public class SimpleFSM : FSM
         attack,//攻击状态
         dead//死亡状态
     }
+    public float monster1 = 2;
+    public float monster2 = 2.5f;
     public SimpleFSM simpleFSM;
     public Vector3 velocity;
     //追逐距离
@@ -52,7 +54,10 @@ public class SimpleFSM : FSM
         //上一次攻击时间
         elapsedTime = 0;
         //攻击间隔时间
-        attackRate = 1;
+        if (this.gameObject.name == "mon_orcWarrior(Clone)")
+            attackRate = monster1;
+        if (this.gameObject.name == "mon_orgeHitter(Clone)")
+            attackRate = monster2;
         //获取AI对象控制器组件
         //_controller = GetComponent<CharacterController>();
         rigidbody = GetComponent<Rigidbody>();
@@ -179,11 +184,11 @@ public class SimpleFSM : FSM
             Quaternion rotation = Quaternion.LookRotation(a);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
             //如果上一次攻击时间大于等于间隔时间，则认为可以攻击
-            if (elapsedTime >= attackRate)
+            if (elapsedTime >= 1)
             {
                 _animation.Play("Attack01");
                 //将上一次攻击时间置零
-                if (elapsedTime > 2)
+                if (elapsedTime > attackRate)
                     elapsedTime = 0;
             }
             //否则播放站立动画

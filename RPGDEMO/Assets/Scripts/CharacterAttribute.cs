@@ -154,6 +154,12 @@ public class CharacterAttribute : MonoBehaviour
         {
             HP -= (_Aggressivity - (_Aggressivity * ((Armor * 6) / (100 + Armor * 6))));
         }
+
+        HP = Mathf.Clamp(HP, 0, MAX_HP);
+        if (HP <= 0)
+        {
+            ac.die = true;
+        }
         print("HoShi还剩："+HP);
     }
 

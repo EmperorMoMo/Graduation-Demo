@@ -39,6 +39,7 @@ public class ActorController : MonoBehaviour
     private bool stillRun;
     public bool _isAttacked;
     public bool canAttacked;
+    public bool die;
 
     [Header("=====  Attack =====")]
     private float normalDis;//普攻距离
@@ -132,6 +133,13 @@ public class ActorController : MonoBehaviour
         {
             anim.SetTrigger("isattacked");
 
+        }
+
+        if (die)
+        {
+            anim.SetTrigger("die");
+            pi.inputEnabled = false;
+            lockPlanar = true;
         }
     }
 

@@ -23,15 +23,15 @@ public class HeadSlider : MonoBehaviour {
         MPTextOutline = this.transform.GetChild(1).GetChild(1).GetChild(0).GetComponent<Text>();
         HPSlider.value = 0;
         MPSlider.value = 0;
-        HPText.text = HPTextOutline.text = player.HP + " / " + player.MAX_HP;
-        MPText.text = MPTextOutline.text = player.MP + " / " + player.MAX_MP;
+        HPText.text = HPTextOutline.text = player.Cur_HP + " / " + player.finalAttribute.HP;
+        MPText.text = MPTextOutline.text = player.Cur_MP + " / " + player.finalAttribute.MP;
     }
     public void Update() {
-        tarHPValue = player.HP / player.MAX_HP;
-        tarMPValue = player.MP / player.MAX_MP;
+        tarHPValue = player.Cur_HP / player.finalAttribute.HP;
+        tarMPValue = player.Cur_MP / player.finalAttribute.MP;
         HPSlider.value = Mathf.Lerp(HPSlider.value, tarHPValue, 0.08f);
         MPSlider.value = Mathf.Lerp(MPSlider.value, tarMPValue, 0.08f);
-        HPText.text = HPTextOutline.text = player.HP + " / " + player.MAX_HP;
-        MPText.text = MPTextOutline.text = player.MP + " / " + player.MAX_MP;
+        HPText.text = HPTextOutline.text = player.Cur_HP + " / " + player.finalAttribute.HP;
+        MPText.text = MPTextOutline.text = player.Cur_MP + " / " + player.finalAttribute.MP;
     }
 }

@@ -14,6 +14,7 @@ public class CharacterAttribute : MonoBehaviour
     public BaseAttribute EquipAttribute;
     public Attribute Main_Attribute;
 
+
     public float MAX_HP=250;//最大生命值
     public float HP;//生命值
     public float MAX_MP=500;//最大魔法值
@@ -48,6 +49,7 @@ public class CharacterAttribute : MonoBehaviour
 
     public void Character_HP(float _HP)
     {
+        Debug.Log("text3:" + _HP);
         MAX_HP += _HP;
         //return MAX_HP;
     }
@@ -166,11 +168,13 @@ public class CharacterAttribute : MonoBehaviour
 
     public void ChangeAttribute(BaseAttribute equipAttribute)
     {
+        Debug.Log("text2");
         Character_HP(equipAttribute.HP);
         Character_MP(equipAttribute.MP);
         Character_Aggressivity(equipAttribute.Aggressivity);
         Character_Strength(equipAttribute.Strength);
         Character_Agile(equipAttribute.Agile);
         Character_Intellect(equipAttribute.Intellect);
+        Debug.Log("Max_HP" + MAX_HP);
     }
 }

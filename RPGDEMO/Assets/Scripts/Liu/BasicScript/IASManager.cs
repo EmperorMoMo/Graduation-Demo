@@ -26,6 +26,13 @@ public class IASManager : MonoBehaviour {
         ReadData();
         CreateItem(1000);
         CreateItem(1001);
+        CreateItem(1002);
+        CreateItem(1003);
+        CreateItem(1004);
+        CreateItem(1005);
+        CreateItem(1006);
+        CreateItem(1007);
+        CreateItem(1008);
         Debug.Log(DataManager.ShowFile());
     }
     public void Update() {
@@ -181,7 +188,7 @@ public class IASManager : MonoBehaviour {
                 attr.Agile += equipmentAttr.Agile;
             }
         }
-
+        Debug.Log("test1");
         CA.ChangeAttribute(attr);
     }
 }

@@ -37,6 +37,7 @@ public class ActorController : MonoBehaviour
     private bool lockCamera = false;
     public bool isDam;
     private bool stillRun;
+    public bool _isAttacked;
 
     [Header("=====  Attack =====")]
     private float normalDis;//普攻距离
@@ -55,6 +56,8 @@ public class ActorController : MonoBehaviour
 
         normalDis = 3f;
         skill_OneDis = 4f;
+        _isAttacked = false;
+
     }
 
     // Update is called once per frame
@@ -118,6 +121,12 @@ public class ActorController : MonoBehaviour
         if (pi.pickup)
         {
             anim.SetTrigger("pickup");
+        }
+
+        if (_isAttacked)
+        {
+            anim.SetTrigger("isattacked");
+            pi.Dmag = 0;
         }
     }
 
@@ -270,7 +279,7 @@ public class ActorController : MonoBehaviour
                         if (str == State.normalAtk)
                         {
                             //print("test4");
-                            if (dir < normalDis && angle < 90)
+                            if (dir < normalDis && angle < 75)
                             {
                                 tempList.Add(cols[i].gameObject);
                                 //print("test5");
@@ -307,7 +316,7 @@ public class ActorController : MonoBehaviour
             {
                 objects.GetComponent<Rigidbody>().freezeRotation = true;
 
-                objects.GetComponent<Rigidbody>().AddExplosionForce(180, transform.position, 5, 180);
+                objects.GetComponent<Rigidbody>().AddExplosionForce(180, transform.position, 3);
                 //isDam = true;
 
                 objects.GetComponent<EnemyAttribute>().Enemy_Attacked(50);

@@ -28,10 +28,12 @@ public class CharacterAttribute : MonoBehaviour
     public float Intellect=15;//智力
     
     bool _Upgrade;//判断是否升级了
+
+    private ActorController ac;
     // Start is called before the first frame update
     void Awake()
     {
-        
+        ac = GetComponent<ActorController>();
     }
 
     // Update is called once per frame
@@ -130,6 +132,7 @@ public class CharacterAttribute : MonoBehaviour
 
     public void Character_Attacked(float _Aggressivity)
     {
+        ac._isAttacked = true;
         if (Armor == 0)
         {
             HP -= _Aggressivity;

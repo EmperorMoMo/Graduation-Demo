@@ -21,7 +21,8 @@ public class HeadSlider : MonoBehaviour {
         MPText = this.transform.GetChild(1).GetComponentInChildren<Text>();
         HPTextOutline = this.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Text>();
         MPTextOutline = this.transform.GetChild(1).GetChild(1).GetChild(0).GetComponent<Text>();
-
+        HPSlider.value = 0;
+        MPSlider.value = 0;
         HPText.text = HPTextOutline.text = player.HP + " / " + player.MAX_HP;
         MPText.text = MPTextOutline.text = player.MP + " / " + player.MAX_MP;
     }

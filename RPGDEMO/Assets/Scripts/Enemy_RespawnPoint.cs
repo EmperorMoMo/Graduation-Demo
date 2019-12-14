@@ -12,6 +12,7 @@ public class Enemy_RespawnPoint : MonoBehaviour
     private Vector3 distanceToPlayer;//怪物与角色的距离
     public int Enemy = 10;
     private bool first_IN = true;
+    public int mons=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,19 +22,23 @@ public class Enemy_RespawnPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distanceToPlayer = transform.position - target.position;
-        if(distanceToPlayer.magnitude<spawnRange&&first_IN)//说明主角已经进入到怪物出生点范围
-        {
-            for(int i = 0; i < Enemy; i++)
+            distanceToPlayer = transform.position - target.position;
+            if (distanceToPlayer.magnitude < spawnRange && first_IN)//说明主角已经进入到怪物出生点范围
             {
-                currentEnemy = Instantiate(enemy, transform.position, transform.rotation) as GameObject;
-                isOutsideRange = false;
+                for (int i = 0; i < Enemy; i++)
+                {
+                    currentEnemy = Instantiate(enemy, transform.position, transform.rotation) as GameObject;
+                    mons++;
+                    isOutsideRange = false;
+                }
+                first_IN = false;
+                // if(!currentEnemy)
+                //currentEnemy = Instantiate(enemy,transform.position, transform.rotation) as GameObject;
+                // isOutsideRange = false;
             }
-            first_IN = false;
-            // if(!currentEnemy)
-            //currentEnemy = Instantiate(enemy,transform.position, transform.rotation) as GameObject;
-            // isOutsideRange = false;
-        }
-        isOutsideRange = true;
+            isOutsideRange = true;
+        if (mons <= 0)
+            first_IN = true;
     }
+
 }

@@ -41,9 +41,11 @@ public class SimpleFSM : FSM
     public bool _isAttacked;
     private CharacterAttribute ca;
     private EnemyAttribute ea;
+    private Enemy_RespawnPoint er;
     //实现基类初始状态机方法
     protected override void Initialize()
     {
+        er = GameObject.Find("Monster_Manager").GetComponent<Enemy_RespawnPoint>();
         ca =  GameObject.Find("PlayerHandle").GetComponent<CharacterAttribute>();
         ea = GetComponent<EnemyAttribute>();
         _isAttacked = false;
@@ -107,6 +109,8 @@ public class SimpleFSM : FSM
             }
             else
                 _animation.Play("Idle");
+            if (ea.HP <= 0)
+                curState = FSMState.dead;
         }
         else
         {
@@ -148,6 +152,8 @@ public class SimpleFSM : FSM
             }
             else
                 _animation.Play("Idle");
+            if (ea.HP <= 0)
+                curState = FSMState.dead;
         }
         else
         {
@@ -211,6 +217,8 @@ public class SimpleFSM : FSM
             }
             else
                 _animation.Play("Idle");
+            if (ea.HP <= 0)
+                curState = FSMState.dead;
         }
         else
         {
@@ -225,9 +233,16 @@ public class SimpleFSM : FSM
         }
     }
     //死亡状态方法实现
-    private void DeadState()
+    IEnumerator die()
     {
         _animation.Play("Dead");
+        yield return new WaitForSeconds(1.5f);
+        Destroy(this.gameObject);
+        er.mons--;
+    }
+    private void DeadState()
+    {
+        StartCoroutine(die());
     }
     //重写父类方法
     //用于根据当前状态调用相应事件以及实现方法

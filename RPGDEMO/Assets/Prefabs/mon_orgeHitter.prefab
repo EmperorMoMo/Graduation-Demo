@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1446162904}
   - component: {fileID: 1446162903}
   - component: {fileID: 2002727356762718027}
+  - component: {fileID: 6779515742344894556}
   m_Layer: 0
   m_Name: mon_orgeHitter
   m_TagString: Enemy
@@ -34,6 +35,7 @@ Transform:
   m_Children:
   - {fileID: 7303617813678634099}
   - {fileID: 3252599015645478658}
+  - {fileID: 8022030982984040507}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -49,7 +51,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 9f1585e60d1dd9048af8e27b74795a5a, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: 9f1585e60d1dd9048af8e27b74795a5a, type: 3}
-  - {fileID: 7400000, guid: df44653e459034c4eba7c74c1331aa99, type: 3}
+  - {fileID: 7400000, guid: d0247bf0e5191b84980d58890b6fcbf6, type: 2}
   - {fileID: 7400000, guid: 69e66e6066b16ea4ba2e4197df5133fd, type: 3}
   - {fileID: 7400000, guid: 5a51efa3910e2a44c99f001cb73952f3, type: 3}
   - {fileID: 7400000, guid: 1a61cdcd4054c5549a0d1cdc44303f3c, type: 3}
@@ -126,6 +128,25 @@ MonoBehaviour:
   curState: 0
   walkSpeed: 50
   turnSpeed: 10
+  damageTime: 0
+  _isAttacked: 0
+--- !u!114 &6779515742344894556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446162900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b91243f70fa64e46abc040f6a8543c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MAX_HP: 1000
+  HP: 0
+  Aggressivity: 50
+  Armor: 3
+  Effect: {fileID: 1931391723872664, guid: 8690041cf7250174eb66ceb76d6bf32a, type: 3}
 --- !u!1 &76670363622827031
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,6 +1405,36 @@ Transform:
   - {fileID: 634543565242596565}
   m_Father: {fileID: 1395234086421292411}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4928379198402251124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8022030982984040507}
+  m_Layer: 0
+  m_Name: hitPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8022030982984040507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4928379198402251124}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.614, z: 0.736}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2802155263366302909}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5211899967669567247
 GameObject:

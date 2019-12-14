@@ -29,7 +29,8 @@ public class SimpleFSM : FSM
     //AI对象动画播放组件
     private Animation _animation;
     //AI对象角色控制器组件
-    private CharacterController _controller;
+    //private CharacterController _controller;
+    private Rigidbody rigidbody;
     //角色当前所在路径点
     private int _currentPoint = 0;
     //角色是否还存活
@@ -46,7 +47,8 @@ public class SimpleFSM : FSM
         //攻击间隔时间
         attackRate = 1;
         //获取AI对象控制器组件
-        _controller = GetComponent<CharacterController>();
+        //_controller = GetComponent<CharacterController>();
+        rigidbody = GetComponent<Rigidbody>();
         //获取AI对象动画播放器组件
         _animation = GetComponent<Animation>();
         //获取AI对象巡逻点
@@ -77,7 +79,8 @@ public class SimpleFSM : FSM
         Vector3 a = new Vector3(targetPoint.x - transform.position.x, 0, targetPoint.z - transform.position.z);
         Quaternion rotation = Quaternion.LookRotation(a);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
-        _controller.SimpleMove(transform.forward * Time.deltaTime * walkSpeed);
+        //_controller.SimpleMove(transform.forward * Time.deltaTime * walkSpeed);
+        rigidbody.velocity = transform.forward * Time.deltaTime * walkSpeed;
         //播放AI对象移动动画
         _animation.Play("Run");
     }
@@ -97,7 +100,8 @@ public class SimpleFSM : FSM
         Vector3 a = new Vector3(targetPoint.x - transform.position.x, 0, targetPoint.z - transform.position.z);
         Quaternion rotation = Quaternion.LookRotation(a);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
-        _controller.SimpleMove(transform.forward * Time.deltaTime * walkSpeed);
+        //_controller.SimpleMove(transform.forward * Time.deltaTime * walkSpeed);
+        rigidbody.velocity = transform.forward * Time.deltaTime * walkSpeed;
         //播放移动动画
         _animation.Play("Run");
     }

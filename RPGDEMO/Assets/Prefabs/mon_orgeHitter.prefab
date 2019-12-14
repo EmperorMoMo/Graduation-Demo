@@ -68,7 +68,7 @@ CharacterController:
   m_GameObject: {fileID: 1446162900}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Height: 3
   m_Radius: 0.85
@@ -91,7 +91,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!65 &1446162903
 BoxCollider:
@@ -101,11 +101,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1446162900}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7808416, y: 3.2156444, z: 1.246686}
-  m_Center: {x: -0.040399194, y: 1.1078222, z: 0.12334302}
+  m_Size: {x: 1.4240699, y: 2.723177, z: 1.0409856}
+  m_Center: {x: -0.0063945055, y: 1.3540559, z: 0.13788801}
 --- !u!114 &2002727356762718027
 MonoBehaviour:
   m_ObjectHideFlags: 0

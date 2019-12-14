@@ -11,6 +11,7 @@ public class CharacterAttribute : MonoBehaviour
         Intellect
     }
 
+    public BaseAttribute EquipAttribute;
     public Attribute Main_Attribute;
 
     public float MAX_HP=250;//最大生命值
@@ -34,6 +35,8 @@ public class CharacterAttribute : MonoBehaviour
     void Awake()
     {
         ac = GetComponent<ActorController>();
+        HP = MAX_HP;
+        MP = MAX_MP;
     }
 
     // Update is called once per frame
@@ -147,5 +150,15 @@ public class CharacterAttribute : MonoBehaviour
         {
             HP -= (_Aggressivity - (_Aggressivity * ((Armor * 6) / (100 + Armor * 6))));
         }
+    }
+
+    public void ChangeAttribute(BaseAttribute equipAttribute)
+    {
+        Character_HP(equipAttribute.HP);
+        Character_MP(equipAttribute.MP);
+        Character_Aggressivity(equipAttribute.Aggressivity);
+        Character_Strength(equipAttribute.Strength);
+        Character_Agile(equipAttribute.Agile);
+        Character_Intellect(equipAttribute.Intellect);
     }
 }

@@ -20,20 +20,12 @@ public class UIManager : MonoBehaviour {
     public static GameObject FuncationMenu;     //功能菜单
     public static GameObject DialogBox;         //对话框
 
-    private static CameraController MainCamera;       //主相机控制脚本
-    private static bool isNone = true;
-    private static bool isCtrl = false;
+    private static CameraController MainCamera;         //主相机控制脚本
+    private static bool isNone = true;                  //非持久化界面是否为空
+    private static bool isCtrl = false;                 //是否取得控制
 
-    private static List<GameObject> PanelList = new List<GameObject>();        //存储UI面板List
+    private static List<GameObject> PanelList = new List<GameObject>();        //存储UI面板的List
 
-    private static GameObject GetPanel(string panelName) {
-        switch (panelName) {
-            case "equip": return EquipmentPanel;
-            case "backpage": return Backpage;
-            case "attr": return AttributePanel;
-            default: return null;
-        }
-    }
     void Awake() {
         Canvas = GameObject.Find("Canvas");
         Head = Canvas.transform.GetChild(0).gameObject;
@@ -53,14 +45,13 @@ public class UIManager : MonoBehaviour {
     public void Update() {
         if (Input.GetKeyDown(KeyCode.Tab)) {
             ShowFuncationMenu();
-            isNone = false;
         }
 
         if (Input.GetKeyUp(KeyCode.Tab)) {
             CloseFuncationMenu();
         }
 
-        if (Input.GetKeyDown(KeyCode.I)) {
+        if (Input.GetKeyUp(KeyCode.I)) {
             if (!EquipmentPanel.activeSelf) {
                 ShowPanel(EquipmentPanel);
             } else {
@@ -68,7 +59,7 @@ public class UIManager : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.P)) {
+        if (Input.GetKeyUp(KeyCode.P)) {
             if (!AttributePanel.activeSelf) {
                 ShowPanel(AttributePanel);
             } else {
@@ -76,7 +67,7 @@ public class UIManager : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.B)) {
+        if (Input.GetKeyUp(KeyCode.B)) {
             if (!Backpage.activeSelf) {
                 ShowPanel(Backpage);
             } else {
@@ -84,27 +75,23 @@ public class UIManager : MonoBehaviour {
             }
         }
 
-
-        if (Input.GetKeyUp(KeyCode.Tab)) {
-            CloseFuncationMenu();
-            isNone = true;
-        }
-
         if (Input.GetKeyUp(KeyCode.F1)) {
             if (PanelList.Count != 0) {
-                ClosePanel(PanelList[PanelList.Count - 1]);
+                PanelList[PanelList.Count - 1].SetActive(false);
+                PanelList.RemoveAt(PanelList.Count - 1);
             }
         }
 
         if (isNone) {
             if (PanelList.Count == 0) {
                     if (isCtrl) {
-                    MainCamera.hide_Cursor();
-                    isCtrl = false;
-                    Debug.Log("归还控制");
+                        MainCamera.hide_Cursor();
+                        isCtrl = false;
+                        Debug.Log("归还控制");
                 }
             }
         }
+
         if (PanelList.Count != 0) {
             if (!isCtrl) {
                 MainCamera.show_Cursor();
@@ -114,18 +101,20 @@ public class UIManager : MonoBehaviour {
         }
     }
 
+    //显示功能菜单
     public static void ShowFuncationMenu() {
         if (!FuncationMenu.activeSelf) {
             FuncationMenu.SetActive(true);
             isNone = false;
-            MainCamera.show_Cursor();
             if (!isCtrl) {
+                MainCamera.show_Cursor();
                 isCtrl = true;
                 Debug.Log("取得控制");
             }
         }
     }
 
+    //关闭功能菜单
     public static void CloseFuncationMenu() {
         if (FuncationMenu.activeSelf) {
             FuncationMenu.SetActive(false);
@@ -133,17 +122,36 @@ public class UIManager : MonoBehaviour {
         }
     }
 
+    //显示前操作
     public void PreShowPanel(string panelName) {
         ShowPanel(GetPanel(panelName));
     }
+
+    //显示当前面板
     public static void ShowPanel(GameObject Panel) {
         Panel.SetActive(true);
         PanelList.Add(Panel);
         CloseFuncationMenu();
     }
 
-    public static void ClosePanel(GameObject Panel) {
+    //关闭当前面板
+    public void ClosePanel(GameObject Panel) {
         Panel.SetActive(false);
-        PanelList.Remove(EquipmentPanel);
+        PanelList.Remove(Panel);
+    }
+
+    //通过名字取得对应面板
+    private static GameObject GetPanel(string panelName) {
+        switch (panelName) {
+            case "head": return Head;
+            case "minimap": return MiniMap;
+            case "quickbar": return QuickBar;
+            case "equip": return EquipmentPanel;
+            case "backpage": return Backpage;
+            case "shoppage": return Shoppage;
+            case "attr": return AttributePanel;
+            case "dialog": return DialogBox;
+            default: return null;
+        }
     }
 }

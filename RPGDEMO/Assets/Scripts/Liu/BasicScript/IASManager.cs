@@ -141,7 +141,6 @@ public class IASManager : MonoBehaviour {
         UIManager.ShowPanel(UIManager.EquipmentPanel);
         Slot EquipSlot = DataManager.SlotArr[equipment.equipemtnBase.Position + 90];
         //如果该装备在对应的装备栏上
-        Debug.Log(equipment.SlotIndex + "//" + EquipSlot.Index);
         if (equipment.SlotIndex == EquipSlot.Index) {
             //放置在空位
             int index = FetchUtils.FetchEmpty();
@@ -183,6 +182,5 @@ public class IASManager : MonoBehaviour {
             }
         }
         EquipmentsAttr = attr;
-        Debug.Log(attr.HP + "//" + attr.Aggressivity);
     }
 }

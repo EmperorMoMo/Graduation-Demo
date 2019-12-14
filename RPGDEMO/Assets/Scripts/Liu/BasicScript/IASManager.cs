@@ -91,6 +91,8 @@ public class IASManager : MonoBehaviour {
 
         item.GetComponent<Image>().sprite = equipment.itemBase.Sprite;  //显示贴图
         equipment.ShowCount();                                          //显示数量
+
+        DataManager.SaveItem();
     }
 
     //将物品放在空网格上
@@ -105,6 +107,7 @@ public class IASManager : MonoBehaviour {
             SetEquipmentAtr();
             DataManager.SlotArr[slotIndex].transform.GetChild(0).gameObject.SetActive(true);
         }
+        DataManager.SaveItem();
     }
 
     //将物品交换位置
@@ -117,6 +120,7 @@ public class IASManager : MonoBehaviour {
         DataManager.ItemArr[preSlot.Index] = curItem;           //前网格指向的Arr指向的物体更新
 
         curItem.ReplaceParent();                                //当前物品的父物体更新
+        DataManager.SaveItem();
     }
 
     //物品堆叠
@@ -134,6 +138,7 @@ public class IASManager : MonoBehaviour {
             item.ShowCount();
         }
         curItem.ShowCount();
+        DataManager.SaveItem();
     }
 
     //拆分物品
@@ -142,6 +147,7 @@ public class IASManager : MonoBehaviour {
         Item newItem = DataManager.ItemArr[slot.Index];         //新物品
         item.curStack -= count;
         item.ShowCount();
+        DataManager.SaveItem();
     }
 
     public static void Equip(Equipment equipment){
@@ -169,6 +175,7 @@ public class IASManager : MonoBehaviour {
         }
         SetEquipmentAtr();
         equipment.ReplaceParent();
+        DataManager.SaveItem();
     }
 
     public static void SetEquipmentAtr() {

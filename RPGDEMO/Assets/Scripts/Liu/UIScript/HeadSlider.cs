@@ -31,5 +31,7 @@ public class HeadSlider : MonoBehaviour {
         tarMPValue = player.MP / player.MAX_MP;
         HPSlider.value = Mathf.Lerp(HPSlider.value, tarHPValue, 0.08f);
         MPSlider.value = Mathf.Lerp(MPSlider.value, tarMPValue, 0.08f);
+        HPText.text = HPTextOutline.text = player.HP + " / " + player.MAX_HP;
+        MPText.text = MPTextOutline.text = player.MP + " / " + player.MAX_MP;
     }
 }

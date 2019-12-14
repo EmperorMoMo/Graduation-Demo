@@ -21,15 +21,16 @@ public class UIManager : MonoBehaviour {
     public static GameObject DialogBox;         //对话框
 
     private static CameraController MainCamera;       //主相机控制脚本
-    private static bool isNone = false;
+    private static bool isNone = true;
     private static bool isCtrl = false;
 
-    private static Stack<GameObject> UIStack = new Stack<GameObject>();        //存储UI面板的栈
+    private static List<GameObject> PanelList = new List<GameObject>();        //存储UI面板List
 
     private static GameObject GetPanel(string panelName) {
         switch (panelName) {
             case "equip": return EquipmentPanel;
             case "backpage": return Backpage;
+            case "attr": return AttributePanel;
             default: return null;
         }
     }
@@ -52,25 +53,63 @@ public class UIManager : MonoBehaviour {
     public void Update() {
         if (Input.GetKeyDown(KeyCode.Tab)) {
             ShowFuncationMenu();
+            isNone = false;
         }
 
         if (Input.GetKeyUp(KeyCode.Tab)) {
             CloseFuncationMenu();
         }
 
+        if (Input.GetKeyDown(KeyCode.I)) {
+            if (!EquipmentPanel.activeSelf) {
+                ShowPanel(EquipmentPanel);
+            } else {
+                ClosePanel(EquipmentPanel);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.P)) {
+            if (!AttributePanel.activeSelf) {
+                ShowPanel(AttributePanel);
+            } else {
+                ClosePanel(AttributePanel);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.B)) {
+            if (!Backpage.activeSelf) {
+                ShowPanel(Backpage);
+            } else {
+                ClosePanel(Backpage);
+            }
+        }
+
+
+        if (Input.GetKeyUp(KeyCode.Tab)) {
+            CloseFuncationMenu();
+            isNone = true;
+        }
+
         if (Input.GetKeyUp(KeyCode.F1)) {
-            if (UIStack.Count != 0) {
-                UIStack.Pop().SetActive(false);
+            if (PanelList.Count != 0) {
+                ClosePanel(PanelList[PanelList.Count - 1]);
             }
         }
 
         if (isNone) {
-            if (UIStack.Count == 0) {
+            if (PanelList.Count == 0) {
                     if (isCtrl) {
-                    Debug.Log("归还控制");
                     MainCamera.hide_Cursor();
                     isCtrl = false;
+                    Debug.Log("归还控制");
                 }
+            }
+        }
+        if (PanelList.Count != 0) {
+            if (!isCtrl) {
+                MainCamera.show_Cursor();
+                isCtrl = true;
+                Debug.Log("取得控制");
             }
         }
     }
@@ -95,12 +134,16 @@ public class UIManager : MonoBehaviour {
     }
 
     public void PreShowPanel(string panelName) {
-        ShowPanel(panelName);
+        ShowPanel(GetPanel(panelName));
     }
-    public static void ShowPanel(string panelName) {
-        GameObject Panel = GetPanel(panelName);
+    public static void ShowPanel(GameObject Panel) {
         Panel.SetActive(true);
-        UIStack.Push(Panel);
+        PanelList.Add(Panel);
         CloseFuncationMenu();
+    }
+
+    public static void ClosePanel(GameObject Panel) {
+        Panel.SetActive(false);
+        PanelList.Remove(EquipmentPanel);
     }
 }

@@ -34,10 +34,13 @@ public class SimpleFSM : FSM
     //角色当前所在路径点
     private int _currentPoint = 0;
     //角色是否还存活
+    public float damageTime = 0;
     private bool _isDead;
+    public bool _isAttacked;
     //实现基类初始状态机方法
     protected override void Initialize()
     {
+        _isAttacked = false;
         //先将AI对象的当前状态设置为巡逻状态
         curState = FSMState.patrol;
         //没有死亡
@@ -70,19 +73,34 @@ public class SimpleFSM : FSM
     //巡逻状态实现方法
     private void PatrolState()
     {
-        //如果AI对象当前位置与目标点的位置小于等于抵达距离时，转向下一个巡逻点
-        if (Vector3.Distance(transform.position, targetPoint) <= arriveDistance)
-            FindNextPoint();
-        //判断AI对象与玩家之间的距离是否满足追逐状态，如果AI对象现在的距离与玩家的距离小于等于追逐距离时，将当前状态转换为追逐状态
-        else if (Vector3.Distance(transform.position, playerTransform.position) <= chaseDistance)
-            curState = FSMState.chase;
-        Vector3 a = new Vector3(targetPoint.x - transform.position.x, 0, targetPoint.z - transform.position.z);
-        Quaternion rotation = Quaternion.LookRotation(a);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
-        //_controller.SimpleMove(transform.forward * Time.deltaTime * walkSpeed);
-        rigidbody.velocity = transform.forward * Time.deltaTime * walkSpeed;
-        //播放AI对象移动动画
-        _animation.Play("Run");
+        Vector3 trans = new Vector3(transform.position.x, 0, transform.position.z);
+        if (!_isAttacked)
+        {
+            //如果AI对象当前位置与目标点的位置小于等于抵达距离时，转向下一个巡逻点
+            if (Vector3.Distance(transform.position, targetPoint) <= arriveDistance)
+                FindNextPoint();
+            //判断AI对象与玩家之间的距离是否满足追逐状态，如果AI对象现在的距离与玩家的距离小于等于追逐距离时，将当前状态转换为追逐状态
+            else if (Vector3.Distance(transform.position, playerTransform.position) <= chaseDistance)
+                curState = FSMState.chase;
+            Vector3 a = new Vector3(targetPoint.x - transform.position.x, 0, targetPoint.z - transform.position.z);
+            Quaternion rotation = Quaternion.LookRotation(a);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
+            //_controller.SimpleMove(transform.forward * Time.deltaTime * walkSpeed);
+            rigidbody.velocity = transform.forward * Time.deltaTime * walkSpeed;
+            //播放AI对象移动动画
+            _animation.Play("Run");
+        }
+        else
+        {
+            damageTime += Time.deltaTime;
+            _animation.Play("Damage");
+            if (damageTime >= 0.4f)
+            {
+                _isAttacked = false;
+                   damageTime = 0;
+                transform.position = trans;
+            }
+        }
     }
     //追逐状态方法
     private void ChaseState()
@@ -91,61 +109,91 @@ public class SimpleFSM : FSM
         targetPoint = playerTransform.position;
         //计算AI对象与玩家的距离
         float distance = Vector3.Distance(transform.position, targetPoint);
-        //如果AI对象与玩家距离小于攻击距离时，将当前状态切换成攻击状态
-        if (distance <= attackDistance)
-            curState = FSMState.attack;
-        //如果当前距离已经大于巡逻状态，将当前状态切换成巡逻状态
-        else if (distance >= chaseDistance)
-            curState = FSMState.patrol;
-        Vector3 a = new Vector3(targetPoint.x - transform.position.x, 0, targetPoint.z - transform.position.z);
-        Quaternion rotation = Quaternion.LookRotation(a);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
-        //_controller.SimpleMove(transform.forward * Time.deltaTime * walkSpeed);
-        rigidbody.velocity = transform.forward * Time.deltaTime * walkSpeed;
-        //播放移动动画
-        _animation.Play("Run");
+        Vector3 trans = new Vector3(transform.position.x, 0, transform.position.z);
+        if (!_isAttacked)
+        {
+            //如果AI对象与玩家距离小于攻击距离时，将当前状态切换成攻击状态
+            if (distance <= attackDistance)
+                curState = FSMState.attack;
+            //如果当前距离已经大于巡逻状态，将当前状态切换成巡逻状态
+            else if (distance >= chaseDistance)
+                curState = FSMState.patrol;
+            Vector3 a = new Vector3(targetPoint.x - transform.position.x, 0, targetPoint.z - transform.position.z);
+            Quaternion rotation = Quaternion.LookRotation(a);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
+            //_controller.SimpleMove(transform.forward * Time.deltaTime * walkSpeed);
+            rigidbody.velocity = transform.forward * Time.deltaTime * walkSpeed;
+            //播放移动动画
+            _animation.Play("Run");
+        }
+        else
+        {
+            damageTime += Time.deltaTime;
+            _animation.Play("Damage");
+            if (damageTime >= 0.4f)
+            {
+                _isAttacked = false;
+                damageTime = 0;
+                transform.position = trans;
+            }
+        }
     }
     //攻击状态
     private void AttackState()
     {
+        Vector3 trans = new Vector3(transform.position.x, 0, transform.position.z);
         //将目标位置复制成玩家位置
         targetPoint = playerTransform.position;
         //计算两者之间的距离
         float distance = Vector3.Distance(transform.position, targetPoint);
-        //判断是否满足攻击需求
-        //如果距离已经大于攻击距离且小于等于追逐距离
-        if (distance > attackDistance && distance <= chaseDistance)
+        if (!_isAttacked)
         {
-            //将当前状态转换成追逐状态
-            curState = FSMState.chase;
-            //退出计算
-            return;
+            //判断是否满足攻击需求
+            //如果距离已经大于攻击距离且小于等于追逐距离
+            if (distance > attackDistance && distance <= chaseDistance)
+            {
+                //将当前状态转换成追逐状态
+                curState = FSMState.chase;
+                //退出计算
+                return;
+            }
+            //如果距离已经大于追逐距离，将AI对象状态切换成巡逻状态
+            else if (distance > chaseDistance)
+            {
+                //将当前状态切换成巡逻状态
+                curState = FSMState.patrol;
+                //退出计算
+                return;
+            }
+            //计算转向，攻击状态需要AI对象正面朝向玩家
+            //根据目标位置控制AI对象转向，根据目标位置与AI对象当前位置差值获取转向角度，再实现转向
+            Vector3 a = new Vector3(targetPoint.x - transform.position.x, 0, targetPoint.z - transform.position.z);
+            Quaternion rotation = Quaternion.LookRotation(a);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
+            //如果上一次攻击时间大于等于间隔时间，则认为可以攻击
+            if (elapsedTime >= attackRate)
+            {
+                _animation.Play("Attack01");
+                //将上一次攻击时间置零
+                if (elapsedTime > 2)
+                    elapsedTime = 0;
+            }
+            //否则播放站立动画
+            else
+            {
+                _animation.Play("Idle");
+            }
         }
-        //如果距离已经大于追逐距离，将AI对象状态切换成巡逻状态
-        else if (distance > chaseDistance)
-        {
-            //将当前状态切换成巡逻状态
-            curState = FSMState.patrol;
-            //退出计算
-            return;
-        }
-        //计算转向，攻击状态需要AI对象正面朝向玩家
-        //根据目标位置控制AI对象转向，根据目标位置与AI对象当前位置差值获取转向角度，再实现转向
-        Vector3 a = new Vector3(targetPoint.x - transform.position.x, 0, targetPoint.z - transform.position.z);
-        Quaternion rotation = Quaternion.LookRotation(a);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
-        //如果上一次攻击时间大于等于间隔时间，则认为可以攻击
-        if (elapsedTime >= attackRate)
-        {
-            _animation.Play("Attack01");
-            //将上一次攻击时间置零
-            if(elapsedTime>2)
-            elapsedTime = 0;
-        }
-        //否则播放站立动画
         else
         {
-            _animation.Play("Idle");
+            damageTime += Time.deltaTime;
+            _animation.Play("Damage");
+            if (damageTime >= 0.4f)
+            {
+                _isAttacked = false;
+                    damageTime = 0;
+                transform.position = trans;
+            }
         }
     }
     //死亡状态方法实现

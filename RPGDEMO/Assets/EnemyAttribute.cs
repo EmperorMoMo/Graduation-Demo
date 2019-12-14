@@ -8,14 +8,17 @@ public class EnemyAttribute : MonoBehaviour
     public float HP;
     public float Aggressivity=50;
     public float Armor=3;
-
+    //private Animation animation;
     public GameObject Effect;
     private Transform hitpoint;
+    private SimpleFSM sim;
     // Start is called before the first frame update
     void Awake()
     {
         HP = MAX_HP;
         hitpoint= this.transform.GetChild(2).GetComponent<Transform>();
+        //animation = GetComponent<Animation>();
+        sim = GetComponent<SimpleFSM>();
     }
 
     // Update is called once per frame
@@ -27,6 +30,7 @@ public class EnemyAttribute : MonoBehaviour
     public void Enemy_Attacked(float _Aggressivity)
     {
         InstantiateEffect();
+        sim._isAttacked = true;
         if (Armor == 0)
         {
             HP -= _Aggressivity;

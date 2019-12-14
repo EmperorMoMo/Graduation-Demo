@@ -1360,6 +1360,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764f18c8bb4ab4d4f9ad1c5e8741e838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monster1: 2
+  monster2: 2.5
   simpleFSM: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   chaseDistance: 5
@@ -1370,7 +1372,6 @@ MonoBehaviour:
   turnSpeed: 10
   damageTime: 0
   _isAttacked: 0
-  ca: {fileID: 0}
 --- !u!54 &1643899656504083374
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1412,7 +1413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 880a887a85d2f9744babd3140dbba7ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_HP: 1000
+  MAX_HP: 10
   HP: 0
   Aggressivity: 50
   Armor: 3

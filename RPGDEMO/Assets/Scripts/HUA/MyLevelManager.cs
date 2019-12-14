@@ -33,7 +33,6 @@ public class MyLevelManager : MonoBehaviour
             } while (index == LastTimeIndex);
             background.sprite = sprite[index];
             LastTimeIndex = index;
-
             async =SceneManager.LoadSceneAsync(nextLevel);
             async.allowSceneActivation = false;
             Debug.Log("1");
@@ -48,9 +47,6 @@ public class MyLevelManager : MonoBehaviour
         player.SetActive(false);
 
         SceneManager.LoadSceneAsync("LoadingScene");
-
-        
-
         player.SetActive(true);
     }
     void transformChange()

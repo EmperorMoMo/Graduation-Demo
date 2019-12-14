@@ -237,8 +237,8 @@ public class SimpleFSM : FSM
     {
         _animation.Play("Dead");
         yield return new WaitForSeconds(1.5f);
+        er.gameObjects.Remove(this.gameObject);
         Destroy(this.gameObject);
-        er.mons--;
     }
     private void DeadState()
     {

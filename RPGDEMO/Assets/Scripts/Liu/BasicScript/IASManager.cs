@@ -13,30 +13,20 @@ public class IASManager : MonoBehaviour {
     private static GameObject SlotPrefab;       //生成网格的预制体
     private static GameObject ItemPrefab;       //生成物品的预制体
 
-    private static BaseAttribute EquipmentsAttr;
+    private static CharacterAttribute CA = new CharacterAttribute();
 
     public void Awake(){
         SlotPrefab = slotPrefab;
         ItemPrefab = itemPrefab;
     }
     public void Start() {
+        Debug.Log(DataManager.ShowFile());
         CreateSlot();
         CreateEquipmentSlot();
-        CreateItem(1000);
-        CreateItem(1000);
-        CreateItem(1000);
-        CreateItem(1000);
-        CreateItem(1000);
-        CreateItem(1000);
-        CreateItem(1000);
+        ReadData();
         CreateItem(1000);
         CreateItem(1001);
-        CreateItem(1002);
-        CreateItem(1003);
-        CreateItem(1004);
-        CreateItem(1005);
-        CreateItem(1100);
-        
+        Debug.Log(DataManager.ShowFile());
     }
     public void Update() {
 
@@ -63,6 +53,17 @@ public class IASManager : MonoBehaviour {
         }
     }
 
+    public static void ReadData() {
+        Item item;
+        //foreach () {
+        //    item = DataManager.ItemArr[i];
+        //    if (item != null) {
+        //        Debug.Log(item.itemBase.UID + " // " + item.SlotIndex + " // " + item.curStack);
+        //        CreateItem(item.itemBase.UID, i, item.curStack);
+        //    }
+        //}
+    }
+
     //创建物品
     public static void CreateItem(int uid) {
         int index = FetchUtils.FetchEmpty();
@@ -70,14 +71,15 @@ public class IASManager : MonoBehaviour {
             Debug.Log("物品栏已满，无法生成");
             return;
         }
-        CreateItem(uid, index);
+        CreateItem(uid, index, 1);
     }
 
-    public static void CreateItem(int uid, int Index) {
+    public static void CreateItem(int uid, int Index, int CurStack) {
         GameObject item = GameObject.Instantiate(ItemPrefab, DataManager.SlotArr[Index].transform);     //指定位置生成指定物品
         Equipment equipment = item.AddComponent<Equipment>();           //挂载Equipment脚本
         equipment.itemBase = FetchUtils.FetchEquipmentsBase(uid);       //为其中的物品基础类赋值
         equipment.SlotIndex = Index;                                //网格索引指向该网格
+        equipment.curStack = CurStack;
         DataManager.ItemArr[Index] = equipment;                     //将Equipment脚本存入数组
 
         item.GetComponent<Image>().sprite = equipment.itemBase.Sprite;  //显示贴图
@@ -129,11 +131,9 @@ public class IASManager : MonoBehaviour {
 
     //拆分物品
     public static void SplitItem(Item item, Slot slot, int count) {
-        CreateItem(item.itemBase.UID, slot.Index);              //指定位置创建新物品
+        CreateItem(item.itemBase.UID, slot.Index, count);              //指定位置创建新物品
         Item newItem = DataManager.ItemArr[slot.Index];         //新物品
-        newItem.curStack = count;               
         item.curStack -= count;
-        newItem.ShowCount();
         item.ShowCount();
     }
 
@@ -181,6 +181,7 @@ public class IASManager : MonoBehaviour {
                 attr.Agile += equipmentAttr.Agile;
             }
         }
-        EquipmentsAttr = attr;
+
+        CA.ChangeAttribute(attr);
     }
 }

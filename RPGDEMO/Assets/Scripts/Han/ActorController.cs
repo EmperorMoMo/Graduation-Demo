@@ -140,6 +140,7 @@ public class ActorController : MonoBehaviour
             anim.SetTrigger("die");
             pi.inputEnabled = false;
             lockPlanar = true;
+            canAttacked = false;
         }
     }
 
@@ -279,6 +280,11 @@ public class ActorController : MonoBehaviour
     public void OnAttackedUpdate()
     {
         _isAttacked = false;
+        anim.ResetTrigger("isattacked");
+    }
+
+    public void OnDieEnter()
+    {
         anim.ResetTrigger("isattacked");
     }
 

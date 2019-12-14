@@ -159,6 +159,7 @@ public class CharacterAttribute : MonoBehaviour
         if (HP <= 0)
         {
             ac.die = true;
+            this.gameObject.GetComponent<CharacterAttribute>().enabled = false;
         }
         print("HoShi还剩："+HP);
     }

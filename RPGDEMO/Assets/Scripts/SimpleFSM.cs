@@ -91,7 +91,7 @@ public class SimpleFSM : FSM
         Vector3 trans = new Vector3(transform.position.x, 0, transform.position.z);
         if (!_isAttacked)
         {
-            if (ca.HP > 0)
+            if (ca.Cur_HP > 0)
             {
                 //如果AI对象当前位置与目标点的位置小于等于抵达距离时，转向下一个巡逻点
                 if (Vector3.Distance(transform.position, targetPoint) <= arriveDistance)
@@ -134,7 +134,7 @@ public class SimpleFSM : FSM
         Vector3 trans = new Vector3(transform.position.x, 0, transform.position.z);
         if (!_isAttacked)
         {
-            if (ca.HP > 0)
+            if (ca.Cur_HP > 0)
             {
                 //如果AI对象与玩家距离小于攻击距离时，将当前状态切换成攻击状态
                 if (distance <= attackDistance)
@@ -177,7 +177,7 @@ public class SimpleFSM : FSM
         float distance = Vector3.Distance(transform.position, targetPoint);
         if (!_isAttacked)
         {
-            if (ca.HP > 0)
+            if (ca.Cur_HP > 0)
             {
                 //判断是否满足攻击需求
                 //如果距离已经大于攻击距离且小于等于追逐距离

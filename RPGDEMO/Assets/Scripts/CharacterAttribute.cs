@@ -10,23 +10,16 @@ public class CharacterAttribute : MonoBehaviour
         Agile,
         Intellect
     }
-
-    public BaseAttribute EquipAttribute;
     public Attribute Main_Attribute;
 
-    public float MAX_HP=250;//最大生命值
-    public float HP;//生命值
-    public float MAX_MP=500;//最大魔法值
-    public float MP;//魔法值
-    public float ReplyHP=1;//生命回复
-    public float ReplyMP=5;//魔法回复
-    public float Aggressivity=22;//攻击力
-    public float Armor=2;//护甲值
+    public BaseAttribute baseAttribute;
+    public BaseAttribute equipAttribute;
+    public BaseAttribute finalAttribute;
+
+    public float Cur_HP;//生命值
+    public float Cur_MP;//魔法值
     public float Exp=0;//经验值
     public int Level=1;//等级
-    public float Strength=18;//力量
-    public float Agile=10;//敏捷
-    public float Intellect=15;//智力
     
     bool _Upgrade;//判断是否升级了
 
@@ -34,10 +27,20 @@ public class CharacterAttribute : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        baseAttribute.HP = 250;
+        baseAttribute.MP = 500;
+        baseAttribute.ReHP = 1;
+        baseAttribute.ReMP = 5;
+        baseAttribute.Aggressivity = 22;
+        baseAttribute.Armor = 2;
+        baseAttribute.Strength = 18;
+        baseAttribute.Agile = 10;
+        baseAttribute.Intellect = 15;
+
         ac = GetComponent<ActorController>();
-        HP = MAX_HP;
-        MP = MAX_MP;
-        print(HP);
+        Cur_HP = baseAttribute.HP + equipAttribute.HP;
+        Cur_MP = baseAttribute.MP + equipAttribute.MP;
+        print(Cur_HP);
     }
 
     // Update is called once per frame
@@ -45,44 +48,10 @@ public class CharacterAttribute : MonoBehaviour
     {
         
     }
-
-    public void Character_HP(float _HP)
-    {
-        MAX_HP += _HP;
-        //return MAX_HP;
-    }
-
-    public void Character_MP(float _MP)
-    {
-        MAX_MP += _MP;
-        //return MAX_MP;
-    }
-
-    public void Character_ReplyHP()
-    {
-
-    }
-
-    public void Character_ReplyMP()
-    {
-
-    }
-
-    public void Character_Aggressivity(float _Aggressivity)
-    {
-        Aggressivity += _Aggressivity;
-        //return Aggressivity;
-    }
-
-    public void Character_Armor()
-    {
-
-    }
-
+    
     public void Character_Exp(float _Exp)
     {
         Exp += _Exp;
-        //return Exp;
     }
 
     public void Character_Level()
@@ -96,42 +65,40 @@ public class CharacterAttribute : MonoBehaviour
 
         if (_Upgrade)
         {
-            Character_Strength(25);
-            Character_Agile(20);
-            Character_Intellect(20);
+            baseAttribute.Strength += 25;
+            baseAttribute.Agile += 20;
+            baseAttribute.Intellect += 20;
             _Upgrade = false;
         }
     }
 
-    public void Character_Strength(float _Strength)
+    public void Strength()
     {
-        Strength += _Strength;
-        ReplyHP += Strength / 10;
-        MAX_HP += Strength * 10;
-        if (Main_Attribute==Attribute.Strength)
+        finalAttribute.ReHP = finalAttribute.Strength / 10;
+        finalAttribute.HP = finalAttribute.Strength * 10;
+        if (Main_Attribute == Attribute.Strength)
         {
-            Aggressivity += Strength;
+            finalAttribute.Aggressivity += finalAttribute.Strength;
         }
-        //return Strength;
     }
 
-    public void Character_Agile(float _Agile)
+    public void Agile()
     {
-        Agile += _Agile;
-        Armor += Agile / 10;
+        finalAttribute.Armor += finalAttribute.Agile / 10;
         if (Main_Attribute == Attribute.Agile)
         {
-            Aggressivity += Agile;
+            finalAttribute.Aggressivity += finalAttribute.Agile;
         }
-        //return Agile;
     }
 
-    public void Character_Intellect(float _Intellect)
+    public void Intellect()
     {
-        Intellect += _Intellect;
-        ReplyMP += Intellect * 4;
-        MAX_MP += Intellect * 20;
-        //return Intellect;
+        finalAttribute.ReMP += finalAttribute.Intellect * 3;
+        finalAttribute.MP += finalAttribute.Intellect * 20;
+        if (Main_Attribute == Attribute.Intellect)
+        {
+            finalAttribute.Aggressivity += finalAttribute.Intellect;
+        }
     }
 
     public void Character_Attacked(float _Aggressivity)
@@ -140,37 +107,58 @@ public class CharacterAttribute : MonoBehaviour
         {
             ac._isAttacked = true;
         }
-        if (Armor == 0)
+        if (finalAttribute.Armor == 0)
         {
-            HP -= _Aggressivity;
+            Cur_HP -= _Aggressivity;
         }
 
-        if (Armor < 0)
+        if (finalAttribute.Armor < 0)
         {
-            HP -= _Aggressivity * 2;
+            Cur_HP -= _Aggressivity * 2;
         }
 
-        if (Armor > 0)
+        if (finalAttribute.Armor > 0)
         {
-            HP -= (_Aggressivity - (_Aggressivity * ((Armor * 6) / (100 + Armor * 6))));
+            Cur_HP -= (_Aggressivity - (_Aggressivity * ((finalAttribute.Armor * 6) / (100 + finalAttribute.Armor * 6))));
         }
 
-        HP = Mathf.Clamp(HP, 0, MAX_HP);
-        if (HP <= 0)
+        Cur_HP = Mathf.Clamp(Cur_HP, 0, finalAttribute.HP);
+        if (Cur_HP <= 0)
         {
             ac.die = true;
             this.gameObject.GetComponent<CharacterAttribute>().enabled = false;
         }
-        print("HoShi还剩："+HP);
+        print("HoShi还剩："+Cur_HP);
     }
 
-    public void ChangeAttribute(BaseAttribute equipAttribute)
+    public void ChangeEquipAttribute(BaseAttribute _equipAttribute)
     {
-        Character_HP(equipAttribute.HP);
-        Character_MP(equipAttribute.MP);
-        Character_Aggressivity(equipAttribute.Aggressivity);
-        Character_Strength(equipAttribute.Strength);
-        Character_Agile(equipAttribute.Agile);
-        Character_Intellect(equipAttribute.Intellect);
+        equipAttribute = _equipAttribute;
+
+        ChangeAttribute();
     }
+
+    public void ChangeBaseAttribute(BaseAttribute _baseAttribute)
+    {
+        baseAttribute = _baseAttribute;
+
+        ChangeAttribute();
+    }
+
+    public void ChangeAttribute()
+    {
+        finalAttribute.HP = baseAttribute.HP + equipAttribute.HP;
+        finalAttribute.MP = baseAttribute.MP + equipAttribute.MP;
+        finalAttribute.ReHP = baseAttribute.ReHP + equipAttribute.ReHP;
+        finalAttribute.ReMP = baseAttribute.ReMP + equipAttribute.ReMP;
+        finalAttribute.Aggressivity = baseAttribute.Aggressivity + equipAttribute.Aggressivity;
+        finalAttribute.Armor = baseAttribute.Armor + equipAttribute.Armor;
+        finalAttribute.Strength = baseAttribute.Strength + equipAttribute.Strength;
+        finalAttribute.Agile = baseAttribute.Agile + equipAttribute.Agile;
+        finalAttribute.Intellect = baseAttribute.Intellect + equipAttribute.Intellect;
+        Strength();
+        Agile();
+        Intellect();
+    }
+
 }

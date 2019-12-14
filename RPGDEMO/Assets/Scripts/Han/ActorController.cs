@@ -38,6 +38,7 @@ public class ActorController : MonoBehaviour
     public bool isDam;
     private bool stillRun;
     public bool _isAttacked;
+    public bool canAttacked;
 
     [Header("=====  Attack =====")]
     private float normalDis;//普攻距离
@@ -78,6 +79,7 @@ public class ActorController : MonoBehaviour
         if (pi.roll)
         {
             anim.SetTrigger("roll");
+            canAttacked = false;
         }
 
         if (pi.attack)
@@ -106,16 +108,19 @@ public class ActorController : MonoBehaviour
         if (pi.skill_1)
         {
             anim.SetTrigger("skill_1");
+            canAttacked = false;
         }
 
         if (pi.skill_2)
         {
             anim.SetTrigger("skill_2");
+            canAttacked = false;
         }
 
         if (pi.skill_3)
         {
             anim.SetTrigger("skill_3");
+            canAttacked = false;
         }
 
         if (pi.pickup)
@@ -126,7 +131,7 @@ public class ActorController : MonoBehaviour
         if (_isAttacked)
         {
             anim.SetTrigger("isattacked");
-            pi.Dmag = 0;
+
         }
     }
 
@@ -145,6 +150,7 @@ public class ActorController : MonoBehaviour
     {
         pi.inputEnabled = true;
         lockCamera = false;
+        canAttacked = true;
         //this.gameObject.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
     }
 
@@ -254,6 +260,18 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = false;
         lockCamera = true;
         str = State.pickup;
+    }
+
+    public void OnAttackedEnter()
+    {
+        pi.inputEnabled = false;
+        pi.Dmag = 0;
+    }
+
+    public void OnAttackedUpdate()
+    {
+        _isAttacked = false;
+        anim.ResetTrigger("isattacked");
     }
 
     public void Select(State str)

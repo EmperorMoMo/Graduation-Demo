@@ -999,6 +999,9 @@ MonoBehaviour:
   smoothtime: 0.2
   anim: {fileID: 172672131}
   isDam: 0
+  _isAttacked: 0
+  canAttacked: 0
+  die: 0
   str: 0
 --- !u!54 &627488771
 Rigidbody:

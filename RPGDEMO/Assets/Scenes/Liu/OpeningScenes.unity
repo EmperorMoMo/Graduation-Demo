@@ -14919,6 +14919,8 @@ MonoBehaviour:
   anim: {fileID: 632346117}
   isDam: 0
   _isAttacked: 0
+  canAttacked: 0
+  die: 0
   str: 0
 --- !u!114 &1088763780
 MonoBehaviour:

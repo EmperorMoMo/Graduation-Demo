@@ -82,6 +82,7 @@ public class EnemyAttribute : MonoBehaviour
             {
                 HP -= (_Aggressivity - (_Aggressivity * ((Armor * 6) / (100 + Armor * 6))));
             }
+            HP = Mathf.Clamp(HP, 0, MAX_HP);
         }
         else
         {

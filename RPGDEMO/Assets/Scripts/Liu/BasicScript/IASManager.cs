@@ -13,6 +13,8 @@ public class IASManager : MonoBehaviour {
     private static GameObject SlotPrefab;       //生成网格的预制体
     private static GameObject ItemPrefab;       //生成物品的预制体
 
+    private static List<int[]> thisFile = new List<int[]>();
+
     public void Awake(){
         SlotPrefab = slotPrefab;
         ItemPrefab = itemPrefab;
@@ -22,15 +24,6 @@ public class IASManager : MonoBehaviour {
         CreateSlot();
         CreateEquipmentSlot();
         ReadData();
-        CreateItem(1000);
-        CreateItem(1001);
-        CreateItem(1002);
-        CreateItem(1003);
-        CreateItem(1004);
-        CreateItem(1005);
-        CreateItem(1006);
-        CreateItem(1007);
-        CreateItem(1008);
         Debug.Log(DataManager.ShowFile());
     }
     public void Update() {
@@ -59,14 +52,13 @@ public class IASManager : MonoBehaviour {
     }
 
     public static void ReadData() {
-        Item item;
-        //foreach () {
-        //    item = DataManager.ItemArr[i];
-        //    if (item != null) {
-        //        Debug.Log(item.itemBase.UID + " // " + item.SlotIndex + " // " + item.curStack);
-        //        CreateItem(item.itemBase.UID, i, item.curStack);
-        //    }
-        //}
+        foreach (int[] i in DataManager.ItemFile) {
+            thisFile.Add(new int[3] { i[0], i[1], i[2] });
+        }
+        foreach (int[] i in thisFile) {
+            CreateItem(i[0], i[1], i[2]);
+        }
+        thisFile.Clear();
     }
 
     //创建物品

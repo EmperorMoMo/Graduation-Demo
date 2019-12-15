@@ -24,6 +24,15 @@ public class DataManager : MonoBehaviour
     public void Start() {
         EquipmentJData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/DataSource/EquipmentData.json"));    //将Json文件转化为对象
         ContructEquipemnt();
+        ItemFile.Add(new int[3] { 1000, 0, 1 });
+        ItemFile.Add(new int[3] { 1001, 1, 1 });
+        ItemFile.Add(new int[3] { 1002, 2, 1 });
+        ItemFile.Add(new int[3] { 1003, 3, 1 });
+        ItemFile.Add(new int[3] { 1004, 4, 1 });
+        ItemFile.Add(new int[3] { 1005, 5, 1 });
+        ItemFile.Add(new int[3] { 1006, 6, 1 });
+        ItemFile.Add(new int[3] { 1007, 7, 1 });
+        ItemFile.Add(new int[3] { 1008, 8, 1 });
     }
 
     private void ContructEquipemnt() { 

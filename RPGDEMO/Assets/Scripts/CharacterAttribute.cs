@@ -68,6 +68,7 @@ public class CharacterAttribute : MonoBehaviour
             }
             else if (Cur_HP > finalAttribute.HP)
             {
+
                 Cur_HP = finalAttribute.HP;
             }
 

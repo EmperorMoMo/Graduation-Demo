@@ -20,7 +20,6 @@ public class EnemyAttribute : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        HP = MAX_HP;
         hitpoint= this.transform.GetChild(2).GetComponent<Transform>();
         CA = GameObject.Find("PlayerHandle").GetComponent<CharacterAttribute>();
         sim = GetComponent<SimpleFSM>();
@@ -39,6 +38,7 @@ public class EnemyAttribute : MonoBehaviour
             Aggressivity *= level * level * level*2f;
             Armor *= level * level * level * 3f;
         }
+        HP = MAX_HP;
         Debug.Log("怪物等级为：" + level);
         Debug.Log("怪物攻击力：" + Aggressivity);
     }

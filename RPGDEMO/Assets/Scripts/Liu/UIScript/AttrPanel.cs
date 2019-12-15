@@ -105,8 +105,8 @@ public class AttrPanel : MonoBehaviour {
         curExp = MyLerp(curExp, tarExp, 2);
         curCurHP = MyLerp(curCurHP, tarCurHP, 2);
         curCurMP = MyLerp(curCurMP, tarCurMP, 2);
-        curHP = MyLerp(curHP, tarHP, 2);
-        curMP = MyLerp(curMP, tarMP, 2);
+        curHP = MyLerp(curHP, tarHP, 4);
+        curMP = MyLerp(curMP, tarMP, 4);
         curAgg = MyLerp(curAgg, tarAgg, 2);
         curArm = MyLerp(curArm, tarArm, 2);
         curStre = MyLerp(curStre, tarStre, 2);

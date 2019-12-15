@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAttribute : MonoBehaviour
 {
-    public float MAX_HP=10;
+    public float MAX_HP=200;
     public float HP;
     public float Aggressivity=50;
     public float Armor=3;
@@ -37,7 +37,7 @@ public class EnemyAttribute : MonoBehaviour
             level = (CA.Level / 10)+1;
             MAX_HP *= level*level*level*1.5f;
             Aggressivity *= level * level * level*1.5f;
-            Armor *= level * level * level*1.5f;
+            Armor *= level * level * level * 1.5f;
         }
         Debug.Log("怪物等级为：" + level);
         Debug.Log("怪物攻击力：" + Aggressivity);

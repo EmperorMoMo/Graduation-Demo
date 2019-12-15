@@ -275,7 +275,7 @@ public class HTDRAFSM : MonsterFSM
             {
                 if (!flag)
                 {
-                    elapsedTime = 5.4f;
+                    elapsedTime = 5.0f;
                     flag = true;
                 }
                 if (i == 1)

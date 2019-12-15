@@ -42,11 +42,12 @@ public class MonsterFSM : MonoBehaviour
     void Update()
     {
         //调用每一帧更新状态机
-        FSMUpdate();
+
     }
     //执行固定帧率调用状态机
     void FixedUpdate()
     {
         FSMFixedUpdate();
+        FSMUpdate();
     }
 }

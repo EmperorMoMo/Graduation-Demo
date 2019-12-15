@@ -13,10 +13,16 @@ public class Enemy_RespawnPoint : MonoBehaviour
     public int Enemy = 15;
     private bool first_IN = true;
     public List<GameObject> gameObjects=new List<GameObject>();
+    //private CharacterAttribute ca;
+    //private EnemyAttribute ea;
+    //public int mons_level=1;
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindWithTag("TestPlayer").transform;
+        //ca = GameObject.Find("PlayerHandle").GetComponent<CharacterAttribute>();
+        //mons_level += ca.Level / 10;
+        //ea = GameObject.Find("mon_orgeHitter(Clone)").GetComponent<EnemyAttribute>();
     }
 
     // Update is called once per frame
@@ -28,6 +34,13 @@ public class Enemy_RespawnPoint : MonoBehaviour
                 for (int i = 0; i < Enemy; i++)
                 {
                     currentEnemy = Instantiate(enemy, transform.position, transform.rotation) as GameObject;
+                //currentEnemy.GetComponent<EnemyAttribute>().playerLevel = ca.Level;
+                //if (ca.Level>=10)
+                //{
+                //    currentEnemy.GetComponent<EnemyAttribute>().MAX_HP =10*(ca.Level / 10);
+                //    currentEnemy.GetComponent<EnemyAttribute>().Aggressivity =50* (ca.Level / 10);
+                //    currentEnemy.GetComponent<EnemyAttribute>().Armor = 3* (ca.Level / 10);
+                //}
                     gameObjects.Add(currentEnemy);
                     isOutsideRange = false;
                 }

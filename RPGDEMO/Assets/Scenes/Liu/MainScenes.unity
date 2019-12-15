@@ -5371,8 +5371,9 @@ MonoBehaviour:
   Main_Attribute: 0
   Cur_HP: 0
   Cur_MP: 0
-  Exp: 0
-  Level: 1
+  Exp: 1000
+  Level: 10
+  Effect: {fileID: 0}
   time: 0
 --- !u!4 &514264179
 Transform:

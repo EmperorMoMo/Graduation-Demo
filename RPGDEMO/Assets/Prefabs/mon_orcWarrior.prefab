@@ -1413,11 +1413,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 880a887a85d2f9744babd3140dbba7ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_HP: 10
+  MAX_HP: 200
   HP: 0
   Aggressivity: 50
   Armor: 3
   Effect: {fileID: 1931391723872664, guid: 8690041cf7250174eb66ceb76d6bf32a, type: 3}
+  level: 1
+  playerLevel: 0
 --- !u!1 &1527605202
 GameObject:
   m_ObjectHideFlags: 0

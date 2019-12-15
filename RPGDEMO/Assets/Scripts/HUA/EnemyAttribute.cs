@@ -35,9 +35,9 @@ public class EnemyAttribute : MonoBehaviour
         if (CA.Level >= 10)
         {
             level = (CA.Level / 10)+1;
-            MAX_HP *= level*level*level*1.5f;
-            Aggressivity *= level * level * level*1.5f;
-            Armor *= level * level * level * 1.5f;
+            MAX_HP *= level*level*level*3f;
+            Aggressivity *= level * level * level*2f;
+            Armor *= level * level * level * 3f;
         }
         Debug.Log("怪物等级为：" + level);
         Debug.Log("怪物攻击力：" + Aggressivity);

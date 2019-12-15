@@ -130,6 +130,9 @@ public class UIManager : MonoBehaviour {
 
     //显示当前面板
     public static void ShowPanel(GameObject Panel) {
+        if (Panel == AttributePanel) {
+            AttrPanel.isReOpen = true;
+        }
         Debug.Log(Panel.gameObject.name + "开启");
         Panel.SetActive(true);
         PanelList.Add(Panel);

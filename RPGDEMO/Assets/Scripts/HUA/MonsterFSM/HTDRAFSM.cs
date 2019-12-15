@@ -73,7 +73,7 @@ public class HTDRAFSM : MonsterFSM
         //FindNextPoint();
         i = 1;
     }
-    private void Damage(int s)
+    private void Damage(float s)
     {
         ca.Character_Attacked(ba.Aggressivity*s);
     }
@@ -206,8 +206,6 @@ public class HTDRAFSM : MonsterFSM
         {
             if (distance <= attackDistance)
             {
-                flag = false;
-                i = 1;
                 curState = FSMState.attack;
             }
             //如果当前距离已经大于巡逻状态，将当前状态切换成巡逻状态
@@ -250,20 +248,17 @@ public class HTDRAFSM : MonsterFSM
         //如果距离已经大于攻击距离且小于等于追逐距离
         if(ca.Cur_HP>0)
         {
-            if (distance > attackDistance && distance <= walkDistance)
+            if (!_animation.IsPlaying("Attack01") && !_animation.IsPlaying("Attack02") && !_animation.IsPlaying("Attack03"))
             {
-                if (!_animation.IsPlaying("Attack01") && !_animation.IsPlaying("Attack02") && !_animation.IsPlaying("Attack03"))
+                if (distance > attackDistance && distance <= walkDistance)
                 {
                     //将当前状态转换成追逐状态
                     curState = FSMState.walk;
                     //退出计算
                     return;
                 }
-            }
-            //如果距离已经大于追逐距离，将AI对象状态切换成巡逻状态
-            else if (distance > walkDistance && !_animation.Play())
-            {
-                if (!_animation.IsPlaying("Attack01") && !_animation.IsPlaying("Attack02") && !_animation.IsPlaying("Attack03"))
+                //如果距离已经大于追逐距离，将AI对象状态切换成巡逻状态
+                else if (distance > walkDistance)
                 {
                     //将当前状态切换成巡逻状态
                     curState = FSMState.chase;
@@ -271,13 +266,13 @@ public class HTDRAFSM : MonsterFSM
                     return;
                 }
             }
+            if (!flag)
+            {
+                elapsedTime = 5.3f;
+                flag = true;
+            }
             if (elapsedTime >= attackRate)
             {
-                if (!flag)
-                {
-                    elapsedTime = 5.0f;
-                    flag = true;
-                }
                 if (i == 1)
                 {
                     _animation.Play("Attack01");
@@ -286,7 +281,7 @@ public class HTDRAFSM : MonsterFSM
                         ToDrawSectorSolid(transform, transform.localPosition, 60, 5.6f);
                         if (UmbrellaAttack(transform, playerTransform, 60, 5.6f))
                         {
-                            if (Time_damage > 1)
+                            if (Time_damage > 0.9f)
                             {
                                 //takeDamage();
                                 Damage(1);
@@ -295,7 +290,7 @@ public class HTDRAFSM : MonsterFSM
                             Time_damage += Time.fixedDeltaTime;
                         }
                     }
-                    if (elapsedTime > 6.4)
+                    if (elapsedTime > 6.33f)
                     {
                         elapsedTime = 0;
                         i = Random.Range(1, 4);
@@ -309,10 +304,10 @@ public class HTDRAFSM : MonsterFSM
                         ToDrawSectorSolid(transform, transform.localPosition, 60, 5.6f);
                         if (UmbrellaAttack(transform, playerTransform, 60, 5.6f))
                         {
-                            if (Time_damage > 1)
+                            if (Time_damage > 0.86f)
                             {
                                 //takeDamage();
-                                Damage(3);
+                                Damage(1.5f);
                                 Time_damage = 0;
                             }
                             Time_damage += Time.fixedDeltaTime;
@@ -332,7 +327,7 @@ public class HTDRAFSM : MonsterFSM
                         ToDrawSectorSolid(transform, transform.localPosition, 60, 5.6f);
                         if (UmbrellaAttack(transform, playerTransform, 60, 5.6f))
                         {
-                            if (Time_damage > 1)
+                            if (Time_damage > 1.25f)
                             {
                                 //takeDamage();
                                 Damage(2);
@@ -420,6 +415,6 @@ public class HTDRAFSM : MonsterFSM
                 break;
         }
         //计算攻击状态中上一次攻击时间
-        elapsedTime += Time.deltaTime;
+        elapsedTime += Time.fixedDeltaTime;
     }
 }

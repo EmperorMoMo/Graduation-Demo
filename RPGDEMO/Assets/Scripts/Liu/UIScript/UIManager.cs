@@ -79,8 +79,7 @@ public class UIManager : MonoBehaviour {
 
         if (Input.GetKeyUp(KeyCode.F1)) {
             if (PanelList.Count != 0) {
-                PanelList[PanelList.Count - 1].SetActive(false);
-                PanelList.RemoveAt(PanelList.Count - 1);
+                ClosePanel(PanelList[PanelList.Count - 1]);
             }
         }
 
@@ -131,15 +130,19 @@ public class UIManager : MonoBehaviour {
 
     //显示当前面板
     public static void ShowPanel(GameObject Panel) {
+        Debug.Log(Panel.gameObject.name + "开启");
         Panel.SetActive(true);
         PanelList.Add(Panel);
+        Debug.Log("数量" + PanelList.Count);
         CloseFuncationMenu();
     }
 
     //关闭当前面板
     public void ClosePanel(GameObject Panel) {
+        Debug.Log(Panel.gameObject.name + "关闭");
         Panel.SetActive(false);
         PanelList.Remove(Panel);
+        Debug.Log("数量" + PanelList.Count);
     }
 
     //通过名字取得对应面板

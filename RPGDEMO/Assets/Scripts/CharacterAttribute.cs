@@ -175,7 +175,6 @@ public class CharacterAttribute : MonoBehaviour
     public void ChangeEquipAttribute(BaseAttribute _equipAttribute)
     {
         equipAttribute = _equipAttribute;
-        Debug.Log(equipAttribute.HP);
         ChangeAttribute();
     }
 

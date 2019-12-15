@@ -1284,6 +1284,7 @@ GameObject:
   - component: {fileID: 1643899656504083374}
   - component: {fileID: 2243766567001131918}
   - component: {fileID: 1296976327956255351}
+  - component: {fileID: 435458486032029994}
   m_Layer: 0
   m_Name: mon_orcWarrior
   m_TagString: Enemy
@@ -1413,11 +1414,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 880a887a85d2f9744babd3140dbba7ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_HP: 10
+  MAX_HP: 200
   HP: 0
   Aggressivity: 50
   Armor: 3
   Effect: {fileID: 1931391723872664, guid: 8690041cf7250174eb66ceb76d6bf32a, type: 3}
+  level: 1
+  playerLevel: 0
+--- !u!114 &435458486032029994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449104016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 349eecdd809eff1438e0df0d999be4ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BarPrefab: {fileID: 4597276321675367045, guid: ba62ce92f9dc13f4387b1059a8f07dc2,
+    type: 3}
 --- !u!1 &1527605202
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAttribute : MonoBehaviour
 {
-    public float MAX_HP=1000;
+    public float MAX_HP=500;
     public float HP;
     public float Aggressivity=50;
     public float Armor=3;
@@ -12,13 +12,16 @@ public class EnemyAttribute : MonoBehaviour
     public GameObject Effect;
     private Transform hitpoint;
     private SimpleFSM sim;
+    private CharacterAttribute CA;
     //private SimpleFSM01 sim01;
     private bool isme = false;
+    public int level=1;
     // Start is called before the first frame update
     void Awake()
     {
         HP = MAX_HP;
         hitpoint= this.transform.GetChild(2).GetComponent<Transform>();
+        CA = GameObject.Find("PlayerHandle").GetComponent<CharacterAttribute>();
         sim = GetComponent<SimpleFSM>();
         //animation = GetComponent<Animation>();
         //if(this.gameObject.name== "mon_orcWarrior")
@@ -33,7 +36,13 @@ public class EnemyAttribute : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(CA.Level%10==0)
+        {
+            level++;
+            MAX_HP*=level;
+            Armor *= level;
+            Aggressivity *= level;
+        }
     }
 
     public void Enemy_Attacked(float _Aggressivity)

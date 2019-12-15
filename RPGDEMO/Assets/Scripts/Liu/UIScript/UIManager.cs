@@ -8,6 +8,7 @@ using UnityEngine;
 /// 控制所有UI界面显示隐藏等
 /// </summary>
 public class UIManager : MonoBehaviour {
+    public static GameObject PlayerHandle;      //角色
     public static GameObject Canvas;            //UI画布
     public static GameObject Head;              //头像血条
     public static GameObject MiniMap;           //小地图
@@ -27,6 +28,7 @@ public class UIManager : MonoBehaviour {
     private static List<GameObject> PanelList = new List<GameObject>();        //存储UI面板的List
 
     void Awake() {
+        PlayerHandle = GameObject.Find("PlayerHandle");
         Canvas = GameObject.Find("Canvas");
         Head = Canvas.transform.GetChild(0).gameObject;
         MiniMap = Canvas.transform.GetChild(1).gameObject;

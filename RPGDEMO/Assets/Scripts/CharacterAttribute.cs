@@ -38,8 +38,9 @@ public class CharacterAttribute : MonoBehaviour
         baseAttribute.Intellect = 15;
 
         ac = GetComponent<ActorController>();
-        Cur_HP = baseAttribute.HP + equipAttribute.HP;
-        Cur_MP = baseAttribute.MP + equipAttribute.MP;
+        ChangeAttribute();
+        Cur_HP = finalAttribute.HP;
+        Cur_MP = finalAttribute.MP;
         print(Cur_HP);
     }
 

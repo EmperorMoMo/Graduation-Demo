@@ -13,8 +13,6 @@ public class IASManager : MonoBehaviour {
     private static GameObject SlotPrefab;       //生成网格的预制体
     private static GameObject ItemPrefab;       //生成物品的预制体
 
-    private static CharacterAttribute CA = new CharacterAttribute();
-
     public void Awake(){
         SlotPrefab = slotPrefab;
         ItemPrefab = itemPrefab;
@@ -196,6 +194,6 @@ public class IASManager : MonoBehaviour {
             }
         }
         Debug.Log("test1");
-        CA.ChangeEquipAttribute(attr);
+        UIManager.PlayerHandle.GetComponent<CharacterAttribute>().ChangeEquipAttribute(attr);
     }
 }

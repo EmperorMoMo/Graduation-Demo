@@ -134,7 +134,6 @@ public class CharacterAttribute : MonoBehaviour
     public void ChangeEquipAttribute(BaseAttribute _equipAttribute)
     {
         equipAttribute = _equipAttribute;
-        Debug.Log(equipAttribute.HP);
         ChangeAttribute();
     }
 
@@ -161,9 +160,6 @@ public class CharacterAttribute : MonoBehaviour
         Strength();
         Agile();
         Intellect();
-        Debug.Log("final:"+finalAttribute.HP);
-        Debug.Log("base:"+baseAttribute.HP);
-        Debug.Log("equip:" + equipAttribute.HP);
     }
 
 }

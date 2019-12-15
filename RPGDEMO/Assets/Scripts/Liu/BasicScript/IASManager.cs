@@ -149,7 +149,9 @@ public class IASManager : MonoBehaviour {
     }
 
     public static void Equip(Equipment equipment){
-        UIManager.ShowPanel(UIManager.EquipmentPanel);
+        if (!UIManager.EquipmentPanel.activeSelf) {
+            UIManager.ShowPanel(UIManager.EquipmentPanel);
+        }
         Slot EquipSlot = DataManager.SlotArr[equipment.equipemtnBase.Position + 90];
         //如果该装备在对应的装备栏上
         if (equipment.SlotIndex == EquipSlot.Index) {
@@ -193,7 +195,6 @@ public class IASManager : MonoBehaviour {
                 attr.Agile += equipmentAttr.Agile;
             }
         }
-        Debug.Log("test1");
         UIManager.PlayerHandle.GetComponent<CharacterAttribute>().ChangeEquipAttribute(attr);
     }
 }

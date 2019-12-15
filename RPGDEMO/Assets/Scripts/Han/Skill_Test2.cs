@@ -7,11 +7,13 @@ public class Skill_Test2 : MonoBehaviour
     private Vector3 target_2;
     private EnemyAttribute ai;
 
+    private CharacterAttribute ca;
     //private Collider box;
     //// Start is called before the first frame update
     void Awake()
     {
         target_2 = GameObject.Find("Target_1").transform.position;
+        ca = GameObject.Find("PlayerHandle").GetComponent<CharacterAttribute>();
         //box = GetComponent<BoxCollider>();
     }
 
@@ -28,7 +30,7 @@ public class Skill_Test2 : MonoBehaviour
                     float t2 = 0f;
                     t2 += 1f * Time.fixedDeltaTime;
                     cols[i].transform.position = Vector3.Lerp(cols[i].transform.position, -cols[i].transform.forward*20f, t2*1f);
-                    ai.Enemy_Attacked(10);
+                    ai.Enemy_Attacked(ca.finalAttribute.Aggressivity*0.3f);
                 }
             }
         }

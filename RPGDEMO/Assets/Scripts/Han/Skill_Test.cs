@@ -7,6 +7,8 @@ public class Skill_Test : MonoBehaviour
     private Animator anim;
 
     private EnemyAttribute ai;
+
+    private CharacterAttribute ca;
     //private Vector3 currentVelocity;
     //private Transform trans;
 
@@ -20,6 +22,7 @@ public class Skill_Test : MonoBehaviour
         canCollider = false;
         //trans = GetComponent<Transform>();
         target = GameObject.Find("TargetPoint_").transform.position;
+        ca = GameObject.Find("PlayerHandle").GetComponent<CharacterAttribute>();
     }
 
     // Update is called once per frame
@@ -57,7 +60,7 @@ public class Skill_Test : MonoBehaviour
                         float t2 = 0f;
                         t2 += 1f * Time.fixedDeltaTime;
                         cols[i].transform.position = Vector3.Lerp(cols[i].transform.position, (-cols[i].transform.forward * 4f + Vector3.up * 4f) * 10f, t2);
-                        ai.Enemy_Attacked(25);
+                        ai.Enemy_Attacked(ca.finalAttribute.Aggressivity*0.5f);
                     }
                 }
             }

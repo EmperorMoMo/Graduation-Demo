@@ -239,7 +239,7 @@ public class SimpleFSM : FSM
         yield return new WaitForSeconds(1.5f);
         er.gameObjects.Remove(this.gameObject);
         if(attackRate == monster2)
-        ca.Character_Exp(50);
+        ca.Character_Exp(50*ea.level);
         Destroy(this.gameObject);
     }
     private void DeadState()

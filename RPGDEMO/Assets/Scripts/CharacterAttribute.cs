@@ -21,7 +21,7 @@ public class CharacterAttribute : MonoBehaviour
     public float Exp=0;//经验值
     public int Level=1;//等级
     
-    bool _Upgrade;//判断是否升级了
+    public bool _Upgrade;//判断是否升级了
     public GameObject Effect;
 
     public float time = 0;

@@ -48833,7 +48833,7 @@ MonoBehaviour:
   Time_damage: 0
   SkillDistance: 5
   SkillJiaodu: 60
-  walkDistance: 8
+  walkDistance: 5.5
   chaseDistance: 21
   attackDistance: 4.5
   arriveDistance: 2

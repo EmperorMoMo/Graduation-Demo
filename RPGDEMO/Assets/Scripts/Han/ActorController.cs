@@ -25,6 +25,7 @@ public class ActorController : MonoBehaviour
     public float runMultiplier = 2.0f;
     public float smoothtime = 0.2f;
     private float currentvelocity;
+    private float Aggressivity_Temp;
 
     [SerializeField]
     private Animator anim;
@@ -51,6 +52,19 @@ public class ActorController : MonoBehaviour
 
     private float skill_OneDis;//技能距离
     public State str;//当前是何种攻击方式
+
+    [Header("===== CD Manager =====")]
+    private bool skill_one_CD = true;
+    private bool skill_two_CD = true;
+    private bool skill_three_CD = true;
+    private bool skill_four_CD = true;
+    private bool roll_CD = true;
+
+    private float CD_skill_one = 0;
+    private float CD_skill_two = 0;
+    private float CD_skill_three = 0;
+    private float CD_skill_four = 0;
+    private float CD_roll = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -86,10 +100,20 @@ public class ActorController : MonoBehaviour
             anim.SetTrigger("jump");
         }
 
-        if (pi.roll)
+        if (pi.roll&&roll_CD)
         {
             anim.SetTrigger("roll");
             canAttacked = false;
+            roll_CD = false;
+        }
+        if (roll_CD == false)
+        {
+            CD_roll += Time.deltaTime;
+            if (CD_roll > 2)
+            {
+                roll_CD = true;
+                CD_roll = 0;
+            }
         }
 
         if (pi.attack)
@@ -115,22 +139,52 @@ public class ActorController : MonoBehaviour
                                         ref currentvelocity, smoothtime);
         }
 
-        if (pi.skill_1)
+        if (pi.skill_1&&skill_one_CD)
         {
             anim.SetTrigger("skill_1");
             canAttacked = false;
+            skill_one_CD = false;
         }
-
-        if (pi.skill_2)
+        if (skill_one_CD == false)
+        {
+            CD_skill_one += Time.deltaTime;
+            if (CD_skill_one > 10)
+            {
+                skill_one_CD = true;
+                CD_skill_one = 0;
+            }
+        }
+        
+        if (pi.skill_2&&skill_two_CD)
         {
             anim.SetTrigger("skill_2");
             canAttacked = false;
+            skill_two_CD = false;
+        }
+        if (skill_two_CD == false)
+        {
+            CD_skill_two += Time.deltaTime;
+            if (CD_skill_two > 8)
+            {
+                skill_two_CD = true;
+                CD_skill_two = 0;
+            }
         }
 
-        if (pi.skill_3)
+        if (pi.skill_3&&skill_three_CD)
         {
             anim.SetTrigger("skill_3");
             canAttacked = false;
+            skill_three_CD = false;
+        }
+        if (skill_three_CD == false)
+        {
+            CD_skill_three += Time.deltaTime;
+            if (CD_skill_three > 15)
+            {
+                skill_three_CD = true;
+                CD_skill_three = 0;
+            }
         }
 
         if (pi.pickup)
@@ -152,11 +206,23 @@ public class ActorController : MonoBehaviour
             canAttacked = false;
         }
 
-        if (pi.increaseskill_1)
+        if (pi.increaseskill_1&&skill_four_CD)
         {
             Increase_Point.SetActive(true);
-            ca.finalAttribute.Aggressivity *= 1.5f;
+            Aggressivity_Temp = ca.finalAttribute.Aggressivity;
+            ca.finalAttribute.Aggressivity += Aggressivity_Temp * 0.5f;
             increase = true;
+            pi.increaseskill_1 = false;
+            skill_four_CD = false;
+        }
+        if (skill_four_CD == false)
+        {
+            CD_skill_four += Time.deltaTime;
+            if (CD_skill_four > 45)
+            {
+                skill_four_CD = true;
+                CD_skill_four = 0;
+            }
         }
 
         if (increase)
@@ -165,14 +231,14 @@ public class ActorController : MonoBehaviour
             if (Increase_time > 10)
             {
                 Increase_Point.SetActive(false);
-                ca.finalAttribute.Aggressivity /= 1.5f;
+                ca.finalAttribute.Aggressivity -= Aggressivity_Temp * 0.5f;
                 Increase_time = 0;
                 increase = false;
             }
         }
 
-        Debug.Log("increase_time:"+Increase_time);
-        Debug.Log("aggressivity:"+ca.finalAttribute.Aggressivity);
+        //Debug.Log("increase_time:"+Increase_time);
+        //Debug.Log("aggressivity:"+ca.finalAttribute.Aggressivity);
     }
 
     void FixedUpdate()
@@ -441,6 +507,20 @@ public class ActorController : MonoBehaviour
             //objects.GetComponent<EnemyAI>().Damage();
         }
 
+    }
+
+    public void CD_Manager(bool _name,float _timer,float _time)
+    {
+        if (_name==false)
+        {
+            _timer += Time.deltaTime;
+            Debug.Log("_timer:"+_timer);
+            if (_timer > _time)
+            {
+                _name = true;
+                _timer = 0;
+            }
+        }
     }
 
     ///

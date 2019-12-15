@@ -17,8 +17,9 @@ public class ActorController : MonoBehaviour
     public PlayerInput pi;
     private Transform cameraTransform;
     private CharacterAttribute ca;
+    private GameObject Increase_Point;
+    public GameObject IncreaseSkill;
 
-    private Transform flashPoint;
     //private GameObject cameraTransform;
     public float walkSpeed = 2.0f;
     public float runMultiplier = 2.0f;
@@ -32,6 +33,8 @@ public class ActorController : MonoBehaviour
     private Vector3 thrustVec;
     private float rollVec = 1f;
     private float currentVelocity;
+
+    public float Increase_time = 0f;
     //private float lerpTarget;//状态机权重
 
     private bool lockPlanar = false;
@@ -41,6 +44,7 @@ public class ActorController : MonoBehaviour
     public bool _isAttacked;
     public bool canAttacked;
     public bool die;
+    public bool increase;
 
     [Header("=====  Attack =====")]
     private float normalDis;//普攻距离
@@ -55,13 +59,16 @@ public class ActorController : MonoBehaviour
         anim = model.GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
         cameraTransform = Camera.main.transform;
-        flashPoint = GameObject.Find("flashPoint").GetComponent<Transform>();
+        Increase_Point = GameObject.Find("IncreasePoint");
         ca = GetComponent<CharacterAttribute>();
 
         normalDis = 3f;
         skill_OneDis = 4f;
         _isAttacked = false;
 
+        Increase_Point = Instantiate(IncreaseSkill, Increase_Point.transform.position, Increase_Point.transform.rotation);
+        Increase_Point.transform.parent = model.transform;
+        Increase_Point.SetActive(false);
     }
 
     // Update is called once per frame
@@ -144,6 +151,28 @@ public class ActorController : MonoBehaviour
             lockPlanar = true;
             canAttacked = false;
         }
+
+        if (pi.increaseskill_1)
+        {
+            Increase_Point.SetActive(true);
+            ca.finalAttribute.Aggressivity *= 1.5f;
+            increase = true;
+        }
+
+        if (increase)
+        {
+            Increase_time += Time.deltaTime;
+            if (Increase_time > 10)
+            {
+                Increase_Point.SetActive(false);
+                ca.finalAttribute.Aggressivity /= 1.5f;
+                Increase_time = 0;
+                increase = false;
+            }
+        }
+
+        Debug.Log("increase_time:"+Increase_time);
+        Debug.Log("aggressivity:"+ca.finalAttribute.Aggressivity);
     }
 
     void FixedUpdate()
@@ -157,6 +186,7 @@ public class ActorController : MonoBehaviour
     /// 
     /// 
     ///
+
     public void OnGround()
     {
         pi.inputEnabled = true;

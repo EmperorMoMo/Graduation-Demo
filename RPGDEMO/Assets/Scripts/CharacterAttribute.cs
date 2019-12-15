@@ -52,44 +52,41 @@ public class CharacterAttribute : MonoBehaviour
     void FixedUpdate()
     {
         Character_Level();
-        if (Cur_HP < finalAttribute.HP)
+        if (!ac.die)
         {
-            time += Time.fixedDeltaTime;
-            if (time > 1)
+            if (Cur_HP < finalAttribute.HP)
             {
-                Cur_HP += finalAttribute.ReHP;
-                Debug.Log(Cur_HP);
-                time = 0;
+                time += Time.fixedDeltaTime;
+                if (time > 1)
+                {
+                    Cur_HP += finalAttribute.ReHP;
+                    Debug.Log(Cur_HP);
+                    time = 0;
+                }
+
+                Cur_HP = Mathf.Clamp(Cur_HP, 0, finalAttribute.HP);
+            }
+            else if (Cur_HP > finalAttribute.HP)
+            {
+                Cur_HP = finalAttribute.HP;
             }
 
-            Cur_HP = Mathf.Clamp(Cur_HP, 0, finalAttribute.HP);
-        }
-        else if(Cur_HP>finalAttribute.HP)
-        {
-            Cur_HP = finalAttribute.HP;
-        }
-
-        if (Cur_MP < finalAttribute.MP)
-        {
-            time += Time.fixedDeltaTime;
-            if (time > 1)
+            if (Cur_MP < finalAttribute.MP)
             {
-                Cur_MP += finalAttribute.ReMP;
-                Debug.Log(Cur_MP);
-                time = 0;
+                time += Time.fixedDeltaTime;
+                if (time > 1)
+                {
+                    Cur_MP += finalAttribute.ReMP;
+                    Debug.Log(Cur_MP);
+                    time = 0;
+                }
+
+                Cur_MP = Mathf.Clamp(Cur_MP, 0, finalAttribute.MP);
             }
-
-            Cur_MP = Mathf.Clamp(Cur_MP, 0, finalAttribute.MP);
-        }
-        else if (Cur_MP > finalAttribute.MP)
-        {
-            Cur_MP = finalAttribute.MP;
-        }
-
-        if (_Upgrade)
-        {
-            Cur_HP = finalAttribute.HP;
-            Cur_MP = finalAttribute.MP;
+            else if (Cur_MP > finalAttribute.MP)
+            {
+                Cur_MP = finalAttribute.MP;
+            }
         }
     }
     
@@ -110,6 +107,8 @@ public class CharacterAttribute : MonoBehaviour
         if (_Upgrade)
         {
             ChangeBaseAttribute();
+            Cur_HP = finalAttribute.HP;
+            Cur_MP = finalAttribute.MP;
             _Upgrade = false;
         }
     }

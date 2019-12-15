@@ -11,20 +11,22 @@ public class HeadSlider : MonoBehaviour {
     Text MPText;
     Text HPTextOutline;
     Text MPTextOutline;
+    Text Level;
     float tarHPValue;
     float tarMPValue;
     public void Start() {
         player = GameObject.Find("PlayerHandle").GetComponent<CharacterAttribute>();
         HPSlider = this.transform.GetChild(0).GetComponent<Slider>();
         MPSlider = this.transform.GetChild(1).GetComponent<Slider>();
+        Level = this.transform.GetChild(3).GetComponent<Text>();
         HPText = this.transform.GetChild(0).GetComponentInChildren<Text>();
         MPText = this.transform.GetChild(1).GetComponentInChildren<Text>();
         HPTextOutline = this.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Text>();
         MPTextOutline = this.transform.GetChild(1).GetChild(1).GetChild(0).GetComponent<Text>();
         HPSlider.value = 0;
         MPSlider.value = 0;
-        HPText.text = HPTextOutline.text = player.Cur_HP + " / " + player.finalAttribute.HP;
-        MPText.text = MPTextOutline.text = player.Cur_MP + " / " + player.finalAttribute.MP;
+        HPText.text = HPTextOutline.text = (int)player.Cur_HP + " / " + (int)player.finalAttribute.HP;
+        MPText.text = MPTextOutline.text = (int)player.Cur_MP + " / " + (int)player.finalAttribute.MP;
     }
     public void Update() {
         tarHPValue = player.Cur_HP / player.finalAttribute.HP;
@@ -33,5 +35,6 @@ public class HeadSlider : MonoBehaviour {
         MPSlider.value = Mathf.Lerp(MPSlider.value, tarMPValue, 0.08f);
         HPText.text = HPTextOutline.text = player.Cur_HP + " / " + player.finalAttribute.HP;
         MPText.text = MPTextOutline.text = player.Cur_MP + " / " + player.finalAttribute.MP;
+        Level.text = "Lv." + player.Level;
     }
 }

@@ -23,6 +23,9 @@ public class CharacterAttribute : MonoBehaviour
     
     bool _Upgrade;//判断是否升级了
 
+
+    public float time = 0;
+
     private ActorController ac;
     // Start is called before the first frame update
     void Awake()
@@ -42,13 +45,46 @@ public class CharacterAttribute : MonoBehaviour
         Cur_HP = finalAttribute.HP;
         Cur_MP = finalAttribute.MP;
         print(Cur_HP);
+
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Character_Level();
-        //Debug.Log(baseAttribute.HP);
+        if (Cur_HP < finalAttribute.HP)
+        {
+            time += Time.fixedDeltaTime;
+            if (time > 1)
+            {
+                Cur_HP += finalAttribute.ReHP;
+                Debug.Log(Cur_HP);
+                time = 0;
+            }
+
+            Cur_HP = Mathf.Clamp(Cur_HP, 0, finalAttribute.HP);
+        }
+        else if(Cur_HP>finalAttribute.HP)
+        {
+            Cur_HP = finalAttribute.HP;
+        }
+
+        if (Cur_MP < finalAttribute.MP)
+        {
+            time += Time.fixedDeltaTime;
+            if (time > 1)
+            {
+                Cur_MP += finalAttribute.ReMP;
+                Debug.Log(Cur_MP);
+                time = 0;
+            }
+
+            Cur_MP = Mathf.Clamp(Cur_MP, 0, finalAttribute.MP);
+        }
+        else if (Cur_MP > finalAttribute.MP)
+        {
+            Cur_MP = finalAttribute.MP;
+        }
     }
     
     public void Character_Exp(float _Exp)
@@ -160,6 +196,9 @@ public class CharacterAttribute : MonoBehaviour
         Strength();
         Agile();
         Intellect();
+        //Debug.Log("final:"+finalAttribute.HP);
+        //Debug.Log("base:"+baseAttribute.HP);
+        //Debug.Log("equip:" + equipAttribute.HP);
     }
 
 }

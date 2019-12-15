@@ -12,9 +12,9 @@ public class CharacterAttribute : MonoBehaviour
     }
     public Attribute Main_Attribute;
 
-    public BaseAttribute baseAttribute;
-    public BaseAttribute equipAttribute;
-    public BaseAttribute finalAttribute;
+    public BaseAttribute baseAttribute = new BaseAttribute();
+    public BaseAttribute equipAttribute = new BaseAttribute();
+    public BaseAttribute finalAttribute = new BaseAttribute();
 
     public float Cur_HP;//生命值
     public float Cur_MP;//魔法值
@@ -46,7 +46,8 @@ public class CharacterAttribute : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Character_Level();
+        //Debug.Log(baseAttribute.HP);
     }
     
     public void Character_Exp(float _Exp)
@@ -65,17 +66,15 @@ public class CharacterAttribute : MonoBehaviour
 
         if (_Upgrade)
         {
-            baseAttribute.Strength += 25;
-            baseAttribute.Agile += 20;
-            baseAttribute.Intellect += 20;
+            ChangeBaseAttribute();
             _Upgrade = false;
         }
     }
 
     public void Strength()
     {
-        finalAttribute.ReHP = finalAttribute.Strength / 10;
-        finalAttribute.HP = finalAttribute.Strength * 10;
+        finalAttribute.ReHP += finalAttribute.Strength / 10;
+        finalAttribute.HP += finalAttribute.Strength * 10;
         if (Main_Attribute == Attribute.Strength)
         {
             finalAttribute.Aggressivity += finalAttribute.Strength;
@@ -126,7 +125,7 @@ public class CharacterAttribute : MonoBehaviour
         if (Cur_HP <= 0)
         {
             ac.die = true;
-            this.gameObject.GetComponent<CharacterAttribute>().enabled = false;
+            //this.gameObject.GetComponent<CharacterAttribute>().enabled = false;
         }
         print("HoShi还剩："+Cur_HP);
     }
@@ -134,13 +133,15 @@ public class CharacterAttribute : MonoBehaviour
     public void ChangeEquipAttribute(BaseAttribute _equipAttribute)
     {
         equipAttribute = _equipAttribute;
-
+        Debug.Log(equipAttribute.HP);
         ChangeAttribute();
     }
 
-    public void ChangeBaseAttribute(BaseAttribute _baseAttribute)
+    public void ChangeBaseAttribute()
     {
-        baseAttribute = _baseAttribute;
+        baseAttribute.Strength += 25;
+        baseAttribute.Agile += 20;
+        baseAttribute.Intellect += 20;
 
         ChangeAttribute();
     }
@@ -159,6 +160,9 @@ public class CharacterAttribute : MonoBehaviour
         Strength();
         Agile();
         Intellect();
+        Debug.Log("final:"+finalAttribute.HP);
+        Debug.Log("base:"+baseAttribute.HP);
+        Debug.Log("equip:" + equipAttribute.HP);
     }
 
 }

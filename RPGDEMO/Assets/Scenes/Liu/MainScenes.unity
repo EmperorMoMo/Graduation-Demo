@@ -5348,7 +5348,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 514264179}
-  - component: {fileID: 514264178}
   m_Layer: 0
   m_Name: PlayerHandle
   m_TagString: Untagged
@@ -5356,32 +5355,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &514264178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 514264177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b53866c83e639bd4a9c5deed30a8af03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Main_Attribute: 0
-  MAX_HP: 250
-  HP: 0
-  MAX_MP: 500
-  MP: 0
-  ReplyHP: 1
-  ReplyMP: 5
-  Aggressivity: 22
-  Armor: 2
-  Exp: 0
-  Level: 1
-  Strength: 18
-  Agile: 10
-  Intellect: 15
 --- !u!4 &514264179
 Transform:
   m_ObjectHideFlags: 0

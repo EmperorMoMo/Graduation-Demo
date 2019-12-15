@@ -33455,19 +33455,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Main_Attribute: 0
-  MAX_HP: 250
-  HP: 250
-  MAX_MP: 500
-  MP: 500
-  ReplyHP: 1
-  ReplyMP: 5
-  Aggressivity: 25
-  Armor: 2
+  Cur_HP: 0
+  Cur_MP: 0
   Exp: 0
   Level: 1
-  Strength: 18
-  Agile: 10
-  Intellect: 15
 --- !u!54 &1874531856
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33576,7 +33567,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1874531854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.7, y: 0.246, z: 66.71}
+  m_LocalPosition: {x: 41.7, y: -1.22, z: 66.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 19135440}

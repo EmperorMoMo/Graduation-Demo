@@ -185,9 +185,9 @@ public class CharacterAttribute : MonoBehaviour
 
     public void ChangeBaseAttribute()
     {
-        baseAttribute.Strength += 25;
-        baseAttribute.Agile += 20;
-        baseAttribute.Intellect += 20;
+        baseAttribute.Strength += 13;
+        baseAttribute.Agile += 10;
+        baseAttribute.Intellect += 10;
 
         ChangeAttribute();
     }

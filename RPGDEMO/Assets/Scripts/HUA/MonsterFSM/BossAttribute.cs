@@ -37,7 +37,7 @@ public class BossAttribute : MonoBehaviour
 
     }
 
-    public void Enemy_Attacked(float _Aggressivity)
+    public void Boss_Attacked(float _Aggressivity)
     {
         if (HP > 0)
         {

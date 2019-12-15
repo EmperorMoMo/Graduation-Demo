@@ -22,7 +22,7 @@ public class CharacterAttribute : MonoBehaviour
     public int Level=1;//等级
     
     bool _Upgrade;//判断是否升级了
-
+    public GameObject Effect;
 
     public float time = 0;
 
@@ -107,6 +107,9 @@ public class CharacterAttribute : MonoBehaviour
 
         if (_Upgrade)
         {
+            var instance = Instantiate(Effect, transform.position, transform.rotation) as GameObject;
+            instance.transform.parent = transform;
+            Destroy(instance,1.35f);
             ChangeBaseAttribute();
             Cur_HP = finalAttribute.HP;
             Cur_MP = finalAttribute.MP;

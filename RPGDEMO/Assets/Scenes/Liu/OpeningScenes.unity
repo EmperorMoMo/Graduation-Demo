@@ -20295,7 +20295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1330081972}
   m_Layer: 0
-  m_Name: flashPoint
+  m_Name: IncreasePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20309,7 +20309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330081971}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 19135440}
@@ -33459,6 +33459,8 @@ MonoBehaviour:
   Cur_MP: 0
   Exp: 0
   Level: 1
+  Effect: {fileID: 100004, guid: 53d818fe21816488e931816bd69d501e, type: 3}
+  time: 0
 --- !u!54 &1874531856
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33489,6 +33491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 19135439}
   pi: {fileID: 0}
+  IncreaseSkill: {fileID: 100004, guid: 781087dfdce2e724486d22c0c76cb94b, type: 3}
   walkSpeed: 1.4
   runMultiplier: 2.7
   smoothtime: 0.2
@@ -33531,6 +33534,7 @@ MonoBehaviour:
   skill_1: 0
   skill_2: 0
   skill_3: 0
+  increaseskill_1: 0
   pickup: 0
   lastAttack: 0
   attack: 0

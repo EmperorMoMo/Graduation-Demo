@@ -13,7 +13,14 @@ public class HTDRAFSM : MonsterFSM
         attack,//攻击状态
         dead//死亡状态
     }
+    public float Time_damage = 0;
+    public float SkillDistance = 5;
+    public float SkillJiaodu = 60;
     public float walkDistance = 6;
+    GameObject go;
+    MeshFilter mf;
+    MeshRenderer mr;
+    Shader shader;
     //追逐距离
     public float chaseDistance = 20;
     //攻击距离
@@ -37,13 +44,13 @@ public class HTDRAFSM : MonsterFSM
     private bool _isDead;
     //是否第一次进入攻击
     private bool flag = false;
+    private CharacterAttribute ca;
+    private BossAttribute ba;
     //实现基类初始状态机方法
-    void GetMessage(string s)
-    {
-        _animation.Play(s);
-    }
     protected override void Initialize()
     {
+        ca = GameObject.Find("PlayerHandle").GetComponent<CharacterAttribute>();
+        ba = GetComponent<BossAttribute>();
         monsterHP = 100;
         //先将AI对象的当前状态设置为巡逻状态
         curState = FSMState.idle;
@@ -66,60 +73,88 @@ public class HTDRAFSM : MonsterFSM
         //FindNextPoint();
         i = 1;
     }
+    private void Damage(int s)
+    {
+        ca.Character_Attacked(ba.Aggressivity*s);
+    }
+    public bool UmbrellaAttack(Transform attacker, Transform attacked, float angle, float radius)
+    {
+        Vector3 deltaA = attacked.position - attacker.position;
+        float tmpAngel = Mathf.Acos(Vector3.Dot(deltaA.normalized, attacker.forward)) * Mathf.Rad2Deg;
+        if (tmpAngel < angle * 0.5f && deltaA.magnitude < radius)
+        {
+            return true;
+        }
+        return false;
+    }
+    public void ToDrawSectorSolid(Transform t, Vector3 center, float angle, float radius)
+    {
+        int pointAmmount = 100;
+        float eachAngle = angle / pointAmmount;
+        Vector3 forward = t.forward;
+        List<Vector3> Vertices = new List<Vector3>();
+        Vertices.Add(center);
+        for (int i = 0; i < pointAmmount; i++)
+        {
+            Vector3 pos = Quaternion.Euler(0f, -angle / 2 + eachAngle * (i - 1), 0f) * forward * radius + center;
+            Vertices.Add(pos);
+        }
+        CreateMesh(Vertices);
+    }
+    private GameObject CreateMesh(List<Vector3> vertices)
+    {
+        int[] triangles;
+        Mesh mesh = new Mesh();
+        int triangleAmount = vertices.Count - 2;
+        triangles = new int[3 * triangleAmount];
+        for (int i = 0; i < triangleAmount; i++)
+        {
+            triangles[3 * i] = 0;
+            triangles[3 * i + 1] = i + 1;
+            triangles[3 * i + 2] = i + 2;
+        }
+        if (go == null)
+        {
+            go = new GameObject("mesh");
+            go.transform.position = new Vector3(0f, 0f, 0f);
+            mf = go.AddComponent<MeshFilter>();
+            mr = go.AddComponent<MeshRenderer>();
+            shader = Shader.Find("Unlit/Color");
+        }
+        mesh.vertices = vertices.ToArray();
+        mesh.triangles = triangles;
+        mf.mesh = mesh;
+        mr.material.shader = shader;
+        mr.material.color = Color.red;
+        return go;
+    }
     ////获取下一个路径点的方法
-    //private void FindNextPoint()
-    //{
-    //    //随机获取路径点
-    //    int i = Random.Range(0, pointList.Length);
-    //    //将取到的路径点赋值给目标位置
-    //    targetPoint = pointList[i].transform.position;
-    //}
     //巡逻状态实现方法
     private void IdleState()
     {
-        ////如果AI对象当前位置与目标点的位置小于等于抵达距离时，转向下一个巡逻点
-        //if (Vector3.Distance(transform.position, targetPoint) <= arriveDistance)
-        //    FindNextPoint();
-        ////判断AI对象与玩家之间的距离是否满足追逐状态，如果AI对象现在的距离与玩家的距离小于等于追逐距离时，将当前状态转换为追逐状态
-        //else if (Vector3.Distance(transform.position, playerTransform.position) <= chaseDistance)
-        //    curState = FSMState.chase;
-        ////根据目标位置控制AI对象转向，根据目标位置与AI对象当前位置差值获取转向角度，再实现转向
-        //Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
-        ////用每一帧的时间乘以转向速度来控制转向
-        //transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
-        ////控制AI对象向前移动
-        //_controller.SimpleMove(transform.forward * Time.deltaTime * walkSpeed);
-        ////播放AI对象移动动画
-        //_animation.Play("Run");
-        //_animation.Play("Idle");
-        if (Vector3.Distance(transform.position, playerTransform.position) <= chaseDistance)
-            curState = FSMState.chase;
+        if (ca.Cur_HP > 0)
+        {
+            if (Vector3.Distance(transform.position, playerTransform.position) <= chaseDistance)
+                curState = FSMState.chase;
+        }
+        else
+        {
+            _animation.Play("Idle");
+            if (go != null)
+            {
+                Destroy(go);
+            }
+        }
     }
     //追逐状态方法
-    private void animation_Manager(string name)
-    {
-        //if (_animation["Attack01"].normalizedTime == 0.5f)
-        //{
-        //    Debug.Log("attack01");
-        //    this.transform.GetComponent<Damage>().TakeDamage(playerTransform.GetComponent<Status>());
-        //}
-        //if (_animation["Attack02"].normalizedTime == 0.5f)
-        //{
-        //    Debug.Log("attack02");
-        //    this.transform.GetComponent<Damage>().TakeDamage(playerTransform.GetComponent<Status>());
-        //}
-
-        //if (_animation["Attack03"].normalizedTime == 0.5f)
-        //{
-        //    Debug.Log("attack03");
-        //    this.transform.GetComponent<Damage>().TakeDamage(playerTransform.GetComponent<Status>());
-        //}
-        AnimationEvent event0 = new AnimationEvent();
-        event0.time = this._animation[name].length * 0.5f;
-        event0.functionName = "takeDamage";
-        _animation[name].clip.AddEvent(event0);
-        _animation.Play(name);
-    }
+    //private void animation_Manager(string name)
+    //{
+    //    AnimationEvent event0 = new AnimationEvent();
+    //    event0.time = this._animation[name].length * 0.5f;
+    //    event0.functionName = "takeDamage";
+    //    _animation[name].clip.AddEvent(event0);
+    //    _animation.Play(name);
+    //}
     //private void takeDamage()
     //{
     //    print("test");
@@ -131,59 +166,78 @@ public class HTDRAFSM : MonsterFSM
         targetPoint = playerTransform.position;
         //计算AI对象与玩家的距离
         float distance = Vector3.Distance(transform.position, targetPoint);
-        //如果AI对象与玩家距离小于攻击距离时，将当前状态切换成攻击状态
-        if (distance <= walkDistance)
-            curState = FSMState.walk;
-        //if (distance <= attackDistance)
-        //    curState = FSMState.attack;
-        ////如果当前距离已经大于巡逻状态，将当前状态切换成巡逻状态
-        else if (distance >= chaseDistance)
-            curState = FSMState.idle;
-        //根据目标位置控制AI对象转向，根据目标位置与AI对象当前位置差值获取转向角度，再实现转向
-        Vector3 a = new Vector3(targetPoint.x - transform.position.x, 0, targetPoint.z - transform.position.z);
-        Quaternion rotation = Quaternion.LookRotation(a);
-        //Quaternion rotation = Quaternion.LookRotation(targetPoint - transform.position);
-        //用每一帧的时间乘以转向速度来控制转向
-        //Transform tran = transform;
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
-        //if ((transform.rotation.y - tran.rotation.y) > 1)
-        //    _animation.Play("turn45Right3toxicSpitCombo");
-        //控制AI对象朝目标方向移动
-        //if (distance <= walkDistance)
-        //{
-        //    _controller.SimpleMove(transform.forward * Time.deltaTime * walkSpeed);
-        //    _animation.Play("Walk");
-        //}
-        //播放移动动画
-        _controller.SimpleMove(transform.forward * Time.deltaTime * runSpeed);
-        _animation.Play("Run");
+        if (ca.Cur_HP > 0)
+        {
+            //如果AI对象与玩家距离小于攻击距离时，将当前状态切换成攻击状态
+            if (distance <= walkDistance)
+                curState = FSMState.walk;
+            ////如果当前距离已经大于巡逻状态，将当前状态切换成巡逻状态
+            else if (distance >= chaseDistance)
+                curState = FSMState.idle;
+            //根据目标位置控制AI对象转向，根据目标位置与AI对象当前位置差值获取转向角度，再实现转向
+            Vector3 a = new Vector3(targetPoint.x - transform.position.x, 0, targetPoint.z - transform.position.z);
+            Quaternion rotation = Quaternion.LookRotation(a);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
+            _controller.SimpleMove(transform.forward * Time.deltaTime * runSpeed);
+            _animation.Play("Run");
+            if (_animation.IsPlaying("Run"))
+            {
+                if (go != null)
+                {
+                    Destroy(go);
+                }
+            }
+        }
+        else
+        {
+            _animation.Play("Idle");
+            if (go != null)
+            {
+                Destroy(go);
+            }
+        }
+
     }
-    //private void attackNow()
-    //{
-    //    _animation.Play("Attack01");
-    //}
     private void WalkState()
     {
         targetPoint = playerTransform.position;
         float distance = Vector3.Distance(transform.position, targetPoint);
-        if (distance <= attackDistance)
+        if (ca.Cur_HP > 0)
         {
-            flag = false;
-            i = 1;
-            curState = FSMState.attack;
+            if (distance <= attackDistance)
+            {
+                flag = false;
+                i = 1;
+                curState = FSMState.attack;
+            }
+            //如果当前距离已经大于巡逻状态，将当前状态切换成巡逻状态
+            else if (distance >= walkDistance)
+                curState = FSMState.chase;
+            //根据目标位置控制AI对象转向，根据目标位置与AI对象当前位置差值获取转向角度，再实现转向
+            Vector3 a = new Vector3(targetPoint.x - transform.position.x, 0, targetPoint.z - transform.position.z);
+            Quaternion rotation = Quaternion.LookRotation(a);
+            //Quaternion rotation = Quaternion.LookRotation(targetPoint - transform.position);
+            //用每一帧的时间乘以转向速度来控制转向
+            //Transform tran = transform;
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
+            _controller.SimpleMove(transform.forward * Time.deltaTime * walkSpeed);
+            _animation.Play("Walk");
+            if (_animation.IsPlaying("Walk"))
+            {
+                if (go != null)
+                {
+                    Destroy(go);
+                }
+            }
         }
-        //如果当前距离已经大于巡逻状态，将当前状态切换成巡逻状态
-        else if (distance >= walkDistance)
-            curState = FSMState.chase;
-        //根据目标位置控制AI对象转向，根据目标位置与AI对象当前位置差值获取转向角度，再实现转向
-        Vector3 a = new Vector3(targetPoint.x - transform.position.x, 0, targetPoint.z - transform.position.z);
-        Quaternion rotation = Quaternion.LookRotation(a);
-        //Quaternion rotation = Quaternion.LookRotation(targetPoint - transform.position);
-        //用每一帧的时间乘以转向速度来控制转向
-        //Transform tran = transform;
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
-        _controller.SimpleMove(transform.forward * Time.deltaTime * walkSpeed);
-        _animation.Play("Walk");
+        else
+        {
+            _animation.Play("Idle");
+            if (go != null)
+            {
+                Destroy(go);
+            }
+        }
     }
     //攻击状态
     private void AttackState()
@@ -194,84 +248,148 @@ public class HTDRAFSM : MonsterFSM
         float distance = Vector3.Distance(transform.position, targetPoint);
         //判断是否满足攻击需求
         //如果距离已经大于攻击距离且小于等于追逐距离
-        if (distance > attackDistance && distance <= walkDistance)
+        if(ca.Cur_HP>0)
         {
-            //将当前状态转换成追逐状态
-            curState = FSMState.walk;
-            //退出计算
-            return;
-        }
-        //如果距离已经大于追逐距离，将AI对象状态切换成巡逻状态
-        else if (distance > walkDistance)
-        {
-            //将当前状态切换成巡逻状态
-            curState = FSMState.chase;
-            //退出计算
-            return;
-        }
-        //计算转向，攻击状态需要AI对象正面朝向玩家
-        //根据目标位置控制AI对象转向，根据目标位置与AI对象当前位置差值获取转向角度，再实现转向
-        Vector3 a = new Vector3(targetPoint.x - transform.position.x, 0, targetPoint.z - transform.position.z);
-        Quaternion rotation = Quaternion.LookRotation(a);
-        //Quaternion rotation = Quaternion.LookRotation(targetPoint - transform.position);
-        //用每一帧的时间乘以转向速度来控制转向
-        //Transform tran=transform;
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
-        //if ((transform.rotation.y - tran.rotation.y)> 1)
-        //    _animation.Play("turn45Right3toxicSpitCombo");
-        //如果上一次攻击时间大于等于间隔时间，则认为可以攻击
-        if (elapsedTime >= attackRate)
-        {
-            if (!flag) {
-                elapsedTime = 5.067f;
-                flag = true;
-            }
-            if (i == 1)
+            if (distance > attackDistance && distance <= walkDistance)
             {
-                _animation.Play("Attack01");
-                //animation_Manager("Attack01");
-                if (elapsedTime > 6.4)
+                if (!_animation.IsPlaying("Attack01") && !_animation.IsPlaying("Attack02") && !_animation.IsPlaying("Attack03"))
                 {
-                    elapsedTime = 0;
-                    i = Random.Range(1, 4);
+                    //将当前状态转换成追逐状态
+                    curState = FSMState.walk;
+                    //退出计算
+                    return;
                 }
             }
-            if (i == 2)
+            //如果距离已经大于追逐距离，将AI对象状态切换成巡逻状态
+            else if (distance > walkDistance && !_animation.Play())
             {
-                _animation.Play("Attack02");
-                //animation_Manager("Attack02");
-                if (elapsedTime > 7.9)
+                if (!_animation.IsPlaying("Attack01") && !_animation.IsPlaying("Attack02") && !_animation.IsPlaying("Attack03"))
                 {
-                    elapsedTime = 0;
-                    i = Random.Range(1, 4);
+                    //将当前状态切换成巡逻状态
+                    curState = FSMState.chase;
+                    //退出计算
+                    return;
                 }
             }
-            if (i == 3)
+            if (elapsedTime >= attackRate)
             {
-                _animation.Play("Attack03");
-                //animation_Manager("Attack03");
-                if (elapsedTime > 6.6)
+                if (!flag)
                 {
-                    elapsedTime = 0;
-                    i = Random.Range(1, 4);
+                    elapsedTime = 5.4f;
+                    flag = true;
                 }
+                if (i == 1)
+                {
+                    _animation.Play("Attack01");
+                    if (_animation.IsPlaying("Attack01"))
+                    {
+                        ToDrawSectorSolid(transform, transform.localPosition, 60, 5.6f);
+                        if (UmbrellaAttack(transform, playerTransform, 60, 5.6f))
+                        {
+                            if (Time_damage > 1)
+                            {
+                                //takeDamage();
+                                Damage(1);
+                                Time_damage = 0;
+                            }
+                            Time_damage += Time.fixedDeltaTime;
+                        }
+                    }
+                    if (elapsedTime > 6.4)
+                    {
+                        elapsedTime = 0;
+                        i = Random.Range(1, 4);
+                    }
+                }
+                if (i == 2)
+                {
+                    _animation.Play("Attack02");
+                    if (_animation.IsPlaying("Attack02"))
+                    {
+                        ToDrawSectorSolid(transform, transform.localPosition, 60, 5.6f);
+                        if (UmbrellaAttack(transform, playerTransform, 60, 5.6f))
+                        {
+                            if (Time_damage > 1)
+                            {
+                                //takeDamage();
+                                Damage(3);
+                                Time_damage = 0;
+                            }
+                            Time_damage += Time.fixedDeltaTime;
+                        }
+                    }
+                    if (elapsedTime > 7.9)
+                    {
+                        elapsedTime = 0;
+                        i = Random.Range(1, 4);
+                    }
+                }
+                if (i == 3)
+                {
+                    _animation.Play("Attack03");
+                    if (_animation.IsPlaying("Attack03"))
+                    {
+                        ToDrawSectorSolid(transform, transform.localPosition, 60, 5.6f);
+                        if (UmbrellaAttack(transform, playerTransform, 60, 5.6f))
+                        {
+                            if (Time_damage > 1)
+                            {
+                                //takeDamage();
+                                Damage(2);
+                                Time_damage = 0;
+                            }
+                            Time_damage += Time.fixedDeltaTime;
+                        }
+                    }
+                    if (elapsedTime > 6.6)
+                    {
+                        elapsedTime = 0;
+                        i = Random.Range(1, 4);
+                    }
+                }
+                Debug.Log(i);
             }
-            Debug.Log(i);
-            //将上一次攻击时间置零
-
+            else
+            {
+                _animation.Play("Idle");
+            }
+            if (_animation.IsPlaying("Idle"))
+            {
+                if (go != null)
+                {
+                    Destroy(go);
+                }
+                Vector3 a = new Vector3(targetPoint.x - transform.position.x, 0, targetPoint.z - transform.position.z);
+                Quaternion rotation = Quaternion.LookRotation(a);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
+            }
         }
-        //否则播放站立动画
         else
         {
             _animation.Play("Idle");
+            if (go != null)
+            {
+                Destroy(go);
+            }
         }
     }
+    IEnumerator die()
+    {
+        _animation.Play("Dead");
+        if (_animation.IsPlaying("Dead"))
+        {
+            if (go != null)
+            {
+                Destroy(go);
+            }
+        }
+        yield return new WaitForSeconds(1.5f);
+        Destroy(this.gameObject);
+    }
     //死亡状态方法实现
-
     private void DeadState()
     {
-        if(monsterHP>=0)
-        _animation.Play("Dead");
+        StartCoroutine(die());
     }
     //重写父类方法
     //用于根据当前状态调用相应事件以及实现方法
@@ -303,6 +421,5 @@ public class HTDRAFSM : MonsterFSM
         }
         //计算攻击状态中上一次攻击时间
         elapsedTime += Time.deltaTime;
-        //Debug.Log(elapsedTime);
     }
 }

@@ -10,9 +10,9 @@ public class Enemy_RespawnPoint : MonoBehaviour
     private GameObject currentEnemy;//当前的怪物
     private bool isOutsideRange = true;//是否在怪物出生点的外面
     private Vector3 distanceToPlayer;//怪物与角色的距离
-    public int Enemy = 10;
+    public int Enemy = 15;
     private bool first_IN = true;
-    public int mons=0;
+    public List<GameObject> gameObjects=new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +28,7 @@ public class Enemy_RespawnPoint : MonoBehaviour
                 for (int i = 0; i < Enemy; i++)
                 {
                     currentEnemy = Instantiate(enemy, transform.position, transform.rotation) as GameObject;
-                    mons++;
+                    gameObjects.Add(currentEnemy);
                     isOutsideRange = false;
                 }
                 first_IN = false;
@@ -37,8 +37,9 @@ public class Enemy_RespawnPoint : MonoBehaviour
                 // isOutsideRange = false;
             }
             isOutsideRange = true;
-        if (mons <= 0)
+        if (gameObjects.Count<=0)
+        {
             first_IN = true;
+        }
     }
-
 }

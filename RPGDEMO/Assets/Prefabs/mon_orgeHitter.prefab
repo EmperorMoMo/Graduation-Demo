@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 880a887a85d2f9744babd3140dbba7ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_HP: 1000
+  MAX_HP: 10
   HP: 0
   Aggressivity: 50
   Armor: 3

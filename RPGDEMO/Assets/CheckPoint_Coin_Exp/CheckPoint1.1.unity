@@ -30306,7 +30306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MAX_HP: 5000
   HP: 0
-  Aggressivity: 1500
+  Aggressivity: 1
   Armor: 50
   Effect: {fileID: 1931391723872664, guid: 8690041cf7250174eb66ceb76d6bf32a, type: 3}
 --- !u!1 &1158572774
@@ -30799,7 +30799,7 @@ MonoBehaviour:
   Time_damage: 0
   SkillDistance: 5
   SkillJiaodu: 60
-  walkDistance: 8
+  walkDistance: 5.5
   chaseDistance: 21
   attackDistance: 4.5
   arriveDistance: 2

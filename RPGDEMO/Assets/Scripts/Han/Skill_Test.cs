@@ -7,6 +7,7 @@ public class Skill_Test : MonoBehaviour
     private Animator anim;
 
     private EnemyAttribute ai;
+    private BossAttribute ba;
 
     private CharacterAttribute ca;
     //private Vector3 currentVelocity;
@@ -59,8 +60,14 @@ public class Skill_Test : MonoBehaviour
                         ai = cols[i].GetComponent<EnemyAttribute>();
                         float t2 = 0f;
                         t2 += 1f * Time.fixedDeltaTime;
-                        cols[i].transform.position = Vector3.Lerp(cols[i].transform.position, (-cols[i].transform.forward * 4f + Vector3.up * 4f) * 10f, t2);
+                        cols[i].transform.position = Vector3.Lerp(cols[i].transform.position, (-cols[i].transform.forward * 4f + Vector3.up * 2f) * 10f, t2);
                         ai.Enemy_Attacked(ca.finalAttribute.Aggressivity*0.5f);
+                    }
+
+                    if (cols[i].tag == "Boss")
+                    {
+                        ba = cols[i].GetComponent<BossAttribute>();
+                        ba.Boss_Attacked(ca.finalAttribute.Aggressivity * 0.5f);
                     }
                 }
             }

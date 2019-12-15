@@ -368,6 +368,41 @@ public class ActorController : MonoBehaviour
                             }
                         }
                     }
+
+                    if (cols[i].tag == "Boss")
+                    {
+                        float dir = Vector3.Distance(model.transform.position, cols[i].transform.position);
+                        float angle = Vector3.Angle(model.transform.forward,
+                            cols[i].transform.position - model.transform.position);
+
+                        if (str == State.normalAtk)
+                        {
+                            //print("test4");
+                            if (dir < normalDis && angle < 90)
+                            {
+                                cols[i].GetComponent<BossAttribute>().Boss_Attacked(ca.finalAttribute.Aggressivity);
+                                isDam = true;
+                            }
+                        }
+
+                        if (str == State.skill_One)
+                        {
+                            if (dir < skill_OneDis && angle < 360)
+                            {
+                                cols[i].GetComponent<BossAttribute>().Boss_Attacked(ca.finalAttribute.Aggressivity*0.5f);
+                                isDam = true;
+                            }
+                        }
+
+                        if (str == State.pickup)
+                        {
+                            if (dir < normalDis && angle < 60)
+                            {
+                                cols[i].GetComponent<BossAttribute>().Boss_Attacked(ca.finalAttribute.Aggressivity);
+                                isDam = true;
+                            }
+                        }
+                    }
                 }
             }
 

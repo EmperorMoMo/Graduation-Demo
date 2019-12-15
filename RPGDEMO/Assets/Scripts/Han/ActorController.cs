@@ -16,6 +16,7 @@ public class ActorController : MonoBehaviour
     public GameObject model;
     public PlayerInput pi;
     private Transform cameraTransform;
+    private CharacterAttribute ca;
 
     private Transform flashPoint;
     //private GameObject cameraTransform;
@@ -55,6 +56,7 @@ public class ActorController : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         cameraTransform = Camera.main.transform;
         flashPoint = GameObject.Find("flashPoint").GetComponent<Transform>();
+        ca = GetComponent<CharacterAttribute>();
 
         normalDis = 3f;
         skill_OneDis = 4f;
@@ -311,7 +313,7 @@ public class ActorController : MonoBehaviour
                         if (str == State.normalAtk)
                         {
                             //print("test4");
-                            if (dir < normalDis && angle < 75)
+                            if (dir < normalDis && angle < 90)
                             {
                                 tempList.Add(cols[i].gameObject);
                                 //print("test5");
@@ -351,7 +353,7 @@ public class ActorController : MonoBehaviour
                 objects.GetComponent<Rigidbody>().AddExplosionForce(180, transform.position, 3);
                 //isDam = true;
 
-                objects.GetComponent<EnemyAttribute>().Enemy_Attacked(50);
+                objects.GetComponent<EnemyAttribute>().Enemy_Attacked(ca.finalAttribute.Aggressivity);
             }
 
             if (objects.GetComponent<Rigidbody>() != null && str == State.skill_One)
@@ -360,7 +362,7 @@ public class ActorController : MonoBehaviour
 
                 objects.GetComponent<Rigidbody>().AddExplosionForce(165, transform.position, 4, 150);
 
-                objects.GetComponent<EnemyAttribute>().Enemy_Attacked(50);
+                objects.GetComponent<EnemyAttribute>().Enemy_Attacked(ca.finalAttribute.Aggressivity*0.5f);
             }
 
             if (objects.GetComponent<Rigidbody>() != null && str == State.pickup)

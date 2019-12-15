@@ -7,6 +7,7 @@ public class Skill_Test3 : MonoBehaviour
     private ActorController ac;
 
     private EnemyAttribute ai;
+    private CharacterAttribute ca;
     
     float timeTemp = 0f;
     float time = 0;
@@ -20,6 +21,7 @@ public class Skill_Test3 : MonoBehaviour
     void Awake()
     {
         ac = GameObject.Find("PlayerHandle").GetComponent<ActorController>();
+        ca = GameObject.Find("PlayerHandle").GetComponent<CharacterAttribute>();
         canStop = true;
         
         var instance = Instantiate(Effect, transform.position+Vector3.up, transform.rotation);
@@ -54,7 +56,7 @@ public class Skill_Test3 : MonoBehaviour
 
                     if (timeTemp >= 0.2f)
                     {
-                        ai.Enemy_Attacked(20);
+                        ai.Enemy_Attacked(ca.finalAttribute.Aggressivity * 0.3f);
                         timeTemp = 0;
                         if (canStop)
                         {

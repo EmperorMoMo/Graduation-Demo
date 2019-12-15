@@ -60,7 +60,7 @@ public class CharacterAttribute : MonoBehaviour
                 if (time > 1)
                 {
                     Cur_HP += finalAttribute.ReHP;
-                    Debug.Log(Cur_HP);
+                    //Debug.Log(Cur_HP);
                     time = 0;
                 }
 
@@ -174,6 +174,7 @@ public class CharacterAttribute : MonoBehaviour
             //this.gameObject.GetComponent<CharacterAttribute>().enabled = false;
         }
         print("HoShi还剩："+Cur_HP);
+        print("HoShi受到的伤害："+_Aggressivity);
     }
 
     public void ChangeEquipAttribute(BaseAttribute _equipAttribute)

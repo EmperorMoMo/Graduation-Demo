@@ -7,6 +7,7 @@ public class Skill_Test3 : MonoBehaviour
     private ActorController ac;
 
     private EnemyAttribute ai;
+    private BossAttribute ba;
     private CharacterAttribute ca;
     
     float timeTemp = 0f;
@@ -57,6 +58,21 @@ public class Skill_Test3 : MonoBehaviour
                     if (timeTemp >= 0.2f)
                     {
                         ai.Enemy_Attacked(ca.finalAttribute.Aggressivity * 0.3f);
+                        timeTemp = 0;
+                        if (canStop)
+                        {
+                            Stop(0.3f);
+                        }
+                    }
+                    timeTemp += Time.fixedDeltaTime;
+                }
+
+                if (cols[i].tag == "Boss")
+                {
+                    ba = cols[i].GetComponent<BossAttribute>();
+                    if (timeTemp >= 0.2f)
+                    {
+                        ba.Boss_Attacked(ca.finalAttribute.Aggressivity * 0.3f);
                         timeTemp = 0;
                         if (canStop)
                         {

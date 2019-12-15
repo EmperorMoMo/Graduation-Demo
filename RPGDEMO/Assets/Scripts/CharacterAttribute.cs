@@ -58,7 +58,7 @@ public class CharacterAttribute : MonoBehaviour
             if (time > 1)
             {
                 Cur_HP += finalAttribute.ReHP;
-                Debug.Log(Cur_HP);
+                //Debug.Log(Cur_HP);
                 time = 0;
             }
 
@@ -75,7 +75,7 @@ public class CharacterAttribute : MonoBehaviour
             if (time > 1)
             {
                 Cur_MP += finalAttribute.ReMP;
-                Debug.Log(Cur_MP);
+                //Debug.Log(Cur_MP);
                 time = 0;
             }
 

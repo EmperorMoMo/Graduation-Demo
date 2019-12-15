@@ -116,7 +116,7 @@ public class SimpleFSM : FSM
         {
             damageTime += Time.deltaTime;
             _animation.Play("Damage");
-            if (damageTime >= 0.4f)
+            if (damageTime >= 0.35f)
             {
                 _isAttacked = false;
                    damageTime = 0;
@@ -159,7 +159,7 @@ public class SimpleFSM : FSM
         {
             damageTime += Time.deltaTime;
             _animation.Play("Damage");
-            if (damageTime >= 0.4f)
+            if (damageTime >= 0.35f)
             {
                 _isAttacked = false;
                 damageTime = 0;
@@ -224,7 +224,7 @@ public class SimpleFSM : FSM
         {
             damageTime += Time.deltaTime;
             _animation.Play("Damage");
-            if (damageTime >= 0.4f)
+            if (damageTime >= 0.35f)
             {
                 _isAttacked = false;
                     damageTime = 0;

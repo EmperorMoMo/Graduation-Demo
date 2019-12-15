@@ -85,6 +85,12 @@ public class CharacterAttribute : MonoBehaviour
         {
             Cur_MP = finalAttribute.MP;
         }
+
+        if (_Upgrade)
+        {
+            Cur_HP = finalAttribute.HP;
+            Cur_MP = finalAttribute.MP;
+        }
     }
     
     public void Character_Exp(float _Exp)

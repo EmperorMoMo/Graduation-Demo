@@ -141,6 +141,7 @@ public class ActorController : MonoBehaviour
 
         if (pi.skill_1&&skill_one_CD)
         {
+            pi.canUseSkill = false;
             anim.SetTrigger("skill_1");
             canAttacked = false;
             skill_one_CD = false;
@@ -157,6 +158,7 @@ public class ActorController : MonoBehaviour
         
         if (pi.skill_2&&skill_two_CD)
         {
+            pi.canUseSkill = false;
             anim.SetTrigger("skill_2");
             canAttacked = false;
             skill_two_CD = false;
@@ -173,6 +175,7 @@ public class ActorController : MonoBehaviour
 
         if (pi.skill_3&&skill_three_CD)
         {
+            pi.canUseSkill = false;
             anim.SetTrigger("skill_3");
             canAttacked = false;
             skill_three_CD = false;
@@ -258,6 +261,7 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = true;
         lockCamera = false;
         canAttacked = true;
+        pi.canUseSkill = true;
         //this.gameObject.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
     }
 

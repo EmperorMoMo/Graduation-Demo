@@ -42,6 +42,8 @@ public class PlayerInput : MonoBehaviour
     public bool increaseskill_1;
 
     public bool pickup;
+
+    public bool canUseSkill = true;
     //3.double trigger双击型
     public bool lastAttack;
     public bool attack;
@@ -117,14 +119,17 @@ public class PlayerInput : MonoBehaviour
             attack = false;
         }
         lastAttack = newAttack;
-
-        skill_1 = Input.GetKeyDown(keyD);
-
-        skill_2 = Input.GetKeyDown(keyE);
-
-        skill_3 = Input.GetKeyDown(keyF);
-
+        
         pickup = Input.GetMouseButtonDown(1);
+
+        if (canUseSkill)
+        {
+            skill_1 = Input.GetKeyDown(keyD);
+
+            skill_2 = Input.GetKeyDown(keyE);
+
+            skill_3 = Input.GetKeyDown(keyF);
+        }
 
         increaseskill_1 = Input.GetKeyDown(KeyCode.Alpha1);
 

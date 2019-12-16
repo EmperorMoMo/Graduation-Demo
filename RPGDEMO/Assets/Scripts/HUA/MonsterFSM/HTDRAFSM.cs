@@ -377,15 +377,15 @@ public class HTDRAFSM : MonsterFSM
     }
     IEnumerator die()
     {
-        _animation.Play("Dead");
-        if (_animation.IsPlaying("Dead"))
+        _animation.Play("Death");
+        if (_animation.IsPlaying("Death"))
         {
             if (go != null)
             {
                 Destroy(go);
             }
         }
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(3.3f);
         Destroy(this.gameObject);
     }
     //死亡状态方法实现

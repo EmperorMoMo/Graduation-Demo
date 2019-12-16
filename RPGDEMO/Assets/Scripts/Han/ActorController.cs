@@ -404,7 +404,7 @@ public class ActorController : MonoBehaviour
                 for (int i = 0; i < cols.Length; i++)
                 {
                     //print("test2"+cols[i].name);
-                    if (cols[i].tag == "Enemy")
+                    if (cols[i].tag == "Enemy"||cols[i].tag == "Enemy1")
                     {
                         //print("test3"+cols[i].name);
                         float dir = Vector3.Distance(model.transform.position, cols[i].transform.position);
@@ -483,7 +483,14 @@ public class ActorController : MonoBehaviour
         {
             if (objects.GetComponent<Rigidbody>() != null && str == State.normalAtk)
             {
-                objects.GetComponent<EnemyAttribute>().Enemy_Attacked(ca.finalAttribute.Aggressivity*0.50f);
+                if (objects.tag == "Enemy")
+                {
+                    objects.GetComponent<EnemyAttribute>().Enemy_Attacked(ca.finalAttribute.Aggressivity * 0.5f);
+                }
+                else if (objects.tag == "Enemy1")
+                {
+                    objects.GetComponent<EnemyAttribute1>().Enemy_Attacked1(ca.finalAttribute.Aggressivity * 0.5f);
+                }
             }
 
             if (objects.GetComponent<Rigidbody>() != null && str == State.skill_One)
@@ -492,7 +499,15 @@ public class ActorController : MonoBehaviour
 
                 objects.GetComponent<Rigidbody>().AddExplosionForce(165, transform.position, 4, 150);
 
-                objects.GetComponent<EnemyAttribute>().Enemy_Attacked(ca.finalAttribute.Aggressivity*0.5f);
+                if (objects.tag == "Enemy")
+                {
+                    objects.GetComponent<EnemyAttribute>().Enemy_Attacked(ca.finalAttribute.Aggressivity * 0.75f);
+                }
+                else if (objects.tag == "Enemy1")
+                {
+                    objects.GetComponent<EnemyAttribute1>().Enemy_Attacked1(ca.finalAttribute.Aggressivity * 0.75f); 
+                }
+
             }
 
             if (objects.GetComponent<Rigidbody>() != null && str == State.pickup)

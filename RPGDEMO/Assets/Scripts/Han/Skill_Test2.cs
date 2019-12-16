@@ -7,6 +7,7 @@ public class Skill_Test2 : MonoBehaviour
     private Vector3 target_2;
     private EnemyAttribute ai;
     private BossAttribute ba;
+    private EnemyAttribute1 ai1;
 
     private CharacterAttribute ca;
     //private Collider box;
@@ -38,6 +39,15 @@ public class Skill_Test2 : MonoBehaviour
                 {
                     ba = cols[i].GetComponent<BossAttribute>();
                     ba.Boss_Attacked(ca.finalAttribute.Aggressivity * 0.3f);
+                }
+
+                if (cols[i].tag == "Enemy1")
+                {
+                    ai1 = cols[i].GetComponent<EnemyAttribute1>();
+                    float t2 = 0f;
+                    t2 += 1f * Time.fixedDeltaTime;
+                    cols[i].transform.position = Vector3.Lerp(cols[i].transform.position, -cols[i].transform.forward * 20f, t2 * 1f);
+                    ai1.Enemy_Attacked1(ca.finalAttribute.Aggressivity * 0.3f);
                 }
             }
         }

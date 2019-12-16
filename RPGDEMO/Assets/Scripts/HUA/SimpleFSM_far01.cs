@@ -262,7 +262,7 @@ public class SimpleFSM_far01 : FSM
         //计算攻击状态中上一次攻击时间
         elapsedTime += Time.deltaTime;
     }
-    public void InstantiateEffect()
+    public void InstantiateEffect1()
     {
         var instance = Instantiate(Effect, EffectPoint1.position, EffectPoint1.rotation);
             Destroy(instance, 1f);

@@ -184,6 +184,16 @@ public class IASManager : MonoBehaviour {
         DataManager.SaveItem();
     }
 
+    public static void Consu(Consum consum) {
+        Debug.Log("使用消耗品");
+        if (--consum.curStack == 0) {
+            DataManager.ItemArr[consum.SlotIndex] = null;         //指向物品的Arr置为空
+            Destroy(consum.gameObject);
+        } else {
+            consum.ShowCount();
+        }
+    }
+
     public static void SetEquipmentAtr() {
         BaseAttribute attr = new BaseAttribute();
         BaseAttribute equipmentAttr;

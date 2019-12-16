@@ -100,7 +100,6 @@ public class DataManager : MonoBehaviour
             describe = ConsumJData[i]["Describe"].ToString();
             sprite = ConsumJData[i]["Sprite"].ToString();
             stackMax = (int)ConsumJData[i]["StackMax"];
-            Debug.Log(sprite);
             ConsumBase consum = new ConsumBase(uid, name, quality, price, stackMax, describe, sprite, conType, reValue, duration);
             ConsumDic.Add(uid, consum);
         }

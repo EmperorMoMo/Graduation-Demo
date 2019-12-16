@@ -30,7 +30,7 @@ public class Consum : Item, IPointerEnterHandler, IPointerExitHandler {
             }
 
             if (Input.GetMouseButtonUp(1)) {
-                //IASManager.Equip(this);
+                IASManager.Consu(this);
             }
         }
     }

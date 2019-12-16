@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour {
     public static GameObject Backpage;          //背包
     public static GameObject Shoppage;          //商店
     public static GameObject AttributePanel;    //属性面板
+    public static GameObject SkillPanel;        //技能面板
     public static GameObject SwitchRole;        //切换人物
     public static GameObject FuncationMenu;     //功能菜单
     public static GameObject DialogBox;         //对话框
@@ -37,9 +38,10 @@ public class UIManager : MonoBehaviour {
         Backpage = Canvas.transform.GetChild(4).gameObject;
         Shoppage = Canvas.transform.GetChild(5).gameObject;
         AttributePanel = Canvas.transform.GetChild(6).gameObject;
-        SwitchRole = Canvas.transform.GetChild(7).gameObject;
-        FuncationMenu = Canvas.transform.GetChild(8).gameObject;
-        DialogBox = Canvas.transform.GetChild(9).gameObject;
+        SkillPanel = Canvas.transform.GetChild(7).gameObject;
+        SwitchRole = Canvas.transform.GetChild(8).gameObject;
+        FuncationMenu = Canvas.transform.GetChild(9).gameObject;
+        DialogBox = Canvas.transform.GetChild(10).gameObject;
 
         MainCamera = GameObject.Find("Main Camera").GetComponent<CameraController>();
     }
@@ -74,6 +76,14 @@ public class UIManager : MonoBehaviour {
                 ShowPanel(Backpage);
             } else {
                 ClosePanel(Backpage);
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.K)) {
+            if (!SkillPanel.activeSelf) {
+                ShowPanel(SkillPanel);
+            } else {
+                ClosePanel(SkillPanel);
             }
         }
 
@@ -133,19 +143,15 @@ public class UIManager : MonoBehaviour {
         if (Panel == AttributePanel) {
             AttrPanel.isReOpen = true;
         }
-        Debug.Log(Panel.gameObject.name + "开启");
         Panel.SetActive(true);
         PanelList.Add(Panel);
-        Debug.Log("数量" + PanelList.Count);
         CloseFuncationMenu();
     }
 
     //关闭当前面板
     public void ClosePanel(GameObject Panel) {
-        Debug.Log(Panel.gameObject.name + "关闭");
         Panel.SetActive(false);
         PanelList.Remove(Panel);
-        Debug.Log("数量" + PanelList.Count);
     }
 
     //通过名字取得对应面板

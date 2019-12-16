@@ -27,6 +27,16 @@ public class FetchUtils {
         return null;    //未找到返回null
     }
 
+    //在装备词典中寻找指定UID的装备对象
+    public static ConsumBase FetchConsumsBase(int uid) {
+        foreach (int key in DataManager.ConsumDic.Keys) {
+            if (key == uid) {
+                return DataManager.ConsumDic[key];
+            }
+        }
+        return null;    //未找到返回null
+    }
+
     //在物品List中寻找所有特定UID的Item游戏对象
     //public List<Item> FetchByUID(int uid){
         //List<Item> items = new List<Item>();

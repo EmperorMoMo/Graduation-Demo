@@ -72,15 +72,29 @@ public class IASManager : MonoBehaviour {
     }
 
     public static void CreateItem(int uid, int Index, int CurStack) {
-        GameObject item = GameObject.Instantiate(ItemPrefab, DataManager.SlotArr[Index].transform);     //指定位置生成指定物品
-        Equipment equipment = item.AddComponent<Equipment>();           //挂载Equipment脚本
-        equipment.itemBase = FetchUtils.FetchEquipmentsBase(uid);       //为其中的物品基础类赋值
-        equipment.SlotIndex = Index;                                //网格索引指向该网格
-        equipment.curStack = CurStack;
-        DataManager.ItemArr[Index] = equipment;                     //将Equipment脚本存入数组
+        GameObject Item = GameObject.Instantiate(ItemPrefab, DataManager.SlotArr[Index].transform);     //指定位置生成指定物品
+        Item item;
+        switch (uid / 1000) {
+            case 1:
+                item = Item.AddComponent<Equipment>();                     //挂载Equipment脚本
+                item.itemBase = FetchUtils.FetchEquipmentsBase(uid);       //为其中的物品基础类赋值
+                break;
+            case 2:
+                item = Item.AddComponent<Consum>();
+                item.itemBase = FetchUtils.FetchConsumsBase(uid);
+                break;
+            default:
+                item = null;
+                break;
+                
+        }
+        
+        item.SlotIndex = Index;                                //网格索引指向该网格
+        item.curStack = CurStack;
+        DataManager.ItemArr[Index] = item;                     //将Equipment脚本存入数组
 
-        item.GetComponent<Image>().sprite = equipment.itemBase.Sprite;  //显示贴图
-        equipment.ShowCount();                                          //显示数量
+        Item.GetComponent<Image>().sprite = item.itemBase.Sprite;  //显示贴图
+        item.ShowCount();                                          //显示数量
 
         DataManager.SaveItem();
     }
@@ -156,11 +170,9 @@ public class IASManager : MonoBehaviour {
             //装备栏上存在其他物品
             if (DataManager.ItemArr[EquipSlot.Index] != null) { 
                 //交换位置
-                Debug.Log("装备交换位置");
                 IASManager.Exchange(equipment, EquipSlot);
             } else { 
             //装备栏上不存在装备
-                Debug.Log("装备到装备栏");
                 ToEmpty(equipment, EquipSlot);
                 EquipSlot.transform.GetChild(0).gameObject.SetActive(false);
             }
@@ -168,6 +180,17 @@ public class IASManager : MonoBehaviour {
         SetEquipmentAtr();
         equipment.ReplaceParent();
         DataManager.SaveItem();
+    }
+
+    public static void Consu(Consum consum) {
+        UIManager.PlayerHandle.GetComponent<CharacterAttribute>()
+            .UseDrug(consum.consumBase.ConType, consum.consumBase.ReValue, consum.consumBase.Duration);
+        if (--consum.curStack == 0) {
+            DataManager.ItemArr[consum.SlotIndex] = null;         //指向物品的Arr置为空
+            Destroy(consum.gameObject);
+        } else {
+            consum.ShowCount();
+        }
     }
 
     public static void SetEquipmentAtr() {

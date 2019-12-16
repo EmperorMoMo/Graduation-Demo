@@ -11,19 +11,28 @@ using LitJson;
 /// </summary>
 public class DataManager : MonoBehaviour
 {
-    public static Slot[] SlotArr = new Slot[99];                    //存放所有的Slot脚本
-    public static Item[] ItemArr = new Item[99];                    //存放当前分类的Item脚本
-    public static List<int[]> ItemFile = new List<int[]>();           //物品存档
-    public static Equipment[] EquipmentArr = new Equipment[80];     //存放所有的Equipment脚本
+    public static List<int[]> ItemFile = new List<int[]>();         //物品存档
 
-    public static Dictionary<int, EquipmentBase> EquipmentDic = new Dictionary<int, EquipmentBase>();      //装备词典
+    public static Slot[] SlotArr = new Slot[99];                    //存放所有的Slot脚本
+    public static Item[] ItemArr = new Item[99];                    //存放所有的Item脚本
+
+    public static Equipment[] EquipmentArr = new Equipment[80];     //存放所有的Equipment脚本
+    public static Consum[] ConsumArr = new Consum[80];              //存放所有的Consum脚本
+
+    public static Dictionary<int, EquipmentBase> EquipmentDic = new Dictionary<int, EquipmentBase>();       //装备词典
+    public static Dictionary<int, ConsumBase> ConsumDic = new Dictionary<int, ConsumBase>();                //消耗品词典
 
     public JsonData EquipmentJData;     //装备数据的Json数据文件对象
+    public JsonData ConsumJData;        //消耗品数据的Json数据文件对象
 
 
     public void Start() {
         EquipmentJData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/DataSource/EquipmentData.json"));    //将Json文件转化为对象
+        ConsumJData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/DataSource/ConsumData.json"));          //将Json文件转化为对象
+
         ContructEquipemnt();
+        ContructConsum();
+
         ItemFile.Add(new int[3] { 1000, 0, 1 });
         ItemFile.Add(new int[3] { 1001, 1, 1 });
         ItemFile.Add(new int[3] { 1002, 2, 1 });
@@ -33,6 +42,10 @@ public class DataManager : MonoBehaviour
         ItemFile.Add(new int[3] { 1006, 6, 1 });
         ItemFile.Add(new int[3] { 1007, 7, 1 });
         ItemFile.Add(new int[3] { 1008, 8, 1 });
+        ItemFile.Add(new int[3] { 2000, 9, 20 });
+        ItemFile.Add(new int[3] { 2001, 10, 20 });
+        ItemFile.Add(new int[3] { 2002, 11, 20 });
+        ItemFile.Add(new int[3] { 2003, 12, 20 });
     }
 
     private void ContructEquipemnt() { 
@@ -61,6 +74,34 @@ public class DataManager : MonoBehaviour
 
             EquipmentBase equipment = new EquipmentBase(uid, name, quality, price, stackMax, describe, sprite, position, attr, lvlimit);
             EquipmentDic.Add(uid, equipment);
+        }
+    }
+
+    private void ContructConsum() {
+        int uid;
+        string name;
+        int quality;
+        int price;
+        string conType;
+        int reValue;
+        int duration;
+        string describe;
+        string sprite;
+        int stackMax;
+
+        for (int i = 0; i < ConsumJData.Count; i++) {
+            uid = (int)ConsumJData[i]["UID"];
+            name = ConsumJData[i]["Name"].ToString();
+            quality = (int)ConsumJData[i]["Quality"];
+            price = (int)ConsumJData[i]["Price"];
+            conType = ConsumJData[i]["ConType"].ToString();
+            reValue = (int)ConsumJData[i]["ReValue"];
+            duration = (int)ConsumJData[i]["Duration"];
+            describe = ConsumJData[i]["Describe"].ToString();
+            sprite = ConsumJData[i]["Sprite"].ToString();
+            stackMax = (int)ConsumJData[i]["StackMax"];
+            ConsumBase consum = new ConsumBase(uid, name, quality, price, stackMax, describe, sprite, conType, reValue, duration);
+            ConsumDic.Add(uid, consum);
         }
     }
 

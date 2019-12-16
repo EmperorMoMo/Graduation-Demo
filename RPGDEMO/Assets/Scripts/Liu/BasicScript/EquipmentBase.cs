@@ -17,9 +17,10 @@ public class EquipmentBase : ItemBase{
 
     //装备构造函数
     public EquipmentBase(int uid, string name, int quality, int price, int stackMax, string describe, string sprite,
-        int position, BaseAttribute attr, int lvlimit) : base(uid, name, quality, price, stackMax, describe, sprite) {
+        int position, BaseAttribute attr, int lvlimit) : base(uid, name, quality, price, stackMax, describe) {
             Position = position;
             Attr = attr;
             LvLimit = lvlimit;
+            Sprite = Resources.Load<Sprite>("Equipment/" + sprite);
     }
 }

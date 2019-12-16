@@ -60,7 +60,7 @@ public class Skill_Test : MonoBehaviour
                         ai = cols[i].GetComponent<EnemyAttribute>();
                         float t2 = 0f;
                         t2 += 1f * Time.fixedDeltaTime;
-                        cols[i].transform.position = Vector3.Lerp(cols[i].transform.position, (-cols[i].transform.forward * 4f + Vector3.up * 2f) * 10f, t2);
+                        cols[i].transform.position = Vector3.Lerp(cols[i].transform.position, (-cols[i].transform.forward * 4f + Vector3.up) * 10f, t2);
                         ai.Enemy_Attacked(ca.finalAttribute.Aggressivity*0.5f);
                     }
 

@@ -211,7 +211,6 @@ public class ActorController : MonoBehaviour
 
         if (pi.increaseskill_1&&skill_four_CD)
         {
-            pi.canUseSkill = false;
             Increase_Point.SetActive(true);
             Aggressivity_Temp = ca.finalAttribute.Aggressivity;
             ca.finalAttribute.Aggressivity += Aggressivity_Temp * 0.5f;

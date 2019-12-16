@@ -129,9 +129,9 @@ public class PlayerInput : MonoBehaviour
             skill_2 = Input.GetKeyDown(keyE);
 
             skill_3 = Input.GetKeyDown(keyF);
-
-            increaseskill_1 = Input.GetKeyDown(KeyCode.Alpha1);
         }
+
+        increaseskill_1 = Input.GetKeyDown(KeyCode.Alpha1);
 
     }
 

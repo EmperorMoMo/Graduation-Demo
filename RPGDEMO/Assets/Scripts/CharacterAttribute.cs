@@ -22,9 +22,14 @@ public class CharacterAttribute : MonoBehaviour
     public int Level=1;//等级
     
     public bool _Upgrade;//判断是否升级了
+    public bool _IsUseHPDrugs;
+    public bool _IsUseMPDrugs;
     public GameObject Effect;
 
     public float time = 0;
+    public float HPdrugsTime = 0;
+    public float MPdrugsTime = 0;
+    public float _timer = 0;
 
     private ActorController ac;
     // Start is called before the first frame update
@@ -87,6 +92,27 @@ public class CharacterAttribute : MonoBehaviour
             else if (Cur_MP > finalAttribute.MP)
             {
                 Cur_MP = finalAttribute.MP;
+            }
+        }
+    }
+
+    void Update()
+    {
+        if (_IsUseHPDrugs)
+        {
+            HPdrugsTime += Time.deltaTime;
+            if (HPdrugsTime>_timer)
+            {
+                finalAttribute.ReHP = baseAttribute.ReHP + equipAttribute.ReHP;
+            }
+        }
+
+        if (_IsUseMPDrugs)
+        {
+            MPdrugsTime += Time.deltaTime;
+            if (MPdrugsTime > _timer)
+            {
+                finalAttribute.ReMP = baseAttribute.ReMP + equipAttribute.ReMP;
             }
         }
     }
@@ -210,6 +236,7 @@ public class CharacterAttribute : MonoBehaviour
 
     public void UseDrug(string _drugs, int _num, int _time)
     {
+        _timer = _time;
         if (_drugs == "HP")
         {
             if (_time == 0)
@@ -220,8 +247,9 @@ public class CharacterAttribute : MonoBehaviour
                 }
             }
 
-            if (_time == 1)
+            else
             {
+                _IsUseHPDrugs = true;
                 finalAttribute.ReHP += _num;
             }
         }
@@ -236,8 +264,9 @@ public class CharacterAttribute : MonoBehaviour
                 }
             }
 
-            if (_time == 1)
+            else
             {
+                _IsUseMPDrugs = true;
                 finalAttribute.ReMP += _num;
             }
         }

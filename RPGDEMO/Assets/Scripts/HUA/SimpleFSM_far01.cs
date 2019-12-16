@@ -113,6 +113,8 @@ public class SimpleFSM_far01 : FSM
                 damageTime = 0;
                 transform.position = trans;
             }
+            if (ea1.HP <= 0)
+                curState = FSMState.dead;
         }
     }
     //追逐状态方法
@@ -156,6 +158,8 @@ public class SimpleFSM_far01 : FSM
                 damageTime = 0;
                 transform.position = trans;
             }
+            if (ea1.HP <= 0)
+                curState = FSMState.dead;
         }
     }
     //攻击状态
@@ -221,6 +225,8 @@ public class SimpleFSM_far01 : FSM
                 damageTime = 0;
                 transform.position = trans;
             }
+            if (ea1.HP <= 0)
+                curState = FSMState.dead;
         }
     }
     //死亡状态方法实现

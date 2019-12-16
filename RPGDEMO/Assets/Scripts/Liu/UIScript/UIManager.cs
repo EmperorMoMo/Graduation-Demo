@@ -143,19 +143,15 @@ public class UIManager : MonoBehaviour {
         if (Panel == AttributePanel) {
             AttrPanel.isReOpen = true;
         }
-        Debug.Log(Panel.gameObject.name + "开启");
         Panel.SetActive(true);
         PanelList.Add(Panel);
-        Debug.Log("数量" + PanelList.Count);
         CloseFuncationMenu();
     }
 
     //关闭当前面板
     public void ClosePanel(GameObject Panel) {
-        Debug.Log(Panel.gameObject.name + "关闭");
         Panel.SetActive(false);
         PanelList.Remove(Panel);
-        Debug.Log("数量" + PanelList.Count);
     }
 
     //通过名字取得对应面板

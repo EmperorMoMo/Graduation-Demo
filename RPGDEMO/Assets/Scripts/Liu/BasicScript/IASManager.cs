@@ -170,11 +170,9 @@ public class IASManager : MonoBehaviour {
             //装备栏上存在其他物品
             if (DataManager.ItemArr[EquipSlot.Index] != null) { 
                 //交换位置
-                Debug.Log("装备交换位置");
                 IASManager.Exchange(equipment, EquipSlot);
             } else { 
             //装备栏上不存在装备
-                Debug.Log("装备到装备栏");
                 ToEmpty(equipment, EquipSlot);
                 EquipSlot.transform.GetChild(0).gameObject.SetActive(false);
             }
@@ -185,7 +183,8 @@ public class IASManager : MonoBehaviour {
     }
 
     public static void Consu(Consum consum) {
-        Debug.Log("使用消耗品");
+        UIManager.PlayerHandle.GetComponent<CharacterAttribute>()
+            .UseDrug(consum.consumBase.ConType, consum.consumBase.ReValue, consum.consumBase.Duration);
         if (--consum.curStack == 0) {
             DataManager.ItemArr[consum.SlotIndex] = null;         //指向物品的Arr置为空
             Destroy(consum.gameObject);

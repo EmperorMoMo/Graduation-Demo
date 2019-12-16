@@ -16,7 +16,7 @@ public class ConsumBase : ItemBase {
 
     public ConsumBase(int uid, string name, int quality, int price, int stackMax, string describe, string sprite,
         string conType, int reValue, int duration) : base(uid, name, quality, price, stackMax, describe) {
-            ConType = ConType;
+            ConType = conType;
             ReValue = reValue;
             Duration = duration;
             Sprite = Resources.Load<Sprite>("Consum/" + sprite);

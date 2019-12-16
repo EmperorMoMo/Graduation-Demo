@@ -104,6 +104,8 @@ public class CharacterAttribute : MonoBehaviour
             if (HPdrugsTime>_timer)
             {
                 finalAttribute.ReHP = baseAttribute.ReHP + equipAttribute.ReHP;
+                HPdrugsTime = 0;
+                _IsUseHPDrugs = false;
             }
         }
 
@@ -113,6 +115,8 @@ public class CharacterAttribute : MonoBehaviour
             if (MPdrugsTime > _timer)
             {
                 finalAttribute.ReMP = baseAttribute.ReMP + equipAttribute.ReMP;
+                MPdrugsTime = 0;
+                _IsUseMPDrugs = false;
             }
         }
     }
@@ -237,7 +241,7 @@ public class CharacterAttribute : MonoBehaviour
     public void UseDrug(string _drugs, int _num, int _time)
     {
         _timer = _time;
-        if (_drugs == "HP")
+        if (string.Equals(_drugs , "HP"))
         {
             if (_time == 0)
             {
@@ -254,7 +258,7 @@ public class CharacterAttribute : MonoBehaviour
             }
         }
 
-        if (_drugs == "MP")
+        if (string.Equals(_drugs, "MP"))
         {
             if (_time == 0)
             {

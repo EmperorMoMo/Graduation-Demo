@@ -20,13 +20,12 @@ public class ItemBase {
     public ItemBase() { }
 
     //物品构造函数
-    public ItemBase(int uid, string name, int quality, int price, int stackMax, string describe, string sprite) {
+    public ItemBase(int uid, string name, int quality, int price, int stackMax, string describe) {
         UID = uid;
         Name = name;
         Quality = quality;
         Price = price;
         StackMax = stackMax;
         Describe = describe;
-        Sprite = Resources.Load<Sprite>("Equipment/" + sprite);
     }
 }

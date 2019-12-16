@@ -23,12 +23,24 @@ public class InfoPanel : MonoBehaviour {
         Carry = this.transform.GetChild(7);
     }
 
-    public static void ShowEquipmentInfo(EquipmentBase equipment ) {
+    public static void ShowEquipmentInfo(EquipmentBase equipment) {
         BuildItemBase(equipment);
-        Head.GetChild(0).GetComponent<Image>().sprite = equipment.Sprite;
         Head.GetChild(3).GetComponent<Text>().text = GetPosition(equipment.Position);
         LvLimit.GetComponent<Text>().text = "等级：Lv" + equipment.LvLimit + "以上";
         Attribute.GetComponent<Text>().text = GetAttribute(equipment.Attr);
+        ShowPanel();
+    }
+
+    public static void ShowConsumInfo(ConsumBase consum) {
+        BuildItemBase(consum);
+        Head.GetChild(3).GetComponent<Text>().text = "药剂";
+        if (consum.Duration == 0) {
+            LvLimit.GetComponent<Text>().text = "即时回复";
+            Attribute.GetComponent<Text>().text = "使用后立即回复" + consum.ReValue + "点" + consum.ConType;
+        } else {
+            LvLimit.GetComponent<Text>().text = "持续回复";
+            Attribute.GetComponent<Text>().text = "使用后每秒持续回复" + consum.ReValue + "点" + consum.ConType + "持续" + consum.Duration + "秒";
+        }
         ShowPanel();
     }
 
@@ -45,6 +57,7 @@ public class InfoPanel : MonoBehaviour {
     }
     private static void BuildItemBase<T>(T itembase) where T : ItemBase {
         string color = GetColor(itembase.Quality);
+        Head.GetChild(0).GetComponent<Image>().sprite = itembase.Sprite;
         Head.GetChild(1).GetComponent<Text>().text = " <color=" + color + ">" + itembase.Name + "</color>";
         Head.GetChild(2).GetComponent<Text>().text = " <color=" + color + ">" + GetQuality(itembase.Quality) + "</color>";
         Describe.GetComponent<Text>().text = "<color=" + color + ">" + itembase.Describe + "</color>";

@@ -206,9 +206,41 @@ public class CharacterAttribute : MonoBehaviour
         Strength();
         Agile();
         Intellect();
-        //Debug.Log("final:"+finalAttribute.HP);
-        //Debug.Log("base:"+baseAttribute.HP);
-        //Debug.Log("equip:" + equipAttribute.HP);
+    }
+
+    public void UseDrug(string _drugs, int _num, int _time)
+    {
+        if (_drugs == "HP")
+        {
+            if (_time == 0)
+            {
+                if (Cur_HP < finalAttribute.HP)
+                {
+                    Cur_HP += _num;
+                }
+            }
+
+            if (_time == 1)
+            {
+                finalAttribute.ReHP += _num;
+            }
+        }
+
+        if (_drugs == "MP")
+        {
+            if (_time == 0)
+            {
+                if (Cur_MP < finalAttribute.MP)
+                {
+                    Cur_MP += _num;
+                }
+            }
+
+            if (_time == 1)
+            {
+                finalAttribute.ReMP += _num;
+            }
+        }
     }
 
 }

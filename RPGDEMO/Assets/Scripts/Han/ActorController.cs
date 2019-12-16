@@ -483,12 +483,7 @@ public class ActorController : MonoBehaviour
         {
             if (objects.GetComponent<Rigidbody>() != null && str == State.normalAtk)
             {
-                objects.GetComponent<Rigidbody>().freezeRotation = true;
-
-                objects.GetComponent<Rigidbody>().AddExplosionForce(180, transform.position, 3);
-                //isDam = true;
-
-                objects.GetComponent<EnemyAttribute>().Enemy_Attacked(ca.finalAttribute.Aggressivity);
+                objects.GetComponent<EnemyAttribute>().Enemy_Attacked(ca.finalAttribute.Aggressivity*0.50f);
             }
 
             if (objects.GetComponent<Rigidbody>() != null && str == State.skill_One)

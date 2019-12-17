@@ -122,6 +122,8 @@ public class SimpleFSM : FSM
                    damageTime = 0;
                 transform.position = trans;
             }
+            if (ea.HP <= 0)
+                curState = FSMState.dead;
         }
     }
     //追逐状态方法
@@ -165,6 +167,8 @@ public class SimpleFSM : FSM
                 damageTime = 0;
                 transform.position = trans;
             }
+            if (ea.HP <= 0)
+                curState = FSMState.dead;
         }
     }
     //攻击状态
@@ -230,6 +234,8 @@ public class SimpleFSM : FSM
                     damageTime = 0;
                 transform.position = trans;
             }
+            if (ea.HP <= 0)
+                curState = FSMState.dead;
         }
     }
     //死亡状态方法实现

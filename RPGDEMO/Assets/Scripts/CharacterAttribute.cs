@@ -20,6 +20,8 @@ public class CharacterAttribute : MonoBehaviour
     public float Cur_MP;//魔法值
     public float Exp=0;//经验值
     public int Level=1;//等级
+    public float drug_ReHP = 0f;
+    public float drug_ReMP = 0f;
     
     public bool _Upgrade;//判断是否升级了
     public bool _IsUseHPDrugs;
@@ -64,7 +66,7 @@ public class CharacterAttribute : MonoBehaviour
                 time += Time.fixedDeltaTime;
                 if (time > 1)
                 {
-                    Cur_HP += finalAttribute.ReHP;
+                    Cur_HP += (finalAttribute.ReHP + drug_ReHP);
                     //Debug.Log(Cur_HP);
                     time = 0;
                 }
@@ -82,7 +84,7 @@ public class CharacterAttribute : MonoBehaviour
                 time += Time.fixedDeltaTime;
                 if (time > 1)
                 {
-                    Cur_MP += finalAttribute.ReMP;
+                    Cur_MP += (finalAttribute.ReMP + drug_ReMP);
                     Debug.Log(Cur_MP);
                     time = 0;
                 }
@@ -103,7 +105,7 @@ public class CharacterAttribute : MonoBehaviour
             HPdrugsTime += Time.deltaTime;
             if (HPdrugsTime>_timer)
             {
-                finalAttribute.ReHP = baseAttribute.ReHP + equipAttribute.ReHP;
+                drug_ReHP = 0;
                 HPdrugsTime = 0;
                 _IsUseHPDrugs = false;
             }
@@ -114,7 +116,7 @@ public class CharacterAttribute : MonoBehaviour
             MPdrugsTime += Time.deltaTime;
             if (MPdrugsTime > _timer)
             {
-                finalAttribute.ReMP = baseAttribute.ReMP + equipAttribute.ReMP;
+                drug_ReMP = 0;
                 MPdrugsTime = 0;
                 _IsUseMPDrugs = false;
             }
@@ -254,7 +256,7 @@ public class CharacterAttribute : MonoBehaviour
             else
             {
                 _IsUseHPDrugs = true;
-                finalAttribute.ReHP += _num;
+                drug_ReHP += _num;
             }
         }
 
@@ -271,8 +273,23 @@ public class CharacterAttribute : MonoBehaviour
             else
             {
                 _IsUseMPDrugs = true;
-                finalAttribute.ReMP += _num;
+                drug_ReMP += _num;
             }
+        }
+    }
+
+    void OnParticleCollision(GameObject other)
+    {
+        if (other.name == "projectile06(Clone)")
+        {
+            EnemyAttribute1 ai1 = GameObject.Find("mon_trolCurer(Clone)").GetComponent<EnemyAttribute1>();
+            Character_Attacked(ai1.Aggressivity);
+        }
+
+        if (other.name == "projectile05(Clone)")
+        {
+            EnemyAttribute2 ai2 = GameObject.Find("mon_goblinWizard(Clone)").GetComponent<EnemyAttribute2>();
+            Character_Attacked(ai2.Aggressivity);
         }
     }
 

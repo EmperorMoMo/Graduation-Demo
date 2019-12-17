@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - wall
   - Boss
+  - Patrol
+  - Enemy1
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - 
   - PostProcessing
   - Enemy
-  - 
+  - Player
   - 
   - 
   - 

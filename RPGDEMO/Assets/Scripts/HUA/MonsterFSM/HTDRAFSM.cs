@@ -145,6 +145,8 @@ public class HTDRAFSM : MonsterFSM
                 Destroy(go);
             }
         }
+        if (ba.HP <= 0)
+            curState = FSMState.dead;
     }
     //追逐状态方法
     //private void animation_Manager(string name)
@@ -196,7 +198,8 @@ public class HTDRAFSM : MonsterFSM
                 Destroy(go);
             }
         }
-
+        if (ba.HP <= 0)
+            curState = FSMState.dead;
     }
     private void WalkState()
     {
@@ -236,6 +239,8 @@ public class HTDRAFSM : MonsterFSM
                 Destroy(go);
             }
         }
+        if (ba.HP <= 0)
+            curState = FSMState.dead;
     }
     //攻击状态
     private void AttackState()
@@ -367,18 +372,20 @@ public class HTDRAFSM : MonsterFSM
                 Destroy(go);
             }
         }
+        if (ba.HP <= 0)
+            curState = FSMState.dead;
     }
     IEnumerator die()
     {
-        _animation.Play("Dead");
-        if (_animation.IsPlaying("Dead"))
+        _animation.Play("Death");
+        if (_animation.IsPlaying("Death"))
         {
             if (go != null)
             {
                 Destroy(go);
             }
         }
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(3.3f);
         Destroy(this.gameObject);
     }
     //死亡状态方法实现

@@ -8,6 +8,8 @@ public class Skill_Test : MonoBehaviour
 
     private EnemyAttribute ai;
     private BossAttribute ba;
+    private EnemyAttribute1 ai1;
+    private EnemyAttribute2 ai2;
 
     private CharacterAttribute ca;
     //private Vector3 currentVelocity;
@@ -68,6 +70,24 @@ public class Skill_Test : MonoBehaviour
                     {
                         ba = cols[i].GetComponent<BossAttribute>();
                         ba.Boss_Attacked(ca.finalAttribute.Aggressivity * 0.5f);
+                    }
+
+                    if (cols[i].tag == "Enemy1")
+                    {
+                        ai1 = cols[i].GetComponent<EnemyAttribute1>();
+                        float t2 = 0f;
+                        t2 += 1f * Time.fixedDeltaTime;
+                        cols[i].transform.position = Vector3.Lerp(cols[i].transform.position, (-cols[i].transform.forward * 4f + Vector3.up) * 10f, t2);
+                        ai1.Enemy_Attacked1(ca.finalAttribute.Aggressivity * 0.5f);
+                    }
+
+                    if (cols[i].tag == "Enemy2")
+                    {
+                        ai2 = cols[i].GetComponent<EnemyAttribute2>();
+                        float t2 = 0f;
+                        t2 += 1f * Time.fixedDeltaTime;
+                        cols[i].transform.position = Vector3.Lerp(cols[i].transform.position, (-cols[i].transform.forward * 4f + Vector3.up) * 10f, t2);
+                        ai2.Enemy_Attacked2(ca.finalAttribute.Aggressivity * 0.5f);
                     }
                 }
             }

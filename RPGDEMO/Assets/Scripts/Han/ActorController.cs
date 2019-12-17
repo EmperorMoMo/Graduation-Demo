@@ -60,10 +60,10 @@ public class ActorController : MonoBehaviour
     private bool skill_four_CD = true;
     private bool roll_CD = true;
 
-    private float CD_skill_one = 0;
-    private float CD_skill_two = 0;
-    private float CD_skill_three = 0;
-    private float CD_skill_four = 0;
+    private float CD_skill_one = 0;         //10
+    private float CD_skill_two = 0;         //8
+    private float CD_skill_three = 0;       //15
+    private float CD_skill_four = 0;        //45
     private float CD_roll = 0;
 
     // Start is called before the first frame update

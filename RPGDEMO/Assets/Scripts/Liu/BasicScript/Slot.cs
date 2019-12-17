@@ -13,13 +13,33 @@ public class Slot : MonoBehaviour, IDropHandler {
 
     //鼠标在该网格上落下
     public void OnDrop(PointerEventData eventData) {
-        Item dragItem = eventData.pointerDrag.GetComponent<Item>();     //拖拽体的Item脚本
-
-        //鼠标未拖拽任何物体
-        if (dragItem == null) {
-            Debug.Log("无物");
+        Debug.Log("落下");
+        Equipment equipment = eventData.pointerDrag.GetComponent<Equipment>();
+        if (Index >= 90 && Index < 99) {
+            if (equipment != null) {
+                if (equipment.equipemtnBase.Position == Index - 90) {
+                    Debug.Log("装备");
+                    IASManager.Equip(equipment);
+                }
+            }
             return;
         }
+
+        Skill skill = eventData.pointerDrag.GetComponent<Skill>();
+        SkillCopy skillcopy = eventData.pointerDrag.GetComponent<SkillCopy>();
+        if (Index >= 80 && Index < 90) {
+            Debug.Log("快捷栏");
+            if (skill != null) {
+                Debug.Log("ToEmpty");
+                skill.ToEmpty(Index);
+            }
+            if (skillcopy != null) {
+                skillcopy.skill.ToEmpty(Index);
+            }
+            return;
+        }
+
+        Item dragItem = eventData.pointerDrag.GetComponent<Item>();     //拖拽体的Item脚本
 
         //如果并未移动到其他网格
         if (dragItem.SlotIndex == Index) {
@@ -27,12 +47,9 @@ public class Slot : MonoBehaviour, IDropHandler {
             return;
         }
 
-        Equipment equipment = eventData.pointerDrag.GetComponent<Equipment>();
-        if (equipment != null && Index >= 90 && Index < 99) {
-            if (equipment.equipemtnBase.Position == Index - 90) {
-                Debug.Log("装备");
-                IASManager.Equip(equipment);
-            }
+        //鼠标未拖拽任何物体
+        if (dragItem == null) {
+            Debug.Log("无物");
             return;
         }
 

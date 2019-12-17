@@ -56,7 +56,7 @@ public class CharacterAttribute : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void AFixedUpdate()
     {
         Character_Level();
         if (!ac.die)

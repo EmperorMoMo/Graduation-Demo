@@ -98,7 +98,6 @@ public class UIManager : MonoBehaviour {
                     if (isCtrl) {
                         MainCamera.hide_Cursor();
                         isCtrl = false;
-                        Debug.Log("归还控制");
                 }
             }
         }
@@ -107,9 +106,10 @@ public class UIManager : MonoBehaviour {
             if (!isCtrl) {
                 MainCamera.show_Cursor();
                 isCtrl = true;
-                Debug.Log("取得控制");
             }
         }
+
+        
     }
 
     //显示功能菜单

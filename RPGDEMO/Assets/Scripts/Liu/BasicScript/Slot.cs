@@ -11,6 +11,8 @@ using UnityEngine.EventSystems;
 public class Slot : MonoBehaviour, IDropHandler {
     public int Index = -1;              //该网格的指向的网格及物品索引
 
+    public int QuickBarID = -1;
+
     //鼠标在该网格上落下
     public void OnDrop(PointerEventData eventData) {
         Debug.Log("落下");

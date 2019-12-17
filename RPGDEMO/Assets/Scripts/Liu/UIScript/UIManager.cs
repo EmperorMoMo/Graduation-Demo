@@ -93,6 +93,38 @@ public class UIManager : MonoBehaviour {
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha1)) {
+            SetSkill(DataManager.SlotArr[80].QuickBarID, true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha1)) {
+            SetSkill(DataManager.SlotArr[80].QuickBarID, false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2)) {
+            SetSkill(DataManager.SlotArr[81].QuickBarID, true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha2)) {
+            SetSkill(DataManager.SlotArr[81].QuickBarID, false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3)) {
+            SetSkill(DataManager.SlotArr[82].QuickBarID, true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha3)) {
+            SetSkill(DataManager.SlotArr[82].QuickBarID, false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha4)) {
+            SetSkill(DataManager.SlotArr[83].QuickBarID, true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha4)) {
+            SetSkill(DataManager.SlotArr[83].QuickBarID, false);
+        }
+
         if (isNone) {
             if (PanelList.Count == 0) {
                     if (isCtrl) {
@@ -166,6 +198,24 @@ public class UIManager : MonoBehaviour {
             case "attr": return AttributePanel;
             case "dialog": return DialogBox;
             default: return null;
+        }
+    }
+    private static void SetSkill(int skillID, bool value) {
+        switch (skillID) {
+            case 1200:
+                PlayerHandle.GetComponent<PlayerInput>().UI_skill_1 = value;
+                break;
+            case 1201:
+                PlayerHandle.GetComponent<PlayerInput>().UI_skill_2 = value;
+                break;
+            case 1202: 
+                PlayerHandle.GetComponent<PlayerInput>().UI_skill_3 = value;
+                break;
+            case 1100:
+                PlayerHandle.GetComponent<PlayerInput>().increaseskill_1 = value;
+                break;
+            case -1:
+                break;
         }
     }
 }

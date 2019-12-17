@@ -14,7 +14,7 @@ public class IASManager : MonoBehaviour {
     private static GameObject ItemPrefab;       //生成物品的预制体
 
     private static List<int[]> thisFile = new List<int[]>();
-
+    private static int[] quickFile = new int[10];
 
     public void Awake(){
         SlotPrefab = slotPrefab;
@@ -25,6 +25,7 @@ public class IASManager : MonoBehaviour {
         CreateQuickBarSlot();
         CreateEquipmentSlot();
         ReadData();
+        ReadQuick();
     }
     public void Update() {
 
@@ -71,6 +72,20 @@ public class IASManager : MonoBehaviour {
         thisFile.Clear();
     }
 
+    public static void ReadQuick() {
+        for (int i = 0; i < 10; i++) {
+            quickFile[i] = DataManager.QuickFile[i];
+        }
+        for (int i = 0; i < 10; i++) {
+            if (quickFile[i] != -1) {
+                CreateQuick(quickFile[i], i);
+            }
+        }
+        for (int i = 0; i < 10; i++) {
+            quickFile[i] = -1;
+        }
+    }
+
     //创建物品
     public static void CreateItem(int uid) {
         int index = FetchUtils.FetchEmpty();
@@ -108,6 +123,26 @@ public class IASManager : MonoBehaviour {
         item.ShowCount();                                          //显示数量
 
         DataManager.SaveItem();
+    }
+
+    public static void CreateQuick(int uid, int slotIndex) {
+        int index = 0;
+        switch (uid) { 
+            case 1200:
+                index = 0;
+                break;
+            case 1201:
+                index = 1;
+                break;
+            case 1202:
+                index = 2;
+                break;
+            case 1100:
+                index = 3;
+                break;
+        }
+        Skill skill = UIManager.SkillPanel.transform.GetChild(1).GetChild(index).GetChild(2).GetComponent<Skill>();
+        skill.ToEmpty(slotIndex + 80);
     }
 
     //将物品放在空网格上

@@ -34,10 +34,16 @@ public class PlayerInput : MonoBehaviour
     public bool roll;
 
     public bool skill_1;
-
+    
     public bool skill_2;
-
+    
     public bool skill_3;
+
+    public bool UI_skill_1;
+
+    public bool UI_skill_2;
+
+    public bool UI_skill_3;
 
     public bool increaseskill_1;
 
@@ -124,14 +130,14 @@ public class PlayerInput : MonoBehaviour
 
         if (canUseSkill)
         {
-            skill_1 = Input.GetKeyDown(keyD);
+            skill_1 = UI_skill_1;
 
-            skill_2 = Input.GetKeyDown(keyE);
+            skill_2 = UI_skill_2;
 
-            skill_3 = Input.GetKeyDown(keyF);
+            skill_3 = UI_skill_3;
         }
 
-        increaseskill_1 = Input.GetKeyDown(KeyCode.Alpha1);
+        //increaseskill_1 = Input.GetKeyDown(KeyCode.Alpha1);
 
     }
 

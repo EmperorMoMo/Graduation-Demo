@@ -11,18 +11,18 @@ using UnityEngine.EventSystems;
 /// 其可执行所有物品公有一些基础操作
 /// </summary>
 public class Skill : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
+    public int SkillID;
+
     private int SlotIndex = -1;
-    private Transform SkillCopy;
-    private Transform SkillSpare;
-    private Transform Parent;
+    public Transform SkillCopy;
+    public Transform SkillSpare;
+    public Transform Parent;
+    public Image Cover;
+
 
     public void Start() {
-        SkillCopy = this.transform.parent.GetChild(0);
-        SkillSpare = this.transform.parent.GetChild(1);
-        Parent = this.transform.parent;
     }
     public void Update() {
-        
     }
 
     //开始拖拽
@@ -55,8 +55,13 @@ public class Skill : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
     }
 
     public void ToEmpty(int slotIndex){
+        Debug.Log(slotIndex);
+        Debug.Log(SkillCopy.gameObject.name);
         SkillCopy.transform.SetParent(DataManager.SlotArr[slotIndex].transform);
         SkillCopy.transform.position = SkillCopy.transform.parent.position;
         SkillCopy.transform.GetChild(0).GetComponent<Image>().raycastTarget = true;                  //开启当前组件中Image的射线检测
+
+        DataManager.SlotArr[slotIndex].QuickBarID = SkillID;
+        DataManager.SaveQuick();
     }
 }

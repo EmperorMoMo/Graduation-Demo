@@ -12,6 +12,7 @@ using LitJson;
 public class DataManager : MonoBehaviour
 {
     public static List<int[]> ItemFile = new List<int[]>();         //物品存档
+    public static int[] QuickFile = new int[10];
 
     public static Slot[] SlotArr = new Slot[99];                    //存放所有的Slot脚本
     public static Item[] ItemArr = new Item[99];                    //存放所有的Item脚本
@@ -31,6 +32,10 @@ public class DataManager : MonoBehaviour
 
         ContructEquipemnt();
         ContructConsum();
+
+        for (int i = 0; i < 10; i++) {
+            QuickFile[i] = -1;
+        }
 
         ItemFile.Add(new int[3] { 1000, 0, 1 });
         ItemFile.Add(new int[3] { 1001, 1, 1 });
@@ -132,6 +137,15 @@ public class DataManager : MonoBehaviour
                 //Debug.Log("Save one");
                 ItemFile.Add(new int[3]{item.itemBase.UID, item.SlotIndex, item.curStack});
             }
+        }
+    }
+
+    public static void SaveQuick() {
+        for (int i = 0; i < 10; i++) {
+            QuickFile[i] = -1;
+        }
+        for (int i = 0; i < 10; i++) {
+            QuickFile[i] = SlotArr[80 + i].QuickBarID;
         }
     }
 

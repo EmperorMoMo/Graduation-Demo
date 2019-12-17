@@ -1935,7 +1935,7 @@ MonoBehaviour:
     DestroyAfter: 3.5
     UseLocalPosition: 0
   - Effect: {fileID: 1563435664761700, guid: 96c2388d3a717254c918608a033b4bf3, type: 3}
-    StartPositionRotation: {fileID: 0}
+    StartPositionRotation: {fileID: 1088763783}
     DestroyAfter: 3
     UseLocalPosition: 0
   - Effect: {fileID: 1934977346563538, guid: 8c2a99d5d9b4d4a4d973ce3412f51745, type: 3}

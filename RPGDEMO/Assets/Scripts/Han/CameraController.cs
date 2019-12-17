@@ -61,6 +61,8 @@ public class CameraController : MonoBehaviour
             transform.position = hits[0].point;
         }
 
+
+
     }
 
     public void hide_Cursor()

@@ -280,10 +280,16 @@ public class CharacterAttribute : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
-        EnemyAttribute1 ai1 = GameObject.Find("mon_trolCurer(Clone)").GetComponent<EnemyAttribute1>();
         if (other.name == "projectile06(Clone)")
         {
+            EnemyAttribute1 ai1 = GameObject.Find("mon_trolCurer(Clone)").GetComponent<EnemyAttribute1>();
             Character_Attacked(ai1.Aggressivity);
+        }
+
+        if (other.name == "projectile05(Clone)")
+        {
+            EnemyAttribute2 ai2 = GameObject.Find("mon_goblinWizard(Clone)").GetComponent<EnemyAttribute2>();
+            Character_Attacked(ai2.Aggressivity);
         }
     }
 

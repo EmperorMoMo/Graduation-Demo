@@ -9,6 +9,7 @@ public class Skill_Test3 : MonoBehaviour
     private EnemyAttribute ai;
     private BossAttribute ba;
     private EnemyAttribute1 ai1;
+    private EnemyAttribute2 ai2;
 
     private CharacterAttribute ca;
     
@@ -104,6 +105,35 @@ public class Skill_Test3 : MonoBehaviour
                     if (timeTemp >= 0.2f)
                     {
                         ai1.Enemy_Attacked1(ca.finalAttribute.Aggressivity * 0.3f);
+                        timeTemp = 0;
+                        if (canStop)
+                        {
+                            Stop(0.3f);
+                        }
+                    }
+                    timeTemp += Time.fixedDeltaTime;
+                }
+
+                if (cols[i].tag == "Enemy2")
+                {
+                    ai2 = cols[i].GetComponent<EnemyAttribute2>();
+                    Rigidbody rig = cols[i].GetComponent<Rigidbody>();
+                    if (time < 1.8f)
+                    {
+                        //cols[i].transform.position = new Vector3(cols[i].transform.position.x, 1.75f, cols[i].transform.position.z);
+                        cols[i].transform.position = Vector3.Lerp(cols[i].transform.position, transform.position,
+                            Time.fixedDeltaTime);
+                        rig.constraints = RigidbodyConstraints.FreezePositionY;
+
+                    }
+                    else
+                    {
+                        rig.constraints = ~RigidbodyConstraints.FreezePosition;
+                    }
+
+                    if (timeTemp >= 0.2f)
+                    {
+                        ai2.Enemy_Attacked2(ca.finalAttribute.Aggressivity * 0.3f);
                         timeTemp = 0;
                         if (canStop)
                         {

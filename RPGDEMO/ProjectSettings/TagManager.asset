@@ -9,6 +9,7 @@ TagManager:
   - wall
   - Boss
   - Patrol
+  - Enemy1
   layers:
   - Default
   - TransparentFX

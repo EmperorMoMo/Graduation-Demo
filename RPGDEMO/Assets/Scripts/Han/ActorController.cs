@@ -76,7 +76,7 @@ public class ActorController : MonoBehaviour
         Increase_Point = GameObject.Find("IncreasePoint");
         ca = GetComponent<CharacterAttribute>();
 
-        normalDis = 3f;
+        normalDis = 4f;
         skill_OneDis = 4f;
         _isAttacked = false;
 

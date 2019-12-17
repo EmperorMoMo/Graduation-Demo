@@ -25,7 +25,6 @@ public class DataManager : MonoBehaviour
     public JsonData EquipmentJData;     //装备数据的Json数据文件对象
     public JsonData ConsumJData;        //消耗品数据的Json数据文件对象
 
-
     public void Start() {
         EquipmentJData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/DataSource/EquipmentData.json"));    //将Json文件转化为对象
         ConsumJData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/DataSource/ConsumData.json"));          //将Json文件转化为对象

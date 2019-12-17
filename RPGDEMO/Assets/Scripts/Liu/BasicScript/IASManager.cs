@@ -15,16 +15,16 @@ public class IASManager : MonoBehaviour {
 
     private static List<int[]> thisFile = new List<int[]>();
 
+
     public void Awake(){
         SlotPrefab = slotPrefab;
         ItemPrefab = itemPrefab;
     }
     public void Start() {
-        Debug.Log(DataManager.ShowFile());
         CreateSlot();
+        CreateQuickBarSlot();
         CreateEquipmentSlot();
         ReadData();
-        Debug.Log(DataManager.ShowFile());
     }
     public void Update() {
 
@@ -38,6 +38,16 @@ public class IASManager : MonoBehaviour {
             slot.AddComponent<Slot>().Index = i;                    //网格指向的ItemArr
             DataManager.SlotArr[i] = slot.GetComponent<Slot>();     //将Slot脚本存入数组
 
+        }
+    }
+
+    //创建快捷栏网格
+    private static void CreateQuickBarSlot() {
+        Transform Grid = UIManager.QuickBar.transform.GetChild(1);
+        for (int i = 80; i < 90; i++) {
+            GameObject slot = Grid.GetChild(i - 80).gameObject;       //对应装备栏
+            slot.AddComponent<Slot>().Index = i;                        //网格的索引
+            DataManager.SlotArr[i] = slot.GetComponent<Slot>();         //将Slot脚本存入数组
         }
     }
 
@@ -82,6 +92,7 @@ public class IASManager : MonoBehaviour {
             case 2:
                 item = Item.AddComponent<Consum>();
                 item.itemBase = FetchUtils.FetchConsumsBase(uid);
+                item.transform.GetChild(1).GetComponent<Image>().sprite = item.itemBase.Sprite;
                 break;
             default:
                 item = null;
@@ -149,6 +160,9 @@ public class IASManager : MonoBehaviour {
     public static void SplitItem(Item item, Slot slot, int count) {
         CreateItem(item.itemBase.UID, slot.Index, count);              //指定位置创建新物品
         Item newItem = DataManager.ItemArr[slot.Index];         //新物品
+        if (item.itemBase.UID / 1000 == 2) {
+            ((Consum)newItem).ConsuTime = ((Consum)item).ConsuTime;
+        }
         item.curStack -= count;
         item.ShowCount();
         DataManager.SaveItem();
@@ -183,13 +197,16 @@ public class IASManager : MonoBehaviour {
     }
 
     public static void Consu(Consum consum) {
-        UIManager.PlayerHandle.GetComponent<CharacterAttribute>()
-            .UseDrug(consum.consumBase.ConType, consum.consumBase.ReValue, consum.consumBase.Duration);
-        if (--consum.curStack == 0) {
-            DataManager.ItemArr[consum.SlotIndex] = null;         //指向物品的Arr置为空
-            Destroy(consum.gameObject);
-        } else {
-            consum.ShowCount();
+        if (consum.ConsuTime <= 0) {
+            UIManager.PlayerHandle.GetComponent<CharacterAttribute>()
+                .UseDrug(consum.consumBase.ConType, consum.consumBase.ReValue, consum.consumBase.Duration);
+            ConsumCD(consum.consumBase.ConType);
+            if (--consum.curStack == 0) {
+                DataManager.ItemArr[consum.SlotIndex] = null;         //指向物品的Arr置为空
+                Destroy(consum.gameObject);
+            } else {
+                consum.ShowCount();
+            }
         }
     }
 
@@ -211,5 +228,18 @@ public class IASManager : MonoBehaviour {
             }
         }
         UIManager.PlayerHandle.GetComponent<CharacterAttribute>().ChangeEquipAttribute(attr);
+    }
+
+    public static void ConsumCD(string conType) {
+        foreach (Item item in DataManager.ItemArr) {
+            if (item != null) {
+                if (item.itemBase.UID / 1000 == 2) {
+                    Consum i = (Consum)item;
+                    if (string.Equals(i.consumBase.ConType, conType)) {
+                        i.ConsuTime = i.ConsuTimer;
+                    }
+                }
+            }
+        }
     }
 }

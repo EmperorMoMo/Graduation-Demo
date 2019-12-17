@@ -14,8 +14,14 @@ public class Consum : Item, IPointerEnterHandler, IPointerExitHandler {
     private bool isShow = false;
     private float stayTime = 0.5f;
     private float stayTimer = 0;
+
+    public float ConsuTimer = 22;
+    public float ConsuTime = 0;
+
+    private Image fillImage;
     public void Start() {
         consumBase = (ConsumBase)itemBase;
+        fillImage = this.transform.GetChild(1).GetComponent<Image>();
     }
 
     public void Update() {
@@ -32,6 +38,13 @@ public class Consum : Item, IPointerEnterHandler, IPointerExitHandler {
             if (Input.GetMouseButtonUp(1)) {
                 IASManager.Consu(this);
             }
+        }
+    }
+
+    public void FixedUpdate() {
+        if (ConsuTime > 0) {
+            ConsuTime -= Time.fixedDeltaTime;
+            fillImage.fillAmount = ConsuTime / ConsuTimer;
         }
     }
 

@@ -208,6 +208,7 @@ public class IASManager : MonoBehaviour {
                 consum.ShowCount();
             }
         }
+        DataManager.SaveItem();
     }
 
     public static void SetEquipmentAtr() {

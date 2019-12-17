@@ -2870,7 +2870,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1778941999}
-  - {fileID: 1480764837}
   - {fileID: 2071234017}
   - {fileID: 1693969479}
   - {fileID: 474636142}
@@ -20636,7 +20635,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 64275146}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &455441151
 SphereCollider:
@@ -22451,7 +22450,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 64275146}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &474636143
 SphereCollider:
@@ -74249,7 +74248,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 64275146}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1693969480
 SphereCollider:
@@ -82052,6 +82051,7 @@ GameObject:
   - component: {fileID: 1875845363}
   - component: {fileID: 1875845366}
   - component: {fileID: 1875845367}
+  - component: {fileID: 1875845368}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -82197,6 +82197,22 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &1875845368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875845362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c098a53b2dee6704fbbba4abb6689919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShake: 0
+  shakeLv: 7.5
+  setShakeTime: 0.2
+  shakeFps: 45
 --- !u!1001 &1876838164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91005,7 +91021,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 64275146}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &2071234018
 SphereCollider:

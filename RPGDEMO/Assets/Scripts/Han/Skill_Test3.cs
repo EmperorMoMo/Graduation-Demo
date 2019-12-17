@@ -43,6 +43,7 @@ public class Skill_Test3 : MonoBehaviour
             {
                 if (cols[i].tag == "Enemy")
                 {
+                    timeTemp += Time.fixedDeltaTime;
                     ai = cols[i].GetComponent<EnemyAttribute>();
                     Rigidbody rig = cols[i].GetComponent<Rigidbody>();
                     if (time < 1.8f)
@@ -67,11 +68,11 @@ public class Skill_Test3 : MonoBehaviour
                             Stop(0.3f);
                         }
                     }
-                    timeTemp += Time.fixedDeltaTime;
                 }
 
                 if (cols[i].tag == "Boss")
                 {
+                    timeTemp += Time.fixedDeltaTime;
                     ba = cols[i].GetComponent<BossAttribute>();
                     if (timeTemp >= 0.2f)
                     {
@@ -82,11 +83,11 @@ public class Skill_Test3 : MonoBehaviour
                             Stop(0.3f);
                         }
                     }
-                    timeTemp += Time.fixedDeltaTime;
                 }
 
                 if (cols[i].tag == "Enemy1")
                 {
+                    timeTemp += Time.fixedDeltaTime;
                     ai1 = cols[i].GetComponent<EnemyAttribute1>();
                     Rigidbody rig = cols[i].GetComponent<Rigidbody>();
                     if (time < 1.8f)
@@ -111,11 +112,11 @@ public class Skill_Test3 : MonoBehaviour
                             Stop(0.3f);
                         }
                     }
-                    timeTemp += Time.fixedDeltaTime;
                 }
 
                 if (cols[i].tag == "Enemy2")
                 {
+                    timeTemp += Time.fixedDeltaTime;
                     ai2 = cols[i].GetComponent<EnemyAttribute2>();
                     Rigidbody rig = cols[i].GetComponent<Rigidbody>();
                     if (time < 1.8f)
@@ -140,7 +141,6 @@ public class Skill_Test3 : MonoBehaviour
                             Stop(0.3f);
                         }
                     }
-                    timeTemp += Time.fixedDeltaTime;
                 }
             }
         }

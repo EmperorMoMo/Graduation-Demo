@@ -7,6 +7,8 @@ public class Hit : MonoBehaviour
     private ActorController ac;
 
     private bool waiting;
+
+    public bool shakeCamera;
     // Start is called before the first frame update
     void Awake()
     {
@@ -28,6 +30,7 @@ public class Hit : MonoBehaviour
             //Debug.Log(ac.isDam);
             if (ac.isDam)
             {
+                shakeCamera = true;
                 Stop(0.15f);
             }
         }
@@ -51,5 +54,6 @@ public class Hit : MonoBehaviour
         yield return new WaitForSecondsRealtime(duration);
         Time.timeScale = 1f;
         waiting = false;
+        shakeCamera = false;
     }
 }

@@ -10,6 +10,8 @@ public class Events_ : MonoBehaviour
 
     private ActorController ac;
 
+    private Animator anim;
+
     private bool waiting;
 
     public bool shakeCamera;
@@ -18,6 +20,8 @@ public class Events_ : MonoBehaviour
     {
         playerHandle=GameObject.Find("PlayerHandle");
         ac = this.transform.GetComponentInParent<ActorController>();
+
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -75,5 +79,10 @@ public class Events_ : MonoBehaviour
         Time.timeScale = 1f;
         waiting = false;
         shakeCamera = false;
+    }
+
+    public void ResetTrigger(string triggerName)
+    {
+        anim.ResetTrigger(triggerName);
     }
 }

@@ -291,6 +291,24 @@ public class CharacterAttribute : MonoBehaviour
             EnemyAttribute2 ai2 = GameObject.Find("mon_goblinWizard(Clone)").GetComponent<EnemyAttribute2>();
             Character_Attacked(ai2.Aggressivity);
         }
+
+        if (other.name == "FireFieldALT(Clone)")
+        {
+            BossAttribute2 ba2 = GameObject.Find("MOUNTAIN_DRAGON_LEGACY").GetComponent<BossAttribute2>();
+            Character_Attacked(ba2.Aggressivity);
+        }
+
+        if (other.name == "projectile04(Clone)")
+        {
+            BossAttribute2 ba2 = GameObject.Find("MOUNTAIN_DRAGON_LEGACY").GetComponent<BossAttribute2>();
+            Character_Attacked(ba2.Aggressivity);
+        }
+
+        if (other.name == "FlamethrowerALT(Clone)")
+        {
+            BossAttribute2 ba2 = GameObject.Find("MOUNTAIN_DRAGON_LEGACY").GetComponent<BossAttribute2>();
+            Character_Attacked(ba2.Aggressivity);
+        }
     }
 
 }

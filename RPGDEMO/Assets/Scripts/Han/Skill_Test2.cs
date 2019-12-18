@@ -7,6 +7,7 @@ public class Skill_Test2 : MonoBehaviour
     private Vector3 target_2;
     private EnemyAttribute ai;
     private BossAttribute ba;
+    private BossAttribute2 ba2;
     private EnemyAttribute1 ai1;
     private EnemyAttribute2 ai2;
 
@@ -40,6 +41,12 @@ public class Skill_Test2 : MonoBehaviour
                 {
                     ba = cols[i].GetComponent<BossAttribute>();
                     ba.Boss_Attacked(ca.finalAttribute.Aggressivity * 0.3f);
+                }
+
+                if (cols[i].tag == "Boss2")
+                {
+                    ba2 = cols[i].GetComponent<BossAttribute2>();
+                    ba2.Boss_Attacked(ca.finalAttribute.Aggressivity * 0.3f);
                 }
 
                 if (cols[i].tag == "Enemy1")

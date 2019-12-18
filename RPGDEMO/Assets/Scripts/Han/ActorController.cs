@@ -474,7 +474,7 @@ public class ActorController : MonoBehaviour
                         }
                     }
 
-                    if (cols[i].tag == "Boss")
+                    if (cols[i].tag == "Boss"||cols[i].tag=="Boss2")
                     {
                         float dir = Vector3.Distance(model.transform.position, cols[i].transform.position);
                         float angle = Vector3.Angle(model.transform.forward,
@@ -485,8 +485,16 @@ public class ActorController : MonoBehaviour
                             //print("test4");
                             if (dir < normalDis && angle < 90)
                             {
-                                cols[i].GetComponent<BossAttribute>().Boss_Attacked(ca.finalAttribute.Aggressivity);
-                                isDam = true;
+                                if (cols[i].tag == "Boss")
+                                {
+                                    cols[i].GetComponent<BossAttribute>().Boss_Attacked(ca.finalAttribute.Aggressivity*0.5f);
+                                    isDam = true;
+                                }
+                                else
+                                {
+                                    cols[i].GetComponent<BossAttribute2>().Boss_Attacked(ca.finalAttribute.Aggressivity*0.5f);
+                                    isDam = true;
+                                }
                             }
                         }
 
@@ -494,19 +502,27 @@ public class ActorController : MonoBehaviour
                         {
                             if (dir < skill_OneDis && angle < 360)
                             {
-                                cols[i].GetComponent<BossAttribute>().Boss_Attacked(ca.finalAttribute.Aggressivity*0.5f);
-                                isDam = true;
+                                if (cols[i].tag == "Boss")
+                                {
+                                    cols[i].GetComponent<BossAttribute>().Boss_Attacked(ca.finalAttribute.Aggressivity*0.5f);
+                                    isDam = true;
+                                }
+                                else
+                                {
+                                    cols[i].GetComponent<BossAttribute2>().Boss_Attacked(ca.finalAttribute.Aggressivity*0.5f);
+                                    isDam = true;
+                                }
                             }
                         }
 
-                        if (str == State.pickup)
-                        {
-                            if (dir < normalDis && angle < 60)
-                            {
-                                cols[i].GetComponent<BossAttribute>().Boss_Attacked(ca.finalAttribute.Aggressivity);
-                                isDam = true;
-                            }
-                        }
+                        //if (str == State.pickup)
+                        //{
+                        //    if (dir < normalDis && angle < 60)
+                        //    {
+                        //        cols[i].GetComponent<BossAttribute>().Boss_Attacked(ca.finalAttribute.Aggressivity);
+                        //        isDam = true;
+                        //    }
+                        //}
                     }
                 }
             }

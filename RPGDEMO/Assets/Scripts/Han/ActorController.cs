@@ -204,6 +204,11 @@ public class ActorController : MonoBehaviour
         if (die)
         {
             anim.SetTrigger("die");
+            pi.inputEnabled = false;
+            lockPlanar = true;
+            canAttacked = false;
+            lockCamera = true;
+            pi.Dmag = 0;
         }
 
         if (pi.increaseskill_1&&skill_four_CD)
@@ -386,11 +391,6 @@ public class ActorController : MonoBehaviour
     {
         anim.ResetTrigger("isattacked");
 
-        pi.inputEnabled = false;
-        lockPlanar = true;
-        canAttacked = false;
-        lockCamera = true;
-        pi.Dmag = 0;
     }
 
     public void Select(State str)

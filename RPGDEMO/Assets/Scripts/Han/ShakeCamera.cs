@@ -19,7 +19,7 @@ public class ShakeCamera : MonoBehaviour
     //相机
     Camera selfCamers;
 
-    private Hit hit_shake;
+    private Events_ hit_shake;
     //抖屏幅度
     Rect changeRect;
     void Start()
@@ -31,7 +31,7 @@ public class ShakeCamera : MonoBehaviour
         frameTime = 0.03f;
         shakeDelta = 0.005f;
 
-        hit_shake = GameObject.Find("Hoshi").GetComponent<Hit>();
+        hit_shake = GameObject.Find("Hoshi").GetComponent<Events_>();
     }
     void Update()
     {

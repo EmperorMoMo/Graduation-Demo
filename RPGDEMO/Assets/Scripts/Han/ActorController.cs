@@ -324,28 +324,60 @@ public class ActorController : MonoBehaviour
         }
     }
 
-    public void OnAttack1Enter()
+    /// <summary>
+    /// 普通攻击信号处理区域
+    /// </summary>
+    
+    public void OnAttackEnter01()
     {
         pi.inputEnabled = false;
-        lockCamera = true;
-        //lerpTarget = 1.0f;
+        //lockCamera = true;
         str = State.normalAtk;
-        //Select(str);
-    }
-    
-    public void OnAttack2Enter()
-    {
-        str = State.normalAtk;
-        lockCamera = true;
-        //Select(str);
     }
 
-    public void OnAttackIdleEnter()
+    public void OnAttackEnter02()
     {
-        pi.inputEnabled = true;
-        lockCamera = false;
-        //lerpTarget = 0f;
+        pi.inputEnabled = false;
+        //lockCamera = true;
+        str = State.normalAtk;
     }
+
+    public void OnAttackEnter06()
+    {
+        pi.inputEnabled = false;
+        //lockCamera = true;
+        str = State.normalAtk;
+    }
+
+    public void OnAttackEnter07()
+    {
+        pi.inputEnabled = false;
+        //lockCamera = true;
+        str = State.normalAtk;
+    }
+
+    //public void OnAttack1Enter()
+    //{
+    //    pi.inputEnabled = false;
+    //    lockCamera = true;
+    //    //lerpTarget = 1.0f;
+    //    str = State.normalAtk;
+    //    //Select(str);
+    //}
+
+    //public void OnAttack2Enter()
+    //{
+    //    str = State.normalAtk;
+    //    lockCamera = true;
+    //    //Select(str);
+    //}
+
+    //public void OnAttackIdleEnter()
+    //{
+    //    pi.inputEnabled = true;
+    //    lockCamera = false;
+    //    //lerpTarget = 0f;
+    //}
 
     public void OnSkillOneEnter()
     {

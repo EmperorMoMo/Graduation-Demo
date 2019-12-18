@@ -1997,7 +1997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MAX_HP: 200
   HP: 0
-  Aggressivity: 50
+  Aggressivity: 1
   Armor: 3
   Effect: {fileID: 1931391723872664, guid: 8690041cf7250174eb66ceb76d6bf32a, type: 3}
 --- !u!1 &672797076340701625

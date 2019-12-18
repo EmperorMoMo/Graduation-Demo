@@ -13,7 +13,7 @@ public class SkillCopy : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     private ActorController ac;
 
-    public void Awake() {
+    public void Start() {
         ac = UIManager.PlayerHandle.GetComponent<ActorController>();
     }
 

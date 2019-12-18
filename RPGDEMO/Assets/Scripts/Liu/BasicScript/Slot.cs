@@ -15,7 +15,6 @@ public class Slot : MonoBehaviour, IDropHandler {
 
     //鼠标在该网格上落下
     public void OnDrop(PointerEventData eventData) {
-        Debug.Log("落下");
         Equipment equipment = eventData.pointerDrag.GetComponent<Equipment>();
         if (Index >= 90 && Index < 99) {
             if (equipment != null) {
@@ -30,13 +29,25 @@ public class Slot : MonoBehaviour, IDropHandler {
         Skill skill = eventData.pointerDrag.GetComponent<Skill>();
         SkillCopy skillcopy = eventData.pointerDrag.GetComponent<SkillCopy>();
         if (Index >= 80 && Index < 90) {
-            Debug.Log("快捷栏");
-            if (skill != null) {
-                Debug.Log("ToEmpty");
-                skill.ToEmpty(Index);
-            }
-            if (skillcopy != null) {
-                skillcopy.skill.ToEmpty(Index);
+            //该格不存在物体
+            if (QuickBarID == -1) {
+                if (skill != null) {
+                    skill.Homing();
+                    skill.ToEmpty(Index);
+                }
+                if (skillcopy != null) {
+                    skillcopy.skill.Homing();
+                    skillcopy.skill.ToEmpty(Index);
+                }
+            //该格存在物体
+            } else {
+                //从技能栏来
+                if (skill != null) {
+                    skill.ExChange(DataManager.SkillDic[QuickBarID], Index);
+                }
+                if (skillcopy != null) {
+                    skillcopy.skill.ExChange(DataManager.SkillDic[QuickBarID], Index);
+                }
             }
             return;
         }

@@ -12,10 +12,12 @@ using LitJson;
 public class DataManager : MonoBehaviour
 {
     public static List<int[]> ItemFile = new List<int[]>();         //物品存档
-    public static int[] QuickFile = new int[10];
+    public static int[] QuickFile = new int[10] { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 };
 
     public static Slot[] SlotArr = new Slot[99];                    //存放所有的Slot脚本
     public static Item[] ItemArr = new Item[99];                    //存放所有的Item脚本
+
+    public static Dictionary<int, Skill> SkillDic = new Dictionary<int, Skill>();
 
     public static Equipment[] EquipmentArr = new Equipment[80];     //存放所有的Equipment脚本
     public static Consum[] ConsumArr = new Consum[80];              //存放所有的Consum脚本
@@ -30,12 +32,13 @@ public class DataManager : MonoBehaviour
         EquipmentJData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/DataSource/EquipmentData.json"));    //将Json文件转化为对象
         ConsumJData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/DataSource/ConsumData.json"));          //将Json文件转化为对象
 
+        SkillDic.Add(1200, null);
+        SkillDic.Add(1201, null);
+        SkillDic.Add(1202, null);
+        SkillDic.Add(1100, null);
+
         ContructEquipemnt();
         ContructConsum();
-
-        for (int i = 0; i < 10; i++) {
-            QuickFile[i] = -1;
-        }
 
         ItemFile.Add(new int[3] { 1000, 0, 1 });
         ItemFile.Add(new int[3] { 1001, 1, 1 });

@@ -24,6 +24,11 @@ public class IASManager : MonoBehaviour {
         CreateSlot();
         CreateQuickBarSlot();
         CreateEquipmentSlot();
+
+        for (int i = 0; i < 10; i++) {
+            quickFile[i] = -1;
+        }
+
         ReadData();
         ReadQuick();
     }
@@ -74,6 +79,7 @@ public class IASManager : MonoBehaviour {
 
     public static void ReadQuick() {
         for (int i = 0; i < 10; i++) {
+            Debug.Log(DataManager.QuickFile[i]);
             quickFile[i] = DataManager.QuickFile[i];
         }
         for (int i = 0; i < 10; i++) {
@@ -126,7 +132,7 @@ public class IASManager : MonoBehaviour {
     }
 
     public static void CreateQuick(int uid, int slotIndex) {
-        int index = 0;
+        int index = -1;
         switch (uid) { 
             case 1200:
                 index = 0;

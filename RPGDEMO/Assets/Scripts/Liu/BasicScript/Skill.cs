@@ -13,7 +13,7 @@ using UnityEngine.EventSystems;
 public class Skill : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
     public int SkillID;
 
-    private int SlotIndex = -1;
+    public int SlotIndex = -1;
     public Transform SkillCopy;
     public Transform SkillSpare;
     public Transform Parent;
@@ -21,6 +21,7 @@ public class Skill : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
 
 
     public void Start() {
+        DataManager.SkillDic[SkillID] = this;
     }
     public void Update() {
     }
@@ -55,13 +56,35 @@ public class Skill : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
     }
 
     public void ToEmpty(int slotIndex){
-        Debug.Log(slotIndex);
-        Debug.Log(SkillCopy.gameObject.name);
         SkillCopy.transform.SetParent(DataManager.SlotArr[slotIndex].transform);
         SkillCopy.transform.position = SkillCopy.transform.parent.position;
         SkillCopy.transform.GetChild(0).GetComponent<Image>().raycastTarget = true;                  //开启当前组件中Image的射线检测
 
+        this.SlotIndex = slotIndex;
         DataManager.SlotArr[slotIndex].QuickBarID = SkillID;
         DataManager.SaveQuick();
+    }
+
+    public void Homing() {
+        if (SlotIndex == -1) {
+            return;
+        }
+        SkillCopy.transform.SetParent(Parent);
+        SkillCopy.transform.position = Parent.position;
+
+        DataManager.SlotArr[SlotIndex].QuickBarID = -1;
+        this.SlotIndex = -1;
+    }
+
+    public void ExChange(Skill curSkill, int slotIndex) {
+        if (SlotIndex != -1) {
+            int perSlotIndex = SlotIndex;
+            Homing();
+            curSkill.Homing();
+            curSkill.ToEmpty(perSlotIndex);
+        } else {
+            curSkill.Homing();
+        }
+        ToEmpty(slotIndex);
     }
 }

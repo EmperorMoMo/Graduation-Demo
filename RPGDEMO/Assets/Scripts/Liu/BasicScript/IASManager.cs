@@ -16,11 +16,21 @@ public class IASManager : MonoBehaviour {
     private static List<int[]> thisFile = new List<int[]>();
     private static int[] quickFile = new int[10];
 
+    public static float HPConTime = 0;
+    public static float MPConTime = 0;
+
     public void Awake(){
         SlotPrefab = slotPrefab;
         ItemPrefab = itemPrefab;
     }
+    IEnumerator wait() {
+        yield return new WaitForSeconds(0.3f);
+        ReadQuick();
+
+        UIManager.Backpage.SetActive(false);
+    }
     public void Start() {
+        UIManager.Backpage.SetActive(true);
         CreateSlot();
         CreateQuickBarSlot();
         CreateEquipmentSlot();
@@ -28,12 +38,21 @@ public class IASManager : MonoBehaviour {
         for (int i = 0; i < 10; i++) {
             quickFile[i] = -1;
         }
-
         ReadData();
-        ReadQuick();
+        StartCoroutine(wait());
+
     }
     public void Update() {
 
+    }
+
+    public void FixedUpdate() {
+        if (HPConTime > 0) {
+            HPConTime -= Time.fixedDeltaTime;
+        }
+        if (MPConTime > 0) {
+            MPConTime -= Time.fixedDeltaTime;
+        }
     }
 
     //创建背包网格
@@ -79,7 +98,6 @@ public class IASManager : MonoBehaviour {
 
     public static void ReadQuick() {
         for (int i = 0; i < 10; i++) {
-            Debug.Log(DataManager.QuickFile[i]);
             quickFile[i] = DataManager.QuickFile[i];
         }
         for (int i = 0; i < 10; i++) {
@@ -131,24 +149,50 @@ public class IASManager : MonoBehaviour {
         DataManager.SaveItem();
     }
 
-    public static void CreateQuick(int uid, int slotIndex) {
-        int index = -1;
-        switch (uid) { 
-            case 1200:
-                index = 0;
+    public static void CreateConsumCopy(int uid, int Index) {
+        for (int i = 84; i < 90; i++) {
+            if (DataManager.SlotArr[i].QuickBarID == uid) {
+                Debug.Log("销毁");
+                Destroy(DataManager.SlotArr[i].transform.GetChild(1).gameObject);
+                DataManager.SlotArr[i].QuickBarID = -1;
                 break;
-            case 1201:
-                index = 1;
-                break;
-            case 1202:
-                index = 2;
-                break;
-            case 1100:
-                index = 3;
-                break;
+            }
         }
-        Skill skill = UIManager.SkillPanel.transform.GetChild(1).GetChild(index).GetChild(2).GetComponent<Skill>();
-        skill.ToEmpty(slotIndex + 80);
+        GameObject consumCopy = GameObject.Instantiate(ItemPrefab, DataManager.SlotArr[Index].transform);     //指定位置生成指定物品
+        consumCopy.GetComponent<Image>().sprite = consumCopy.transform.GetChild(1).GetComponent<Image>().sprite
+            = FetchUtils.FetchConsumsBase(uid).Sprite;
+        ConsumCopy copy = consumCopy.AddComponent<ConsumCopy>();
+        copy.ConsumUID = uid;
+        copy.QuickIndex = Index;
+
+        DataManager.SlotArr[Index].QuickBarID = uid;
+        DataManager.SaveQuick();
+    }
+
+    public static void CreateQuick(int uid, int slotIndex) {
+        Debug.Log("读取快捷栏" + uid + slotIndex);
+        int index = -1;
+        if (slotIndex >= 0 && slotIndex < 4) {
+            switch (uid) { 
+                case 1200:
+                    index = 0;
+                    break;
+                case 1201:
+                    index = 1;
+                    break;
+                case 1202:
+                    index = 2;
+                    break;
+                case 1100:
+                    index = 3;
+                    break;
+            }
+            Skill skill = UIManager.SkillPanel.transform.GetChild(1).GetChild(index).GetChild(2).GetComponent<Skill>();
+            skill.ToEmpty(slotIndex + 80);
+        }
+        if (slotIndex >= 4 && slotIndex < 10) {
+            CreateConsumCopy(uid, slotIndex + 80);
+        }
     }
 
     //将物品放在空网格上
@@ -201,9 +245,6 @@ public class IASManager : MonoBehaviour {
     public static void SplitItem(Item item, Slot slot, int count) {
         CreateItem(item.itemBase.UID, slot.Index, count);              //指定位置创建新物品
         Item newItem = DataManager.ItemArr[slot.Index];         //新物品
-        if (item.itemBase.UID / 1000 == 2) {
-            ((Consum)newItem).ConsuTime = ((Consum)item).ConsuTime;
-        }
         item.curStack -= count;
         item.ShowCount();
         DataManager.SaveItem();
@@ -212,6 +253,9 @@ public class IASManager : MonoBehaviour {
     public static void Equip(Equipment equipment){
         if (!UIManager.EquipmentPanel.activeSelf) {
             UIManager.ShowPanel(UIManager.EquipmentPanel);
+        }
+        if (!UIManager.Backpage.activeSelf) {
+            UIManager.ShowPanel(UIManager.Backpage);
         }
         Slot EquipSlot = DataManager.SlotArr[equipment.equipemtnBase.Position + 90];
         //如果该装备在对应的装备栏上
@@ -238,10 +282,15 @@ public class IASManager : MonoBehaviour {
     }
 
     public static void Consu(Consum consum) {
-        if (consum.ConsuTime <= 0) {
+        if ((string.Equals(consum.consumBase.ConType, "HP") && HPConTime <= 0) || (string.Equals(consum.consumBase.ConType, "MP") && MPConTime <= 0)){
             UIManager.PlayerHandle.GetComponent<CharacterAttribute>()
                 .UseDrug(consum.consumBase.ConType, consum.consumBase.ReValue, consum.consumBase.Duration);
-            ConsumCD(consum.consumBase.ConType);
+            if(string.Equals(consum.consumBase.ConType, "HP")){
+                HPConTime =consum.ConsuTimer;
+            }
+            if(string.Equals(consum.consumBase.ConType, "MP")){
+                MPConTime =consum.ConsuTimer;
+            }
             if (--consum.curStack == 0) {
                 DataManager.ItemArr[consum.SlotIndex] = null;         //指向物品的Arr置为空
                 Destroy(consum.gameObject);
@@ -272,16 +321,4 @@ public class IASManager : MonoBehaviour {
         UIManager.PlayerHandle.GetComponent<CharacterAttribute>().ChangeEquipAttribute(attr);
     }
 
-    public static void ConsumCD(string conType) {
-        foreach (Item item in DataManager.ItemArr) {
-            if (item != null) {
-                if (item.itemBase.UID / 1000 == 2) {
-                    Consum i = (Consum)item;
-                    if (string.Equals(i.consumBase.ConType, conType)) {
-                        i.ConsuTime = i.ConsuTimer;
-                    }
-                }
-            }
-        }
-    }
 }

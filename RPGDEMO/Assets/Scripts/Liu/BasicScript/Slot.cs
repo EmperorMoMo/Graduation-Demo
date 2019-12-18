@@ -28,7 +28,8 @@ public class Slot : MonoBehaviour, IDropHandler {
 
         Skill skill = eventData.pointerDrag.GetComponent<Skill>();
         SkillCopy skillcopy = eventData.pointerDrag.GetComponent<SkillCopy>();
-        if (Index >= 80 && Index < 90) {
+        
+        if (Index >= 80 && Index < 84) {
             //该格不存在物体
             if (QuickBarID == -1) {
                 if (skill != null) {
@@ -39,6 +40,7 @@ public class Slot : MonoBehaviour, IDropHandler {
                     skillcopy.skill.Homing();
                     skillcopy.skill.ToEmpty(Index);
                 }
+                
             //该格存在物体
             } else {
                 //从技能栏来
@@ -49,6 +51,30 @@ public class Slot : MonoBehaviour, IDropHandler {
                     skillcopy.skill.ExChange(DataManager.SkillDic[QuickBarID], Index);
                 }
             }
+            return;
+        }
+
+        Consum consum = eventData.pointerDrag.GetComponent<Consum>();
+        ConsumCopy consumCopy = eventData.pointerDrag.GetComponent<ConsumCopy>();
+        if (Index >= 84 && Index < 90) {
+            if (QuickBarID == -1) {
+                if (consum != null) {
+                    IASManager.CreateConsumCopy(consum.consumBase.UID, Index);
+                }
+                if (consumCopy != null) {
+                    consumCopy.ToEmpty(Index);
+                }
+            } else {
+                if (consum != null) {
+                    Destroy(DataManager.SlotArr[Index].transform.GetChild(1).gameObject);
+                    DataManager.SlotArr[Index].QuickBarID = -1;
+                    IASManager.CreateConsumCopy(consum.consumBase.UID, Index);
+                }
+                if (consumCopy != null) {
+                    consumCopy.ExChange(DataManager.SlotArr[Index].transform.GetChild(1).GetComponent<ConsumCopy>(), Index);
+                }
+            }
+            DataManager.SaveQuick();
             return;
         }
 

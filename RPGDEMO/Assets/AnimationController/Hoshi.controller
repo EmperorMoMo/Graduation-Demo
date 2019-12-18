@@ -221,6 +221,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onEnterMessages:
   - OnGround
+--- !u!114 &114187541181079266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07342a40ece3ce741a23940f1ed0d70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnterMessages:
+  - OnAttackEnter06
 --- !u!114 &114258120272187920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -291,6 +305,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onEnterMessages:
   - OnSkillThreeEnter
+--- !u!114 &114324003782960252
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07342a40ece3ce741a23940f1ed0d70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnterMessages:
+  - OnAttackEnter01
 --- !u!114 &114370405472007902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -375,6 +403,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onUpdateMessages:
   - OnAttackedUpdate
+--- !u!114 &114534289369147308
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07342a40ece3ce741a23940f1ed0d70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnterMessages:
+  - OnAttackEnter02
+--- !u!114 &114567394244327428
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07342a40ece3ce741a23940f1ed0d70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnterMessages:
+  - OnAttackEnter07
 --- !u!114 &114636643687493248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2074,7 +2130,7 @@ AnimatorState:
   - {fileID: 1101069313853211832}
   - {fileID: 1101018396558392520}
   m_StateMachineBehaviours:
-  - {fileID: 114804329676488126}
+  - {fileID: 114534289369147308}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -2158,7 +2214,7 @@ AnimatorState:
   - {fileID: 1101749995748911896}
   - {fileID: 1101011510507889280}
   m_StateMachineBehaviours:
-  - {fileID: 114154290287139216}
+  - {fileID: 114187541181079266}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -2297,7 +2353,7 @@ AnimatorState:
   - {fileID: 1101163895971200516}
   - {fileID: 1101790900528697052}
   m_StateMachineBehaviours:
-  - {fileID: 114109153486869370}
+  - {fileID: 114324003782960252}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -2500,7 +2556,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: 1101294247997154210}
   m_StateMachineBehaviours:
-  - {fileID: 114097959293802000}
+  - {fileID: 114567394244327428}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -2849,6 +2905,7 @@ AnimatorStateMachine:
   m_StateMachineTransitions:
   - first: {fileID: 1107305401016358174}
     second:
+    - {fileID: 1109178292432078612}
     - {fileID: 1109609311867907894}
     - {fileID: 1109343763054070176}
     - {fileID: 1109218112207923682}
@@ -2914,6 +2971,20 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 600, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 576, y: 12, z: 0}
   m_DefaultState: {fileID: 1102965940865589878}
+--- !u!1109 &1109178292432078612
+AnimatorTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1102826326317468182}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 1
 --- !u!1109 &1109218112207923682
 AnimatorTransition:
   m_ObjectHideFlags: 1

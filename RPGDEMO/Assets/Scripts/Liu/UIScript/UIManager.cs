@@ -125,6 +125,40 @@ public class UIManager : MonoBehaviour {
             SetSkill(DataManager.SlotArr[83].QuickBarID, false);
         }
 
+        if (Input.GetKeyUp(KeyCode.Alpha5)) {
+            if (DataManager.SlotArr[84].QuickBarID != -1) {
+                DataManager.SlotArr[84].transform.GetChild(1).GetComponent<ConsumCopy>().UseConsum();
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha6)) {
+            if (DataManager.SlotArr[85].QuickBarID != -1) {
+                DataManager.SlotArr[85].transform.GetChild(1).GetComponent<ConsumCopy>().UseConsum();
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha7)) {
+            if (DataManager.SlotArr[86].QuickBarID != -1) {
+                DataManager.SlotArr[86].transform.GetChild(1).GetComponent<ConsumCopy>().UseConsum();
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha8)) {
+            if (DataManager.SlotArr[87].QuickBarID != -1) {
+                DataManager.SlotArr[87].transform.GetChild(1).GetComponent<ConsumCopy>().UseConsum();
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha9)) {
+            if (DataManager.SlotArr[84].QuickBarID != -1) { }
+            DataManager.SlotArr[88].transform.GetChild(1).GetComponent<ConsumCopy>().UseConsum();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha0)) {
+            if (DataManager.SlotArr[84].QuickBarID != -1) { }
+            DataManager.SlotArr[89].transform.GetChild(1).GetComponent<ConsumCopy>().UseConsum();
+        }
+
         if (isNone) {
             if (PanelList.Count == 0) {
                     if (isCtrl) {

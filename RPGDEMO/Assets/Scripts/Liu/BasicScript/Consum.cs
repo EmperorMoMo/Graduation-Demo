@@ -16,7 +16,6 @@ public class Consum : Item, IPointerEnterHandler, IPointerExitHandler {
     private float stayTimer = 0;
 
     public float ConsuTimer = 22;
-    public float ConsuTime = 0;
 
     private Image fillImage;
     public void Start() {
@@ -42,9 +41,11 @@ public class Consum : Item, IPointerEnterHandler, IPointerExitHandler {
     }
 
     public void FixedUpdate() {
-        if (ConsuTime > 0) {
-            ConsuTime -= Time.fixedDeltaTime;
-            fillImage.fillAmount = ConsuTime / ConsuTimer;
+        if (string.Equals(consumBase.ConType, "HP")) {
+            fillImage.fillAmount = IASManager.HPConTime / ConsuTimer;
+        }
+        if (string.Equals(consumBase.ConType, "MP")) {
+            fillImage.fillAmount = IASManager.MPConTime / ConsuTimer;
         }
     }
 

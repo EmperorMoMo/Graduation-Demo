@@ -37,6 +37,23 @@ public class FetchUtils {
         return null;    //未找到返回null
     }
 
+    public static Consum FetchLastConsum(int uid, out int Count) {
+        Count = 0;
+        Consum consum = null;
+        foreach (Item i in DataManager.ItemArr) {
+            if (i != null) {
+                if ((i as Consum) != null) {
+                    if (i.itemBase.UID == uid) {
+                        Count += i.curStack;
+                        consum = (Consum)i;
+                        Debug.Log(consum.consumBase.ConType);
+                    }
+                }
+            }
+        }
+        return consum;
+    }
+
     //在物品List中寻找所有特定UID的Item游戏对象
     //public List<Item> FetchByUID(int uid){
         //List<Item> items = new List<Item>();

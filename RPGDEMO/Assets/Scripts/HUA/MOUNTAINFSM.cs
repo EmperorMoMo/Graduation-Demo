@@ -344,7 +344,7 @@ public class MOUNTAINFSM : MonsterFSM
                 ToDrawSectorSolid(transform, transform.localPosition, 45, 5);
                 if (UmbrellaAttack(transform, playerTransform, 45, 5))
                 {
-                    if (Time_damage > 0.8f)
+                    if (Time_damage > 1f)
                     {
                         Damage(1);
                         Time_damage = 0;

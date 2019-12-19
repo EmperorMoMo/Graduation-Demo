@@ -148,7 +148,7 @@ MonoBehaviour:
   monster2: 2.5
   simpleFSM: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
-  chaseDistance: 5
+  chaseDistance: 10
   attackDistance: 2.3
   arriveDistance: 2
   curState: 0

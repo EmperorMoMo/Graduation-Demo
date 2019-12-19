@@ -46,6 +46,15 @@ public class FetchUtils {
         return null;    //未找到返回null
     }
 
+    public static ScrollBase FetchScrollBase(int uid) {
+        foreach (int key in DataManager.ScrollDic.Keys) {
+            if (key == uid) {
+                return DataManager.ScrollDic[key];
+            }
+        }
+        return null;    //未找到返回null
+    }
+
     public static Consum FetchLastConsum(int uid, out int Count) {
         Count = 0;
         Consum consum = null;

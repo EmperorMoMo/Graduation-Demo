@@ -44,6 +44,14 @@ public class InfoPanel : MonoBehaviour {
         ShowPanel();
     }
 
+    public static void ShowMatertia(ItemBase materia) {
+        BuildItemBase(materia);
+        Head.GetChild(3).GetComponent<Text>().text = "材料";
+        LvLimit.GetComponent<Text>().text = "";
+        Attribute.GetComponent<Text>().text = "";
+        ShowPanel();
+    }
+
     private static void ShowPanel() {
         Panel.SetParent(UIManager.Canvas.transform);
         Panel.position = Input.mousePosition;

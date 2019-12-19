@@ -183,6 +183,7 @@ public class CharacterAttribute : MonoBehaviour
         if (ac.canAttacked == true)
         {
             ac._isAttacked = true;
+            StartCoroutine(OnAttacked());
         }
         if (finalAttribute.Armor == 0)
         {
@@ -309,6 +310,14 @@ public class CharacterAttribute : MonoBehaviour
             BossAttribute2 ba2 = GameObject.Find("MOUNTAIN_DRAGON_LEGACY").GetComponent<BossAttribute2>();
             Character_Attacked(ba2.Aggressivity);
         }
+    }
+
+    IEnumerator OnAttacked()
+    {
+        ac.canAttacked = false;
+        yield return new WaitForSeconds(1.8f);
+        ac.canAttacked = true;
+
     }
 
 }

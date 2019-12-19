@@ -17,6 +17,7 @@ public class MOUNTAINFSM : MonsterFSM
     MeshFilter mf;
     MeshRenderer mr;
     Shader shader;
+    private bool jizhi=false;
     public float Time_damage = 0;
     public float alert_Distance = 20;
     public float attack_far_Distance = 15;
@@ -173,7 +174,7 @@ public class MOUNTAINFSM : MonsterFSM
         else
         {
             animation.Play("idleLookAround");
-            if (go != null)
+            if (go != null&&jizhi==false)
             {
                 Destroy(go);
             }
@@ -194,6 +195,11 @@ public class MOUNTAINFSM : MonsterFSM
     {
         if (ca.Cur_HP > 0)
         {
+            if (ba2.HP == ba2.MAX_HP * 0.75 || ba2.HP == ba2.MAX_HP * 0.5 || ba2.HP == ba2.MAX_HP * 0.25)
+            {
+                jizhi = true;
+                waitTime();
+            }
             Vector3 monsterTransform = new Vector3(transform.position.x, playerTransform.position.y, transform.position.z);
             Vector3 m = new Vector3(transform.position.x, 6, transform.position.z);
             //if (Vector3.Distance(playerTransform.position, monsterTransform) <= attack_far_Distance && Vector3.Distance(playerTransform.position, monsterTransform) >= attack_near_Distance)
@@ -220,7 +226,7 @@ public class MOUNTAINFSM : MonsterFSM
         else
         {
             animation.Play("idleLookAround");
-            if (go != null)
+            if (go != null && jizhi == false)
             {
                 Destroy(go);
             }
@@ -232,6 +238,11 @@ public class MOUNTAINFSM : MonsterFSM
     {
         if (ca.Cur_HP > 0)
         {
+            if (ba2.HP == ba2.MAX_HP * 0.75 || ba2.HP == ba2.MAX_HP * 0.5 || ba2.HP == ba2.MAX_HP * 0.25)
+            {
+                jizhi = true;
+                waitTime();
+            }
             Vector3 monsterTransform = new Vector3(transform.position.x, playerTransform.position.y, transform.position.z);
             Vector3 a = new Vector3(playerTransform.position.x - transform.position.x, 0, playerTransform.position.z - transform.position.z);
             Quaternion rotation = Quaternion.LookRotation(a);
@@ -256,7 +267,7 @@ public class MOUNTAINFSM : MonsterFSM
         else
         {
             animation.Play("idleLookAround");
-            if (go != null)
+            if (go != null && jizhi == false)
             {
                 Destroy(go);
             }
@@ -268,8 +279,13 @@ public class MOUNTAINFSM : MonsterFSM
     {
         if (ca.Cur_HP > 0)
         {
+            if (ba2.HP == ba2.MAX_HP * 0.75 || ba2.HP == ba2.MAX_HP * 0.5 || ba2.HP == ba2.MAX_HP * 0.25)
+            {
+                jizhi = true;
+                waitTime();
+            }
             Vector3 monsterTransform = new Vector3(transform.position.x, playerTransform.position.y, transform.position.z);
-            if (go != null)
+            if (go != null && jizhi == false)
             {
                 Destroy(go);
             }
@@ -304,7 +320,7 @@ public class MOUNTAINFSM : MonsterFSM
         else
         {
             animation.Play("idleLookAround");
-            if (go != null)
+            if (go != null && jizhi == false)
             {
                 Destroy(go);
             }
@@ -316,6 +332,11 @@ public class MOUNTAINFSM : MonsterFSM
     {
         if (ca.Cur_HP > 0)
         {
+            if (ba2.HP == ba2.MAX_HP * 0.75 || ba2.HP == ba2.MAX_HP * 0.5 || ba2.HP == ba2.MAX_HP * 0.25)
+            {
+                jizhi = true;
+                waitTime();
+            }
             Vector3 monsterTransform = new Vector3(transform.position.x, playerTransform.position.y, transform.position.z);
             if (elapsedTime >= 2)
             {
@@ -323,7 +344,7 @@ public class MOUNTAINFSM : MonsterFSM
                 ToDrawSectorSolid(transform, transform.localPosition, 45, 5);
                 if (UmbrellaAttack(transform, playerTransform, 45, 5))
                 {
-                    if (Time_damage > 0.6f)
+                    if (Time_damage > 0.8f)
                     {
                         Damage(1);
                         Time_damage = 0;
@@ -351,7 +372,7 @@ public class MOUNTAINFSM : MonsterFSM
         else
         {
             animation.Play("idleLookAround");
-            if (go != null)
+            if (go != null && jizhi == false)
             {
                 Destroy(go);
             }
@@ -361,15 +382,15 @@ public class MOUNTAINFSM : MonsterFSM
     }
     IEnumerator die()
     {
-        animation.Play("Death");
-        if (animation.IsPlaying("Death"))
+        animation.Play("death");
+        if (animation.IsPlaying("death"))
         {
             if (go != null)
             {
                 Destroy(go);
             }
         }
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(4f);
         Destroy(this.gameObject);
     }
     private void DeadState()
@@ -408,20 +429,17 @@ public class MOUNTAINFSM : MonsterFSM
         //计算攻击状态中上一次攻击时间
         elapsedTime += Time.deltaTime;
         //Debug.Log(elapsedTime);
-        if(ba2.HP==ba2.MAX_HP*0.75|| ba2.HP == ba2.MAX_HP * 0.5|| ba2.HP == ba2.MAX_HP * 0.25)
-        {
-            ToDrawSectorSolid(playerTransform, playerTransform.localPosition, 360, 3);
-             waitTime();
-        }
     }
     IEnumerator waitTime()
     {
+        ToDrawSectorSolid(playerTransform, playerTransform.localPosition, 360, 3);
         yield return new WaitForSeconds(1.5f);
         InstantiateEffect3();
         if (go != null)
         {
             Destroy(go);
         }
+        jizhi = false; 
     }
     public void InstantiateEffect()
     {

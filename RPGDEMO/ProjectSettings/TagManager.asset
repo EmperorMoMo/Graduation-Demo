@@ -11,6 +11,7 @@ TagManager:
   - Patrol
   - Enemy1
   - Enemy2
+  - Boss2
   layers:
   - Default
   - TransparentFX

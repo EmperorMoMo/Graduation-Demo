@@ -26,13 +26,16 @@ public class DataManager : MonoBehaviour
 
     public static Dictionary<int, EquipmentBase> EquipmentDic = new Dictionary<int, EquipmentBase>();       //装备词典
     public static Dictionary<int, ConsumBase> ConsumDic = new Dictionary<int, ConsumBase>();                //消耗品词典
+    public static Dictionary<int, ItemBase> MaterialDic = new Dictionary<int, ItemBase>();
 
     public JsonData EquipmentJData;     //装备数据的Json数据文件对象
     public JsonData ConsumJData;        //消耗品数据的Json数据文件对象
+    public JsonData MaterialJData;       //材料数据的Json数据文件对象
 
     public void Start() {
         EquipmentJData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/DataSource/EquipmentData.json"));    //将Json文件转化为对象
         ConsumJData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/DataSource/ConsumData.json"));          //将Json文件转化为对象
+        MaterialJData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/DataSource/MaterialData.json"));          //将Json文件转化为对象
 
         SkillDic.Add(1200, null);
         SkillDic.Add(1201, null);
@@ -41,6 +44,7 @@ public class DataManager : MonoBehaviour
 
         ContructEquipemnt();
         ContructConsum();
+        ContructMaterial();
 
         ShopFile[0] = 1000;
         ShopFile[1] = 1001;
@@ -87,6 +91,14 @@ public class DataManager : MonoBehaviour
         ShopFile[37] = 2001;
         ShopFile[38] = 2002;
         ShopFile[39] = 2003;
+
+        ShopFile[40] = 3000;
+        ShopFile[41] = 3001;
+        ShopFile[42] = 3100;
+        ShopFile[43] = 3101;
+        ShopFile[44] = 3200;
+        ShopFile[45] = 3201;
+        ShopFile[46] = 3300;
     }
 
     private void ContructEquipemnt() { 
@@ -143,6 +155,29 @@ public class DataManager : MonoBehaviour
             stackMax = (int)ConsumJData[i]["StackMax"];
             ConsumBase consum = new ConsumBase(uid, name, quality, price, stackMax, describe, sprite, conType, reValue, duration);
             ConsumDic.Add(uid, consum);
+        }
+    }
+
+    private void ContructMaterial() {
+        int uid;
+        string name;
+        int quality;
+        int price;
+        string describe;
+        string sprite;
+        int stackMax;
+
+        for (int i = 0; i < MaterialJData.Count; i++) {
+            uid = (int)MaterialJData[i]["UID"];
+            name = MaterialJData[i]["Name"].ToString();
+            quality = (int)MaterialJData[i]["Quality"];
+            price = (int)MaterialJData[i]["Price"];
+            describe = MaterialJData[i]["Describe"].ToString();
+            sprite = MaterialJData[i]["Sprite"].ToString();
+            stackMax = (int)MaterialJData[i]["StackMax"];
+            ItemBase material = new ItemBase(uid, name, quality, price, stackMax, describe);
+            material.Sprite = Resources.Load<Sprite>("Material/" + sprite);
+            MaterialDic.Add(uid, material);
         }
     }
 

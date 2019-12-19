@@ -1,0 +1,65 @@
+﻿[
+  {
+    "UID": 3000,
+    "Name": "原石",
+    "Quality": 0,
+    "Price": 800,
+    "Describe": "开采的石矿",
+    "Sprite": "3000",
+    "StackMax": 40
+  },
+  {
+    "UID": 3001,
+    "Name": "铁块",
+    "Quality": 0,
+    "Price": 800,
+    "Describe": "铁矿炼成",
+    "Sprite": "3001",
+    "StackMax": 40
+  },
+  {
+    "UID": 3100,
+    "Name": "皮革",
+    "Quality": 1,
+    "Price": 800,
+    "Describe": "制成的皮革",
+    "Sprite": "3100",
+    "StackMax": 40
+  },
+  {
+    "UID": 3101,
+    "Name": "铁皮",
+    "Quality": 1,
+    "Price": 800,
+    "Describe": "压成的铁皮",
+    "Sprite": "3101",
+    "StackMax": 40
+  },
+  {
+    "UID": 3200,
+    "Name": "碎银",
+    "Quality": 2,
+    "Price": 800,
+    "Describe": "银块的碎片",
+    "Sprite": "3200",
+    "StackMax": 20
+  },
+  {
+    "UID": 3201,
+    "Name": "碎金",
+    "Quality": 2,
+    "Price": 800,
+    "Describe": "金块的碎片",
+    "Sprite": "3201",
+    "StackMax": 20
+  },
+  {
+    "UID": 3300,
+    "Name": "金块",
+    "Quality": 3,
+    "Price": 800,
+    "Describe": "一整块金子",
+    "Sprite": "3300",
+    "StackMax": 5
+  }
+]

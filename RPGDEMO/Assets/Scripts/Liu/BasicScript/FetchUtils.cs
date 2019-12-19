@@ -37,6 +37,15 @@ public class FetchUtils {
         return null;    //未找到返回null
     }
 
+    public static ItemBase FetchMaterial(int uid) {
+        foreach (int key in DataManager.MaterialDic.Keys) {
+            if (key == uid) {
+                return DataManager.MaterialDic[key];
+            }
+        }
+        return null;    //未找到返回null
+    }
+
     public static Consum FetchLastConsum(int uid, out int Count) {
         Count = 0;
         Consum consum = null;

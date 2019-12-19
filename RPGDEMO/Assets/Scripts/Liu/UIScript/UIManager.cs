@@ -87,6 +87,14 @@ public class UIManager : MonoBehaviour {
             }
         }
 
+        if (Input.GetKeyUp(KeyCode.O)) {
+            if (!Shoppage.activeSelf) {
+                ShowPanel(Shoppage);
+            } else {
+                ClosePanel(Shoppage);
+            }
+        }
+
         if (Input.GetKeyUp(KeyCode.F1)) {
             if (PanelList.Count != 0) {
                 ClosePanel(PanelList[PanelList.Count - 1]);

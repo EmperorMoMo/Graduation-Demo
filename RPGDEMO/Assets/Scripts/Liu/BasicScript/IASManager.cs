@@ -27,6 +27,7 @@ public class IASManager : MonoBehaviour {
         yield return new WaitForSeconds(0.1f);
         ReadQuick();
         UIManager.Backpage.SetActive(false);
+        UIManager.Shoppage.SetActive(false);
 
     }
     public void Start() {
@@ -148,18 +149,31 @@ public class IASManager : MonoBehaviour {
         
         item.SlotIndex = Index;                                //网格索引指向该网格
         item.curStack = CurStack;
-        DataManager.ItemArr[Index] = item;                     //将Equipment脚本存入数组
 
+        Color newColor;
+        ColorUtility.TryParseHtmlString(GetColor(item.itemBase.Quality), out newColor);
+        Item.transform.GetChild(2).GetComponent<Image>().color = newColor;
         Item.GetComponent<Image>().sprite = item.itemBase.Sprite;  //显示贴图
         item.ShowCount();                                          //显示数量
 
+        Item perItem;
+        for (int i = 0; i < 80; i++) {
+            perItem = DataManager.ItemArr[i];
+            if (perItem != null) {
+                if (perItem.itemBase.UID == uid && perItem.curStack < perItem.itemBase.StackMax) {
+                    Stack(item, DataManager.SlotArr[i]);
+                    break;
+                }
+            }
+        }
+
+        DataManager.ItemArr[Index] = item;                     //将Equipment脚本存入数组
         DataManager.SaveItem();
     }
 
     public static void CreateConsumCopy(int uid, int Index) {
         for (int i = 84; i < 90; i++) {
             if (DataManager.SlotArr[i].QuickBarID == uid) {
-                Debug.Log("销毁");
                 Destroy(DataManager.SlotArr[i].transform.GetChild(1).gameObject);
                 DataManager.SlotArr[i].QuickBarID = -1;
                 break;
@@ -177,7 +191,6 @@ public class IASManager : MonoBehaviour {
     }
 
     public static void CreateQuick(int uid, int slotIndex) {
-        Debug.Log("读取快捷栏" + uid + slotIndex);
         int index = -1;
         if (slotIndex >= 0 && slotIndex < 4) {
             switch (uid) { 
@@ -218,6 +231,10 @@ public class IASManager : MonoBehaviour {
             }
             Item.GetComponent<Image>().sprite = commodity.itemBase.Sprite;  //显示贴图
             Item.transform.GetChild(0).GetComponent<Text>().text = "";      //显示数量
+
+            Color newColor;
+            ColorUtility.TryParseHtmlString(GetColor(commodity.itemBase.Quality), out newColor);
+            Item.transform.GetChild(2).GetComponent<Image>().color = newColor;
         }
     }
 
@@ -327,8 +344,13 @@ public class IASManager : MonoBehaviour {
         DataManager.SaveItem();
     }
 
-    public static void Shop(ItemBase item) {
-        CreateItem(item.UID);
+    public static void Shop(ItemBase item, int count) {
+        if (!UIManager.Backpage.activeSelf) {
+            UIManager.Backpage.SetActive(true);
+        }
+        for (int i = 0; i < count; i++) {
+            CreateItem(item.UID);
+        }
     }
 
     public static void SetEquipmentAtr() {
@@ -351,4 +373,14 @@ public class IASManager : MonoBehaviour {
         UIManager.PlayerHandle.GetComponent<CharacterAttribute>().ChangeEquipAttribute(attr);
     }
 
+    private static string GetColor(int quality) {
+        switch (quality) {
+            case 0: return "#FFFFFF";
+            case 1: return "#2DBF25";
+            case 2: return "#0056FF";
+            case 3: return "#B500FF";
+            case 4: return "#FF2100";
+            default: return "#FFFFFF";
+        }
+    }
 }

@@ -51,10 +51,42 @@ public class DataManager : MonoBehaviour
         ShopFile[6] = 1006;
         ShopFile[7] = 1007;
         ShopFile[8] = 1008;
-        ShopFile[9] = 2000;
-        ShopFile[10] = 2001;
-        ShopFile[11] = 2002;
-        ShopFile[12] = 2003;
+
+        ShopFile[9] = 1100;
+        ShopFile[10] = 1101;
+        ShopFile[11] = 1102;
+        ShopFile[12] = 1103;
+        ShopFile[13] = 1104;
+        ShopFile[14] = 1105;
+        ShopFile[15] = 1106;
+        ShopFile[16] = 1107;
+        ShopFile[17] = 1108;
+
+        ShopFile[18] = 1200;
+        ShopFile[19] = 1201;
+        ShopFile[20] = 1202;
+        ShopFile[21] = 1203;
+        ShopFile[22] = 1204;
+        ShopFile[23] = 1205;
+        ShopFile[24] = 1206;
+        ShopFile[25] = 1207;
+        ShopFile[26] = 1208;
+
+        ShopFile[27] = 1300;
+        ShopFile[28] = 1301;
+        ShopFile[29] = 1302;
+        ShopFile[30] = 1303;
+        ShopFile[31] = 1304;
+        ShopFile[32] = 1305;
+        ShopFile[33] = 1306;
+        ShopFile[34] = 1307;
+        ShopFile[35] = 1308;
+
+
+        ShopFile[36] = 2000;
+        ShopFile[37] = 2001;
+        ShopFile[38] = 2002;
+        ShopFile[39] = 2003;
     }
 
     private void ContructEquipemnt() { 

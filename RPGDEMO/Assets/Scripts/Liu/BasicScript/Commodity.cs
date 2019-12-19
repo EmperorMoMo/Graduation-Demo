@@ -31,7 +31,14 @@ public class Commodity : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
             }
 
             if (Input.GetMouseButtonUp(1)) {
-                IASManager.Shop(itemBase);
+                if (Input.GetKey(KeyCode.LeftControl)){
+                    Debug.Log("拟购买");
+                    Shop.SetValue(this);
+                    UIManager.Shoppage.transform.GetChild(3).gameObject.SetActive(true);
+                    UIManager.Shoppage.transform.GetChild(3).position = Input.mousePosition;
+                    return;
+                }
+                IASManager.Shop(itemBase, 1);
             }
         }
     }

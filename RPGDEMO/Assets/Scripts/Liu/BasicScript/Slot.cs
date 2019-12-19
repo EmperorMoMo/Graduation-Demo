@@ -99,6 +99,7 @@ public class Slot : MonoBehaviour, IDropHandler {
                 Debug.Log("拟拆分");
                 Split.SetValue(dragItem, this);
                 UIManager.Backpage.transform.GetChild(3).gameObject.SetActive(true);
+                UIManager.Backpage.transform.GetChild(3).position = Input.mousePosition;
             } else { 
             //放置在空位
                 Debug.Log("置空");

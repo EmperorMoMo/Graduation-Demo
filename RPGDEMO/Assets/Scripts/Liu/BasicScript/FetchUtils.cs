@@ -72,6 +72,20 @@ public class FetchUtils {
         return consum;
     }
 
+    public static int FetchMatCount(int uid) {
+        int count = 0;
+        foreach (Item i in DataManager.ItemArr) {
+            if (i != null) {
+                if ((i as Materia) != null) {
+                    if (i.itemBase.UID == uid) {
+                        count += i.curStack;
+                    }
+                }
+            }
+        }
+        return count;
+    }
+
     //在物品List中寻找所有特定UID的Item游戏对象
     //public List<Item> FetchByUID(int uid){
         //List<Item> items = new List<Item>();

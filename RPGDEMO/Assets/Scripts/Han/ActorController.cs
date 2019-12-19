@@ -333,6 +333,7 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = false;
         //lockCamera = true;
         str = State.normalAtk;
+        pi.canUseSkill = false;
     }
 
     public void OnAttackEnter02()
@@ -340,6 +341,7 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = false;
         //lockCamera = true;
         str = State.normalAtk;
+        pi.canUseSkill = false;
     }
 
     public void OnAttackEnter06()
@@ -347,6 +349,7 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = false;
         //lockCamera = true;
         str = State.normalAtk;
+        pi.canUseSkill = false;
     }
 
     public void OnAttackEnter07()
@@ -354,6 +357,7 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = false;
         //lockCamera = true;
         str = State.normalAtk;
+        pi.canUseSkill = false;
     }
 
     //public void OnAttack1Enter()

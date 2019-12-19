@@ -38,6 +38,10 @@ public class MOUNTAINFSM : MonsterFSM
     private Transform EffectPoint1;
     private CharacterAttribute ca;
     private BossAttribute2 ba2;
+    public bool jizhi_75=true;
+    public bool jizhi_50=true;
+    public bool jizhi_25=true;
+    public float jizhi_Time;
     protected override void Initialize()
     {
         monsterHP = 100;
@@ -158,6 +162,7 @@ public class MOUNTAINFSM : MonsterFSM
     }
     private void FlyState()
     {
+        jizhi_Time = 0;
         if (ca.Cur_HP > 0)
         {
             Vector3 monsterTransform = new Vector3(transform.position.x, playerTransform.position.y, transform.position.z);
@@ -195,11 +200,6 @@ public class MOUNTAINFSM : MonsterFSM
     {
         if (ca.Cur_HP > 0)
         {
-            if (ba2.HP == ba2.MAX_HP * 0.75 || ba2.HP == ba2.MAX_HP * 0.5 || ba2.HP == ba2.MAX_HP * 0.25)
-            {
-                jizhi = true;
-                waitTime();
-            }
             Vector3 monsterTransform = new Vector3(transform.position.x, playerTransform.position.y, transform.position.z);
             Vector3 m = new Vector3(transform.position.x, 6, transform.position.z);
             //if (Vector3.Distance(playerTransform.position, monsterTransform) <= attack_far_Distance && Vector3.Distance(playerTransform.position, monsterTransform) >= attack_near_Distance)
@@ -238,11 +238,7 @@ public class MOUNTAINFSM : MonsterFSM
     {
         if (ca.Cur_HP > 0)
         {
-            if (ba2.HP == ba2.MAX_HP * 0.75 || ba2.HP == ba2.MAX_HP * 0.5 || ba2.HP == ba2.MAX_HP * 0.25)
-            {
-                jizhi = true;
-                waitTime();
-            }
+            JIZHI();
             Vector3 monsterTransform = new Vector3(transform.position.x, playerTransform.position.y, transform.position.z);
             Vector3 a = new Vector3(playerTransform.position.x - transform.position.x, 0, playerTransform.position.z - transform.position.z);
             Quaternion rotation = Quaternion.LookRotation(a);
@@ -279,11 +275,7 @@ public class MOUNTAINFSM : MonsterFSM
     {
         if (ca.Cur_HP > 0)
         {
-            if (ba2.HP == ba2.MAX_HP * 0.75 || ba2.HP == ba2.MAX_HP * 0.5 || ba2.HP == ba2.MAX_HP * 0.25)
-            {
-                jizhi = true;
-                waitTime();
-            }
+            JIZHI();
             Vector3 monsterTransform = new Vector3(transform.position.x, playerTransform.position.y, transform.position.z);
             if (go != null && jizhi == false)
             {
@@ -332,11 +324,7 @@ public class MOUNTAINFSM : MonsterFSM
     {
         if (ca.Cur_HP > 0)
         {
-            if (ba2.HP == ba2.MAX_HP * 0.75 || ba2.HP == ba2.MAX_HP * 0.5 || ba2.HP == ba2.MAX_HP * 0.25)
-            {
-                jizhi = true;
-                waitTime();
-            }
+            JIZHI();
             Vector3 monsterTransform = new Vector3(transform.position.x, playerTransform.position.y, transform.position.z);
             if (elapsedTime >= 2)
             {
@@ -390,7 +378,7 @@ public class MOUNTAINFSM : MonsterFSM
                 Destroy(go);
             }
         }
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3.5f);
         Destroy(this.gameObject);
     }
     private void DeadState()
@@ -428,18 +416,47 @@ public class MOUNTAINFSM : MonsterFSM
         }
         //计算攻击状态中上一次攻击时间
         elapsedTime += Time.deltaTime;
+        jizhi_Time += Time.deltaTime;
         //Debug.Log(elapsedTime);
+    }
+    public void JIZHI()
+    {
+        if (jizhi_Time>=20&& jizhi_75 == true)
+        {
+            Debug.Log("11111111111111111111111111111111111");
+            jizhi = true;
+            StartCoroutine(waitTime());
+            jizhi_75 = false;
+        }
+        if (jizhi_Time >= 40 && jizhi_50 == true)
+        {
+            Debug.Log("22222222222222222222222222222222222");
+            jizhi = true;
+            StartCoroutine(waitTime());
+            jizhi_50 = false;
+        }
+        if (jizhi_Time >= 60 && jizhi_25 == true)
+        {
+            Debug.Log("33333333333333333333333333333333333");
+            jizhi = true;
+            StartCoroutine(waitTime());
+            jizhi_25 = false;
+            jizhi_Time = 0;
+            jizhi_75 = true;
+            jizhi_50 = true;
+            jizhi_25 = true;
+        }
     }
     IEnumerator waitTime()
     {
-        ToDrawSectorSolid(playerTransform, playerTransform.localPosition, 360, 3);
-        yield return new WaitForSeconds(1.5f);
+        ToDrawSectorSolid(playerTransform, playerTransform.position, 380, 1.5f);
         InstantiateEffect3();
+        yield return new WaitForSeconds(1f);
         if (go != null)
         {
             Destroy(go);
         }
-        jizhi = false; 
+        jizhi = false;
     }
     public void InstantiateEffect()
     {
@@ -453,7 +470,8 @@ public class MOUNTAINFSM : MonsterFSM
     }
     public void InstantiateEffect3()
     {
-        var instance = Instantiate(Effect3, playerTransform.position, EffectPoint3.rotation);
-        Destroy(instance, 4f);
+        Vector3 a = new Vector3(playerTransform.position.x, 0.3f, playerTransform.position.z);
+        var instance = Instantiate(Effect3, a, EffectPoint3.rotation);
+        Destroy(instance, 5f);
     }
 }

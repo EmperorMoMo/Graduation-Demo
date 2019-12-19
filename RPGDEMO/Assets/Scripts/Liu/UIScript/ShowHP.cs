@@ -22,12 +22,13 @@ public class ShowHP : MonoBehaviour {
         text = ShowHPPanel.transform.GetChild(2).GetComponent<Text>();
         Vector3 position = new Vector3(transform.position.x, (int)(transform.position.y + 3), transform.position.z);
         ShowHPPanel.transform.position = position;
+
+        MaxHP = Enemy.MAX_HP;
     }
     void Update() {
         this.transform.GetComponentsInChildren<Canvas>()[0].transform.rotation = Camera.main.transform.rotation;
-        HP = Mathf.Lerp(HP, Enemy.HP, 2f);
-        MaxHP = Mathf.Lerp(MaxHP, Enemy.MAX_HP, 2f);
-        Bar.fillAmount = Mathf.Lerp(Bar.fillAmount, HP / Enemy.MAX_HP, 0.02f);
+        HP = Enemy.HP;
+        Bar.fillAmount = HP / Enemy.MAX_HP;
         text.text = (int)HP + " / " + (int)MaxHP;
     }
 }

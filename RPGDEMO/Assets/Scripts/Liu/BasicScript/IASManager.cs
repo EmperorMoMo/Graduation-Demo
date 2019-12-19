@@ -24,16 +24,18 @@ public class IASManager : MonoBehaviour {
         ItemPrefab = itemPrefab;
     }
     IEnumerator wait() {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
         ReadQuick();
-
         UIManager.Backpage.SetActive(false);
+
     }
     public void Start() {
         UIManager.Backpage.SetActive(true);
         CreateSlot();
         CreateQuickBarSlot();
         CreateEquipmentSlot();
+        CreateShopSlot();
+        CreateCommodity();
 
         for (int i = 0; i < 10; i++) {
             quickFile[i] = -1;
@@ -85,7 +87,12 @@ public class IASManager : MonoBehaviour {
             DataManager.SlotArr[i] = slot.GetComponent<Slot>();         //将Slot脚本存入数组
         }
     }
-
+    public static void CreateShopSlot() {
+        Transform Shop = UIManager.Shoppage.transform.GetChild(1);
+        for (int i = 0; i < 64; i++) {
+            DataManager.shopTra[i] = Shop.GetChild(i);
+        }
+    }
     public static void ReadData() {
         foreach (int[] i in DataManager.ItemFile) {
             thisFile.Add(new int[3] { i[0], i[1], i[2] });
@@ -195,6 +202,25 @@ public class IASManager : MonoBehaviour {
         }
     }
 
+    public static void CreateCommodity() {
+        Commodity commodity = null;
+        for (int i = 0; i < 64; i++) {
+            if (DataManager.ShopFile[i] == 0) {
+                continue;
+            }
+            GameObject Item = GameObject.Instantiate(ItemPrefab, DataManager.shopTra[i]);     //指定位置生成指定物品
+            commodity = Item.AddComponent<Commodity>();
+            if(DataManager.ShopFile[i] / 1000 == 1){
+                commodity.itemBase = FetchUtils.FetchEquipmentsBase(DataManager.ShopFile[i]);       //为其中的物品基础类赋值
+            }
+            if (DataManager.ShopFile[i] / 1000 == 2) {
+                commodity.itemBase = FetchUtils.FetchConsumsBase(DataManager.ShopFile[i]);
+            }
+            Item.GetComponent<Image>().sprite = commodity.itemBase.Sprite;  //显示贴图
+            Item.transform.GetChild(0).GetComponent<Text>().text = "";      //显示数量
+        }
+    }
+
     //将物品放在空网格上
     public static void ToEmpty(Item item, Slot slot) {
         int slotIndex = item.SlotIndex;
@@ -299,6 +325,10 @@ public class IASManager : MonoBehaviour {
             }
         }
         DataManager.SaveItem();
+    }
+
+    public static void Shop(ItemBase item) {
+        CreateItem(item.UID);
     }
 
     public static void SetEquipmentAtr() {

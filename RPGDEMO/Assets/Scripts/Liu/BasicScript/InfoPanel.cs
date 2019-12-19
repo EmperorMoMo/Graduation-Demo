@@ -45,6 +45,7 @@ public class InfoPanel : MonoBehaviour {
     }
 
     private static void ShowPanel() {
+        Panel.SetParent(UIManager.Canvas.transform);
         Panel.position = Input.mousePosition;
         Panel.GetComponent<CanvasGroup>().alpha = 1;
         if (1f - Panel.GetComponent<CanvasGroup>().alpha > 0.001f) {

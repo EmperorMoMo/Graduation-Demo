@@ -12,10 +12,12 @@ using LitJson;
 public class DataManager : MonoBehaviour
 {
     public static List<int[]> ItemFile = new List<int[]>();         //物品存档
+    public static int[] ShopFile = new int[80];                     //商品存档
     public static int[] QuickFile = new int[10] { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 };
 
     public static Slot[] SlotArr = new Slot[99];                    //存放所有的Slot脚本
     public static Item[] ItemArr = new Item[99];                    //存放所有的Item脚本
+    public static Transform[] shopTra = new Transform[64];
 
     public static Dictionary<int, Skill> SkillDic = new Dictionary<int, Skill>();
 
@@ -40,19 +42,19 @@ public class DataManager : MonoBehaviour
         ContructEquipemnt();
         ContructConsum();
 
-        ItemFile.Add(new int[3] { 1000, 0, 1 });
-        ItemFile.Add(new int[3] { 1001, 1, 1 });
-        ItemFile.Add(new int[3] { 1002, 2, 1 });
-        ItemFile.Add(new int[3] { 1003, 3, 1 });
-        ItemFile.Add(new int[3] { 1004, 4, 1 });
-        ItemFile.Add(new int[3] { 1005, 5, 1 });
-        ItemFile.Add(new int[3] { 1006, 6, 1 });
-        ItemFile.Add(new int[3] { 1007, 7, 1 });
-        ItemFile.Add(new int[3] { 1008, 8, 1 });
-        ItemFile.Add(new int[3] { 2000, 9, 20 });
-        ItemFile.Add(new int[3] { 2001, 10, 20 });
-        ItemFile.Add(new int[3] { 2002, 11, 20 });
-        ItemFile.Add(new int[3] { 2003, 12, 20 });
+        ShopFile[0] = 1000;
+        ShopFile[1] = 1001;
+        ShopFile[2] = 1002;
+        ShopFile[3] = 1003;
+        ShopFile[4] = 1004;
+        ShopFile[5] = 1005;
+        ShopFile[6] = 1006;
+        ShopFile[7] = 1007;
+        ShopFile[8] = 1008;
+        ShopFile[9] = 2000;
+        ShopFile[10] = 2001;
+        ShopFile[11] = 2002;
+        ShopFile[12] = 2003;
     }
 
     private void ContructEquipemnt() { 

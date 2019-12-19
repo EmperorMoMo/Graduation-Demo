@@ -24,10 +24,10 @@ public class IASManager : MonoBehaviour {
         ItemPrefab = itemPrefab;
     }
     IEnumerator wait() {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
         ReadQuick();
-
         UIManager.Backpage.SetActive(false);
+
     }
     public void Start() {
         UIManager.Backpage.SetActive(true);

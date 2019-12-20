@@ -8,7 +8,7 @@ public class ShakeCamera : MonoBehaviour
     //是否开始抖动
     public bool isShake = false;
     //抖动幅度
-    public float shakeLv = 7.5f;
+    public float shakeLv = 5f;
     //设置抖屏的时长
     public float setShakeTime = 0.2f;
     public float shakeFps = 45;

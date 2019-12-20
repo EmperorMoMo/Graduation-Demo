@@ -38735,7 +38735,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: edc788ba907fd194b883f833c109d85a, type: 2}
+      objectReference: {fileID: 9100000, guid: 470f926bf2dfc514681b071e2069c8a6, type: 2}
     - target: {fileID: 95316331630631582, guid: 98a0661a1a68d9949b6b7d564da9f41f,
         type: 3}
       propertyPath: m_ApplyRootMotion
@@ -38938,7 +38938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4688116927040962, guid: 98a0661a1a68d9949b6b7d564da9f41f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00017794984
+      value: -0.00017794986
       objectReference: {fileID: 0}
     - target: {fileID: 4688116927040962, guid: 98a0661a1a68d9949b6b7d564da9f41f, type: 3}
       propertyPath: m_LocalRotation.y
@@ -38946,7 +38946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4688116927040962, guid: 98a0661a1a68d9949b6b7d564da9f41f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.010477822
+      value: -0.010477823
       objectReference: {fileID: 0}
     - target: {fileID: 4688116927040962, guid: 98a0661a1a68d9949b6b7d564da9f41f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -38966,11 +38966,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4490143871862358, guid: 98a0661a1a68d9949b6b7d564da9f41f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00017800921
+      value: -0.00017800923
       objectReference: {fileID: 0}
     - target: {fileID: 4490143871862358, guid: 98a0661a1a68d9949b6b7d564da9f41f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.010477826
+      value: -0.010477827
       objectReference: {fileID: 0}
     - target: {fileID: 4490143871862358, guid: 98a0661a1a68d9949b6b7d564da9f41f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -45545,6 +45545,7 @@ MonoBehaviour:
   _isChange: 0
   nengliang: 0
   ChangeTimer: 0
+  Armor_temp: 0
   str: 0
   CD_skill_one: 0
   CD_skill_two: 0

@@ -56,8 +56,6 @@ public class DataManager : MonoBehaviour
 
         WeaponFile[0] = 1000;
         WeaponFile[1] = 1100;
-        WeaponFile[2] = 1200;
-        WeaponFile[3] = 1300;
 
         ArmorFile[0] = 1001;
         ArmorFile[1] = 1002;
@@ -78,26 +76,6 @@ public class DataManager : MonoBehaviour
         ArmorFile[14] = 1107;
         ArmorFile[15] = 1108;
 
-
-        ArmorFile[16] = 1201;
-        ArmorFile[17] = 1202;
-        ArmorFile[18] = 1203;
-        ArmorFile[19] = 1204;
-        ArmorFile[20] = 1205;
-        ArmorFile[21] = 1206;
-        ArmorFile[22] = 1207;
-        ArmorFile[23] = 1208;
-
-
-        ArmorFile[24] = 1301;
-        ArmorFile[25] = 1302;
-        ArmorFile[26] = 1303;
-        ArmorFile[27] = 1304;
-        ArmorFile[28] = 1305;
-        ArmorFile[29] = 1306;
-        ArmorFile[30] = 1307;
-        ArmorFile[31] = 1308;
-
         ConsuFile[0] = 2000;
         ConsuFile[1] = 2001;
         ConsuFile[2] = 2002;
@@ -107,11 +85,36 @@ public class DataManager : MonoBehaviour
         MatsFile[1] = 3001;
         MatsFile[2] = 3100;
         MatsFile[3] = 3101;
-        MatsFile[4] = 3200;
-        MatsFile[5] = 3201;
-        MatsFile[6] = 3300;
+        MatsFile[4] = 3103;
+        MatsFile[5] = 3104;
+        MatsFile[6] = 3105;
+        MatsFile[7] = 3200;
+        MatsFile[8] = 3201;
+        MatsFile[8] = 3202;
+        MatsFile[9] = 3203;
+        MatsFile[10] = 3204;
+        MatsFile[11] = 3300;
+        MatsFile[12] = 3301;
 
-        ScrollFile[47] = 4000;
+        ScrollFile[0] = 4200;
+        ScrollFile[1] = 4201;
+        ScrollFile[2] = 4202;
+        ScrollFile[3] = 4203;
+        ScrollFile[4] = 4204;
+        ScrollFile[5] = 4205;
+        ScrollFile[6] = 4206;
+        ScrollFile[7] = 4207;
+        ScrollFile[8] = 4208;
+
+        ScrollFile[9] = 4300;
+        ScrollFile[10] = 4301;
+        ScrollFile[11] = 4302;
+        ScrollFile[12] = 4303;
+        ScrollFile[13] = 4304;
+        ScrollFile[14] = 4305;
+        ScrollFile[15] = 4306;
+        ScrollFile[16] = 4307;
+        ScrollFile[17] = 4308;
     }
 
     private void ContructEquipemnt() { 

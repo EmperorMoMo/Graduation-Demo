@@ -52,6 +52,14 @@ public class InfoPanel : MonoBehaviour {
         ShowPanel();
     }
 
+    public static void ShowScroll(ScrollBase scroll) {
+        BuildItemBase(scroll);
+        Head.GetChild(3).GetComponent<Text>().text = "卷轴";
+        LvLimit.GetComponent<Text>().text = "制作物品需要如下材料";
+        Attribute.GetComponent<Text>().text = GetMats(scroll.Mats);
+        ShowPanel();
+    }
+
     public static void ShowScroll(ScrollBase scroll, List<string[]> mats) {
         BuildItemBase(scroll);
         Head.GetChild(3).GetComponent<Text>().text = "卷轴";
@@ -155,6 +163,16 @@ public class InfoPanel : MonoBehaviour {
         foreach (string[] i in mats) {
             str += i[1] + "/" + i[2] + "  " + i[0] + "\n";
         }
-        return str + "\n";
+        return str;
+    }
+
+    private static string GetMats(List<int[]> mats) {
+        string str = "";
+        foreach (int[] i in mats) {
+            string name = FetchUtils.FetchMaterial(i[0]).Name;
+            int count = i[1];
+            str += count + " 个 " + name + "\n";
+        }
+        return str;
     }
 }

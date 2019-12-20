@@ -176,6 +176,8 @@ public class IASManager : MonoBehaviour {
 
         DataManager.ItemArr[Index] = item;                     //将Equipment脚本存入数组
         DataManager.SaveItem();
+
+        TipFrame.ShowTip(item.itemBase.Name, CurStack);
     }
 
     public static void CreateConsumCopy(int uid, int Index) {
@@ -427,7 +429,7 @@ public class IASManager : MonoBehaviour {
 
     public static void Shop(ItemBase item, int count) {
         if (!UIManager.Backpage.activeSelf) {
-            UIManager.Backpage.SetActive(true);
+            UIManager.ShowPanel(UIManager.Backpage);
         }
         for (int i = 0; i < count; i++) {
             CreateItem(item.UID);

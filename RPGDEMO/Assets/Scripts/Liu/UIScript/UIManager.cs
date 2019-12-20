@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour {
     public static GameObject SkillPanel;        //技能面板
     public static GameObject SwitchRole;        //切换人物
     public static GameObject FuncationMenu;     //功能菜单
-    public static GameObject DialogBox;         //对话框
+    public static GameObject TipFrame;          //提示框
 
     private static CameraController MainCamera;         //主相机控制脚本
     private static bool isNone = true;                  //非持久化界面是否为空
@@ -41,7 +41,7 @@ public class UIManager : MonoBehaviour {
         SkillPanel = Canvas.transform.GetChild(7).gameObject;
         SwitchRole = Canvas.transform.GetChild(8).gameObject;
         FuncationMenu = Canvas.transform.GetChild(9).gameObject;
-        DialogBox = Canvas.transform.GetChild(10).gameObject;
+        TipFrame = Canvas.transform.GetChild(10).gameObject;
 
         MainCamera = GameObject.Find("Main Camera").GetComponent<CameraController>();
     }
@@ -242,7 +242,7 @@ public class UIManager : MonoBehaviour {
             case "backpage": return Backpage;
             case "shoppage": return Shoppage;
             case "attr": return AttributePanel;
-            case "dialog": return DialogBox;
+            case "tip": return TipFrame;
             default: return null;
         }
     }

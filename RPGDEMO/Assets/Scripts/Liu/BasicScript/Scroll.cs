@@ -15,7 +15,7 @@ public class Scroll : Item, IPointerEnterHandler, IPointerExitHandler {
     private float stayTime = 0.5f;
     private float stayTimer = 0;
 
-    private List<string[]> MatsCount = new List<string[]>();
+    public List<string[]> MatsCount = new List<string[]>();
     private bool isMake = true;
 
     public void Start() {

@@ -27,15 +27,18 @@ public class DataManager : MonoBehaviour
     public static Dictionary<int, EquipmentBase> EquipmentDic = new Dictionary<int, EquipmentBase>();       //装备词典
     public static Dictionary<int, ConsumBase> ConsumDic = new Dictionary<int, ConsumBase>();                //消耗品词典
     public static Dictionary<int, ItemBase> MaterialDic = new Dictionary<int, ItemBase>();
+    public static Dictionary<int, ScrollBase> ScrollDic = new Dictionary<int, ScrollBase>();
 
     public JsonData EquipmentJData;     //装备数据的Json数据文件对象
     public JsonData ConsumJData;        //消耗品数据的Json数据文件对象
     public JsonData MaterialJData;       //材料数据的Json数据文件对象
+    public JsonData ScrollJData;       //材料数据的Json数据文件对象
 
     public void Start() {
         EquipmentJData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/DataSource/EquipmentData.json"));    //将Json文件转化为对象
         ConsumJData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/DataSource/ConsumData.json"));          //将Json文件转化为对象
         MaterialJData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/DataSource/MaterialData.json"));          //将Json文件转化为对象
+        ScrollJData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/DataSource/ScrollData.json"));
 
         SkillDic.Add(1200, null);
         SkillDic.Add(1201, null);
@@ -45,6 +48,7 @@ public class DataManager : MonoBehaviour
         ContructEquipemnt();
         ContructConsum();
         ContructMaterial();
+        ContructScroll();
 
         ShopFile[0] = 1000;
         ShopFile[1] = 1001;
@@ -99,6 +103,8 @@ public class DataManager : MonoBehaviour
         ShopFile[44] = 3200;
         ShopFile[45] = 3201;
         ShopFile[46] = 3300;
+
+        ShopFile[47] = 4000;
     }
 
     private void ContructEquipemnt() { 
@@ -181,6 +187,33 @@ public class DataManager : MonoBehaviour
         }
     }
 
+    private void ContructScroll() {
+        int uid;
+        string name;
+        int quality;
+        int price;
+        int tarUID;
+        List<int[]> mats;
+        string describe;
+        string sprite;
+        int stackMax;
+
+        for (int i = 0; i < ScrollJData.Count; i++) {
+            uid = (int)ScrollJData[i]["UID"];
+            name = ScrollJData[i]["Name"].ToString();
+            quality = (int)ScrollJData[i]["Quality"];
+            price = (int)ScrollJData[i]["Price"];
+            tarUID = (int)ScrollJData[i]["TarUID"];
+            mats = ContructMats(i);
+            describe = ScrollJData[i]["Describe"].ToString();
+            sprite = ScrollJData[i]["Sprite"].ToString();
+            stackMax = (int)ScrollJData[i]["StackMax"];
+
+            ScrollBase scroll = new ScrollBase(uid, name, quality, price, stackMax, describe, sprite, tarUID, mats);
+            ScrollDic.Add(uid, scroll);
+        }
+    }
+
     private BaseAttribute ContructAttribute(int index) {
         JsonData Attr = EquipmentJData[index]["Attribute"];
 
@@ -197,6 +230,16 @@ public class DataManager : MonoBehaviour
         BaseAttribute attr = new BaseAttribute(hp, mp, rehp, remp, aggr, armo, stre, inte, agil);
 
         return attr;
+    }
+
+    private List<int[]> ContructMats(int index) {
+        JsonData Mats = ScrollJData[index]["Mats"];
+        List<int[]> mats = new List<int[]>();
+        for (int i = 0; i < Mats.Count; i++) { 
+            mats.Add(new int[2]{(int)Mats[i][0], (int)Mats[i][1]});
+            Debug.Log((int)Mats[i][0] + "//" + (int)Mats[i][1]);
+        }
+        return mats;
     }
 
     public static void SaveItem() {

@@ -142,8 +142,12 @@ public class IASManager : MonoBehaviour {
                 item.transform.GetChild(1).GetComponent<Image>().sprite = item.itemBase.Sprite;
                 break;
             case 3:
-                item = Item.AddComponent<Item>();
+                item = Item.AddComponent<Materia>();
                 item.itemBase = FetchUtils.FetchMaterial(uid);
+                break;
+            case 4:
+                item = Item.AddComponent<Scroll>();
+                item.itemBase = FetchUtils.FetchScrollBase(uid);
                 break;
             default:
                 item = null;
@@ -235,6 +239,9 @@ public class IASManager : MonoBehaviour {
             }
             if (DataManager.ShopFile[i] / 1000 == 3) {
                 commodity.itemBase = FetchUtils.FetchMaterial(DataManager.ShopFile[i]);
+            }
+            if (DataManager.ShopFile[i] / 1000 == 4) {
+                commodity.itemBase = FetchUtils.FetchScrollBase(DataManager.ShopFile[i]);
             }
             Item.GetComponent<Image>().sprite = commodity.itemBase.Sprite;  //显示贴图
             Item.transform.GetChild(0).GetComponent<Text>().text = "";      //显示数量

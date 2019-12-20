@@ -44,6 +44,22 @@ public class InfoPanel : MonoBehaviour {
         ShowPanel();
     }
 
+    public static void ShowMatertia(ItemBase materia) {
+        BuildItemBase(materia);
+        Head.GetChild(3).GetComponent<Text>().text = "材料";
+        LvLimit.GetComponent<Text>().text = "";
+        Attribute.GetComponent<Text>().text = "";
+        ShowPanel();
+    }
+
+    public static void ShowScroll(ScrollBase scroll, List<string[]> mats) {
+        BuildItemBase(scroll);
+        Head.GetChild(3).GetComponent<Text>().text = "卷轴";
+        LvLimit.GetComponent<Text>().text = "制作物品需要如下材料";
+        Attribute.GetComponent<Text>().text = GetMats(mats);
+        ShowPanel();
+    }
+
     private static void ShowPanel() {
         Panel.SetParent(UIManager.Canvas.transform);
         Panel.position = Input.mousePosition;
@@ -130,6 +146,14 @@ public class InfoPanel : MonoBehaviour {
         }
         if(attr.Agile != 0){
             str += "\n敏捷 +" + attr.Agile; 
+        }
+        return str + "\n";
+    }
+
+    private static string GetMats(List<string[]> mats) {
+        string str = "";
+        foreach (string[] i in mats) {
+            str += i[1] + "/" + i[2] + "  " + i[0] + "\n";
         }
         return str + "\n";
     }

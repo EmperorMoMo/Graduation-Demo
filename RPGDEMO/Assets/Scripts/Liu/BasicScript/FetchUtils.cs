@@ -46,6 +46,15 @@ public class FetchUtils {
         return null;    //未找到返回null
     }
 
+    public static ScrollBase FetchScrollBase(int uid) {
+        foreach (int key in DataManager.ScrollDic.Keys) {
+            if (key == uid) {
+                return DataManager.ScrollDic[key];
+            }
+        }
+        return null;    //未找到返回null
+    }
+
     public static Consum FetchLastConsum(int uid, out int Count) {
         Count = 0;
         Consum consum = null;
@@ -61,6 +70,20 @@ public class FetchUtils {
             }
         }
         return consum;
+    }
+
+    public static int FetchMatCount(int uid) {
+        int count = 0;
+        foreach (Item i in DataManager.ItemArr) {
+            if (i != null) {
+                if ((i as Materia) != null) {
+                    if (i.itemBase.UID == uid) {
+                        count += i.curStack;
+                    }
+                }
+            }
+        }
+        return count;
     }
 
     //在物品List中寻找所有特定UID的Item游戏对象

@@ -25,6 +25,9 @@ public class Commodity : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
                     if (itemBase.UID / 1000 == 2) {
                         InfoPanel.ShowConsumInfo((ConsumBase)itemBase);
                     }
+                    if (itemBase.UID / 1000 == 3) {
+                        InfoPanel.ShowMatertia(itemBase);
+                    }
                     isShow = true;
                     stayTimer = 0;
                 }

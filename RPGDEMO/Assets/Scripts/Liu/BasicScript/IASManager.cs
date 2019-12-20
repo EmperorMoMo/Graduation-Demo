@@ -387,6 +387,33 @@ public class IASManager : MonoBehaviour {
         UIManager.PlayerHandle.GetComponent<CharacterAttribute>().ChangeEquipAttribute(attr);
     }
 
+    public static void Make(ScrollBase scroll) {
+        foreach (int[] i in scroll.Mats) {
+            DestoryItem(i[0], i[1]);
+        }
+        CreateItem(scroll.TarUID);
+    }
+
+    public static void DestoryItem(int uid, int count) {
+        do {
+            Materia lastMat = FetchUtils.FetchLastMaterial(uid);
+            if (count < lastMat.curStack) {
+                lastMat.curStack -= count;
+                count = 0;
+            }
+            if (count == lastMat.curStack) {
+                DataManager.ItemArr[lastMat.SlotIndex] = null;
+                Destroy(lastMat.gameObject);
+                count = 0;
+            }
+            if (count > lastMat.curStack) {
+                DataManager.ItemArr[lastMat.SlotIndex] = null;
+                Destroy(lastMat.gameObject);
+                count -= lastMat.curStack;
+            }
+        } while (count != 0);
+    }
+
     private static string GetColor(int quality) {
         switch (quality) {
             case 0: return "#FFFFFF";

@@ -185,26 +185,26 @@ public class SimpleFSM : FSM
             {
                 //判断是否满足攻击需求
                 //如果距离已经大于攻击距离且小于等于追逐距离
-                if (distance > attackDistance && distance <= chaseDistance)
-                {
-                    //将当前状态转换成追逐状态
-                    curState = FSMState.chase;
-                    //退出计算
-                    return;
-                }
-                //如果距离已经大于追逐距离，将AI对象状态切换成巡逻状态
-                else if (distance > chaseDistance)
-                {
-                    //将当前状态切换成巡逻状态
-                    curState = FSMState.patrol;
-                    //退出计算
-                    return;
-                }
-                //计算转向，攻击状态需要AI对象正面朝向玩家
-                //根据目标位置控制AI对象转向，根据目标位置与AI对象当前位置差值获取转向角度，再实现转向
-                Vector3 a = new Vector3(targetPoint.x - transform.position.x, 0, targetPoint.z - transform.position.z);
-                Quaternion rotation = Quaternion.LookRotation(a);
-                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
+                    if (distance > attackDistance && distance <= chaseDistance)
+                    {
+                        //将当前状态转换成追逐状态
+                        curState = FSMState.chase;
+                        //退出计算
+                        return;
+                    }
+                    //如果距离已经大于追逐距离，将AI对象状态切换成巡逻状态
+                    else if (distance > chaseDistance)
+                    {
+                        //将当前状态切换成巡逻状态
+                        curState = FSMState.patrol;
+                        //退出计算
+                        return;
+                    }
+                    //计算转向，攻击状态需要AI对象正面朝向玩家
+                    //根据目标位置控制AI对象转向，根据目标位置与AI对象当前位置差值获取转向角度，再实现转向
+                    Vector3 a = new Vector3(targetPoint.x - transform.position.x, 0, targetPoint.z - transform.position.z);
+                    Quaternion rotation = Quaternion.LookRotation(a);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * turnSpeed);
                 //如果上一次攻击时间大于等于间隔时间，则认为可以攻击
                 if (elapsedTime >= 1)
                 {

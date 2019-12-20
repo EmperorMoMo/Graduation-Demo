@@ -223,6 +223,12 @@ public class IASManager : MonoBehaviour {
     }
 
     public static void CreateCommodity(string name) {
+        for (int i = 0; i < 64; i++) {
+            if (DataManager.shopTra[i].childCount == 2) {
+                Destroy(DataManager.shopTra[i].GetChild(1).gameObject);
+            }
+        }
+
         Commodity commodity = null;
         switch (name) { 
             case "武器":
@@ -266,7 +272,7 @@ public class IASManager : MonoBehaviour {
                     }
                     GameObject Item = GameObject.Instantiate(ItemPrefab, DataManager.shopTra[i]);     //指定位置生成指定物品
                     commodity = Item.AddComponent<Commodity>();
-                    commodity.itemBase = FetchUtils.FetchEquipmentsBase(DataManager.ConsuFile[i]);       //为其中的物品基础类赋值
+                    commodity.itemBase = FetchUtils.FetchConsumsBase(DataManager.ConsuFile[i]);       //为其中的物品基础类赋值
 
                     Item.GetComponent<Image>().sprite = commodity.itemBase.Sprite;  //显示贴图
                     Item.transform.GetChild(0).GetComponent<Text>().text = "";      //显示数量
@@ -283,7 +289,7 @@ public class IASManager : MonoBehaviour {
                     }
                     GameObject Item = GameObject.Instantiate(ItemPrefab, DataManager.shopTra[i]);     //指定位置生成指定物品
                     commodity = Item.AddComponent<Commodity>();
-                    commodity.itemBase = FetchUtils.FetchEquipmentsBase(DataManager.MatsFile[i]);       //为其中的物品基础类赋值
+                    commodity.itemBase = FetchUtils.FetchMaterial(DataManager.MatsFile[i]);       //为其中的物品基础类赋值
 
                     Item.GetComponent<Image>().sprite = commodity.itemBase.Sprite;  //显示贴图
                     Item.transform.GetChild(0).GetComponent<Text>().text = "";      //显示数量
@@ -300,7 +306,7 @@ public class IASManager : MonoBehaviour {
                     }
                     GameObject Item = GameObject.Instantiate(ItemPrefab, DataManager.shopTra[i]);     //指定位置生成指定物品
                     commodity = Item.AddComponent<Commodity>();
-                    commodity.itemBase = FetchUtils.FetchEquipmentsBase(DataManager.ScrollFile[i]);       //为其中的物品基础类赋值
+                    commodity.itemBase = FetchUtils.FetchScrollBase(DataManager.ScrollFile[i]);       //为其中的物品基础类赋值
 
                     Item.GetComponent<Image>().sprite = commodity.itemBase.Sprite;  //显示贴图
                     Item.transform.GetChild(0).GetComponent<Text>().text = "";      //显示数量

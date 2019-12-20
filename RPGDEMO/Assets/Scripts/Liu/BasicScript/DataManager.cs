@@ -12,7 +12,11 @@ using LitJson;
 public class DataManager : MonoBehaviour
 {
     public static List<int[]> ItemFile = new List<int[]>();         //物品存档
-    public static int[] ShopFile = new int[80];                     //商品存档
+    public static int[] WeaponFile = new int[80];               //商品存档
+    public static int[] ArmorFile = new int[80];
+    public static int[] ConsuFile = new int[80];
+    public static int[] MatsFile = new int[80];
+    public static int[] ScrollFile = new int[80];
     public static int[] QuickFile = new int[10] { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 };
 
     public static Slot[] SlotArr = new Slot[99];                    //存放所有的Slot脚本
@@ -50,60 +54,64 @@ public class DataManager : MonoBehaviour
         ContructMaterial();
         ContructScroll();
 
-        ShopFile[0] = 1000;
-        ShopFile[1] = 1001;
-        ShopFile[2] = 1002;
-        ShopFile[3] = 1003;
-        ShopFile[4] = 1004;
-        ShopFile[5] = 1005;
-        ShopFile[6] = 1006;
-        ShopFile[7] = 1007;
-        ShopFile[8] = 1008;
+        WeaponFile[0] = 1000;
+        WeaponFile[1] = 1100;
+        WeaponFile[2] = 1200;
+        WeaponFile[3] = 1300;
 
-        ShopFile[9] = 1100;
-        ShopFile[10] = 1101;
-        ShopFile[11] = 1102;
-        ShopFile[12] = 1103;
-        ShopFile[13] = 1104;
-        ShopFile[14] = 1105;
-        ShopFile[15] = 1106;
-        ShopFile[16] = 1107;
-        ShopFile[17] = 1108;
+        ArmorFile[0] = 1001;
+        ArmorFile[1] = 1002;
+        ArmorFile[2] = 1003;
+        ArmorFile[3] = 1004;
+        ArmorFile[4] = 1005;
+        ArmorFile[5] = 1006;
+        ArmorFile[6] = 1007;
+        ArmorFile[7] = 1008;
 
-        ShopFile[18] = 1200;
-        ShopFile[19] = 1201;
-        ShopFile[20] = 1202;
-        ShopFile[21] = 1203;
-        ShopFile[22] = 1204;
-        ShopFile[23] = 1205;
-        ShopFile[24] = 1206;
-        ShopFile[25] = 1207;
-        ShopFile[26] = 1208;
 
-        ShopFile[27] = 1300;
-        ShopFile[28] = 1301;
-        ShopFile[29] = 1302;
-        ShopFile[30] = 1303;
-        ShopFile[31] = 1304;
-        ShopFile[32] = 1305;
-        ShopFile[33] = 1306;
-        ShopFile[34] = 1307;
-        ShopFile[35] = 1308;
+        ArmorFile[8] = 1101;
+        ArmorFile[9] = 1102;
+        ArmorFile[10] = 1103;
+        ArmorFile[11] = 1104;
+        ArmorFile[12] = 1105;
+        ArmorFile[13] = 1106;
+        ArmorFile[14] = 1107;
+        ArmorFile[15] = 1108;
 
-        ShopFile[36] = 2000;
-        ShopFile[37] = 2001;
-        ShopFile[38] = 2002;
-        ShopFile[39] = 2003;
 
-        ShopFile[40] = 3000;
-        ShopFile[41] = 3001;
-        ShopFile[42] = 3100;
-        ShopFile[43] = 3101;
-        ShopFile[44] = 3200;
-        ShopFile[45] = 3201;
-        ShopFile[46] = 3300;
+        ArmorFile[16] = 1201;
+        ArmorFile[17] = 1202;
+        ArmorFile[18] = 1203;
+        ArmorFile[19] = 1204;
+        ArmorFile[20] = 1205;
+        ArmorFile[21] = 1206;
+        ArmorFile[22] = 1207;
+        ArmorFile[23] = 1208;
 
-        ShopFile[47] = 4000;
+
+        ArmorFile[24] = 1301;
+        ArmorFile[25] = 1302;
+        ArmorFile[26] = 1303;
+        ArmorFile[27] = 1304;
+        ArmorFile[28] = 1305;
+        ArmorFile[29] = 1306;
+        ArmorFile[30] = 1307;
+        ArmorFile[31] = 1308;
+
+        ConsuFile[0] = 2000;
+        ConsuFile[1] = 2001;
+        ConsuFile[2] = 2002;
+        ConsuFile[3] = 2003;
+
+        MatsFile[0] = 3000;
+        MatsFile[1] = 3001;
+        MatsFile[2] = 3100;
+        MatsFile[3] = 3101;
+        MatsFile[4] = 3200;
+        MatsFile[5] = 3201;
+        MatsFile[6] = 3300;
+
+        ScrollFile[47] = 4000;
     }
 
     private void ContructEquipemnt() { 

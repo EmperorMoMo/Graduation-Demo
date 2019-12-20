@@ -87,10 +87,8 @@ public class UIManager : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.O)) {
-            if (!Shoppage.activeSelf) {
-                ShowPanel(Shoppage);
-            } else {
+        if (Input.GetKeyUp(KeyCode.E)) {
+            if (Shoppage.activeSelf) {    
                 ClosePanel(Shoppage);
             }
         }
@@ -223,7 +221,7 @@ public class UIManager : MonoBehaviour {
     }
 
     //关闭当前面板
-    public void ClosePanel(GameObject Panel) {
+    public static void ClosePanel(GameObject Panel) {
         Panel.SetActive(false);
         PanelList.Remove(Panel);
     }

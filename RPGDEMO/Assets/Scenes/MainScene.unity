@@ -4780,6 +4780,7 @@ GameObject:
   - component: {fileID: 106428909}
   - component: {fileID: 104173503}
   - component: {fileID: 104173501}
+  - component: {fileID: 110754310}
   - component: {fileID: 1007567812}
   m_Layer: 8
   m_Name: Chef Superb v1.3
@@ -4788,6 +4789,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &110754310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110754309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4658eed55d2d20145ac608135f243aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u6D88\u8017\u54C1"
+  distance: 1.5
 --- !u!1 &110754313
 GameObject:
   m_ObjectHideFlags: 0
@@ -36282,6 +36297,7 @@ GameObject:
   - component: {fileID: 743267315}
   - component: {fileID: 741289377}
   - component: {fileID: 741289379}
+  - component: {fileID: 746805342}
   - component: {fileID: 1470630741}
   m_Layer: 8
   m_Name: Knight Kato v1.5
@@ -36290,6 +36306,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &746805342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746805341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4658eed55d2d20145ac608135f243aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u9632\u5177"
+  distance: 1.5
 --- !u!1 &746805343
 GameObject:
   m_ObjectHideFlags: 0
@@ -47300,6 +47330,7 @@ GameObject:
   - component: {fileID: 840372943}
   - component: {fileID: 846554269}
   - component: {fileID: 846554271}
+  - component: {fileID: 853086562}
   - component: {fileID: 1001571540}
   m_Layer: 8
   m_Name: Captain Spacey v1.2
@@ -47308,6 +47339,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &853086562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853086561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4658eed55d2d20145ac608135f243aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u6750\u6599"
+  distance: 1.5
 --- !u!1 &853086563
 GameObject:
   m_ObjectHideFlags: 0
@@ -63604,6 +63649,7 @@ GameObject:
   - component: {fileID: 1036617130}
   - component: {fileID: 1034679272}
   - component: {fileID: 1034679278}
+  - component: {fileID: 1023903243}
   - component: {fileID: 464577688}
   m_Layer: 8
   m_Name: Wizard Wade v1.5
@@ -63612,6 +63658,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1023903243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023903242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4658eed55d2d20145ac608135f243aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: "\u5377\u8F74"
+  distance: 1.5
 --- !u!1 &1023903244
 GameObject:
   m_ObjectHideFlags: 0
@@ -100718,6 +100778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4658eed55d2d20145ac608135f243aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: "\u6B66\u5668"
   distance: 1.5
 --- !u!1 &1658912453
 GameObject:

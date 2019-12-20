@@ -36,7 +36,6 @@ public class IASManager : MonoBehaviour {
         CreateQuickBarSlot();
         CreateEquipmentSlot();
         CreateShopSlot();
-        CreateCommodity();
 
         for (int i = 0; i < 10; i++) {
             quickFile[i] = -1;
@@ -223,32 +222,94 @@ public class IASManager : MonoBehaviour {
         }
     }
 
-    public static void CreateCommodity() {
+    public static void CreateCommodity(string name) {
         Commodity commodity = null;
-        for (int i = 0; i < 64; i++) {
-            if (DataManager.ShopFile[i] == 0) {
-                continue;
-            }
-            GameObject Item = GameObject.Instantiate(ItemPrefab, DataManager.shopTra[i]);     //指定位置生成指定物品
-            commodity = Item.AddComponent<Commodity>();
-            if(DataManager.ShopFile[i] / 1000 == 1){
-                commodity.itemBase = FetchUtils.FetchEquipmentsBase(DataManager.ShopFile[i]);       //为其中的物品基础类赋值
-            }
-            if (DataManager.ShopFile[i] / 1000 == 2) {
-                commodity.itemBase = FetchUtils.FetchConsumsBase(DataManager.ShopFile[i]);
-            }
-            if (DataManager.ShopFile[i] / 1000 == 3) {
-                commodity.itemBase = FetchUtils.FetchMaterial(DataManager.ShopFile[i]);
-            }
-            if (DataManager.ShopFile[i] / 1000 == 4) {
-                commodity.itemBase = FetchUtils.FetchScrollBase(DataManager.ShopFile[i]);
-            }
-            Item.GetComponent<Image>().sprite = commodity.itemBase.Sprite;  //显示贴图
-            Item.transform.GetChild(0).GetComponent<Text>().text = "";      //显示数量
+        switch (name) { 
+            case "武器":
+                for (int i = 0; i < 64; i++) {
+                    if (DataManager.WeaponFile[i] == 0) {
+                        continue;
+                    }
+                    GameObject Item = GameObject.Instantiate(ItemPrefab, DataManager.shopTra[i]);     //指定位置生成指定物品
+                    commodity = Item.AddComponent<Commodity>();
+                    commodity.itemBase = FetchUtils.FetchEquipmentsBase(DataManager.WeaponFile[i]);       //为其中的物品基础类赋值
 
-            Color newColor;
-            ColorUtility.TryParseHtmlString(GetColor(commodity.itemBase.Quality), out newColor);
-            Item.transform.GetChild(2).GetComponent<Image>().color = newColor;
+                    Item.GetComponent<Image>().sprite = commodity.itemBase.Sprite;  //显示贴图
+                    Item.transform.GetChild(0).GetComponent<Text>().text = "";      //显示数量
+
+                    Color newColor;
+                    ColorUtility.TryParseHtmlString(GetColor(commodity.itemBase.Quality), out newColor);
+                    Item.transform.GetChild(2).GetComponent<Image>().color = newColor;
+                }
+                break;
+            case "防具":
+                for (int i = 0; i < 64; i++) {
+                    if (DataManager.ArmorFile[i] == 0) {
+                        continue;
+                    }
+                    GameObject Item = GameObject.Instantiate(ItemPrefab, DataManager.shopTra[i]);     //指定位置生成指定物品
+                    commodity = Item.AddComponent<Commodity>();
+                    commodity.itemBase = FetchUtils.FetchEquipmentsBase(DataManager.ArmorFile[i]);       //为其中的物品基础类赋值
+
+                    Item.GetComponent<Image>().sprite = commodity.itemBase.Sprite;  //显示贴图
+                    Item.transform.GetChild(0).GetComponent<Text>().text = "";      //显示数量
+
+                    Color newColor;
+                    ColorUtility.TryParseHtmlString(GetColor(commodity.itemBase.Quality), out newColor);
+                    Item.transform.GetChild(2).GetComponent<Image>().color = newColor;
+                }
+                break;
+            case "消耗品":
+                for (int i = 0; i < 64; i++) {
+                    if (DataManager.ConsuFile[i] == 0) {
+                        continue;
+                    }
+                    GameObject Item = GameObject.Instantiate(ItemPrefab, DataManager.shopTra[i]);     //指定位置生成指定物品
+                    commodity = Item.AddComponent<Commodity>();
+                    commodity.itemBase = FetchUtils.FetchEquipmentsBase(DataManager.ConsuFile[i]);       //为其中的物品基础类赋值
+
+                    Item.GetComponent<Image>().sprite = commodity.itemBase.Sprite;  //显示贴图
+                    Item.transform.GetChild(0).GetComponent<Text>().text = "";      //显示数量
+
+                    Color newColor;
+                    ColorUtility.TryParseHtmlString(GetColor(commodity.itemBase.Quality), out newColor);
+                    Item.transform.GetChild(2).GetComponent<Image>().color = newColor;
+                }
+                break;
+            case "材料":
+                for (int i = 0; i < 64; i++) {
+                    if (DataManager.MatsFile[i] == 0) {
+                        continue;
+                    }
+                    GameObject Item = GameObject.Instantiate(ItemPrefab, DataManager.shopTra[i]);     //指定位置生成指定物品
+                    commodity = Item.AddComponent<Commodity>();
+                    commodity.itemBase = FetchUtils.FetchEquipmentsBase(DataManager.MatsFile[i]);       //为其中的物品基础类赋值
+
+                    Item.GetComponent<Image>().sprite = commodity.itemBase.Sprite;  //显示贴图
+                    Item.transform.GetChild(0).GetComponent<Text>().text = "";      //显示数量
+
+                    Color newColor;
+                    ColorUtility.TryParseHtmlString(GetColor(commodity.itemBase.Quality), out newColor);
+                    Item.transform.GetChild(2).GetComponent<Image>().color = newColor;
+                }
+                break;
+            case "卷轴":
+                for (int i = 0; i < 64; i++) {
+                    if (DataManager.ScrollFile[i] == 0) {
+                        continue;
+                    }
+                    GameObject Item = GameObject.Instantiate(ItemPrefab, DataManager.shopTra[i]);     //指定位置生成指定物品
+                    commodity = Item.AddComponent<Commodity>();
+                    commodity.itemBase = FetchUtils.FetchEquipmentsBase(DataManager.ScrollFile[i]);       //为其中的物品基础类赋值
+
+                    Item.GetComponent<Image>().sprite = commodity.itemBase.Sprite;  //显示贴图
+                    Item.transform.GetChild(0).GetComponent<Text>().text = "";      //显示数量
+
+                    Color newColor;
+                    ColorUtility.TryParseHtmlString(GetColor(commodity.itemBase.Quality), out newColor);
+                    Item.transform.GetChild(2).GetComponent<Image>().color = newColor;
+                }
+                break;
         }
     }
 
@@ -385,6 +446,33 @@ public class IASManager : MonoBehaviour {
             }
         }
         UIManager.PlayerHandle.GetComponent<CharacterAttribute>().ChangeEquipAttribute(attr);
+    }
+
+    public static void Make(ScrollBase scroll) {
+        foreach (int[] i in scroll.Mats) {
+            DestoryItem(i[0], i[1]);
+        }
+        CreateItem(scroll.TarUID);
+    }
+
+    public static void DestoryItem(int uid, int count) {
+        do {
+            Materia lastMat = FetchUtils.FetchLastMaterial(uid);
+            if (count < lastMat.curStack) {
+                lastMat.curStack -= count;
+                count = 0;
+            }
+            if (count == lastMat.curStack) {
+                DataManager.ItemArr[lastMat.SlotIndex] = null;
+                Destroy(lastMat.gameObject);
+                count = 0;
+            }
+            if (count > lastMat.curStack) {
+                DataManager.ItemArr[lastMat.SlotIndex] = null;
+                Destroy(lastMat.gameObject);
+                count -= lastMat.curStack;
+            }
+        } while (count != 0);
     }
 
     private static string GetColor(int quality) {

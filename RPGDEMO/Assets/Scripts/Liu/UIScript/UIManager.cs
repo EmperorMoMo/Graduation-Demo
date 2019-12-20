@@ -87,11 +87,12 @@ public class UIManager : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.E)) {
-            if (Shoppage.activeSelf) {    
-                ClosePanel(Shoppage);
-            }
-        }
+        //if (Input.GetKeyUp(KeyCode.E)) {
+        //    if (Shoppage.activeSelf) {
+        //        Debug.Log("");
+        //        ClosePanel(Shoppage);
+        //    }
+        //}
 
         if (Input.GetKeyUp(KeyCode.F1)) {
             if (PanelList.Count != 0) {
@@ -203,6 +204,11 @@ public class UIManager : MonoBehaviour {
             FuncationMenu.SetActive(false);
             isNone = true;
         }
+    }
+
+    public static void ShowShoppage(string name) {
+        IASManager.CreateCommodity(name);
+        ShowPanel(Shoppage);
     }
 
     //显示前操作

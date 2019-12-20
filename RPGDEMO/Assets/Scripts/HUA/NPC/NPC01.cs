@@ -5,6 +5,7 @@ using UnityEngine;
 public class NPC01 : MonoBehaviour
 {
     private GameObject player;
+    public string Name;
     public float distance = 1;
     // Start is called before the first frame update
     void Start()
@@ -16,14 +17,13 @@ public class NPC01 : MonoBehaviour
     {
         if(Vector3.Distance(player.transform.position, transform.position) <= distance)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyUp(KeyCode.E))
             {
                 if (!UIManager.Shoppage.activeSelf)
                 {
-                    UIManager.ShowPanel(UIManager.Shoppage);
-                }
-                else
-                {
+                    Debug.Log("show");
+                    UIManager.ShowShoppage(Name);
+                } else {
                     UIManager.ClosePanel(UIManager.Shoppage);
                 }
             }

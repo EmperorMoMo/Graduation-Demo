@@ -20,7 +20,7 @@ public class ShowHP1 : MonoBehaviour {
         ShowHPPanel = GameObject.Instantiate(BarPrefab, this.transform);
         Bar = ShowHPPanel.transform.GetChild(1).GetComponent<Image>();
         text = ShowHPPanel.transform.GetChild(2).GetComponent<Text>();
-        Vector3 position = new Vector3(transform.position.x, (int)(transform.position.y + 3), transform.position.z);
+        Vector3 position = new Vector3(transform.position.x, (int)(transform.position.y + 2), transform.position.z);
         ShowHPPanel.transform.position = position;
 
         MaxHP = Enemy.MAX_HP;

@@ -14,6 +14,7 @@ public class Scroll : Item, IPointerEnterHandler, IPointerExitHandler {
     private bool isShow = false;
     private float stayTime = 0.5f;
     private float stayTimer = 0;
+    private Vector3 mousePosition;
 
     public List<string[]> MatsCount = new List<string[]>();
     private bool isMake = true;
@@ -29,6 +30,7 @@ public class Scroll : Item, IPointerEnterHandler, IPointerExitHandler {
                 if (stayTimer > stayTime) {
                     Debug.Log("Show");
                     InfoPanel.ShowScroll(ScrollBase, MatsCount);
+                    mousePosition = Input.mousePosition;
                     isShow = true;
                     stayTimer = 0;
                 }
@@ -42,6 +44,13 @@ public class Scroll : Item, IPointerEnterHandler, IPointerExitHandler {
                 } else {
                     Debug.Log("不可合成");
                 }
+            }
+        }
+
+        if (isShow) {
+            if (mousePosition != Input.mousePosition) {
+                InfoPanel.HidePanel();
+                isShow = false;
             }
         }
     }

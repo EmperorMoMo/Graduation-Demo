@@ -14,6 +14,7 @@ public class Consum : Item, IPointerEnterHandler, IPointerExitHandler {
     private bool isShow = false;
     private float stayTime = 0.5f;
     private float stayTimer = 0;
+    private Vector3 mousePosition;
 
     public float ConsuTimer = 22;
 
@@ -30,12 +31,20 @@ public class Consum : Item, IPointerEnterHandler, IPointerExitHandler {
                 if (stayTimer > stayTime) {
                     InfoPanel.ShowConsumInfo(this.consumBase);
                     isShow = true;
+                    mousePosition = Input.mousePosition;
                     stayTimer = 0;
                 }
             }
 
             if (Input.GetMouseButtonUp(1)) {
                 IASManager.Consu(this);
+            }
+        }
+
+        if (isShow) {
+            if (mousePosition != Input.mousePosition) {
+                InfoPanel.HidePanel();
+                isShow = false;
             }
         }
     }

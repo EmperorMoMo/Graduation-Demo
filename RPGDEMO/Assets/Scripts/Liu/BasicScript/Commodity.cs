@@ -10,6 +10,7 @@ public class Commodity : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     private bool isShow = false;
     private float stayTime = 0.5f;
     private float stayTimer = 0;
+    private Vector3 mousePosition;
     public void Start() {
         
     }
@@ -31,6 +32,7 @@ public class Commodity : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
                     if (itemBase.UID / 1000 == 4) {
                         InfoPanel.ShowScroll((ScrollBase)itemBase);
                     }
+                    mousePosition = Input.mousePosition;
                     isShow = true;
                     stayTimer = 0;
                 }
@@ -47,6 +49,13 @@ public class Commodity : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
                 IASManager.Shop(itemBase, 1);
             }
         }
+
+        if (isShow) {
+            if (mousePosition != Input.mousePosition) {
+                InfoPanel.HidePanel();
+                isShow = false;
+            }
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData) {
@@ -55,7 +64,5 @@ public class Commodity : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public void OnPointerExit(PointerEventData eventData) {
         isEnter = false;
-        InfoPanel.HidePanel();
-        isShow = false;
     }
 }

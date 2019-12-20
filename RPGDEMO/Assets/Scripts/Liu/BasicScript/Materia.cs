@@ -13,6 +13,7 @@ public class Materia : Item, IPointerEnterHandler, IPointerExitHandler {
     private bool isShow = false;
     private float stayTime = 0.5f;
     private float stayTimer = 0;
+    private Vector3 mousePosition;
 
     public void Start() {
     }
@@ -22,9 +23,17 @@ public class Materia : Item, IPointerEnterHandler, IPointerExitHandler {
                 stayTimer += Time.deltaTime;
                 if (stayTimer > stayTime) {
                     InfoPanel.ShowMatertia(itemBase);
+                    mousePosition = Input.mousePosition;
                     isShow = true;
                     stayTimer = 0;
                 }
+            }
+        }
+
+        if (isShow) {
+            if (mousePosition != Input.mousePosition) {
+                InfoPanel.HidePanel();
+                isShow = false;
             }
         }
     }

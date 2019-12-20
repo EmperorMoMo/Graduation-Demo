@@ -14,6 +14,7 @@ public class Equipment : Item, IPointerEnterHandler, IPointerExitHandler {
     private bool isShow = false;
     private float stayTime = 0.5f;
     private float stayTimer = 0;
+    private Vector3 mousePosition;
 
     public void Start() {
         equipemtnBase = (EquipmentBase)itemBase;
@@ -24,6 +25,7 @@ public class Equipment : Item, IPointerEnterHandler, IPointerExitHandler {
                 stayTimer += Time.deltaTime;
                 if (stayTimer > stayTime) {
                     InfoPanel.ShowEquipmentInfo(this.equipemtnBase);
+                    mousePosition = Input.mousePosition;
                     isShow = true;
                     stayTimer = 0;
                 }
@@ -31,6 +33,13 @@ public class Equipment : Item, IPointerEnterHandler, IPointerExitHandler {
 
             if (Input.GetMouseButtonUp(1)) {
                 IASManager.Equip(this);
+            }
+        }
+
+        if (isShow) {
+            if (mousePosition != Input.mousePosition) {
+                InfoPanel.HidePanel();
+                isShow = false;
             }
         }
     }

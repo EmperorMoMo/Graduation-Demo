@@ -87,12 +87,6 @@ public class UIManager : MonoBehaviour {
             }
         }
 
-        //if (Input.GetKeyUp(KeyCode.E)) {
-        //    if (Shoppage.activeSelf) {
-        //        Debug.Log("");
-        //        ClosePanel(Shoppage);
-        //    }
-        //}
 
         if (Input.GetKeyUp(KeyCode.F1)) {
             if (PanelList.Count != 0) {
@@ -171,6 +165,7 @@ public class UIManager : MonoBehaviour {
                     if (isCtrl) {
                         MainCamera.hide_Cursor();
                         isCtrl = false;
+                        InfoPanel.HidePanel();
                 }
             }
         }

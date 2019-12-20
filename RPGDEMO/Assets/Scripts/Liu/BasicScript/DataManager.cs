@@ -90,7 +90,6 @@ public class DataManager : MonoBehaviour
         ShopFile[34] = 1307;
         ShopFile[35] = 1308;
 
-
         ShopFile[36] = 2000;
         ShopFile[37] = 2001;
         ShopFile[38] = 2002;

@@ -86,6 +86,20 @@ public class FetchUtils {
         return count;
     }
 
+    public static Materia FetchLastMaterial(int uid) {
+        Materia materia = null;
+        foreach (Item i in DataManager.ItemArr) {
+            if (i != null) {
+                if ((i as Materia) != null) {
+                    if (i.itemBase.UID == uid) {
+                        materia = (Materia)i;
+                    }
+                }
+            }
+        }
+        return materia;
+    }
+
     //在物品List中寻找所有特定UID的Item游戏对象
     //public List<Item> FetchByUID(int uid){
         //List<Item> items = new List<Item>();

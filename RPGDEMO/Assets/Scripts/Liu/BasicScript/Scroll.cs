@@ -36,7 +36,9 @@ public class Scroll : Item, IPointerEnterHandler, IPointerExitHandler {
 
             if (Input.GetMouseButtonUp(1)) {
                 if (isMake) {
-                    Debug.Log("可合成");
+                    DataManager.ItemArr[SlotIndex] = null;
+                    Destroy(this.gameObject);
+                    IASManager.Make(ScrollBase);
                 } else {
                     Debug.Log("不可合成");
                 }

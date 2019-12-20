@@ -7,10 +7,10 @@ public class ActorController : MonoBehaviour
     public enum State
     {
         normalAtk,
+        normalAtk1,
         skill_One,
         skill_Two,
         skill_Three,
-        pickup,
     }
     
     public GameObject model;
@@ -19,6 +19,7 @@ public class ActorController : MonoBehaviour
     private CharacterAttribute ca;
     private GameObject Increase_Point;
     public GameObject IncreaseSkill;
+    public GameObject LeftSword;
 
     //private GameObject cameraTransform;
     public float walkSpeed = 2.0f;
@@ -46,6 +47,15 @@ public class ActorController : MonoBehaviour
     public bool canAttacked;
     public bool die;
     public bool increase;
+
+    
+    public bool change = false;
+    public bool _isChange;
+
+    public float nengliang = 0f;
+    public float ChangeTimer = 0f;
+    public float Armor_temp = 0f;
+
 
     [Header("=====  Attack =====")]
     private float normalDis;//普攻距离
@@ -75,6 +85,8 @@ public class ActorController : MonoBehaviour
         cameraTransform = Camera.main.transform;
         Increase_Point = GameObject.Find("IncreasePoint");
         ca = GetComponent<CharacterAttribute>();
+        LeftSword=GameObject.Find("LeftSword");
+        LeftSword.SetActive(false);
 
         normalDis = 4f;
         skill_OneDis = 4f;
@@ -116,10 +128,50 @@ public class ActorController : MonoBehaviour
             }
         }
 
+        ///
+        ///普通攻击动画播放代码区域
+        /// 
+
+        nengliang = Mathf.Clamp(nengliang, 0, 100);
+        Debug.Log("nengliang:"+nengliang);
         if (pi.attack)
         {
             anim.SetTrigger("attack");
         }
+        
+        if (nengliang == 100)
+        {
+            change = true;
+        }
+
+        if (pi.attack1&&change==true)
+        {
+            anim.SetTrigger("attack1");
+            anim.SetBool("change",true);
+            LeftSword.SetActive(true);
+            _isChange = true;
+        }
+
+        if (_isChange)
+        {
+            ChangeTimer += Time.deltaTime;
+            if (ChangeTimer > 8.5)
+            {
+                _isChange = false;
+                change = false;
+                nengliang = 0f;
+                ChangeTimer = 0f;
+            }
+        }
+
+        if (change == false)
+        {
+            anim.SetBool("change",false);
+            LeftSword.SetActive(false);
+        }
+        ///
+        ///
+        /// 
 
         if (pi.Dmag > 0.1f)
         {
@@ -188,11 +240,6 @@ public class ActorController : MonoBehaviour
                 skill_three_CD = true;
                 CD_skill_three = 0;
             }
-        }
-
-        if (pi.pickup)
-        {
-            anim.SetTrigger("pickup");
         }
 
         if (_isAttacked)
@@ -360,34 +407,31 @@ public class ActorController : MonoBehaviour
         pi.canUseSkill = false;
     }
 
-    //public void OnAttack1Enter()
-    //{
-    //    pi.inputEnabled = false;
-    //    lockCamera = true;
-    //    //lerpTarget = 1.0f;
-    //    str = State.normalAtk;
-    //    //Select(str);
-    //}
+    public void OnChangeAttackEnter05()
+    {
+        pi.inputEnabled = false;
+        str = State.normalAtk1;
+    }
 
-    //public void OnAttack2Enter()
-    //{
-    //    str = State.normalAtk;
-    //    lockCamera = true;
-    //    //Select(str);
-    //}
+    public void OnChangeAttackEnter01()
+    {
+        pi.inputEnabled = false;
+        str = State.normalAtk1;
+    }
 
-    //public void OnAttackIdleEnter()
-    //{
-    //    pi.inputEnabled = true;
-    //    lockCamera = false;
-    //    //lerpTarget = 0f;
-    //}
+    public void OnChangeIdleEnter()
+    {
+        pi.inputEnabled = true;
+        pi.canUseSkill = false;
+        canAttacked = false;
+    }
 
     public void OnSkillOneEnter()
     {
         pi.inputEnabled = false;
         lockCamera = true;
         str = State.skill_One;
+        nengliang += 15;
     }
 
     public void OnSkillTwoEnter()
@@ -395,6 +439,7 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = false;
         lockCamera = true;
         str = State.skill_Two;
+        nengliang += 10;
     }
 
     public void OnSkillThreeEnter()
@@ -402,13 +447,7 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = false;
         lockCamera = true;
         str = State.skill_Three;
-    }
-
-    public void OnPickUpEnter()
-    {
-        pi.inputEnabled = false;
-        lockCamera = true;
-        str = State.pickup;
+        nengliang += 20;
     }
 
     public void OnAttackedEnter()
@@ -451,11 +490,9 @@ public class ActorController : MonoBehaviour
                             cols[i].transform.position - model.transform.position);
                         if (str == State.normalAtk)
                         {
-                            //print("test4");
                             if (dir < normalDis && angle < 90)
                             {
                                 tempList.Add(cols[i].gameObject);
-                                //print("test5");
                                 isDam = true;
                             }
                         }
@@ -467,10 +504,9 @@ public class ActorController : MonoBehaviour
                                 isDam = true;
                             }
                         }
-
-                        if (str == State.pickup)
+                        if (str == State.normalAtk1)
                         {
-                            if (dir < normalDis && angle < 60)
+                            if (dir < normalDis && angle < 90)
                             {
                                 tempList.Add(cols[i].gameObject);
                                 isDam = true;
@@ -502,6 +538,24 @@ public class ActorController : MonoBehaviour
                             }
                         }
 
+                        if (str == State.normalAtk1)
+                        {
+                            //print("test4");
+                            if (dir < normalDis && angle < 90)
+                            {
+                                if (cols[i].tag == "Boss")
+                                {
+                                    cols[i].GetComponent<BossAttribute>().Boss_Attacked(ca.finalAttribute.Aggressivity);
+                                    isDam = true;
+                                }
+                                else
+                                {
+                                    cols[i].GetComponent<BossAttribute2>().Boss_Attacked(ca.finalAttribute.Aggressivity);
+                                    isDam = true;
+                                }
+                            }
+                        }
+
                         if (str == State.skill_One)
                         {
                             if (dir < skill_OneDis && angle < 360)
@@ -518,15 +572,6 @@ public class ActorController : MonoBehaviour
                                 }
                             }
                         }
-
-                        //if (str == State.pickup)
-                        //{
-                        //    if (dir < normalDis && angle < 60)
-                        //    {
-                        //        cols[i].GetComponent<BossAttribute>().Boss_Attacked(ca.finalAttribute.Aggressivity);
-                        //        isDam = true;
-                        //    }
-                        //}
                     }
                 }
             }
@@ -536,7 +581,7 @@ public class ActorController : MonoBehaviour
 
         foreach (var objects in tempList)
         {
-            if (objects.GetComponent<Rigidbody>() != null && str == State.normalAtk)
+            if (str == State.normalAtk)
             {
                 if (objects.tag == "Enemy")
                 {
@@ -549,6 +594,22 @@ public class ActorController : MonoBehaviour
                 else if (objects.tag == "Enemy2")
                 {
                     objects.GetComponent<EnemyAttribute2>().Enemy_Attacked2(ca.finalAttribute.Aggressivity * 0.5f);
+                }
+            }
+
+            if (str == State.normalAtk1)
+            {
+                if (objects.tag == "Enemy")
+                {
+                    objects.GetComponent<EnemyAttribute>().Enemy_Attacked(ca.finalAttribute.Aggressivity);
+                }
+                else if (objects.tag == "Enemy1")
+                {
+                    objects.GetComponent<EnemyAttribute1>().Enemy_Attacked1(ca.finalAttribute.Aggressivity);
+                }
+                else if (objects.tag == "Enemy2")
+                {
+                    objects.GetComponent<EnemyAttribute2>().Enemy_Attacked2(ca.finalAttribute.Aggressivity);
                 }
             }
 
@@ -572,14 +633,6 @@ public class ActorController : MonoBehaviour
                 }
             }
 
-            if (objects.GetComponent<Rigidbody>() != null && str == State.pickup)
-            {
-                objects.transform.position = new Vector3(objects.transform.position.x, 2.5f,
-                    objects.transform.position.z);
-                //objects.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
-                //objects.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
-                
-            }
             //objects.GetComponent<EnemyAI>().Damage();
         }
 

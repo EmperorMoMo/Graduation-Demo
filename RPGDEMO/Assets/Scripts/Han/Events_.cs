@@ -56,6 +56,20 @@ public class Events_ : MonoBehaviour
             {
                 shakeCamera = true;
                 Stop(0.15f);
+                ac.nengliang += 5f;
+                ac.nengliang = Mathf.Clamp(ac.nengliang, 0, 100f);
+            }
+        }
+
+        if (ac.str == ActorController.State.normalAtk1)
+        {
+            //Debug.Log(ac.str);
+            ac.Select(ac.str);
+            //Debug.Log(ac.isDam);
+            if (ac.isDam)
+            {
+                shakeCamera = true;
+                Stop(0.15f);
             }
         }
     }

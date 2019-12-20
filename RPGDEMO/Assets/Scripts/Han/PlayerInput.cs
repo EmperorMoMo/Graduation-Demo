@@ -46,13 +46,12 @@ public class PlayerInput : MonoBehaviour
     public bool UI_skill_3;
 
     public bool increaseskill_1;
-
-    public bool pickup;
-
+    
     public bool canUseSkill = true;
     //3.double trigger双击型
     public bool lastAttack;
     public bool attack;
+    public bool attack1;
 
     [Header("=====  others =====")]
     public bool inputEnabled = true;
@@ -125,8 +124,8 @@ public class PlayerInput : MonoBehaviour
             attack = false;
         }
         lastAttack = newAttack;
-        
-        pickup = Input.GetMouseButtonDown(1);
+
+        attack1 = Input.GetMouseButtonDown(1);
 
         if (canUseSkill)
         {

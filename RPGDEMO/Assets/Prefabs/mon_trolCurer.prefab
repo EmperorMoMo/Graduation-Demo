@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 6237088123269822171}
   - component: {fileID: 6237088123269822173}
   - component: {fileID: 4067604116624499824}
+  - component: {fileID: 1330146931964840395}
   m_Layer: 0
   m_Name: mon_trolCurer
   m_TagString: Enemy1
@@ -435,6 +436,20 @@ MonoBehaviour:
   Aggressivity: 50
   Armor: 3
   Effect: {fileID: 1931391723872664, guid: 8690041cf7250174eb66ceb76d6bf32a, type: 3}
+--- !u!114 &1330146931964840395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6237088123269822150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e74c9d4a627e14aa964d957ac9f0b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BarPrefab: {fileID: 4597276321675367045, guid: ba62ce92f9dc13f4387b1059a8f07dc2,
+    type: 3}
 --- !u!1 &6237088123269822160
 GameObject:
   m_ObjectHideFlags: 0

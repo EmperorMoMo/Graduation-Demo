@@ -12,6 +12,8 @@ public class SimpleFSM : FSM
         attack,//攻击状态
         dead//死亡状态
     }
+    public bool gold;
+    public bool exp;
     public float monster1 = 2;
     public float monster2 = 2.5f;
     public SimpleFSM simpleFSM;
@@ -45,6 +47,8 @@ public class SimpleFSM : FSM
     //实现基类初始状态机方法
     protected override void Initialize()
     {
+        gold = false;
+        exp = false;
         er = GameObject.Find("Monster_Manager").GetComponent<Enemy_RespawnPoint>();
         ca =  GameObject.Find("PlayerHandle").GetComponent<CharacterAttribute>();
         ea = GetComponent<EnemyAttribute>();
@@ -238,16 +242,23 @@ public class SimpleFSM : FSM
                 curState = FSMState.dead;
         }
     }
+
     //死亡状态方法实现
     IEnumerator die()
     {
         _animation.Play("Dead");
         yield return new WaitForSeconds(1.5f);
         er.gameObjects.Remove(this.gameObject);
-        if (attackRate == monster2)
+        if (attackRate == monster2&&!exp)
+        {
             ca.Character_Exp(50 * ea.level);
-        if (attackRate == monster1)
+            exp = true;
+        }
+        if (attackRate == monster1&&!gold)
+        {
             ca.Character_Gold(50 * ea.level);
+            gold = true;
+        }
         Destroy(this.gameObject);
     }
     private void DeadState()

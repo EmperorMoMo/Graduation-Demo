@@ -51,7 +51,6 @@ public class CharacterAttribute : MonoBehaviour
         ChangeAttribute();
         Cur_HP = finalAttribute.HP;
         Cur_MP = finalAttribute.MP;
-        print(Cur_HP);
 
     }
 
@@ -206,8 +205,6 @@ public class CharacterAttribute : MonoBehaviour
             ac.die = true;
             //this.gameObject.GetComponent<CharacterAttribute>().enabled = false;
         }
-        print("HoShi还剩："+Cur_HP);
-        print("HoShi受到的伤害："+_Aggressivity);
     }
 
     public void ChangeEquipAttribute(BaseAttribute _equipAttribute)

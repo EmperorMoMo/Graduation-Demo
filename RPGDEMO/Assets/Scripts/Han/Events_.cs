@@ -9,6 +9,7 @@ public class Events_ : MonoBehaviour
     public Material glowMaterial;
 
     private ActorController ac;
+    private CharacterAttribute ca;
 
     private Animator anim;
 
@@ -20,6 +21,7 @@ public class Events_ : MonoBehaviour
     {
         playerHandle=GameObject.Find("PlayerHandle");
         ac = this.transform.GetComponentInParent<ActorController>();
+        ca = GameObject.Find("PlayerHandle").GetComponent<CharacterAttribute>();
 
         anim = GetComponent<Animator>();
     }
@@ -98,5 +100,40 @@ public class Events_ : MonoBehaviour
     public void ResetTrigger(string triggerName)
     {
         anim.ResetTrigger(triggerName);
+    }
+
+    public void Repulse()
+    {
+        Collider[] cols = Physics.OverlapSphere(transform.position, 4f);
+        if (cols.Length > 0)
+        {
+            shakeCamera = true;
+            Stop(0.3f);
+            for (int i = 0; i < cols.Length; i++)
+            {
+                if (cols[i].tag == "Enemy")
+                {
+                    cols[i].GetComponent<EnemyAttribute>().Enemy_Attacked(ca.finalAttribute.Aggressivity * 0.75f);
+                }
+                if (cols[i].tag == "Enemy1")
+                {
+                    cols[i].GetComponent<EnemyAttribute1>().Enemy_Attacked1(ca.finalAttribute.Aggressivity * 0.75f);
+                }
+                if (cols[i].tag == "Enemy2")
+                {
+                    cols[i].GetComponent<EnemyAttribute2>().Enemy_Attacked2(ca.finalAttribute.Aggressivity * 0.75f);
+                }
+
+                if (cols[i].tag == "Boss")
+                {
+                    cols[i].GetComponent<BossAttribute>().Boss_Attacked(ca.finalAttribute.Aggressivity);
+                }
+                if (cols[i].tag == "Boss2")
+                {
+                    cols[i].GetComponent<BossAttribute2>().Boss_Attacked(ca.finalAttribute.Aggressivity);
+                }
+
+            }
+        }
     }
 }

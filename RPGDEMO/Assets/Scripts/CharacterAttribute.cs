@@ -19,6 +19,7 @@ public class CharacterAttribute : MonoBehaviour
     public float Cur_HP;//生命值
     public float Cur_MP;//魔法值
     public float Exp=0;//经验值
+    public int Gold = 0;//金币
     public int Level=1;//等级
     public float drug_ReHP = 0f;
     public float drug_ReMP = 0f;
@@ -51,7 +52,6 @@ public class CharacterAttribute : MonoBehaviour
         ChangeAttribute();
         Cur_HP = finalAttribute.HP;
         Cur_MP = finalAttribute.MP;
-        print(Cur_HP);
 
     }
 
@@ -126,6 +126,11 @@ public class CharacterAttribute : MonoBehaviour
     public void Character_Exp(float _Exp)
     {
         Exp += _Exp;
+    }
+
+    public void Character_Gold(int _Gold)
+    {
+        Gold += _Gold;
     }
 
     public void Character_Level()
@@ -206,8 +211,6 @@ public class CharacterAttribute : MonoBehaviour
             ac.die = true;
             //this.gameObject.GetComponent<CharacterAttribute>().enabled = false;
         }
-        print("HoShi还剩："+Cur_HP);
-        print("HoShi受到的伤害："+_Aggressivity);
     }
 
     public void ChangeEquipAttribute(BaseAttribute _equipAttribute)

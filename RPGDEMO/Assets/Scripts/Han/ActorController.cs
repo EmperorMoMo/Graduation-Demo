@@ -133,7 +133,6 @@ public class ActorController : MonoBehaviour
         /// 
 
         nengliang = Mathf.Clamp(nengliang, 0, 100);
-        Debug.Log("nengliang:"+nengliang);
         if (pi.attack)
         {
             anim.SetTrigger("attack");
@@ -167,7 +166,6 @@ public class ActorController : MonoBehaviour
         if (change == false)
         {
             anim.SetBool("change",false);
-            LeftSword.SetActive(false);
         }
         ///
         ///
@@ -311,6 +309,7 @@ public class ActorController : MonoBehaviour
         lockCamera = false;
         canAttacked = true;
         pi.canUseSkill = true;
+        LeftSword.SetActive(false);
         //this.gameObject.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
     }
 
@@ -419,11 +418,25 @@ public class ActorController : MonoBehaviour
         str = State.normalAtk1;
     }
 
+    public void OnEnter()
+    {
+        Armor_temp = ca.finalAttribute.Armor*0.5f;
+        ca.finalAttribute.Armor += Armor_temp;
+        pi.canUseSkill = false;
+        canAttacked = false;
+        pi.inputEnabled = false;
+    }
+
     public void OnChangeIdleEnter()
     {
         pi.inputEnabled = true;
-        pi.canUseSkill = false;
-        canAttacked = false;
+    }
+
+    public void OnExit()
+    {
+        ca.finalAttribute.Armor -= Armor_temp;
+        pi.canUseSkill = true;
+        canAttacked = true;
     }
 
     public void OnSkillOneEnter()
@@ -545,12 +558,12 @@ public class ActorController : MonoBehaviour
                             {
                                 if (cols[i].tag == "Boss")
                                 {
-                                    cols[i].GetComponent<BossAttribute>().Boss_Attacked(ca.finalAttribute.Aggressivity);
+                                    cols[i].GetComponent<BossAttribute>().Boss_Attacked(ca.finalAttribute.Aggressivity*0.5f);
                                     isDam = true;
                                 }
                                 else
                                 {
-                                    cols[i].GetComponent<BossAttribute2>().Boss_Attacked(ca.finalAttribute.Aggressivity);
+                                    cols[i].GetComponent<BossAttribute2>().Boss_Attacked(ca.finalAttribute.Aggressivity * 0.5f);
                                     isDam = true;
                                 }
                             }
@@ -601,15 +614,15 @@ public class ActorController : MonoBehaviour
             {
                 if (objects.tag == "Enemy")
                 {
-                    objects.GetComponent<EnemyAttribute>().Enemy_Attacked(ca.finalAttribute.Aggressivity);
+                    objects.GetComponent<EnemyAttribute>().Enemy_Attacked(ca.finalAttribute.Aggressivity * 0.5f);
                 }
                 else if (objects.tag == "Enemy1")
                 {
-                    objects.GetComponent<EnemyAttribute1>().Enemy_Attacked1(ca.finalAttribute.Aggressivity);
+                    objects.GetComponent<EnemyAttribute1>().Enemy_Attacked1(ca.finalAttribute.Aggressivity * 0.5f);
                 }
                 else if (objects.tag == "Enemy2")
                 {
-                    objects.GetComponent<EnemyAttribute2>().Enemy_Attacked2(ca.finalAttribute.Aggressivity);
+                    objects.GetComponent<EnemyAttribute2>().Enemy_Attacked2(ca.finalAttribute.Aggressivity * 0.5f);
                 }
             }
 

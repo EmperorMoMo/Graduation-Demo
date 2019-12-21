@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// UI向导类
@@ -177,7 +178,7 @@ public class UIManager : MonoBehaviour {
             }
         }
 
-        
+        Backpage.transform.GetChild(2).GetChild(1).GetComponent<Text>().text = "$ " + PlayerHandle.GetComponent<CharacterAttribute>().Gold.ToString();
     }
 
     //显示功能菜单

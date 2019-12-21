@@ -167,7 +167,6 @@ public class ActorController : MonoBehaviour
         if (change == false)
         {
             anim.SetBool("change",false);
-            LeftSword.SetActive(false);
         }
         ///
         ///
@@ -311,6 +310,7 @@ public class ActorController : MonoBehaviour
         lockCamera = false;
         canAttacked = true;
         pi.canUseSkill = true;
+        LeftSword.SetActive(false);
         //this.gameObject.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
     }
 

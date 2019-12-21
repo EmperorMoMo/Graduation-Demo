@@ -244,8 +244,10 @@ public class SimpleFSM : FSM
         _animation.Play("Dead");
         yield return new WaitForSeconds(1.5f);
         er.gameObjects.Remove(this.gameObject);
-        if(attackRate == monster2)
-        ca.Character_Exp(50*ea.level);
+        if (attackRate == monster2)
+            ca.Character_Exp(50 * ea.level);
+        if (attackRate == monster1)
+            ca.Character_Gold(50 * ea.level);
         Destroy(this.gameObject);
     }
     private void DeadState()

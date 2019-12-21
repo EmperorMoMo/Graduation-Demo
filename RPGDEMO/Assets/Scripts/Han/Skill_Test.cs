@@ -67,18 +67,6 @@ public class Skill_Test : MonoBehaviour
                         ai.Enemy_Attacked(ca.finalAttribute.Aggressivity*0.5f);
                     }
 
-                    if (cols[i].tag == "Boss")
-                    {
-                        ba = cols[i].GetComponent<BossAttribute>();
-                        ba.Boss_Attacked(ca.finalAttribute.Aggressivity * 0.5f);
-                    }
-
-                    if (cols[i].tag == "Boss2")
-                    {
-                        ba2 = cols[i].GetComponent<BossAttribute2>();
-                        ba2.Boss_Attacked(ca.finalAttribute.Aggressivity * 0.5f);
-                    }
-
                     if (cols[i].tag == "Enemy1")
                     {
                         ai1 = cols[i].GetComponent<EnemyAttribute1>();
@@ -95,6 +83,18 @@ public class Skill_Test : MonoBehaviour
                         t2 += 1f * Time.fixedDeltaTime;
                         cols[i].transform.position = Vector3.Lerp(cols[i].transform.position, (-cols[i].transform.forward * 4f + Vector3.up) * 10f, t2);
                         ai2.Enemy_Attacked2(ca.finalAttribute.Aggressivity * 0.5f);
+                    }
+
+                    if (cols[i].tag == "Boss")
+                    {
+                        ba = cols[i].GetComponent<BossAttribute>();
+                        ba.Boss_Attacked(ca.finalAttribute.Aggressivity * 0.1f);
+                    }
+
+                    if (cols[i].tag == "Boss2")
+                    {
+                        ba2 = cols[i].GetComponent<BossAttribute2>();
+                        ba2.Boss_Attacked(ca.finalAttribute.Aggressivity * 0.1f);
                     }
                 }
             }

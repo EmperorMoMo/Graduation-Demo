@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour {
     public static GameObject SwitchRole;        //切换人物
     public static GameObject FuncationMenu;     //功能菜单
     public static GameObject TipFrame;          //提示框
+    public static GameObject Tip;
 
     private static CameraController MainCamera;         //主相机控制脚本
     private static bool isNone = true;                  //非持久化界面是否为空
@@ -43,6 +44,7 @@ public class UIManager : MonoBehaviour {
         SwitchRole = Canvas.transform.GetChild(8).gameObject;
         FuncationMenu = Canvas.transform.GetChild(9).gameObject;
         TipFrame = Canvas.transform.GetChild(10).gameObject;
+        Tip = Canvas.transform.GetChild(11).gameObject;
 
         MainCamera = GameObject.Find("Main Camera").GetComponent<CameraController>();
     }

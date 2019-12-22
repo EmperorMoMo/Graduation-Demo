@@ -18,4 +18,10 @@ public class TipFrame : MonoBehaviour {
         Tip.transform.GetComponentInChildren<Text>().text = "获得 <color=#B500FF>" + Name + "</color> * <color=#FFFFFf>" + Count + "</color>";
         Destroy(Tip, 1.2f);
     }
+
+    public static void NoMoney() {
+        GameObject Tip = GameObject.Instantiate(TipPerfab, Trans);
+        Tip.transform.GetComponentInChildren<Text>().text = "<color=#B500FF>金币不足</color>";
+        Destroy(Tip, 1.2f);
+    }
 }

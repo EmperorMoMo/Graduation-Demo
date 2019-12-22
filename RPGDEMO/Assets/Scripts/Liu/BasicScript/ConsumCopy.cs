@@ -82,6 +82,12 @@ public class ConsumCopy : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     }
 
     public void UseConsum() {
+        if ((string.Equals(consum.consumBase.ConType, "HP") && IASManager.HPConTime > 0)) {
+            return;
+        }
+        if ((string.Equals(consum.consumBase.ConType, "MP") && IASManager.MPConTime > 0)) {
+            return;
+        }
         bool isUpdata = false;
         if (consum.curStack == 1) {
             isUpdata = true;

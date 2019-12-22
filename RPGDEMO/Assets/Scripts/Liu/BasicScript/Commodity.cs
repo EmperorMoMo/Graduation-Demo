@@ -53,6 +53,8 @@ public class Commodity : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
                 {
                     ca.Gold -= itemBase.Price;
                     IASManager.Shop(itemBase, 1);
+                } else {
+                    TipFrame.NoMoney();
                 }
             }
         }

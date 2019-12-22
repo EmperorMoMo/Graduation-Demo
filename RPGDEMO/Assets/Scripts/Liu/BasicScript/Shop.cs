@@ -31,6 +31,8 @@ public class Shop : MonoBehaviour {
         {
             ca.Gold -= Item.itemBase.Price * Count;
             IASManager.Shop(Item.itemBase, Count);
+        } else {
+            TipFrame.NoMoney();
         }
         GameObject.Find("Shop").SetActive(false);
     }

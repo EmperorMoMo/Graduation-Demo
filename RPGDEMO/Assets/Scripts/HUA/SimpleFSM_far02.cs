@@ -12,6 +12,7 @@ public class SimpleFSM_far02 : FSM
         attack,//攻击状态
         dead//死亡状态
     }
+    public bool firstDiaoluo;
     public bool _isAttacked;
     public GameObject Effect;
     private Transform EffectPoint2;
@@ -50,6 +51,7 @@ public class SimpleFSM_far02 : FSM
         //先将AI对象的当前状态设置为巡逻状态
         curState = FSMState.patrol;
         //没有死亡
+        firstDiaoluo = false;
         _isDead = false;
         //上一次攻击时间
         elapsedTime = 0;
@@ -230,10 +232,32 @@ public class SimpleFSM_far02 : FSM
         }
     }
     //死亡状态方法实现
+    void diaoluo()
+    {
+        int a = Random.Range(1, 4);
+        int i = Random.Range(1, 3);
+        int index = FetchUtils.FetchEmpty();
+        if (a == 1 && firstDiaoluo == false)
+        {
+            IASManager.CreateItem(3300, index, i);
+            firstDiaoluo = true;
+        }
+        if (a == 2 && firstDiaoluo == false)
+        {
+            IASManager.CreateItem(3203, index, i);
+            firstDiaoluo = true;
+        }
+        if (a == 3 && firstDiaoluo == false)
+        {
+            IASManager.CreateItem(3104, index, i);
+            firstDiaoluo = true;
+        }
+    }
     IEnumerator die()
     {
         _animation.Play("Dead");
         yield return new WaitForSeconds(1.5f);
+        diaoluo();
         Destroy(this.gameObject);
     }
     private void DeadState()

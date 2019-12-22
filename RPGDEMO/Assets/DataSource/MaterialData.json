@@ -6,7 +6,7 @@
     "Price": 800,
     "Describe": "开采的石矿",
     "Sprite": "3000",
-    "StackMax": 40
+    "StackMax": 99
   },
   {
     "UID": 3001,
@@ -15,7 +15,7 @@
     "Price": 800,
     "Describe": "铁矿炼成",
     "Sprite": "3001",
-    "StackMax": 40
+    "StackMax": 99
   },
   {
     "UID": 3100,
@@ -24,7 +24,7 @@
     "Price": 800,
     "Describe": "制成的皮革",
     "Sprite": "3100",
-    "StackMax": 40
+    "StackMax": 99
   },
   {
     "UID": 3101,
@@ -33,25 +33,25 @@
     "Price": 800,
     "Describe": "压成的铁皮",
     "Sprite": "3101",
-    "StackMax": 40
+    "StackMax": 99
   },
   {
     "UID": 3103,
     "Name": "白晶矿",
     "Quality": 1,
-    "Price": 800,
+    "Price": 250,
     "Describe": "白色的晶体矿石",
     "Sprite": "3103",
-    "StackMax": 20
+    "StackMax": 99
   },
   {
     "UID": 3104,
     "Name": "黄晶矿",
     "Quality": 1,
-    "Price": 800,
+    "Price": 500,
     "Describe": "黄色的晶体矿石",
     "Sprite": "3104",
-    "StackMax": 20
+    "StackMax": 99
   },
   {
     "UID": 3105,
@@ -59,8 +59,8 @@
     "Quality": 1,
     "Price": 800,
     "Describe": "蓝色的晶体矿石",
-    "Sprite": "3104",
-    "StackMax": 20
+    "Sprite": "3105",
+    "StackMax": 99
   },
   {
     "UID": 3200,
@@ -69,7 +69,7 @@
     "Price": 800,
     "Describe": "银块的碎片",
     "Sprite": "3200",
-    "StackMax": 20
+    "StackMax": 99
   },
   {
     "UID": 3201,
@@ -78,26 +78,26 @@
     "Price": 800,
     "Describe": "金块的碎片",
     "Sprite": "3201",
-    "StackMax": 20
+    "StackMax": 99
   },
 
   {
     "UID": 3202,
     "Name": "白晶宝石",
     "Quality": 2,
-    "Price": 800,
+    "Price": 500,
     "Describe": "白色的晶体宝石",
     "Sprite": "3202",
-    "StackMax": 20
+    "StackMax": 99
   },
   {
     "UID": 3203,
     "Name": "四角黄玉",
     "Quality": 2,
-    "Price": 800,
+    "Price": 750,
     "Describe": "规则的四角黄色玉石",
     "Sprite": "3203",
-    "StackMax": 20
+    "StackMax": 99
   },
   {
     "UID": 3204,
@@ -106,25 +106,25 @@
     "Price": 800,
     "Describe": "规则的六角蓝色玉石",
     "Sprite": "3204",
-    "StackMax": 20
+    "StackMax": 99
   },
   {
     "UID": 3300,
     "Name": "金块",
     "Quality": 3,
-    "Price": 800,
+    "Price": 1000,
     "Describe": "一整块金子",
     "Sprite": "3300",
-    "StackMax": 5
+    "StackMax": 99
   },
   {
     "UID": 3301,
     "Name": "银块",
     "Quality": 3,
-    "Price": 800,
+    "Price": 750,
     "Describe": "一整块银子",
     "Sprite": "3301",
-    "StackMax": 5
+    "StackMax": 99
   },
   {
     "UID": 3400,
@@ -133,7 +133,7 @@
     "Price": 800,
     "Describe": "巨龙的脊柱",
     "Sprite": "3400",
-    "StackMax": 1
+    "StackMax": 99
   },
   {
     "UID": 3401,
@@ -142,6 +142,6 @@
     "Price": 800,
     "Describe": "巨龙的翅膀",
     "Sprite": "3401",
-    "StackMax": 1
+    "StackMax": 99
   }
 ]

@@ -408,6 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03b9ca4e4da90ce40b320ddbd9af3b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstDiaoluo: 0
   _isAttacked: 0
   Effect: {fileID: 100000, guid: 555efdc66060e3041a52d722b2bc3204, type: 3}
   simpleFSM: {fileID: 0}
@@ -431,10 +432,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a2b02e70b14c824591b7e5ee8f6cc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_HP: 200
+  MAX_HP: 2000
   HP: 0
-  Aggressivity: 50
-  Armor: 3
+  Aggressivity: 100
+  Armor: 20
   Effect: {fileID: 1931391723872664, guid: 8690041cf7250174eb66ceb76d6bf32a, type: 3}
 --- !u!114 &1330146931964840395
 MonoBehaviour:

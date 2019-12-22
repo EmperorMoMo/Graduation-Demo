@@ -11,7 +11,10 @@ public class Shop : MonoBehaviour {
 
     public string tiptext;
     private Text TipText;
+
+    private CharacterAttribute ca;
     void Start() {
+        ca = UIManager.PlayerHandle.GetComponent<CharacterAttribute>();
         TipText = this.transform.GetComponentInChildren<Text>();
     }
     void Update() {
@@ -24,7 +27,11 @@ public class Shop : MonoBehaviour {
     }
     public void DeShop() {
         Debug.Log("购买");
-        IASManager.Shop(Item.itemBase, Count);
+        if (Item.itemBase.Price <= ca.Gold * Count)
+        {
+            ca.Gold -= Item.itemBase.Price * Count;
+            IASManager.Shop(Item.itemBase, Count);
+        }
         GameObject.Find("Shop").SetActive(false);
     }
 

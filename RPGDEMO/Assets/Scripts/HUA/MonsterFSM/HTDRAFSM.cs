@@ -13,6 +13,7 @@ public class HTDRAFSM : MonsterFSM
         attack,//攻击状态
         dead//死亡状态
     }
+    public bool firstDiaoluo;
     public float Time_damage = 0;
     public float SkillDistance = 5;
     public float SkillJiaodu = 60;
@@ -55,6 +56,7 @@ public class HTDRAFSM : MonsterFSM
         //先将AI对象的当前状态设置为巡逻状态
         curState = FSMState.idle;
         //没有死亡
+        firstDiaoluo = false;
         _isDead = false;
         //上一次攻击时间
         elapsedTime = 0;
@@ -375,6 +377,16 @@ public class HTDRAFSM : MonsterFSM
         if (ba.HP <= 0)
             curState = FSMState.dead;
     }
+    void diaoluo()
+    {
+        int i = Random.Range(1, 4);
+        int index = FetchUtils.FetchEmpty();
+        if (firstDiaoluo == false)
+        {
+            IASManager.CreateItem(3400, index, i);
+            firstDiaoluo = true;
+        }
+    }
     IEnumerator die()
     {
         _animation.Play("Death");
@@ -386,6 +398,7 @@ public class HTDRAFSM : MonsterFSM
             }
         }
         yield return new WaitForSeconds(3.3f);
+        diaoluo();
         Destroy(this.gameObject);
     }
     //死亡状态方法实现

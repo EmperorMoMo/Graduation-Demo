@@ -27291,7 +27291,7 @@ RectTransform:
   - {fileID: 1688817492}
   - {fileID: 1332306417}
   m_Father: {fileID: 1979970106}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -53036,6 +53036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30601068b460e7447840f6ab08fbbe26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstDiaoluo: 0
   Time_damage: 0
   SkillDistance: 5
   SkillJiaodu: 60
@@ -63035,7 +63036,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1979970106}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -85445,6 +85446,55 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000002, y: 2, z: 0.21361706}
   m_Center: {x: 0.011565494, y: 0.2517785, z: 0.095911086}
+--- !u!1 &1897332558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1897332559}
+  - component: {fileID: 1897332560}
+  m_Layer: 5
+  m_Name: TipFrame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1897332559
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897332558}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1979970106}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -280}
+  m_SizeDelta: {x: 360, y: 54}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1897332560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897332558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3efd1d472d22942bd843c9ed0f7608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipPer: {fileID: 1020209114773050628, guid: d08f30158c64afc44bf9b0bda43c5db5, type: 3}
 --- !u!1 &1898906435
 GameObject:
   m_ObjectHideFlags: 0
@@ -89267,6 +89317,7 @@ RectTransform:
   - {fileID: 2041830180}
   - {fileID: 1338950377}
   - {fileID: 1556695829}
+  - {fileID: 1897332559}
   - {fileID: 1399360133}
   - {fileID: 604656700}
   m_Father: {fileID: 0}

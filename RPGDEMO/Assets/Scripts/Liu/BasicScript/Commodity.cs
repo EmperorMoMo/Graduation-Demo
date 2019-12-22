@@ -11,8 +11,11 @@ public class Commodity : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     private float stayTime = 0.5f;
     private float stayTimer = 0;
     private Vector3 mousePosition;
+
+    private CharacterAttribute ca;
+
     public void Start() {
-        
+        ca = UIManager.PlayerHandle.GetComponent<CharacterAttribute>();
     }
 
     public void Update() {
@@ -46,7 +49,11 @@ public class Commodity : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
                     UIManager.Shoppage.transform.GetChild(3).position = Input.mousePosition;
                     return;
                 }
-                IASManager.Shop(itemBase, 1);
+                if (itemBase.Price <= ca.Gold)
+                {
+                    ca.Gold -= itemBase.Price;
+                    IASManager.Shop(itemBase, 1);
+                }
             }
         }
 

@@ -17,6 +17,7 @@ public class MOUNTAINFSM : MonsterFSM
     MeshFilter mf;
     MeshRenderer mr;
     Shader shader;
+    public bool firstDiaoluo;
     private bool jizhi=false;
     public float Time_damage = 0;
     public float alert_Distance = 20;
@@ -47,6 +48,7 @@ public class MOUNTAINFSM : MonsterFSM
         monsterHP = 100;
         curState = FSMState.fly;
         isDead = false;
+        firstDiaoluo = false;
         elapsedTime = 0;
         attackRate = 3;
         animation = GetComponent<Animation>();
@@ -368,6 +370,16 @@ public class MOUNTAINFSM : MonsterFSM
         if (ba2.HP <= 0)
             curState = FSMState.dead;
     }
+    void diaoluo()
+    {
+        int i = Random.Range(1, 4);
+        int index = FetchUtils.FetchEmpty();
+        if (firstDiaoluo == false)
+        {
+            IASManager.CreateItem(3401, index, i);
+            firstDiaoluo = true;
+        }
+    }
     IEnumerator die()
     {
         animation.Play("death");
@@ -379,6 +391,7 @@ public class MOUNTAINFSM : MonsterFSM
             }
         }
         yield return new WaitForSeconds(3.5f);
+        diaoluo();
         Destroy(this.gameObject);
     }
     private void DeadState()

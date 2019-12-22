@@ -253,6 +253,7 @@ public class ActorController : MonoBehaviour
             canAttacked = false;
             lockCamera = true;
             pi.Dmag = 0;
+            UIManager.Tip.SetActive(true);
         }
 
         if (pi.increaseskill_1&&skill_four_CD)

@@ -38773,7 +38773,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 0c0dd0082bebdb840a92062468c0d738, type: 2}
+      objectReference: {fileID: 9100000, guid: 2a824d5f6344f6543b56d141da05b106, type: 2}
     - target: {fileID: 95316331630631582, guid: 98a0661a1a68d9949b6b7d564da9f41f,
         type: 3}
       propertyPath: m_ApplyRootMotion
@@ -45526,6 +45526,7 @@ MonoBehaviour:
   Cur_HP: 0
   Cur_MP: 0
   Exp: 0
+  Gold: 0
   Level: 1
   drug_ReHP: 0
   drug_ReMP: 0
@@ -45627,6 +45628,7 @@ MonoBehaviour:
   UI_skill_3: 0
   increaseskill_1: 0
   canUseSkill: 1
+  reBirth: 0
   lastAttack: 0
   attack: 0
   attack1: 0

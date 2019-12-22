@@ -221,9 +221,9 @@ public class CharacterAttribute : MonoBehaviour
 
     public void ChangeBaseAttribute()
     {
-        baseAttribute.Strength += 13;
-        baseAttribute.Agile += 10;
-        baseAttribute.Intellect += 10;
+        baseAttribute.Strength += 15;
+        baseAttribute.Agile += 15;
+        baseAttribute.Intellect += 15;
 
         ChangeAttribute();
     }
@@ -320,7 +320,6 @@ public class CharacterAttribute : MonoBehaviour
         ac.canAttacked = false;
         yield return new WaitForSeconds(1.8f);
         //ac.canAttacked = true;
-
     }
 
 }

@@ -319,7 +319,7 @@ public class CharacterAttribute : MonoBehaviour
     {
         ac.canAttacked = false;
         yield return new WaitForSeconds(1.8f);
-        ac.canAttacked = true;
+        //ac.canAttacked = true;
 
     }
 

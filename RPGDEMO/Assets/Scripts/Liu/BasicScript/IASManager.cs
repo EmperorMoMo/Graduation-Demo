@@ -408,7 +408,9 @@ public class IASManager : MonoBehaviour {
     }
 
     public static void Consu(Consum consum) {
+        Debug.Log(consum.consumBase.ConType + "\\" + HPConTime + "\\" + MPConTime);
         if ((string.Equals(consum.consumBase.ConType, "HP") && HPConTime <= 0) || (string.Equals(consum.consumBase.ConType, "MP") && MPConTime <= 0)){
+            
             UIManager.PlayerHandle.GetComponent<CharacterAttribute>()
                 .UseDrug(consum.consumBase.ConType, consum.consumBase.ReValue, consum.consumBase.Duration);
             if(string.Equals(consum.consumBase.ConType, "HP")){

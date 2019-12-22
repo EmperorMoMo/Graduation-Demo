@@ -15,7 +15,7 @@ public class TipFrame : MonoBehaviour {
 
     public static void ShowTip(string Name, int Count) {
         GameObject Tip = GameObject.Instantiate(TipPerfab, Trans);
-        Tip.transform.GetComponentInChildren<Text>().text = "获得物品 <color=#B500FF>" + Name + "</color> * <color=#FFFFFf>" + Count + "</color>";
+        Tip.transform.GetComponentInChildren<Text>().text = "获得 <color=#B500FF>" + Name + "</color> * <color=#FFFFFf>" + Count + "</color>";
         Destroy(Tip, 1.2f);
     }
 }

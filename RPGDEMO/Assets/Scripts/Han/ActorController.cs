@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ActorController : MonoBehaviour
 {
@@ -285,8 +286,15 @@ public class ActorController : MonoBehaviour
             }
         }
 
-        //Debug.Log("increase_time:"+Increase_time);
-        //Debug.Log("aggressivity:"+ca.finalAttribute.Aggressivity);
+        if (pi.reBirth && die)
+        {
+            die = false;
+            anim.ResetTrigger("die");
+            ca.Cur_HP = 1f;
+            anim.SetBool("rebirth", true);
+            DontDestroyOnLoad(this.gameObject);
+            SceneManager.LoadSceneAsync("LoadingScene");
+        }
     }
 
     void FixedUpdate()
@@ -308,6 +316,9 @@ public class ActorController : MonoBehaviour
         canAttacked = true;
         pi.canUseSkill = true;
         LeftSword.SetActive(false);
+        anim.SetBool("rebirth", false);
+
+        lockPlanar = false;
         //this.gameObject.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePosition;
     }
 

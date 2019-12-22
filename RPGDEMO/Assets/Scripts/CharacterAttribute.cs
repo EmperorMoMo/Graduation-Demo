@@ -175,8 +175,8 @@ public class CharacterAttribute : MonoBehaviour
 
     public void Intellect()
     {
-        finalAttribute.ReMP += finalAttribute.Intellect * 3;
-        finalAttribute.MP += finalAttribute.Intellect * 20;
+        finalAttribute.ReMP += finalAttribute.Intellect;
+        finalAttribute.MP += finalAttribute.Intellect * 15;
         if (Main_Attribute == Attribute.Intellect)
         {
             finalAttribute.Aggressivity += finalAttribute.Intellect;
@@ -221,9 +221,9 @@ public class CharacterAttribute : MonoBehaviour
 
     public void ChangeBaseAttribute()
     {
-        baseAttribute.Strength += 15;
-        baseAttribute.Agile += 15;
-        baseAttribute.Intellect += 15;
+        baseAttribute.Strength += 20;
+        baseAttribute.Agile += 20;
+        baseAttribute.Intellect += 20;
 
         ChangeAttribute();
     }

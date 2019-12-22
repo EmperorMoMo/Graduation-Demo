@@ -48,6 +48,8 @@ public class PlayerInput : MonoBehaviour
     public bool increaseskill_1;
     
     public bool canUseSkill = true;
+
+    public bool reBirth;
     //3.double trigger双击型
     public bool lastAttack;
     public bool attack;
@@ -135,6 +137,8 @@ public class PlayerInput : MonoBehaviour
 
             skill_3 = UI_skill_3;
         }
+
+        reBirth = Input.GetKeyDown(KeyCode.R);
 
         //increaseskill_1 = Input.GetKeyDown(KeyCode.Alpha1);
 

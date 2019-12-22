@@ -48,10 +48,9 @@ public class ActorController : MonoBehaviour
     public bool die;
     public bool increase;
 
-    
+    //右键变身代码
     public bool change = false;
     public bool _isChange;
-
     public float nengliang = 0f;
     public float ChangeTimer = 0f;
     public float Armor_temp = 0f;
@@ -147,7 +146,6 @@ public class ActorController : MonoBehaviour
         {
             anim.SetTrigger("attack1");
             anim.SetBool("change",true);
-            LeftSword.SetActive(true);
             _isChange = true;
         }
 
@@ -425,6 +423,7 @@ public class ActorController : MonoBehaviour
         pi.canUseSkill = false;
         canAttacked = false;
         pi.inputEnabled = false;
+        LeftSword.SetActive(true);
     }
 
     public void OnChangeIdleEnter()

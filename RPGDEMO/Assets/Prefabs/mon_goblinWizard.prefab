@@ -1997,10 +1997,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e959070e012a8b43bd2282b70ff7ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_HP: 3000
+  MAX_HP: 2500
   HP: 0
-  Aggressivity: 150
-  Armor: 30
+  Aggressivity: 125
+  Armor: 15
   Effect: {fileID: 1931391723872664, guid: 8690041cf7250174eb66ceb76d6bf32a, type: 3}
 --- !u!114 &3435637301401026161
 MonoBehaviour:

@@ -11,7 +11,7 @@ public class Exit : MonoBehaviour
     }
     public void exit()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
     }
     // Update is called once per frame
     void Update()

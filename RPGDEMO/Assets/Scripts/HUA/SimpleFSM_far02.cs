@@ -236,20 +236,19 @@ public class SimpleFSM_far02 : FSM
     {
         int a = Random.Range(1, 4);
         int i = Random.Range(1, 3);
-        int index = FetchUtils.FetchEmpty();
         if (a == 1 && firstDiaoluo == false)
         {
-            IASManager.CreateItem(3300, index, i);
+            IASManager.CreateItem(3300, -1, i);
             firstDiaoluo = true;
         }
         if (a == 2 && firstDiaoluo == false)
         {
-            IASManager.CreateItem(3203, index, i);
+            IASManager.CreateItem(3203, -1, i);
             firstDiaoluo = true;
         }
         if (a == 3 && firstDiaoluo == false)
         {
-            IASManager.CreateItem(3104, index, i);
+            IASManager.CreateItem(3104, -1, i);
             firstDiaoluo = true;
         }
     }

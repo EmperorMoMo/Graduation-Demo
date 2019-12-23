@@ -380,10 +380,9 @@ public class HTDRAFSM : MonsterFSM
     void diaoluo()
     {
         int i = Random.Range(1, 4);
-        int index = FetchUtils.FetchEmpty();
         if (firstDiaoluo == false)
         {
-            IASManager.CreateItem(3400, index, i);
+            IASManager.CreateItem(3400, -1, i);
             firstDiaoluo = true;
         }
     }

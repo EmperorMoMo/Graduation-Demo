@@ -195,6 +195,9 @@ public class IASManager : MonoBehaviour {
         GameObject consumCopy = GameObject.Instantiate(ItemPrefab, DataManager.SlotArr[Index].transform);     //指定位置生成指定物品
         consumCopy.GetComponent<Image>().sprite = consumCopy.transform.GetChild(1).GetComponent<Image>().sprite
             = FetchUtils.FetchConsumsBase(uid).Sprite;
+        consumCopy.GetComponent<RectTransform>().sizeDelta = new Vector2(80, 80);
+        consumCopy.transform.GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(80, 80);
+        consumCopy.transform.GetChild(2).GetComponent<RectTransform>().sizeDelta = new Vector2(80, 80);
         ConsumCopy copy = consumCopy.AddComponent<ConsumCopy>();
         copy.ConsumUID = uid;
         copy.QuickIndex = Index;

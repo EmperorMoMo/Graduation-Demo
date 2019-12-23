@@ -12779,9 +12779,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 280655237}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1091563792}
+        m_MethodName: huifu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -74281,7 +74281,7 @@ Transform:
   - {fileID: 1091071351}
   - {fileID: 1091071359}
   m_Father: {fileID: 1091071279}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1091071277
 Transform:
@@ -74311,8 +74311,8 @@ Transform:
   m_Children:
   - {fileID: 1091071281}
   - {fileID: 1091071347}
-  - {fileID: 1091071275}
   - {fileID: 1475938938}
+  - {fileID: 1091071275}
   m_Father: {fileID: 770085692}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -161.85701, z: 0}
@@ -74831,6 +74831,7 @@ GameObject:
   - component: {fileID: 1103229601}
   - component: {fileID: 1101235443}
   - component: {fileID: 1101235441}
+  - component: {fileID: 1091563792}
   - component: {fileID: 289416498}
   m_Layer: 8
   m_Name: Doc v1.2
@@ -74839,6 +74840,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1091563792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091563791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e2541a8d922e846a4a1ee91db92787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 3
 --- !u!1 &1091563793
 GameObject:
   m_ObjectHideFlags: 0
@@ -92778,7 +92792,7 @@ GameObject:
   - component: {fileID: 1475938940}
   - component: {fileID: 1475938939}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HUIFU
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92791,17 +92805,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475938937}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 14.183893}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 280655238}
   m_Father: {fileID: 1091071279}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 43.28533, y: -0.0039999485}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1475938939
@@ -112327,9 +112341,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 280655237}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1091563792}
+        m_MethodName: guihuan
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

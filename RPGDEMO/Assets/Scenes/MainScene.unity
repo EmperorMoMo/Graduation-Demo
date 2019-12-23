@@ -92778,8 +92778,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: DeShop
+      - m_Target: {fileID: 1677972498}
+        m_MethodName: exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -107919,6 +107919,7 @@ GameObject:
   - component: {fileID: 1677972495}
   - component: {fileID: 1677972497}
   - component: {fileID: 1677972496}
+  - component: {fileID: 1677972498}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -107983,6 +107984,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677972494}
   m_CullTransparentMesh: 0
+--- !u!114 &1677972498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677972494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86638e54369ee3b4780302f3d3c9b5e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1678694534
 PrefabInstance:
   m_ObjectHideFlags: 0

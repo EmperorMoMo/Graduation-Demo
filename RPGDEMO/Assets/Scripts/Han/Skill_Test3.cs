@@ -51,7 +51,7 @@ public class Skill_Test3 : MonoBehaviour
                     {
                         //cols[i].transform.position = new Vector3(cols[i].transform.position.x, 1.75f, cols[i].transform.position.z);
                         cols[i].transform.position = Vector3.Lerp(cols[i].transform.position, transform.position,
-                            Time.fixedDeltaTime);
+                            Time.fixedDeltaTime * 1.5f);
                         rig.constraints = RigidbodyConstraints.FreezePositionY;
 
                     }
@@ -110,7 +110,7 @@ public class Skill_Test3 : MonoBehaviour
                     {
                         //cols[i].transform.position = new Vector3(cols[i].transform.position.x, 1.75f, cols[i].transform.position.z);
                         cols[i].transform.position = Vector3.Lerp(cols[i].transform.position, transform.position,
-                            Time.fixedDeltaTime);
+                            Time.fixedDeltaTime * 1.5f);
                         rig.constraints = RigidbodyConstraints.FreezePositionY;
 
                     }
@@ -139,7 +139,7 @@ public class Skill_Test3 : MonoBehaviour
                     {
                         //cols[i].transform.position = new Vector3(cols[i].transform.position.x, 1.75f, cols[i].transform.position.z);
                         cols[i].transform.position = Vector3.Lerp(cols[i].transform.position, transform.position,
-                            Time.fixedDeltaTime);
+                            Time.fixedDeltaTime * 1.5f);
                         rig.constraints = RigidbodyConstraints.FreezePositionY;
 
                     }

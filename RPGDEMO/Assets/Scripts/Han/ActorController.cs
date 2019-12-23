@@ -188,10 +188,11 @@ public class ActorController : MonoBehaviour
                                         ref currentvelocity, smoothtime);
         }
 
-        if (pi.skill_1&&skill_one_CD)
+        if (pi.skill_1&&skill_one_CD && ca.Cur_MP >= 200f)
         {
             pi.canUseSkill = false;
             anim.SetTrigger("skill_1");
+            ca.Cur_MP -= 200f;
             canAttacked = false;
             skill_one_CD = false;
         }
@@ -205,10 +206,11 @@ public class ActorController : MonoBehaviour
             }
         }
         
-        if (pi.skill_2&&skill_two_CD)
+        if (pi.skill_2&&skill_two_CD && ca.Cur_MP >= 300f)
         {
             pi.canUseSkill = false;
             anim.SetTrigger("skill_2");
+            ca.Cur_MP -= 300f;
             canAttacked = false;
             skill_two_CD = false;
         }
@@ -222,10 +224,11 @@ public class ActorController : MonoBehaviour
             }
         }
 
-        if (pi.skill_3&&skill_three_CD)
+        if (pi.skill_3&&skill_three_CD && ca.Cur_MP >= 400f)
         {
             pi.canUseSkill = false;
             anim.SetTrigger("skill_3");
+            ca.Cur_MP -= 400f;
             canAttacked = false;
             skill_three_CD = false;
         }
@@ -256,8 +259,9 @@ public class ActorController : MonoBehaviour
             UIManager.Tip.SetActive(true);
         }
 
-        if (pi.increaseskill_1&&skill_four_CD)
+        if (pi.increaseskill_1&&skill_four_CD && ca.Cur_MP >= 600f)
         {
+            ca.Cur_MP -= 600f;
             Increase_Point.SetActive(true);
             Aggressivity_Temp = ca.finalAttribute.Aggressivity;
             ca.finalAttribute.Aggressivity += Aggressivity_Temp * 0.5f;

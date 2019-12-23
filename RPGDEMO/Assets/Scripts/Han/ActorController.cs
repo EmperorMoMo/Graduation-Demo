@@ -252,7 +252,7 @@ public class ActorController : MonoBehaviour
             lockPlanar = true;
             canAttacked = false;
             lockCamera = true;
-            pi.Dmag = 0;
+            planarVec=Vector3.zero;
             UIManager.Tip.SetActive(true);
         }
 

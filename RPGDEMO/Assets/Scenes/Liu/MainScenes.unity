@@ -9897,6 +9897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 648005493}
   - component: {fileID: 648005494}
+  - component: {fileID: 648005495}
   m_Layer: 5
   m_Name: Grid
   m_TagString: Untagged
@@ -10011,6 +10012,18 @@ MonoBehaviour:
   m_Spacing: {x: 9, y: 9}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &648005495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648005492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c61e6e4dd5c013438e0c963f3687c4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &648117194
 GameObject:
   m_ObjectHideFlags: 0
@@ -22588,6 +22601,7 @@ MonoBehaviour:
   Cur_HP: 0
   Cur_MP: 0
   Exp: 0
+  Gold: 0
   Level: 1
   drug_ReHP: 0
   drug_ReMP: 0
@@ -22689,6 +22703,7 @@ MonoBehaviour:
   UI_skill_3: 0
   increaseskill_1: 0
   canUseSkill: 1
+  reBirth: 0
   lastAttack: 0
   attack: 0
   attack1: 0

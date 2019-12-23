@@ -119,16 +119,16 @@ public class IASManager : MonoBehaviour {
 
     //创建物品
     public static void CreateItem(int uid) {
-        int index = FetchUtils.FetchEmpty();
-        if (index == -1) {
-            Debug.Log("物品栏已满，无法生成");
-            return;
-        }
-        CreateItem(uid, index, 1);
+        
+        CreateItem(uid, -1, 1);
     }
 
     public static void CreateItem(int uid, int Index, int CurStack) {
-        GameObject Item = GameObject.Instantiate(ItemPrefab, DataManager.SlotArr[Index].transform);     //指定位置生成指定物品
+        int index = FetchUtils.FetchEmpty();
+        if (index == -1) {
+            Debug.Log("物品栏已满，无法生成");
+        }
+        GameObject Item = GameObject.Instantiate(ItemPrefab, DataManager.SlotArr[index].transform);     //指定位置生成指定物品
         Item item;
         switch (uid / 1000) {
             case 1:
@@ -154,7 +154,7 @@ public class IASManager : MonoBehaviour {
                 
         }
         
-        item.SlotIndex = Index;                                //网格索引指向该网格
+        item.SlotIndex = index;                                //网格索引指向该网格
         item.curStack = CurStack;
 
         Color newColor;
@@ -163,21 +163,25 @@ public class IASManager : MonoBehaviour {
         Item.GetComponent<Image>().sprite = item.itemBase.Sprite;  //显示贴图
         item.ShowCount();                                          //显示数量
 
-        Item perItem;
-        for (int i = 0; i < 80; i++) {
-            perItem = DataManager.ItemArr[i];
-            if (perItem != null) {
-                if (perItem.itemBase.UID == uid && perItem.curStack < perItem.itemBase.StackMax) {
-                    Stack(item, DataManager.SlotArr[i]);
-                    break;
+        if (Index == -1) {
+            Item perItem;
+            for (int i = 0; i < 80; i++) {
+                perItem = DataManager.ItemArr[i];
+                if (perItem != null) {
+                    if (perItem.itemBase.UID == item.itemBase.UID && perItem.curStack < perItem.itemBase.StackMax) {
+                        Stack(item, DataManager.SlotArr[i]);
+                        return;
+                    }
                 }
             }
         }
 
-        DataManager.ItemArr[Index] = item;                     //将Equipment脚本存入数组
+        DataManager.ItemArr[index] = item;                     //将Equipment脚本存入数组
         DataManager.SaveItem();
 
         TipFrame.ShowTip(item.itemBase.Name, CurStack);
+
+        
     }
 
     public static void CreateConsumCopy(int uid, int Index) {

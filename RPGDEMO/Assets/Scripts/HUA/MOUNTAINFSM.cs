@@ -373,10 +373,9 @@ public class MOUNTAINFSM : MonsterFSM
     void diaoluo()
     {
         int i = Random.Range(1, 4);
-        int index = FetchUtils.FetchEmpty();
         if (firstDiaoluo == false)
         {
-            IASManager.CreateItem(3401, index, i);
+            IASManager.CreateItem(3401, -1, i);
             firstDiaoluo = true;
         }
     }

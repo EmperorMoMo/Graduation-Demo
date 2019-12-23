@@ -13,6 +13,8 @@ public class Enemy_RespawnPoint : MonoBehaviour
     public int Enemy = 15;
     private bool first_IN = true;
     public List<GameObject> gameObjects=new List<GameObject>();
+    public int a = 0;
+    public int b = 0;
     //private CharacterAttribute ca;
     //private EnemyAttribute ea;
     //public int mons_level=1;
@@ -20,6 +22,7 @@ public class Enemy_RespawnPoint : MonoBehaviour
     void Start()
     {
         target = GameObject.FindWithTag("TestPlayer").transform;
+
         //ca = GameObject.Find("PlayerHandle").GetComponent<CharacterAttribute>();
         //mons_level += ca.Level / 10;
         //ea = GameObject.Find("mon_orgeHitter(Clone)").GetComponent<EnemyAttribute>();
@@ -28,12 +31,15 @@ public class Enemy_RespawnPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            distanceToPlayer = transform.position - target.position;
-            if (distanceToPlayer.magnitude < spawnRange && first_IN)//说明主角已经进入到怪物出生点范围
+        distanceToPlayer = transform.position - target.position;
+        if (distanceToPlayer.magnitude < spawnRange && first_IN)//说明主角已经进入到怪物出生点范围
             {
                 for (int i = 0; i < Enemy; i++)
                 {
-                    currentEnemy = Instantiate(enemy, transform.position, transform.rotation) as GameObject;
+                a = Random.Range(-5, 6);
+                b = Random.Range(-5, 6);
+                Vector3 tran = new Vector3((transform.position.x) + a, 0, (transform.position.z) + b);
+                currentEnemy = Instantiate(enemy, tran, transform.rotation) as GameObject;
                 //currentEnemy.GetComponent<EnemyAttribute>().playerLevel = ca.Level;
                 //if (ca.Level>=10)
                 //{

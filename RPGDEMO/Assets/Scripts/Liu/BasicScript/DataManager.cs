@@ -39,10 +39,15 @@ public class DataManager : MonoBehaviour
     public JsonData ScrollJData;       //材料数据的Json数据文件对象
 
     public void Start() {
-        EquipmentJData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/DataSource/EquipmentData.json"));    //将Json文件转化为对象
-        ConsumJData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/DataSource/ConsumData.json"));          //将Json文件转化为对象
-        MaterialJData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/DataSource/MaterialData.json"));          //将Json文件转化为对象
-        ScrollJData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/DataSource/ScrollData.json"));
+        StreamReader streamreader;
+        streamreader = new StreamReader(Application.dataPath + "/StreamingAssets/EquipmentData.json");
+        EquipmentJData = JsonMapper.ToObject(streamreader);    //将Json文件转化为对象
+        streamreader = new StreamReader(Application.dataPath + "/StreamingAssets/ConsumData.json");
+        ConsumJData = JsonMapper.ToObject(streamreader);          //将Json文件转化为对象
+        streamreader = new StreamReader(Application.dataPath + "/StreamingAssets/MaterialData.json");
+        MaterialJData = JsonMapper.ToObject(streamreader);          //将Json文件转化为对象
+        streamreader = new StreamReader(Application.dataPath + "/StreamingAssets/ScrollData.json");
+        ScrollJData = JsonMapper.ToObject(streamreader);
 
         SkillDic.Add(1200, null);
         SkillDic.Add(1201, null);

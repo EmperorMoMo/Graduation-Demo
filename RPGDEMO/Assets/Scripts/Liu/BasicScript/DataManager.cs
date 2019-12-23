@@ -247,7 +247,7 @@ public class DataManager : MonoBehaviour
         List<int[]> mats = new List<int[]>();
         for (int i = 0; i < Mats.Count; i++) { 
             mats.Add(new int[2]{(int)Mats[i][0], (int)Mats[i][1]});
-            Debug.Log((int)Mats[i][0] + "//" + (int)Mats[i][1]);
+            //Debug.Log((int)Mats[i][0] + "//" + (int)Mats[i][1]);
         }
         return mats;
     }

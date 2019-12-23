@@ -128,7 +128,12 @@ public class IASManager : MonoBehaviour {
         if (index == -1) {
             Debug.Log("物品栏已满，无法生成");
         }
-        GameObject Item = GameObject.Instantiate(ItemPrefab, DataManager.SlotArr[index].transform);     //指定位置生成指定物品
+        GameObject Item;
+        if (Index != -1) {
+            Item = GameObject.Instantiate(ItemPrefab, DataManager.SlotArr[Index].transform);     //指定位置生成指定物品
+        } else {
+            Item = GameObject.Instantiate(ItemPrefab, DataManager.SlotArr[index].transform);
+        }
         Item item;
         switch (uid / 1000) {
             case 1:
@@ -153,8 +158,11 @@ public class IASManager : MonoBehaviour {
                 break;
                 
         }
-        
-        item.SlotIndex = index;                                //网格索引指向该网格
+        if (Index != -1) {
+            item.SlotIndex = Index;                                //网格索引指向该网格
+        } else {
+            item.SlotIndex = index;
+        }
         item.curStack = CurStack;
 
         Color newColor;
@@ -175,8 +183,11 @@ public class IASManager : MonoBehaviour {
                 }
             }
         }
-
-        DataManager.ItemArr[index] = item;                     //将Equipment脚本存入数组
+        if (Index == -1) {
+            DataManager.ItemArr[index] = item;                     //将Equipment脚本存入数组
+        } else {
+            DataManager.ItemArr[Index] = item;  
+        }
         DataManager.SaveItem();
 
         TipFrame.ShowTip(item.itemBase.Name, CurStack);
@@ -490,6 +501,61 @@ public class IASManager : MonoBehaviour {
                 count -= lastMat.curStack;
             }
         } while (count != 0);
+    }
+
+    public void Arrangement() {
+        for (int i = 0; i < 80; i++) {
+            Item item = DataManager.ItemArr[i];
+            if (item != null) {
+                Item perItem;
+                for (int j = 0; j < i; j++) {
+                    perItem = DataManager.ItemArr[j];
+                    if (perItem != null) {
+                        if (perItem.itemBase.UID == item.itemBase.UID && perItem.curStack < perItem.itemBase.StackMax) {
+                            Stack(item, DataManager.SlotArr[perItem.SlotIndex]);
+                        }
+                    }
+                }
+            }
+        }
+
+        int count = 0;
+        for (int i = 0; i < 80; i++) {
+            Item item = DataManager.ItemArr[i];
+            if (item != null) {
+                count++;
+            }
+        }
+        for (int i = count; i < 80; i++) {
+            Item item = DataManager.ItemArr[i];
+            if (item != null) {
+                int index = FetchUtils.FetchEmpty();
+                ToEmpty(item, DataManager.SlotArr[index]);
+                item.transform.SetParent(DataManager.SlotArr[index].transform);
+                item.ReplaceParent();
+            }
+        }
+        Item[] ItemCopy = new Item[count];
+        for (int i = 0; i < count; i++) {
+            ItemCopy[i] = DataManager.ItemArr[i];
+        }
+        Item temp;
+        for (int i = 0; i < count - 1; i++) {
+            for (int j = 0; j < count - 1 - i; j++) {
+                if (ItemCopy[j].itemBase.UID > ItemCopy[j + 1].itemBase.UID) {
+                    temp = ItemCopy[j];
+                    ItemCopy[j] = ItemCopy[j + 1];
+                    ItemCopy[j + 1] = temp;
+                }
+            }
+        }
+        for (int i = 0; i < count; i++) {
+            Debug.Log(ItemCopy[i].itemBase.UID);
+            ItemCopy[i].SlotIndex = i;
+            ItemCopy[i].transform.SetParent(DataManager.SlotArr[i].transform);
+            ItemCopy[i].transform.position = ItemCopy[i].transform.parent.position;
+            DataManager.ItemArr[i] = ItemCopy[i];
+        }
     }
 
     private static string GetColor(int quality) {

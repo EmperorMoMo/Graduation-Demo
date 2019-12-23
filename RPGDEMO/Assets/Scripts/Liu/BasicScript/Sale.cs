@@ -17,7 +17,7 @@ public class Sale : MonoBehaviour, IDropHandler  {
      public void OnDrop(PointerEventData eventData) {
          Item dragItem = eventData.pointerDrag.GetComponent<Item>();     //拖拽体的Item脚本
          if (dragItem != null) {
-             CA.Gold += (dragItem.itemBase.Price / 2) * dragItem.curStack; 
+             CA.Gold += (dragItem.itemBase.Price / 2) * dragItem.curStack;
              DataManager.ItemArr[dragItem.SlotIndex] = null;
              Destroy(dragItem.gameObject);
          }

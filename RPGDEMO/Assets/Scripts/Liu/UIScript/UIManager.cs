@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour {
     public static GameObject FuncationMenu;     //功能菜单
     public static GameObject TipFrame;          //提示框
     public static GameObject Tip;
+    public static GameObject Exit;
 
     private static CameraController MainCamera;         //主相机控制脚本
     private static bool isNone = true;                  //非持久化界面是否为空
@@ -45,6 +46,7 @@ public class UIManager : MonoBehaviour {
         FuncationMenu = Canvas.transform.GetChild(9).gameObject;
         TipFrame = Canvas.transform.GetChild(10).gameObject;
         Tip = Canvas.transform.GetChild(11).gameObject;
+        Exit = Canvas.transform.GetChild(12).gameObject;
 
         MainCamera = GameObject.Find("Main Camera").GetComponent<CameraController>();
     }
@@ -94,6 +96,12 @@ public class UIManager : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.F1)) {
             if (PanelList.Count != 0) {
                 ClosePanel(PanelList[PanelList.Count - 1]);
+            } else {
+                if (!Exit.activeSelf) {
+                    ShowPanel(Exit);
+                } else {
+                    ClosePanel(Exit);
+                }
             }
         }
 
@@ -224,6 +232,10 @@ public class UIManager : MonoBehaviour {
         CloseFuncationMenu();
     }
 
+    public void PreClosePanel(string panelName) {
+        ClosePanel(GetPanel(panelName));
+    }
+
     //关闭当前面板
     public static void ClosePanel(GameObject Panel) {
         Panel.SetActive(false);
@@ -241,6 +253,7 @@ public class UIManager : MonoBehaviour {
             case "shoppage": return Shoppage;
             case "attr": return AttributePanel;
             case "tip": return TipFrame;
+            case "exit": return Exit;
             default: return null;
         }
     }

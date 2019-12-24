@@ -336,7 +336,7 @@ public class MOUNTAINFSM : MonsterFSM
                 {
                     if (Time_damage > 1f)
                     {
-                        Damage(1);
+                        Damage(2000);
                         Time_damage = 0;
                     }
                     Time_damage += Time.fixedDeltaTime;
@@ -435,21 +435,18 @@ public class MOUNTAINFSM : MonsterFSM
     {
         if (jizhi_Time>=20&& jizhi_75 == true)
         {
-            Debug.Log("11111111111111111111111111111111111");
             jizhi = true;
             StartCoroutine(waitTime());
             jizhi_75 = false;
         }
         if (jizhi_Time >= 40 && jizhi_50 == true)
         {
-            Debug.Log("22222222222222222222222222222222222");
             jizhi = true;
             StartCoroutine(waitTime());
             jizhi_50 = false;
         }
         if (jizhi_Time >= 60 && jizhi_25 == true)
         {
-            Debug.Log("33333333333333333333333333333333333");
             jizhi = true;
             StartCoroutine(waitTime());
             jizhi_25 = false;

@@ -364,6 +364,7 @@ public class IASManager : MonoBehaviour {
         DataManager.ItemArr[preSlot.Index] = curItem;           //前网格指向的Arr指向的物体更新
 
         curItem.ReplaceParent();                                //当前物品的父物体更新
+        item.ReplaceParent();
         DataManager.SaveItem();
     }
 

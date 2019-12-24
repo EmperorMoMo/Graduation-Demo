@@ -25,6 +25,7 @@ public class SkillBase {
         IsActive = isActive;
         LvLimit = lvlimit;
         ConValue = convalue;
+        CDTime = cdTime;
         Describe = describe;
         Sprite = Resources.Load<Sprite>("Skill/" + sprite);
     }

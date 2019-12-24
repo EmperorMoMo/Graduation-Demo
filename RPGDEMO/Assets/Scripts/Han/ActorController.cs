@@ -199,7 +199,7 @@ public class ActorController : MonoBehaviour
         if (skill_one_CD == false)
         {
             CD_skill_one += Time.deltaTime;
-            if (CD_skill_one > 10)
+            if (CD_skill_one > 12)
             {
                 skill_one_CD = true;
                 CD_skill_one = 0;
@@ -459,7 +459,7 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = false;
         lockCamera = true;
         str = State.skill_One;
-        nengliang += 15;
+        nengliang += 10;
     }
 
     public void OnSkillTwoEnter()
@@ -467,7 +467,7 @@ public class ActorController : MonoBehaviour
         pi.inputEnabled = false;
         lockCamera = true;
         str = State.skill_Two;
-        nengliang += 10;
+        nengliang += 15;
     }
 
     public void OnSkillThreeEnter()

@@ -32,11 +32,13 @@ public class DataManager : MonoBehaviour
     public static Dictionary<int, ConsumBase> ConsumDic = new Dictionary<int, ConsumBase>();                //消耗品词典
     public static Dictionary<int, ItemBase> MaterialDic = new Dictionary<int, ItemBase>();
     public static Dictionary<int, ScrollBase> ScrollDic = new Dictionary<int, ScrollBase>();
+    public static Dictionary<int, SkillBase> SkillBaseDic = new Dictionary<int, SkillBase>();
 
     public JsonData EquipmentJData;     //装备数据的Json数据文件对象
     public JsonData ConsumJData;        //消耗品数据的Json数据文件对象
     public JsonData MaterialJData;       //材料数据的Json数据文件对象
     public JsonData ScrollJData;       //材料数据的Json数据文件对象
+    public JsonData SkillJData;
 
     public void Start() {
         StreamReader streamreader;
@@ -48,6 +50,8 @@ public class DataManager : MonoBehaviour
         MaterialJData = JsonMapper.ToObject(streamreader);          //将Json文件转化为对象
         streamreader = new StreamReader(Application.dataPath + "/StreamingAssets/ScrollData.json");
         ScrollJData = JsonMapper.ToObject(streamreader);
+        streamreader = new StreamReader(Application.dataPath + "/StreamingAssets/SkillData.json");
+        SkillJData = JsonMapper.ToObject(streamreader);
 
         SkillDic.Add(1200, null);
         SkillDic.Add(1201, null);
@@ -58,6 +62,7 @@ public class DataManager : MonoBehaviour
         ContructConsum();
         ContructMaterial();
         ContructScroll();
+        ContructSkill();
 
         WeaponFile[0] = 1000;
         WeaponFile[1] = 1100;
@@ -226,6 +231,31 @@ public class DataManager : MonoBehaviour
 
             ScrollBase scroll = new ScrollBase(uid, name, quality, price, stackMax, describe, sprite, tarUID, mats);
             ScrollDic.Add(uid, scroll);
+        }
+    }
+
+    private void ContructSkill() {
+        int uid;
+        string name;
+        bool isActive;
+        int lvlimit;
+        int conValue;
+        int cdTime;
+        string describe;
+        string sprite;
+
+        for (int i = 0; i < SkillJData.Count; i++) {
+            uid = (int)SkillJData[i]["UID"];
+            name = SkillJData[i]["Name"].ToString();
+            isActive = (bool)SkillJData[i]["IsActive"];
+            lvlimit = (int)SkillJData[i]["LvLimit"];
+            conValue = (int)SkillJData[i]["ConValue"];
+            cdTime = (int)SkillJData[i]["CDTime"];
+            describe = SkillJData[i]["Describe"].ToString();
+            sprite = SkillJData[i]["Sprite"].ToString();
+
+            SkillBase skill = new SkillBase(uid, name, isActive, lvlimit, conValue, cdTime, describe, sprite);
+            SkillBaseDic.Add(uid, skill);
         }
     }
 

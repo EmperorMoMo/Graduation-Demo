@@ -10,8 +10,9 @@ using UnityEngine.EventSystems;
 /// 拥有作为物品的一些逻辑关系
 /// 其可执行所有物品公有一些基础操作
 /// </summary>
-public class Skill : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
+public class Skill : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler{
     public int SkillID;
+    public bool isActive;
 
     public int SlotIndex = -1;
     public Transform SkillCopy;
@@ -19,17 +20,43 @@ public class Skill : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
     public Transform Parent;
     public Image Cover;
 
+    private bool isEnter = false;
+    private bool isShow = false;
+    private float stayTime = 0.5f;
+    private float stayTimer = 0;
+    private Vector3 mousePosition;
+
 
     public void Start() {
-        DataManager.SkillDic[SkillID] = this;
+        if (isActive) {
+            DataManager.SkillDic[SkillID] = this;
+        }
     }
     public void Update() {
+        if (isEnter) {
+            if (!isShow) {
+                stayTimer += Time.deltaTime;
+                if (stayTimer > stayTime) {
+                    InfoPanel.ShowSkill(DataManager.SkillBaseDic[SkillID]);
+                    mousePosition = Input.mousePosition;
+                    isShow = true;
+                    stayTimer = 0;
+                }
+            }
+        }
+
+        if (isShow) {
+            if (mousePosition != Input.mousePosition) {
+                InfoPanel.HidePanel();
+                isShow = false;
+            }
+        }
     }
 
     //开始拖拽
     public void OnBeginDrag(PointerEventData eventData) {
         //鼠标左键按住
-        if (Input.GetMouseButton(0)) {
+        if (Input.GetMouseButton(0) && isActive) {
             this.transform.position = eventData.position;
             this.transform.SetParent(UIManager.Canvas.transform);
             this.transform.GetChild(0).GetComponent<Image>().raycastTarget = false; //关闭当前组件中Image的射线检测
@@ -39,7 +66,7 @@ public class Skill : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
     //在拖拽中
     public void OnDrag(PointerEventData eventData) {
         //鼠标左键按住
-        if (Input.GetMouseButton(0)) {
+        if (Input.GetMouseButton(0) && isActive) {
             this.transform.position = eventData.position;
 
         }
@@ -48,12 +75,23 @@ public class Skill : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
     //结束拖拽
     public void OnEndDrag(PointerEventData eventData) {
         //鼠标左键弹起
-        if (Input.GetMouseButtonUp(0)) {
+        if (Input.GetMouseButtonUp(0) && isActive) {
             this.transform.SetParent(Parent);
             this.transform.position = this.transform.parent.position;
             this.transform.GetChild(0).GetComponent<Image>().raycastTarget = true; //开启当前组件中Image的射线检测
         }
     }
+
+    public void OnPointerEnter(PointerEventData eventData) {
+        isEnter = true;
+    }
+
+    public void OnPointerExit(PointerEventData eventData) {
+        isEnter = false;
+        InfoPanel.HidePanel();
+        isShow = false;
+    }
+
 
     public void ToEmpty(int slotIndex){
         SkillCopy.transform.SetParent(DataManager.SlotArr[slotIndex].transform);

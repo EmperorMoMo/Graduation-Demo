@@ -299,19 +299,19 @@ public class CharacterAttribute : MonoBehaviour
         if (other.name == "FireFieldALT(Clone)")
         {
             BossAttribute2 ba2 = GameObject.Find("MOUNTAIN_DRAGON_LEGACY").GetComponent<BossAttribute2>();
-            Character_Attacked(ba2.Aggressivity);
+            Character_Attacked(ba2.Aggressivity*10);
         }
 
         if (other.name == "projectile04(Clone)")
         {
             BossAttribute2 ba2 = GameObject.Find("MOUNTAIN_DRAGON_LEGACY").GetComponent<BossAttribute2>();
-            Character_Attacked(ba2.Aggressivity);
+            Character_Attacked(ba2.Aggressivity*2000);
         }
 
         if (other.name == "FlamethrowerALT(Clone)")
         {
             BossAttribute2 ba2 = GameObject.Find("MOUNTAIN_DRAGON_LEGACY").GetComponent<BossAttribute2>();
-            Character_Attacked(ba2.Aggressivity);
+            Character_Attacked(ba2.Aggressivity*10);
         }
     }
 

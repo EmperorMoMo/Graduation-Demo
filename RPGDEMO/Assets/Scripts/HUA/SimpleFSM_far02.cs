@@ -235,7 +235,7 @@ public class SimpleFSM_far02 : FSM
     void diaoluo()
     {
         int a = Random.Range(1, 4);
-        int i = Random.Range(1, 3);
+        int i = Random.Range(4, 7);
         if (a == 1 && firstDiaoluo == false)
         {
             IASManager.CreateItem(3300, -1, i);

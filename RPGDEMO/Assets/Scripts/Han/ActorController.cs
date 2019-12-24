@@ -100,6 +100,7 @@ public class ActorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Armor_temp);
         if (cameraTransform == null)
         {
             cameraTransform = Camera.main.transform;
@@ -261,13 +262,18 @@ public class ActorController : MonoBehaviour
 
         if (pi.increaseskill_1&&skill_four_CD && ca.Cur_MP >= 600f)
         {
+            float time = Time.deltaTime;
             ca.Cur_MP -= 600f;
             Increase_Point.SetActive(true);
-            Aggressivity_Temp = ca.finalAttribute.Aggressivity;
+            if (time > 0)
+            {
+                Aggressivity_Temp = ca.finalAttribute.Aggressivity;
+            }
             ca.finalAttribute.Aggressivity += Aggressivity_Temp * 0.5f;
             increase = true;
             pi.increaseskill_1 = false;
             skill_four_CD = false;
+            time = 0f;
         }
         if (skill_four_CD == false)
         {
@@ -434,12 +440,18 @@ public class ActorController : MonoBehaviour
 
     public void OnEnter()
     {
-        Armor_temp = ca.finalAttribute.Armor*0.5f;
+        float time = Time.deltaTime;
+        if (time > 0)
+        {
+            Armor_temp = ca.finalAttribute.Armor * 0.5f;
+        }
         ca.finalAttribute.Armor += Armor_temp;
         pi.canUseSkill = false;
         canAttacked = false;
         pi.inputEnabled = false;
         LeftSword.SetActive(true);
+
+        time = 0;
     }
 
     public void OnChangeIdleEnter()
@@ -452,6 +464,7 @@ public class ActorController : MonoBehaviour
         ca.finalAttribute.Armor -= Armor_temp;
         pi.canUseSkill = true;
         canAttacked = true;
+        Armor_temp = 0f;
     }
 
     public void OnSkillOneEnter()

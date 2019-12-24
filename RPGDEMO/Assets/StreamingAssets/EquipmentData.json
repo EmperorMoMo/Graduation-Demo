@@ -425,7 +425,7 @@
     "Quality": 3,
     "Price": 6400,
     "Position": 8,
-    "Attribute": [ 0, 0, 0, 0, 0, 0, 60, 40, 0 ],
+    "Attribute": [ 0, 0, 0, 0, 0, 0, 0, 0, 60 ],
     "LvLimit": 50,
     "Describe": "极品装备，赶紧穿上它去屠龙吧",
     "Sprite": "1308",

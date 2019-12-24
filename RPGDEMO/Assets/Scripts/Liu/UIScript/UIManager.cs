@@ -93,7 +93,7 @@ public class UIManager : MonoBehaviour {
         }
 
 
-        if (Input.GetKeyUp(KeyCode.F1)) {
+        if (Input.GetKeyUp(KeyCode.Escape)) {
             if (PanelList.Count != 0) {
                 ClosePanel(PanelList[PanelList.Count - 1]);
             } else {

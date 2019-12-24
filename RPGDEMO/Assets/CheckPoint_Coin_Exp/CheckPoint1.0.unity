@@ -84485,7 +84485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isShake: 0
-  shakeLv: 7.5
+  shakeLv: 4
   setShakeTime: 0.2
   shakeFps: 45
 --- !u!1001 &1876838164

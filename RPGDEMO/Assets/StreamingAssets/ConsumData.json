@@ -46,5 +46,53 @@
     "Describe": "最常见的回复MP的灵药",
     "Sprite": "2003",
     "StackMax": 40
+  },
+  {
+    "UID": 2004,
+    "Name": "高级HP药剂",
+    "Quality": 2,
+    "Price": 200,
+	"ConType" : "HP",
+    "ReValue": 600,
+	"Duration": 0,
+    "Describe": "高级的的回复HP的药剂",
+    "Sprite": "2004",
+    "StackMax": 40
+  },
+  {
+    "UID": 2005,
+    "Name": "高级MP药剂",
+    "Quality": 2,
+    "Price": 200,
+    "ConType" : "MP",
+    "ReValue": 600,
+	"Duration": 0,
+    "Describe": "高级的回复MP的药剂",
+    "Sprite": "2005",
+    "StackMax": 40
+  },
+  {
+    "UID": 2006,
+    "Name": "高级HP灵药",
+    "Quality": 2,
+    "Price": 200,
+    "ConType" : "HP",
+    "ReValue": 80,
+	"Duration": 15,
+    "Describe": "高级的回复HP的灵药",
+    "Sprite": "2006",
+    "StackMax": 40
+  },
+  {
+    "UID": 2007,
+    "Name": "高级MP灵药",
+    "Quality": 2,
+    "Price": 200,
+    "ConType" : "MP",
+    "ReValue": 80,
+	"Duration": 15,
+    "Describe": "高级的回复MP的灵药",
+    "Sprite": "2007",
+    "StackMax": 40
   }
 ]

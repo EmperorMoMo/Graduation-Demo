@@ -1,0 +1,62 @@
+﻿[
+  {
+    "UID": 1000,
+    "Name": "战士职业掌握",
+	"IsActive" : false,
+	"LvLimit": 0,
+    "ConValue": 0,
+	"CDTime": 0,
+    "Describe": "普通攻击附加剑气增加攻击距离，每次命中敌人<color=#FF2100>怒气值增加5点</color>。当怒气值满时，鼠标右键进入狂战士状态，进入霸体，<color=#0056FF>护甲增加50%</color>，攻速增加，每次攻击造成两段伤害，伤害为<color=#2DBF25>攻击力的50%</color>",
+    "Sprite": "1000"
+  },
+  {
+    "UID": 1001,
+    "Name": "属性掌握",
+	"IsActive" : false,
+	"LvLimit": 0,
+    "ConValue": 0,
+	"CDTime": 0,
+    "Describe": "当角色升级时，<color=#B500FF>力量、敏捷、智力增加20点</color>。",
+    "Sprite": "1001"
+  },
+  {
+    "UID": 1200,
+    "Name": "旋风斩",
+	"IsActive" : true,
+	"LvLimit": 3,
+    "ConValue": 200,
+	"CDTime": 12,
+    "Describe": "第一阶段旋风每秒对周围敌人造成<color=#2DBF25>攻击力的50%</color>伤害，第二阶段剑气造成击飞效果，每秒对敌人造成<color=#2DBF25>攻击力的50%</color>伤害<color=#FF2100>怒气值增加10点</color>",
+    "Sprite": "1200"
+  },
+  {
+    "UID": 1201,
+    "Name": "交错斩",
+    "IsActive" : true,
+	"LvLimit": 5,
+    "ConValue": 300,
+	"CDTime": 8,
+    "Describe": "对沿途敌人产生击退效果，每次击退造成<color=#2DBF25>攻击力的30%</color>伤害，<color=#FF2100>怒气值增加15点</color>",
+    "Sprite": "1201"
+  },
+  {
+    "UID": 1202,
+    "Name": "次元斩",
+    "IsActive" : true,
+	"LvLimit": 7,
+    "ConValue": 400,
+	"CDTime": 15,
+    "Describe": "将敌人聚集到中间，每0.2秒造成<color=#2DBF25>攻击力的30%</color>伤害，<color=#FF2100>怒气值增加20点</color>",
+    "Sprite": "1202"
+  },
+  {
+    "UID": 1100,
+    "Name": "斗志昂扬",
+    "IsActive" : true,
+	"LvLimit": 9,
+    "ConValue": 600,
+	"CDTime": 45,
+    "Describe": "在10秒时间内，将角色<color=#2DBF25>攻击力增加50%</color>",
+    "Sprite": "1100"
+  }
+]

@@ -68,6 +68,23 @@ public class InfoPanel : MonoBehaviour {
         ShowPanel();
     }
 
+    public static void ShowSkill(SkillBase skill) {
+        Head.GetChild(0).GetComponent<Image>().sprite = skill.Sprite;
+        Head.GetChild(1).GetComponent<Text>().text = skill.Name;
+        if (skill.IsActive) {
+            Head.GetChild(2).GetComponent<Text>().text = "主动";
+        } else {
+            Head.GetChild(2).GetComponent<Text>().text = "被动";
+        }
+        Describe.GetComponent<Text>().text = skill.Describe;
+        Price.GetComponent<Text>().text = "消耗MP: " + skill.ConValue + "点";
+        Carry.GetComponent<Text>().text = "冷却时间: " + skill.CDTime + "秒";
+        Head.GetChild(3).GetComponent<Text>().text = "技能";
+        LvLimit.GetComponent<Text>().text = "等级：Lv" + skill.LvLimit + "以上";
+        Attribute.GetComponent<Text>().text = "";
+        ShowPanel();
+    }
+
     private static void ShowPanel() {
         Panel.SetParent(UIManager.Canvas.transform);
         Panel.position = Input.mousePosition;

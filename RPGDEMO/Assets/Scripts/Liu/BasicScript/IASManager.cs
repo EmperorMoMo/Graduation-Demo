@@ -124,6 +124,7 @@ public class IASManager : MonoBehaviour {
     }
 
     public static void CreateItem(int uid, int Index, int CurStack) {
+
         int index = FetchUtils.FetchEmpty();
         if (index == -1) {
             Debug.Log("物品栏已满，无法生成");
@@ -170,7 +171,7 @@ public class IASManager : MonoBehaviour {
         Item.transform.GetChild(2).GetComponent<Image>().color = newColor;
         Item.GetComponent<Image>().sprite = item.itemBase.Sprite;  //显示贴图
         item.ShowCount();                                          //显示数量
-
+        TipFrame.ShowTip(item.itemBase.Name, CurStack);
         if (Index == -1) {
             Item perItem;
             for (int i = 0; i < 80; i++) {
@@ -190,7 +191,6 @@ public class IASManager : MonoBehaviour {
         }
         DataManager.SaveItem();
 
-        TipFrame.ShowTip(item.itemBase.Name, CurStack);
 
         
     }

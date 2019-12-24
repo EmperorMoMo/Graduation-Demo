@@ -500,6 +500,7 @@ public class IASManager : MonoBehaviour {
                 Destroy(lastMat.gameObject);
                 count -= lastMat.curStack;
             }
+            lastMat.ShowCount();
         } while (count != 0);
     }
 

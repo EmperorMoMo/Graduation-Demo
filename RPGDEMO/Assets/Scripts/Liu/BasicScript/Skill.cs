@@ -20,8 +20,8 @@ public class Skill : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
     public Transform Parent;
     public Image Cover;
 
-    private bool isEnter = false;
-    private bool isShow = false;
+    public bool isEnter = false;
+    public bool isShow = false;
     private float stayTime = 0.5f;
     private float stayTimer = 0;
     private Vector3 mousePosition;

@@ -336,7 +336,7 @@ public class MOUNTAINFSM : MonsterFSM
                 {
                     if (Time_damage > 1f)
                     {
-                        Damage(2000);
+                        Damage(3000);
                         Time_damage = 0;
                     }
                     Time_damage += Time.fixedDeltaTime;

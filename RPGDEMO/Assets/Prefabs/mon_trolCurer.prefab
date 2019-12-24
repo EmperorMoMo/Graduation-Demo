@@ -434,9 +434,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MAX_HP: 1500
   HP: 0
-  Aggressivity: 75
+  Aggressivity: 150
   Armor: 10
   Effect: {fileID: 1931391723872664, guid: 8690041cf7250174eb66ceb76d6bf32a, type: 3}
+  sim_far: {fileID: 0}
 --- !u!114 &1330146931964840395
 MonoBehaviour:
   m_ObjectHideFlags: 0

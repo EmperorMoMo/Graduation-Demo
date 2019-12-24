@@ -235,7 +235,7 @@ public class SimpleFSM_far01 : FSM
     void diaoluo()
     {
         int a = Random.Range(1, 4);
-        int i= Random.Range(1, 3);
+        int i= Random.Range(4, 7);
         if (a == 1&&firstDiaoluo==false)
         {
             IASManager.CreateItem(3301, -1, i);
@@ -294,7 +294,7 @@ public class SimpleFSM_far01 : FSM
     public void InstantiateEffect1()
     {
         var instance = Instantiate(Effect, EffectPoint1.position, EffectPoint1.rotation);
-            Destroy(instance, 1f);
+        Destroy(instance, 1f);
     }
 
     //private void OnParticleCollision(GameObject other)

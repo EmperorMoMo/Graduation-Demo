@@ -12,7 +12,7 @@ public class EnemyAttribute1 : MonoBehaviour
     public GameObject Effect;
     private Transform hitpoint;
     //private SimpleFSM sim;
-    private SimpleFSM_far01 sim_far;
+    public SimpleFSM_far01 sim_far;
     private CharacterAttribute CA;
     //private SimpleFSM01 sim01;
     private bool isme = false;

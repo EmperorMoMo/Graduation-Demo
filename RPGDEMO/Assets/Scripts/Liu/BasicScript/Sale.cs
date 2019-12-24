@@ -19,6 +19,7 @@ public class Sale : MonoBehaviour, IDropHandler  {
          if (dragItem != null) {
              CA.Gold += (dragItem.itemBase.Price / 2) * dragItem.curStack;
              DataManager.ItemArr[dragItem.SlotIndex] = null;
+             DataManager.SaveItem();
              Destroy(dragItem.gameObject);
          }
      }

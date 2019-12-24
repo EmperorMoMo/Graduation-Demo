@@ -227,6 +227,7 @@ public class UIManager : MonoBehaviour {
         if (Panel == AttributePanel) {
             AttrPanel.isReOpen = true;
         }
+        
         Panel.SetActive(true);
         PanelList.Add(Panel);
         CloseFuncationMenu();
@@ -238,6 +239,12 @@ public class UIManager : MonoBehaviour {
 
     //关闭当前面板
     public static void ClosePanel(GameObject Panel) {
+        if (Panel == SkillPanel) {
+            foreach (Skill skill in DataManager.SkillDic.Values) {
+                skill.isEnter = false;
+                skill.isShow = false;
+            }
+        }
         Panel.SetActive(false);
         PanelList.Remove(Panel);
     }

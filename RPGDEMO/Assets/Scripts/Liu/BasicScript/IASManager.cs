@@ -171,7 +171,7 @@ public class IASManager : MonoBehaviour {
         Item.transform.GetChild(2).GetComponent<Image>().color = newColor;
         Item.GetComponent<Image>().sprite = item.itemBase.Sprite;  //显示贴图
         item.ShowCount();                                          //显示数量
-        TipFrame.ShowTip(item.itemBase.Name, CurStack);
+        TipFrame.ShowTip(item.itemBase.Name, CurStack, item.itemBase.Quality);
         if (Index == -1) {
             Item perItem;
             for (int i = 0; i < 80; i++) {
@@ -500,6 +500,7 @@ public class IASManager : MonoBehaviour {
                 Destroy(lastMat.gameObject);
                 count -= lastMat.curStack;
             }
+            lastMat.ShowCount();
         } while (count != 0);
     }
 

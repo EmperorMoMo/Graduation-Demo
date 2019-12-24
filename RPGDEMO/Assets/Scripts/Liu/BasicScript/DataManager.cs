@@ -90,6 +90,10 @@ public class DataManager : MonoBehaviour
         ConsuFile[1] = 2001;
         ConsuFile[2] = 2002;
         ConsuFile[3] = 2003;
+        ConsuFile[4] = 2004;
+        ConsuFile[5] = 2005;
+        ConsuFile[6] = 2006;
+        ConsuFile[7] = 2007;
 
         MatsFile[0] = 3000;
         MatsFile[1] = 3001;
